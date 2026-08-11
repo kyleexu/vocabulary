@@ -1,11 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import type {
-  Accent,
-  DisplayMode,
-  PhoneticInfo,
-  Word,
-  WordOrder,
-} from "../types";
+import type { Accent, DisplayMode, Word, WordOrder } from "../types";
 import {
   getSettings,
   isEasy,
@@ -17,7 +11,6 @@ import {
   setWrong,
 } from "../lib/storage";
 import {
-  fetchPhonetics,
   normalizeAnswer,
   shuffle,
   speakWord,
@@ -112,7 +105,6 @@ export function WordsSetup({
   onStart: (payload: {
     list: Word[];
     accent: Accent;
-    showPhonetic: boolean;
     autoSpeak: boolean;
   }) => void;
   onBack: () => void;
@@ -122,7 +114,6 @@ export function WordsSetup({
   const [selected, setSelected] = useState<number[]>([]);
   const [source, setSource] = useState<SourceMode>("categories");
   const [accent, setAccent] = useState<Accent>(settings.accent);
-  const [showPhonetic, setShowPhonetic] = useState(settings.showPhonetic);
   const [autoSpeak, setAutoSpeak] = useState(settings.autoSpeak);
   const [limit, setLimit] = useState(50);
   const [order, setOrder] = useState<WordOrder>(settings.order ?? "random");
@@ -165,8 +156,8 @@ export function WordsSetup({
       alert("当前词库为空，请先选择分类或添加单词。");
       return;
     }
-    saveSettings({ accent, showPhonetic, autoSpeak, order });
-    onStart({ list, accent, showPhonetic, autoSpeak });
+    saveSettings({ accent, autoSpeak, order });
+    onStart({ list, accent, autoSpeak });
   };
 
   return (
@@ -237,14 +228,6 @@ export function WordsSetup({
         >
           英音
         </button>
-        <label className="toggle">
-          <input
-            type="checkbox"
-            checked={showPhonetic}
-            onChange={(e) => setShowPhonetic(e.target.checked)}
-          />
-          显示音标
-        </label>
         <label className="toggle">
           <input
             type="checkbox"
@@ -321,14 +304,12 @@ export function WordsSetup({
 export function WordsPractice({
   list,
   accent,
-  showPhonetic,
   autoSpeak,
   onBack,
   onBooksChange,
 }: {
   list: Word[];
   accent: Accent;
-  showPhonetic: boolean;
   autoSpeak: boolean;
   onBack: () => void;
   onBooksChange: () => void;
@@ -338,7 +319,6 @@ export function WordsPractice({
   const [hoverReveal, setHoverReveal] = useState(false);
   const [input, setInput] = useState("");
   const [inputForId, setInputForId] = useState<number | null>(null);
-  const [phonetic, setPhonetic] = useState<PhoneticInfo>({});
   const [inWrong, setInWrong] = useState(false);
   const [inEasy, setInEasy] = useState(false);
   const [inFav, setInFav] = useState(false);
@@ -369,31 +349,17 @@ export function WordsPractice({
     setInWrong(isWrong(word.english, word.id));
     setInEasy(isEasy(word.english, word.id));
     setInFav(isFavorite(word.english, word.id));
-    setPhonetic({});
     const t = window.setTimeout(() => inputShellRef.current?.focus(), 0);
 
-    let cancelled = false;
-    const english = word.english;
-
-    void (async () => {
-      const info = await fetchPhonetics(english);
-      if (cancelled) return;
-      setPhonetic(info);
-      if (autoSpeak) {
-        await speakWord(english, accent, info);
-      }
-    })();
+    if (autoSpeak) {
+      void speakWord(word.english, accent);
+    }
 
     return () => {
-      cancelled = true;
       stopSpeaking();
       window.clearTimeout(t);
     };
   }, [word, autoSpeak, accent]);
-
-  const phoneticText =
-    accent === "us" ? phonetic.us ?? phonetic.uk : phonetic.uk ?? phonetic.us;
-  const accentLabel = accent === "us" ? "AmE" : "BrE";
 
   const next = () => {
     if (index >= list.length - 1) {
@@ -483,7 +449,7 @@ export function WordsPractice({
       // ⌘K / Ctrl+K → speak current word
       if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        void speakWord(word.english, accent, phonetic);
+        void speakWord(word.english, accent);
         return;
       }
 
@@ -500,7 +466,7 @@ export function WordsPractice({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- handlers close over latest word/input
-  }, [done, word, input, index, accent, phonetic]);
+  }, [done, word, input, index, accent]);
 
   const toggleWrong = () => {
     const next = !inWrong;
@@ -596,20 +562,12 @@ export function WordsPractice({
             title="发音"
             onClick={(e) => {
               e.stopPropagation();
-              void speakWord(word.english, accent, phonetic);
+              void speakWord(word.english, accent);
             }}
           >
             <SpeakerIcon />
           </button>
         </div>
-
-        {showPhonetic && (
-          <p className="flash-phonetic">
-            {phoneticText
-              ? `${accentLabel}: [${phoneticText.replace(/^\/|\/$/g, "")}]`
-              : `${accentLabel}: —`}
-          </p>
-        )}
 
         <p className="flash-chinese">{word.chinese}</p>
         <span className="category">

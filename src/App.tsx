@@ -22,7 +22,6 @@ export default function App() {
   const [practiceList, setPracticeList] = useState<Word[]>([]);
   const [practiceMeta, setPracticeMeta] = useState<{
     accent: Accent;
-    showPhonetic: boolean;
     autoSpeak: boolean;
   } | null>(null);
 
@@ -96,9 +95,9 @@ export default function App() {
           wrongWords={wrong}
           favoriteWords={favorites}
           onBack={() => setView("home")}
-          onStart={({ list, accent, showPhonetic, autoSpeak }) => {
+          onStart={({ list, accent, autoSpeak }) => {
             setPracticeList(list);
-            setPracticeMeta({ accent, showPhonetic, autoSpeak });
+            setPracticeMeta({ accent, autoSpeak });
             setView("words-practice");
           }}
         />
@@ -108,7 +107,6 @@ export default function App() {
         <WordsPractice
           list={practiceList}
           accent={practiceMeta.accent}
-          showPhonetic={practiceMeta.showPhonetic}
           autoSpeak={practiceMeta.autoSpeak}
           onBack={() => setView("words-setup")}
           onBooksChange={refreshFromStore}

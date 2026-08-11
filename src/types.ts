@@ -23,11 +23,4 @@ export type DisplayMode = "full" | "hidden";
 
 export type WordOrder = "random" | "sequential";
 
-export type PhoneticInfo = {
-  us?: string;
-  uk?: string;
-  usAudio?: string;
-  ukAudio?: string;
-};
-
 export type AppView = "home" | "words-setup" | "words-practice" | "books";

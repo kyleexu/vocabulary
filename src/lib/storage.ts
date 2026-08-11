@@ -5,14 +5,12 @@ const VOCAB_URL = "/api/vocabulary.json";
 
 export type Settings = {
   accent: "us" | "uk";
-  showPhonetic: boolean;
   autoSpeak: boolean;
   order: "random" | "sequential";
 };
 
 const defaultSettings: Settings = {
   accent: "us",
-  showPhonetic: true,
   autoSpeak: true,
   order: "random",
 };
