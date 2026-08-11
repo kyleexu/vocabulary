@@ -1,26 +1,107 @@
-import { useEffect, useMemo, useState } from "react";
-import type { Accent, PhoneticInfo, PracticeMode, SessionStats, Word, WordOrder } from "../types";
+import { useEffect, useMemo, useRef, useState } from "react";
+import type {
+  Accent,
+  DisplayMode,
+  PhoneticInfo,
+  Word,
+  WordOrder,
+} from "../types";
 import {
   addEasy,
   addFavorite,
-  addToTrash,
   getSettings,
   isEasy,
   isFavorite,
-  isTrashed,
+  isWrong,
+  removeEasy,
   removeFavorite,
+  removeWrong,
   saveSettings,
   syncBooksToDisk,
   upsertWrongWord,
 } from "../lib/storage";
-import { fetchPhonetics, normalizeAnswer, shuffle, speakWord, stopSpeaking } from "../lib/speech";
 import {
+  fetchPhonetics,
+  normalizeAnswer,
+  shuffle,
+  speakWord,
+  stopSpeaking,
+} from "../lib/speech";
+import {
+  categoriesFromWords,
   formatCategoryLabel,
-  sortCategories,
-  sortWordsByCategoryOrder,
+  sortWordsByCsvOrder,
 } from "../data/categories";
 
 type SourceMode = "categories" | "wrong" | "favorites";
+
+function SpeakerIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M3 10v4h4l5 5V5L7 10H3zm13.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+      />
+    </svg>
+  );
+}
+
+/** Per-character slots: stable width, no layout jump. */
+function WordSlots({
+  target,
+  value,
+  mode,
+  hoverReveal,
+}: {
+  target: string;
+  value: string;
+  mode: DisplayMode;
+  hoverReveal: boolean;
+}) {
+  const chars = [...target];
+  const revealGhost = mode === "full" || hoverReveal;
+
+  return (
+    <div className="word-slots" style={{ ["--n" as string]: String(chars.length) }}>
+      {chars.map((ch, i) => {
+        if (ch === "-") {
+          return (
+            <span key={i} className="word-slot hyphen">
+              -
+            </span>
+          );
+        }
+        if (ch === " ") {
+          return <span key={i} className="word-slot space" />;
+        }
+
+        const typed = value[i];
+        if (typed !== undefined) {
+          const ok = typed.toLowerCase() === ch.toLowerCase();
+          return (
+            <span key={i} className={`word-slot typed ${ok ? "ok" : "bad"}`}>
+              {typed}
+            </span>
+          );
+        }
+
+        if (revealGhost) {
+          return (
+            <span key={i} className="word-slot ghost">
+              {ch}
+            </span>
+          );
+        }
+
+        return (
+          <span key={i} className="word-slot mask">
+            _
+          </span>
+        );
+      })}
+    </div>
+  );
+}
 
 export function WordsSetup({
   words,
@@ -34,20 +115,15 @@ export function WordsSetup({
   favoriteWords: Word[];
   onStart: (payload: {
     list: Word[];
-    mode: PracticeMode;
     accent: Accent;
     showPhonetic: boolean;
     autoSpeak: boolean;
   }) => void;
   onBack: () => void;
 }) {
-  const categories = useMemo(
-    () => sortCategories([...new Set(words.map((w) => w.category))]),
-    [words],
-  );
+  const categories = useMemo(() => categoriesFromWords(words), [words]);
   const settings = getSettings();
-  const [selected, setSelected] = useState<string[]>([]);
-  const [mode, setMode] = useState<PracticeMode>("memory");
+  const [selected, setSelected] = useState<number[]>([]);
   const [source, setSource] = useState<SourceMode>("categories");
   const [accent, setAccent] = useState<Accent>(settings.accent);
   const [showPhonetic, setShowPhonetic] = useState(settings.showPhonetic);
@@ -56,9 +132,11 @@ export function WordsSetup({
   const [order, setOrder] = useState<WordOrder>(settings.order ?? "random");
   const [startIndex, setStartIndex] = useState(1);
 
-  const toggleCat = (cat: string) => {
+  const toggleCat = (categoryId: number) => {
     setSelected((prev) =>
-      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat],
+      prev.includes(categoryId)
+        ? prev.filter((c) => c !== categoryId)
+        : [...prev, categoryId],
     );
   };
 
@@ -67,13 +145,12 @@ export function WordsSetup({
     if (source === "wrong") list = wrongWords;
     else if (source === "favorites") list = favoriteWords;
     else {
-      const cats = selected.length ? selected : categories;
-      list = words.filter(
-        (w) =>
-          cats.includes(w.category) && !isEasy(w.english) && !isTrashed(w.english),
-      );
+      const cats = selected.length
+        ? selected
+        : categories.map((c) => c.categoryId);
+      list = words.filter((w) => cats.includes(w.categoryId));
     }
-    return sortWordsByCategoryOrder(list);
+    return sortWordsByCsvOrder(list);
   }, [source, wrongWords, favoriteWords, selected, categories, words]);
 
   const start = () => {
@@ -93,7 +170,7 @@ export function WordsSetup({
       return;
     }
     saveSettings({ accent, showPhonetic, autoSpeak, order });
-    onStart({ list, mode, accent, showPhonetic, autoSpeak });
+    onStart({ list, accent, showPhonetic, autoSpeak });
   };
 
   return (
@@ -126,7 +203,10 @@ export function WordsSetup({
       {source === "categories" && (
         <div className="stack">
           <div className="row">
-            <button className="btn ghost" onClick={() => setSelected(categories)}>
+            <button
+              className="btn ghost"
+              onClick={() => setSelected(categories.map((c) => c.categoryId))}
+            >
               全选
             </button>
             <button className="btn ghost" onClick={() => setSelected([])}>
@@ -137,32 +217,16 @@ export function WordsSetup({
           <div className="row">
             {categories.map((cat) => (
               <button
-                key={cat}
-                className={`chip ${selected.includes(cat) ? "on" : ""}`}
-                onClick={() => toggleCat(cat)}
+                key={cat.categoryId}
+                className={`chip ${selected.includes(cat.categoryId) ? "on" : ""}`}
+                onClick={() => toggleCat(cat.categoryId)}
               >
-                {formatCategoryLabel(cat)}
+                {formatCategoryLabel(cat.category, cat.categoryId)}
               </button>
             ))}
           </div>
         </div>
       )}
-
-      <div className="row">
-        <span className="muted">模式</span>
-        <button
-          className={`chip ${mode === "memory" ? "on" : ""}`}
-          onClick={() => setMode("memory")}
-        >
-          记忆
-        </button>
-        <button
-          className={`chip ${mode === "dictation" ? "on" : ""}`}
-          onClick={() => setMode("dictation")}
-        >
-          默写
-        </button>
-      </div>
 
       <div className="settings-bar">
         <span className="muted">发音</span>
@@ -264,7 +328,6 @@ export function WordsSetup({
 
 export function WordsPractice({
   list,
-  mode,
   accent,
   showPhonetic,
   autoSpeak,
@@ -272,7 +335,6 @@ export function WordsPractice({
   onBooksChange,
 }: {
   list: Word[];
-  mode: PracticeMode;
   accent: Accent;
   showPhonetic: boolean;
   autoSpeak: boolean;
@@ -280,30 +342,43 @@ export function WordsPractice({
   onBooksChange: () => void;
 }) {
   const [index, setIndex] = useState(0);
-  const [revealed, setRevealed] = useState(false);
+  const [displayMode, setDisplayMode] = useState<DisplayMode>("hidden");
+  const [hoverReveal, setHoverReveal] = useState(false);
   const [input, setInput] = useState("");
-  const [feedback, setFeedback] = useState<{ ok: boolean; text: string } | null>(
-    null,
-  );
+  const [inputForId, setInputForId] = useState<number | null>(null);
   const [phonetic, setPhonetic] = useState<PhoneticInfo>({});
-  const [stats, setStats] = useState<SessionStats>({
-    total: list.length,
-    correct: 0,
-    wrong: 0,
-    skipped: 0,
-  });
+  const [inWrong, setInWrong] = useState(false);
+  const [inEasy, setInEasy] = useState(false);
+  const [inFav, setInFav] = useState(false);
   const [done, setDone] = useState(false);
-  const [fav, setFav] = useState(false);
+  const [toast, setToast] = useState("");
+  const inputShellRef = useRef<HTMLDivElement>(null);
 
   const word = list[index];
 
+  // Reset typing state in the same render as word change — avoids one-frame
+  // mismatch (old input vs new word) that flashes letters red.
+  if (word && inputForId !== word.id) {
+    setInputForId(word.id);
+    let seed = "";
+    while (
+      seed.length < word.english.length &&
+      word.english[seed.length] === "-"
+    ) {
+      seed += "-";
+    }
+    setInput(seed);
+    setToast("");
+    setHoverReveal(false);
+  }
+
   useEffect(() => {
     if (!word) return;
-    setRevealed(false);
-    setInput("");
-    setFeedback(null);
-    setFav(isFavorite(word.english));
+    setInWrong(isWrong(word.english, word.id));
+    setInEasy(isEasy(word.english, word.id));
+    setInFav(isFavorite(word.english, word.id));
     setPhonetic({});
+    const t = window.setTimeout(() => inputShellRef.current?.focus(), 0);
 
     let cancelled = false;
     const english = word.english;
@@ -320,11 +395,13 @@ export function WordsPractice({
     return () => {
       cancelled = true;
       stopSpeaking();
+      window.clearTimeout(t);
     };
-  }, [word, mode, autoSpeak, accent]);
+  }, [word, autoSpeak, accent]);
 
   const phoneticText =
     accent === "us" ? phonetic.us ?? phonetic.uk : phonetic.uk ?? phonetic.us;
+  const accentLabel = accent === "us" ? "AmE" : "BrE";
 
   const next = () => {
     if (index >= list.length - 1) {
@@ -334,121 +411,162 @@ export function WordsPractice({
     setIndex((i) => i + 1);
   };
 
-  const markCorrect = () => {
-    setStats((s) => ({ ...s, correct: s.correct + 1 }));
-    setFeedback({ ok: true, text: "正确" });
-    setTimeout(next, 450);
+  const flash = (msg: string) => {
+    setToast(msg);
+    window.setTimeout(() => setToast(""), 1200);
   };
 
-  const markWrong = () => {
-    upsertWrongWord({
-      english: word.english,
-      chinese: word.chinese,
-      category: word.category,
+  const appendInput = (ch: string) => {
+    setInput((prev) => {
+      if (prev.length >= word.english.length) return prev;
+      let nextVal = prev + ch;
+      while (
+        nextVal.length < word.english.length &&
+        word.english[nextVal.length] === "-"
+      ) {
+        nextVal += "-";
+      }
+      return nextVal;
     });
-    void syncBooksToDisk();
-    onBooksChange();
-    setStats((s) => ({ ...s, wrong: s.wrong + 1 }));
-    setFeedback({
-      ok: false,
-      text: `错误 · 答案：${word.english}`,
+  };
+
+  const backspaceInput = () => {
+    setInput((prev) => {
+      if (!prev) return prev;
+      let nextVal = prev.slice(0, -1);
+      while (nextVal.endsWith("-") && word.english[nextVal.length] === "-") {
+        nextVal = nextVal.slice(0, -1);
+      }
+      return nextVal;
     });
-    setRevealed(true);
   };
 
-  const checkDictation = () => {
-    if (normalizeAnswer(input) === normalizeAnswer(word.english)) {
-      markCorrect();
-    } else {
-      markWrong();
-    }
-  };
-
-  /** Memory-mode check: wrong answers are NOT written to wrong-words.csv */
-  const checkMemory = () => {
-    if (normalizeAnswer(input) === normalizeAnswer(word.english)) {
-      markCorrect();
+  const handleTypeKey = (e: {
+    key: string;
+    ctrlKey: boolean;
+    metaKey: boolean;
+    altKey: boolean;
+    preventDefault: () => void;
+  }) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (normalizeAnswer(input) === normalizeAnswer(word.english)) {
+        flash("正确");
+        window.setTimeout(next, 280);
+      } else {
+        flash("再试一次");
+      }
       return;
     }
-    setStats((s) => ({ ...s, wrong: s.wrong + 1 }));
-    setFeedback({
-      ok: false,
-      text: `不正确 · 答案：${word.english}（未计入错词本）`,
-    });
-    setRevealed(true);
+    if (e.key === "Backspace") {
+      e.preventDefault();
+      backspaceInput();
+      return;
+    }
+    if (e.key === "Escape") {
+      e.preventDefault();
+      let seed = "";
+      while (
+        seed.length < word.english.length &&
+        word.english[seed.length] === "-"
+      ) {
+        seed += "-";
+      }
+      setInput(seed);
+      return;
+    }
+    if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      e.preventDefault();
+      appendInput(e.key);
+    }
   };
 
-  const skip = () => {
-    setStats((s) => ({ ...s, skipped: s.skipped + 1 }));
-    next();
-  };
+  // Capture typing even after clicking action buttons (focus left the shell)
+  useEffect(() => {
+    if (done || !word) return;
+    const onKey = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target?.closest("input, textarea, select")) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // Let focused buttons keep Enter/Space for accessibility
+      if (
+        target?.closest("button") &&
+        (e.key === "Enter" || e.key === " ")
+      ) {
+        return;
+      }
+      handleTypeKey(e);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- handlers close over latest word/input
+  }, [done, word, input, index]);
 
-  const addToEasy = () => {
-    addEasy({
-      english: word.english,
-      chinese: word.chinese,
-      category: word.category,
-    });
-    onBooksChange();
-    setStats((s) => ({ ...s, skipped: s.skipped + 1 }));
-    next();
-  };
-
-  const deleteWord = () => {
-    addToTrash({
-      english: word.english,
-      chinese: word.chinese,
-      category: word.category,
-    });
-    void syncBooksToDisk();
-    onBooksChange();
-    setStats((s) => ({ ...s, skipped: s.skipped + 1 }));
-    next();
-  };
-
-  const toggleFav = () => {
-    if (fav) {
-      removeFavorite(word.english);
-      setFav(false);
+  const toggleWrong = () => {
+    if (inWrong) {
+      removeWrong(word.english, word.id);
+      setInWrong(false);
+      flash("已移出错词本");
     } else {
-      addFavorite({
+      upsertWrongWord({
+        id: word.id,
+        categoryId: word.categoryId,
         english: word.english,
         chinese: word.chinese,
         category: word.category,
       });
-      setFav(true);
+      setInWrong(true);
+      flash("已加入错词本");
+    }
+    void syncBooksToDisk();
+    onBooksChange();
+  };
+
+  const toggleEasy = () => {
+    if (inEasy) {
+      removeEasy(word.english, word.id);
+      setInEasy(false);
+      flash("已移出简单词本");
+    } else {
+      addEasy({
+        id: word.id,
+        categoryId: word.categoryId,
+        english: word.english,
+        chinese: word.chinese,
+        category: word.category,
+      });
+      setInEasy(true);
+      flash("已加入简单词本");
+    }
+    void syncBooksToDisk();
+    onBooksChange();
+  };
+
+  const toggleFav = () => {
+    if (inFav) {
+      removeFavorite(word.english, word.id);
+      setInFav(false);
+      flash("已移出收藏本");
+    } else {
+      addFavorite({
+        id: word.id,
+        categoryId: word.categoryId,
+        english: word.english,
+        chinese: word.chinese,
+        category: word.category,
+      });
+      setInFav(true);
+      flash("已加入收藏本");
     }
     void syncBooksToDisk();
     onBooksChange();
   };
 
   if (done || !word) {
-    const accuracy =
-      stats.correct + stats.wrong === 0
-        ? 0
-        : Math.round((stats.correct / (stats.correct + stats.wrong)) * 100);
     return (
       <div className="panel stack">
         <h2>本轮结束</h2>
-        <div className="stats">
-          <div className="stat">
-            <b>{stats.total}</b>
-            <span>总计</span>
-          </div>
-          <div className="stat">
-            <b>{stats.correct}</b>
-            <span>正确</span>
-          </div>
-          <div className="stat">
-            <b>{stats.wrong}</b>
-            <span>错误</span>
-          </div>
-          <div className="stat">
-            <b>{accuracy}%</b>
-            <span>正确率</span>
-          </div>
-        </div>
-        <p className="muted">错误单词已自动写入错词本（wrong-words.json）。</p>
+        <p className="muted">共练习 {list.length} 词</p>
         <button className="btn primary" onClick={onBack}>
           返回
         </button>
@@ -457,11 +575,25 @@ export function WordsPractice({
   }
 
   return (
-    <div className="panel">
+    <div className="panel practice-panel">
       <div className="row" style={{ justifyContent: "space-between" }}>
-        <h2 style={{ margin: 0 }}>
-          {mode === "memory" ? "记忆模式" : "默写模式"}
-        </h2>
+        <div className="row">
+          <button
+            className={`chip ${displayMode === "full" ? "on" : ""}`}
+            onClick={() => setDisplayMode("full")}
+          >
+            展示
+          </button>
+          <button
+            className={`chip ${displayMode === "hidden" ? "on" : ""}`}
+            onClick={() => {
+              setDisplayMode("hidden");
+              setHoverReveal(false);
+            }}
+          >
+            隐藏
+          </button>
+        </div>
         <button className="btn ghost" onClick={onBack}>
           结束
         </button>
@@ -470,155 +602,78 @@ export function WordsPractice({
       <div className="progress">
         <i style={{ width: `${((index + 1) / list.length) * 100}%` }} />
       </div>
+      <p className="muted" style={{ marginTop: 0, textAlign: "center" }}>
+        {index + 1} / {list.length}
+      </p>
 
-      <div className="stats" style={{ marginBottom: 16 }}>
-        <div className="stat">
-          <b>
-            {index + 1}/{list.length}
-          </b>
-          <span>进度</span>
+      <div className="flash-stage" onClick={() => inputShellRef.current?.focus()}>
+        <div className="flash-word-row">
+          <div
+            ref={inputShellRef}
+            className="word-input-shell"
+            tabIndex={0}
+            onMouseEnter={() => {
+              if (displayMode === "hidden") setHoverReveal(true);
+            }}
+            onMouseLeave={() => {
+              if (displayMode === "hidden") setHoverReveal(false);
+            }}
+          >
+            <WordSlots
+              target={word.english}
+              value={inputForId === word.id ? input : ""}
+              mode={displayMode}
+              hoverReveal={hoverReveal}
+            />
+          </div>
+          <button
+            type="button"
+            className="speak-btn"
+            title="发音"
+            onClick={(e) => {
+              e.stopPropagation();
+              void speakWord(word.english, accent, phonetic);
+            }}
+          >
+            <SpeakerIcon />
+          </button>
         </div>
-        <div className="stat">
-          <b>{stats.correct}</b>
-          <span>正确</span>
-        </div>
-        <div className="stat">
-          <b>{stats.wrong}</b>
-          <span>错误</span>
-        </div>
-        <div className="stat">
-          <b>{stats.skipped}</b>
-          <span>跳过</span>
-        </div>
-      </div>
 
-      <div className="word-stage">
-        {mode === "dictation" ? (
-          <>
-            <p className="chinese-hero">{word.chinese}</p>
-            {showPhonetic && revealed && (
-              <p className="phonetic">{phoneticText ? `/${phoneticText}/` : " "}</p>
-            )}
-            {revealed && <p className="english-answer">{word.english}</p>}
-          </>
-        ) : (
-          <>
-            {revealed ? (
-              <p className="english">{word.english}</p>
-            ) : (
-              <p className="english" style={{ letterSpacing: "0.2em" }}>
-                ······
-              </p>
-            )}
-            {showPhonetic && (
-              <p className="phonetic">{phoneticText ? `/${phoneticText}/` : " "}</p>
-            )}
-            <p className="chinese">{word.chinese}</p>
-          </>
+        {showPhonetic && (
+          <p className="flash-phonetic">
+            {phoneticText
+              ? `${accentLabel}: [${phoneticText.replace(/^\/|\/$/g, "")}]`
+              : `${accentLabel}: —`}
+          </p>
         )}
-        <span className="category">{formatCategoryLabel(word.category)}</span>
+
+        <p className="flash-chinese">{word.chinese}</p>
+        <span className="category">
+          #{word.id} / {formatCategoryLabel(word.category, word.categoryId)}
+        </span>
+        <p className="faint" style={{ margin: "8px 0 0", fontSize: "0.8rem" }}>
+          直接键盘输入 · Enter 检查
+        </p>
       </div>
 
-      <div className="row" style={{ justifyContent: "center", marginBottom: 14 }}>
-        <button
-          className="btn"
-          onClick={() => speakWord(word.english, accent, phonetic)}
-        >
-          发音（{accent === "us" ? "美" : "英"}）
+      <p className={`feedback ${toast ? (toast === "正确" || toast.startsWith("已") ? "ok" : toast === "再试一次" ? "bad" : "ok") : ""}`}>
+        {toast || " "}
+      </p>
+
+      <div className="practice-actions">
+        <button className="btn" onClick={toggleWrong}>
+          {inWrong ? "移出错词本" : "加入错词本"}
+        </button>
+        <button className="btn" onClick={toggleEasy}>
+          {inEasy ? "移出简单词本" : "加入简单词本"}
         </button>
         <button className="btn" onClick={toggleFav}>
-          {fav ? "取消收藏" : "加入收藏本"}
+          {inFav ? "移出收藏本" : "加入收藏本"}
         </button>
-        <button className="btn" onClick={addToEasy}>
-          标为简单词
-        </button>
-        <button className="btn danger" onClick={deleteWord}>
-          删除
+        <button className="btn primary" onClick={next}>
+          下一个
         </button>
       </div>
-
-      {mode === "dictation" && (
-        <div className="stack" style={{ marginBottom: 12, alignItems: "center" }}>
-          <div className="row" style={{ justifyContent: "center", width: "100%" }}>
-            <input
-              className="field answer-input"
-              placeholder="输入英文拼写…"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") checkDictation();
-              }}
-              autoFocus
-            />
-            <button className="btn primary" onClick={checkDictation}>
-              检查
-            </button>
-          </div>
-          <div className="row" style={{ justifyContent: "center" }}>
-            <button className="btn" onClick={skip}>
-              跳过
-            </button>
-            {!revealed && (
-              <button className="btn ghost" onClick={() => setRevealed(true)}>
-                显示答案
-              </button>
-            )}
-            {feedback && !feedback.ok && (
-              <button className="btn primary" onClick={next}>
-                下一个
-              </button>
-            )}
-          </div>
-        </div>
-      )}
-
-      {mode === "memory" && (
-        <div className="stack" style={{ marginBottom: 12, alignItems: "center" }}>
-          <div className="row" style={{ justifyContent: "center", width: "100%" }}>
-            <input
-              className="field answer-input"
-              placeholder="输入英文拼写…"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") checkMemory();
-              }}
-              autoFocus
-            />
-            <button className="btn primary" onClick={checkMemory}>
-              检查
-            </button>
-          </div>
-          <div className="row" style={{ justifyContent: "center" }}>
-            <button className="btn" onClick={skip}>
-              跳过
-            </button>
-            {!revealed ? (
-              <button className="btn ghost" onClick={() => setRevealed(true)}>
-                显示英文
-              </button>
-            ) : (
-              <>
-                <button className="btn primary" onClick={markCorrect}>
-                  认识
-                </button>
-                <button className="btn danger" onClick={markWrong}>
-                  不认识
-                </button>
-              </>
-            )}
-            {feedback && !feedback.ok && (
-              <button className="btn primary" onClick={next}>
-                下一个
-              </button>
-            )}
-          </div>
-        </div>
-      )}
-
-      <p className={`feedback ${feedback ? (feedback.ok ? "ok" : "bad") : ""}`}>
-        {feedback?.text ?? " "}
-      </p>
     </div>
   );
 }

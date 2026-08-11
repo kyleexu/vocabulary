@@ -12,7 +12,6 @@ const ALLOWED = new Set([
   "wrong-words.csv",
   "favorites.csv",
   "easy-words.json",
-  "trash.csv",
 ]);
 
 function readRequestBody(req: Connect.IncomingMessage): Promise<string> {

@@ -1,57 +1,34 @@
-/** Learning-path order for categories (1-based index for memorization). */
-export const CATEGORY_ORDER = [
-  "Software Engineering",
-  "Programming Basics",
-  "Data Structures & Algorithms",
-  "Operating Systems",
-  "Networking & Protocols",
-  "Databases",
-  "Concurrency",
-  "Java Ecosystem",
-  "Caching",
-  "Messaging",
-  "Distributed Systems",
-  "Architecture & Design",
-  "Performance",
-  "DevOps",
-  "Security",
-  "Testing",
-  "Engineering Practices",
-  "Communication",
-] as const;
-
-export type KnownCategory = (typeof CATEGORY_ORDER)[number];
-
-const indexMap = new Map<string, number>(
-  CATEGORY_ORDER.map((name, i) => [name, i + 1]),
-);
-
-/** 1-based category index; unknown categories go to the end. */
-export function categoryIndex(name: string): number {
-  return indexMap.get(name) ?? CATEGORY_ORDER.length + 1;
+/** Format "01 · Software Engineering" from CSV categoryId. */
+export function formatCategoryLabel(category: string, categoryId?: number): string {
+  if (categoryId != null && categoryId > 0) {
+    return `${String(categoryId).padStart(2, "0")} · ${category}`;
+  }
+  return category;
 }
 
-export function formatCategoryLabel(name: string): string {
-  const n = categoryIndex(name);
-  const num = String(n).padStart(2, "0");
-  return `${num} · ${name}`;
+/** Unique categories in CSV order (by categoryId). */
+export function categoriesFromWords(
+  words: Array<{ category: string; categoryId: number }>,
+): Array<{ categoryId: number; category: string }> {
+  const map = new Map<string, number>();
+  for (const w of words) {
+    if (!map.has(w.category)) map.set(w.category, w.categoryId);
+  }
+  return [...map.entries()]
+    .map(([category, categoryId]) => ({ category, categoryId }))
+    .sort((a, b) => a.categoryId - b.categoryId || a.category.localeCompare(b.category));
 }
 
-/** Sort category names by learning-path index. */
-export function sortCategories(names: string[]): string[] {
-  return [...names].sort((a, b) => {
-    const d = categoryIndex(a) - categoryIndex(b);
-    return d !== 0 ? d : a.localeCompare(b);
-  });
-}
-
-/** Sort words by category index, then English. */
-export function sortWordsByCategoryOrder<T extends { category: string; english: string }>(
-  words: T[],
-): T[] {
+/** Preserve CSV file order: categoryId, then word id. */
+export function sortWordsByCsvOrder<
+  T extends { id?: number; categoryId?: number; english?: string },
+>(words: T[]): T[] {
   return [...words].sort((a, b) => {
-    const d = categoryIndex(a.category) - categoryIndex(b.category);
-    if (d !== 0) return d;
-    return a.english.localeCompare(b.english);
+    const cd = (a.categoryId ?? 9999) - (b.categoryId ?? 9999);
+    if (cd !== 0) return cd;
+    const ida = a.id ?? Number.MAX_SAFE_INTEGER;
+    const idb = b.id ?? Number.MAX_SAFE_INTEGER;
+    if (ida !== idb) return ida - idb;
+    return (a.english ?? "").localeCompare(b.english ?? "");
   });
 }

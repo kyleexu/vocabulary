@@ -3,7 +3,6 @@ import type { WordEntry } from "../types";
 const WRONG_KEY = "vocab.wrong-words";
 const FAVORITES_KEY = "vocab.favorites";
 const EASY_KEY = "vocab.easy-words";
-const TRASH_KEY = "vocab.trash";
 const SETTINGS_KEY = "vocab.settings";
 
 export type Settings = {
@@ -35,6 +34,16 @@ function writeList(key: string, list: WordEntry[]) {
   localStorage.setItem(key, JSON.stringify(list, null, 2));
 }
 
+/** Match by vocabulary id when present; otherwise fall back to english. */
+function sameWord(
+  entry: WordEntry,
+  english: string,
+  id?: number,
+): boolean {
+  if (id != null && entry.id != null) return entry.id === id;
+  return entry.english.toLowerCase() === english.toLowerCase();
+}
+
 export function getWrongWords(): WordEntry[] {
   return readList(WRONG_KEY);
 }
@@ -45,10 +54,6 @@ export function getFavorites(): WordEntry[] {
 
 export function getEasyWords(): WordEntry[] {
   return readList(EASY_KEY);
-}
-
-export function getTrashWords(): WordEntry[] {
-  return readList(TRASH_KEY);
 }
 
 export function setWrongWords(list: WordEntry[]) {
@@ -66,16 +71,9 @@ export function setEasyWords(list: WordEntry[]) {
   void syncBooksToDisk();
 }
 
-export function setTrashWords(list: WordEntry[]) {
-  writeList(TRASH_KEY, list);
-  void syncBooksToDisk();
-}
-
 export function upsertWrongWord(entry: Omit<WordEntry, "addedAt" | "wrongCount">) {
   const list = getWrongWords();
-  const idx = list.findIndex(
-    (w) => w.english.toLowerCase() === entry.english.toLowerCase(),
-  );
+  const idx = list.findIndex((w) => sameWord(w, entry.english, entry.id));
   if (idx >= 0) {
     list[idx] = {
       ...list[idx],
@@ -95,7 +93,7 @@ export function upsertWrongWord(entry: Omit<WordEntry, "addedAt" | "wrongCount">
 
 export function addFavorite(entry: Omit<WordEntry, "addedAt">) {
   const list = getFavorites();
-  if (list.some((w) => w.english.toLowerCase() === entry.english.toLowerCase())) {
+  if (list.some((w) => sameWord(w, entry.english, entry.id))) {
     return list;
   }
   list.unshift({ ...entry, addedAt: new Date().toISOString() });
@@ -103,25 +101,21 @@ export function addFavorite(entry: Omit<WordEntry, "addedAt">) {
   return list;
 }
 
-export function removeFavorite(english: string) {
-  const list = getFavorites().filter(
-    (w) => w.english.toLowerCase() !== english.toLowerCase(),
-  );
+export function removeFavorite(english: string, id?: number) {
+  const list = getFavorites().filter((w) => !sameWord(w, english, id));
   setFavorites(list);
   return list;
 }
 
-export function removeWrong(english: string) {
-  const list = getWrongWords().filter(
-    (w) => w.english.toLowerCase() !== english.toLowerCase(),
-  );
+export function removeWrong(english: string, id?: number) {
+  const list = getWrongWords().filter((w) => !sameWord(w, english, id));
   setWrongWords(list);
   return list;
 }
 
 export function addEasy(entry: Omit<WordEntry, "addedAt">) {
   const list = getEasyWords();
-  if (list.some((w) => w.english.toLowerCase() === entry.english.toLowerCase())) {
+  if (list.some((w) => sameWord(w, entry.english, entry.id))) {
     return list;
   }
   list.unshift({ ...entry, addedAt: new Date().toISOString() });
@@ -129,62 +123,22 @@ export function addEasy(entry: Omit<WordEntry, "addedAt">) {
   return list;
 }
 
-export function removeEasy(english: string) {
-  const list = getEasyWords().filter(
-    (w) => w.english.toLowerCase() !== english.toLowerCase(),
-  );
+export function removeEasy(english: string, id?: number) {
+  const list = getEasyWords().filter((w) => !sameWord(w, english, id));
   setEasyWords(list);
   return list;
 }
 
-export function isEasy(english: string): boolean {
-  return getEasyWords().some(
-    (w) => w.english.toLowerCase() === english.toLowerCase(),
-  );
+export function isEasy(english: string, id?: number): boolean {
+  return getEasyWords().some((w) => sameWord(w, english, id));
 }
 
-export function isFavorite(english: string): boolean {
-  return getFavorites().some(
-    (w) => w.english.toLowerCase() === english.toLowerCase(),
-  );
+export function isWrong(english: string, id?: number): boolean {
+  return getWrongWords().some((w) => sameWord(w, english, id));
 }
 
-export function isTrashed(english: string): boolean {
-  return getTrashWords().some(
-    (w) => w.english.toLowerCase() === english.toLowerCase(),
-  );
-}
-
-/** Move word into trash.csv; also strip from other books. */
-export function addToTrash(entry: Omit<WordEntry, "addedAt">) {
-  const list = getTrashWords();
-  if (!list.some((w) => w.english.toLowerCase() === entry.english.toLowerCase())) {
-    list.unshift({ ...entry, addedAt: new Date().toISOString() });
-    // write without double-sync from remove* calls
-    writeList(TRASH_KEY, list);
-  }
-  writeList(
-    WRONG_KEY,
-    getWrongWords().filter((w) => w.english.toLowerCase() !== entry.english.toLowerCase()),
-  );
-  writeList(
-    FAVORITES_KEY,
-    getFavorites().filter((w) => w.english.toLowerCase() !== entry.english.toLowerCase()),
-  );
-  writeList(
-    EASY_KEY,
-    getEasyWords().filter((w) => w.english.toLowerCase() !== entry.english.toLowerCase()),
-  );
-  void syncBooksToDisk();
-  return list;
-}
-
-export function removeTrash(english: string) {
-  const list = getTrashWords().filter(
-    (w) => w.english.toLowerCase() !== english.toLowerCase(),
-  );
-  setTrashWords(list);
-  return list;
+export function isFavorite(english: string, id?: number): boolean {
+  return getFavorites().some((w) => sameWord(w, english, id));
 }
 
 export function getSettings(): Settings {
@@ -236,33 +190,66 @@ function parseCsvLine(line: string): string[] {
   return cols;
 }
 
-/** Basic word CSV: category,english,chinese */
+/** Basic word CSV: id,categoryId,category,english,chinese (id/categoryId optional for legacy) */
 export function entriesToCsv(list: WordEntry[]): string {
-  const lines = ["category,english,chinese"];
+  const hasIds = list.some((w) => w.id != null);
+  const lines = [
+    hasIds ? "id,categoryId,category,english,chinese" : "category,english,chinese",
+  ];
   for (const w of list) {
-    lines.push(
-      [
-        escapeCsvField(w.category ?? ""),
-        escapeCsvField(w.english),
-        escapeCsvField(w.chinese),
-      ].join(","),
-    );
+    if (hasIds) {
+      lines.push(
+        [
+          w.id != null ? String(w.id) : "",
+          w.categoryId != null ? String(w.categoryId) : "",
+          escapeCsvField(w.category ?? ""),
+          escapeCsvField(w.english),
+          escapeCsvField(w.chinese),
+        ].join(","),
+      );
+    } else {
+      lines.push(
+        [
+          escapeCsvField(w.category ?? ""),
+          escapeCsvField(w.english),
+          escapeCsvField(w.chinese),
+        ].join(","),
+      );
+    }
   }
   return `${lines.join("\n")}\n`;
 }
 
 /** Wrong words CSV includes wrongCount. */
 export function wrongWordsToCsv(list: WordEntry[] = getWrongWords()): string {
-  const lines = ["category,english,chinese,wrongCount"];
+  const hasIds = list.some((w) => w.id != null);
+  const lines = [
+    hasIds
+      ? "id,categoryId,category,english,chinese,wrongCount"
+      : "category,english,chinese,wrongCount",
+  ];
   for (const w of list) {
-    lines.push(
-      [
-        escapeCsvField(w.category ?? ""),
-        escapeCsvField(w.english),
-        escapeCsvField(w.chinese),
-        String(w.wrongCount ?? 1),
-      ].join(","),
-    );
+    if (hasIds) {
+      lines.push(
+        [
+          w.id != null ? String(w.id) : "",
+          w.categoryId != null ? String(w.categoryId) : "",
+          escapeCsvField(w.category ?? ""),
+          escapeCsvField(w.english),
+          escapeCsvField(w.chinese),
+          String(w.wrongCount ?? 1),
+        ].join(","),
+      );
+    } else {
+      lines.push(
+        [
+          escapeCsvField(w.category ?? ""),
+          escapeCsvField(w.english),
+          escapeCsvField(w.chinese),
+          String(w.wrongCount ?? 1),
+        ].join(","),
+      );
+    }
   }
   return `${lines.join("\n")}\n`;
 }
@@ -273,16 +260,34 @@ export function parseEntriesCsv(text: string): WordEntry[] {
   const header = lines[0].toLowerCase();
   const hasHeader = header.includes("english");
   const start = hasHeader ? 1 : 0;
-  const headerCols = hasHeader ? parseCsvLine(lines[0]).map((c) => c.trim().toLowerCase()) : [];
+  const headerCols = hasHeader
+    ? parseCsvLine(lines[0]).map((c) => c.trim().toLowerCase())
+    : [];
+  const idIdx = headerCols.indexOf("id");
+  const catIdIdx = headerCols.indexOf("categoryid");
   const wrongIdx = headerCols.indexOf("wrongcount");
+  const catIdx = headerCols.indexOf("category");
+  const enIdx = headerCols.indexOf("english");
+  const zhIdx = headerCols.indexOf("chinese");
 
   const out: WordEntry[] = [];
   for (let i = start; i < lines.length; i++) {
     const cols = parseCsvLine(lines[i]);
     if (cols.length < 2) continue;
-    const category = cols[0]?.trim() ?? "";
-    const english = cols[1]?.trim() ?? "";
-    const chinese = cols[2]?.trim() ?? "";
+
+    let category = "";
+    let english = "";
+    let chinese = "";
+    if (hasHeader && enIdx >= 0) {
+      category = cols[catIdx >= 0 ? catIdx : 0]?.trim() ?? "";
+      english = cols[enIdx]?.trim() ?? "";
+      chinese = cols[zhIdx >= 0 ? zhIdx : enIdx + 1]?.trim() ?? "";
+    } else {
+      // legacy: category,english,chinese
+      category = cols[0]?.trim() ?? "";
+      english = cols[1]?.trim() ?? "";
+      chinese = cols[2]?.trim() ?? "";
+    }
     if (!english) continue;
     const entry: WordEntry = {
       category,
@@ -290,6 +295,14 @@ export function parseEntriesCsv(text: string): WordEntry[] {
       chinese,
       addedAt: new Date().toISOString(),
     };
+    if (idIdx >= 0 && cols[idIdx]) {
+      const n = Number(cols[idIdx]);
+      if (!Number.isNaN(n)) entry.id = n;
+    }
+    if (catIdIdx >= 0 && cols[catIdIdx]) {
+      const n = Number(cols[catIdIdx]);
+      if (!Number.isNaN(n)) entry.categoryId = n;
+    }
     if (wrongIdx >= 0 && cols[wrongIdx]) {
       const n = Number(cols[wrongIdx]);
       if (!Number.isNaN(n)) entry.wrongCount = n;
@@ -300,14 +313,6 @@ export function parseEntriesCsv(text: string): WordEntry[] {
     out.push(entry);
   }
   return out;
-}
-
-export function trashToCsv(list: WordEntry[] = getTrashWords()): string {
-  return entriesToCsv(list);
-}
-
-export function parseTrashCsv(text: string): WordEntry[] {
-  return parseEntriesCsv(text);
 }
 
 let syncing: Promise<void> | null = null;
@@ -322,7 +327,6 @@ export async function syncBooksToDisk() {
       ["/api/books/wrong-words.csv", "text/csv;charset=utf-8", wrongWordsToCsv()],
       ["/api/books/favorites.csv", "text/csv;charset=utf-8", entriesToCsv(getFavorites())],
       ["/api/books/easy-words.json", "application/json", JSON.stringify(getEasyWords(), null, 2)],
-      ["/api/books/trash.csv", "text/csv;charset=utf-8", trashToCsv()],
     ];
     await Promise.all(
       puts.map(async ([url, type, body]) => {
@@ -345,11 +349,10 @@ export async function syncBooksToDisk() {
 /** Load word books from project `data/` files. */
 export async function loadBooksFromDisk() {
   try {
-    const [wrongRes, favRes, easyRes, trashRes] = await Promise.all([
+    const [wrongRes, favRes, easyRes] = await Promise.all([
       fetch("/api/books/wrong-words.csv"),
       fetch("/api/books/favorites.csv"),
       fetch("/api/books/easy-words.json"),
-      fetch("/api/books/trash.csv"),
     ]);
     if (wrongRes.ok) {
       writeList(WRONG_KEY, parseEntriesCsv(await wrongRes.text()));
@@ -360,9 +363,6 @@ export async function loadBooksFromDisk() {
     if (easyRes.ok) {
       const data = (await easyRes.json()) as WordEntry[];
       if (Array.isArray(data)) writeList(EASY_KEY, data);
-    }
-    if (trashRes.ok) {
-      writeList(TRASH_KEY, parseTrashCsv(await trashRes.text()));
     }
   } catch {
     // keep whatever is in localStorage

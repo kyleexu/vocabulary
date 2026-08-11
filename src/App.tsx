@@ -1,11 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Accent, PracticeMode, Word, WordEntry } from "./types";
+import type { Accent, Word, WordEntry } from "./types";
 import { WordsPractice, WordsSetup } from "./components/Words";
 import { WordBooks } from "./components/WordBooks";
 import {
   getEasyWords,
   getFavorites,
-  getTrashWords,
   getWrongWords,
   loadBooksFromDisk,
   syncBooksToDisk,
@@ -20,10 +19,8 @@ export default function App() {
   const [wrong, setWrong] = useState<WordEntry[]>([]);
   const [favorites, setFavorites] = useState<WordEntry[]>([]);
   const [easy, setEasy] = useState<WordEntry[]>([]);
-  const [trash, setTrash] = useState<WordEntry[]>([]);
   const [practiceList, setPracticeList] = useState<Word[]>([]);
   const [practiceMeta, setPracticeMeta] = useState<{
-    mode: PracticeMode;
     accent: Accent;
     showPhonetic: boolean;
     autoSpeak: boolean;
@@ -33,7 +30,6 @@ export default function App() {
     setWrong(getWrongWords());
     setFavorites(getFavorites());
     setEasy(getEasyWords());
-    setTrash(getTrashWords());
   };
 
   useEffect(() => {
@@ -51,6 +47,8 @@ export default function App() {
   const wrongAsWords: Word[] = useMemo(
     () =>
       wrong.map((w) => ({
+        id: w.id ?? 0,
+        categoryId: w.categoryId ?? 9999,
         english: w.english,
         chinese: w.chinese,
         category: w.category ?? "Wrong Words",
@@ -61,6 +59,8 @@ export default function App() {
   const favAsWords: Word[] = useMemo(
     () =>
       favorites.map((w) => ({
+        id: w.id ?? 0,
+        categoryId: w.categoryId ?? 9999,
         english: w.english,
         chinese: w.chinese,
         category: w.category ?? "Favorites",
@@ -102,20 +102,20 @@ export default function App() {
           <section className="hero">
             <h1>把专业词汇练进肌肉记忆</h1>
             <p>
-              按分类记忆或默写，错词自动归档；收藏本与错词本以 JSON
-              保存在本地。
+              展示 / 隐藏模式复习；按分类抽词；错词、收藏与简单词保存在{" "}
+              <code>data/</code>。
             </p>
           </section>
           <div className="grid-home">
             <button className="tile" onClick={() => setView("words-setup")}>
               <h2>背单词</h2>
-              <p>记忆 / 默写 · 音标与美音英音 · 多分类随机 · 错误统计</p>
+              <p>展示与隐藏悬停 · 音标发音 · 多分类随机/顺序</p>
             </button>
             <button className="tile" onClick={() => setView("books")}>
               <h2>词本</h2>
               <p>
                 错词本 {wrong.length} · 收藏本 {favorites.length} · 简单词{" "}
-                {easy.length} · 回收站 {trash.length}
+                {easy.length}
               </p>
             </button>
           </div>
@@ -131,9 +131,9 @@ export default function App() {
           wrongWords={wrongAsWords}
           favoriteWords={favAsWords}
           onBack={() => setView("home")}
-          onStart={({ list, mode, accent, showPhonetic, autoSpeak }) => {
+          onStart={({ list, accent, showPhonetic, autoSpeak }) => {
             setPracticeList(list);
-            setPracticeMeta({ mode, accent, showPhonetic, autoSpeak });
+            setPracticeMeta({ accent, showPhonetic, autoSpeak });
             setView("words-practice");
           }}
         />
@@ -142,7 +142,6 @@ export default function App() {
       {view === "words-practice" && practiceMeta && (
         <WordsPractice
           list={practiceList}
-          mode={practiceMeta.mode}
           accent={practiceMeta.accent}
           showPhonetic={practiceMeta.showPhonetic}
           autoSpeak={practiceMeta.autoSpeak}
@@ -156,7 +155,6 @@ export default function App() {
           wrong={wrong}
           favorites={favorites}
           easy={easy}
-          trash={trash}
           onChange={refreshBooks}
           onBack={() => setView("home")}
         />

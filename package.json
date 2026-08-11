@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "npm run data:json && tsc --noEmit && vite build",
+    "data:json": "node scripts/csv-to-json.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
