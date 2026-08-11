@@ -1,0 +1,7152 @@
+[
+  {
+    "category": "Architecture & Design",
+    "english": "active-active",
+    "chinese": "双活"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "active-passive",
+    "chinese": "主备"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "adapter",
+    "chinese": "适配器"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "aggregate",
+    "chinese": "聚合"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "anti-corruption",
+    "chinese": "防腐层"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "architecture",
+    "chinese": "架构"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "auto-scaling",
+    "chinese": "自动扩展"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "backward-compatibility",
+    "chinese": "向后兼容"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "blackboard",
+    "chinese": "黑板"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "blue-green",
+    "chinese": "蓝绿部署"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "bounded-context",
+    "chinese": "限界上下文"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "business",
+    "chinese": "业务层"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "canary-deployment",
+    "chinese": "金丝雀部署"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "capacity-planning",
+    "chinese": "容量规划"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "clean-architecture",
+    "chinese": "整洁架构"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "client-server",
+    "chinese": "客户端服务器"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "cohesion",
+    "chinese": "内聚"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "cold-standby",
+    "chinese": "冷备份"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "component",
+    "chinese": "组件"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "composition-over-inheritance",
+    "chinese": "组合优于继承"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "consumer-driven",
+    "chinese": "消费者驱动"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "contract",
+    "chinese": "契约"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "convention-over-configuration",
+    "chinese": "约定优于配置"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "coupling",
+    "chinese": "耦合"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "data-access",
+    "chinese": "数据访问层"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "defensive-programming",
+    "chinese": "防御式编程"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "dependency-injection",
+    "chinese": "依赖注入"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "disaster-recovery",
+    "chinese": "灾难恢复"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "domain",
+    "chinese": "领域；领域层"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "domain-driven",
+    "chinese": "领域驱动"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "elasticity",
+    "chinese": "弹性"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "entity",
+    "chinese": "实体"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "exponential-backoff",
+    "chinese": "指数退避"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "fail-fast",
+    "chinese": "快速失败"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "fallback",
+    "chinese": "降级"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "fault-tolerance",
+    "chinese": "容错"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "fault-tolerant",
+    "chinese": "容错的"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "feature-flag",
+    "chinese": "特性开关"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "framework",
+    "chinese": "框架"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "geo-redundancy",
+    "chinese": "地理冗余"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "graceful-degradation",
+    "chinese": "优雅降级"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "health-check",
+    "chinese": "健康检查"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "heartbeat",
+    "chinese": "心跳"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "hexagonal",
+    "chinese": "六边形"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "high-availability",
+    "chinese": "高可用"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "high-cohesion",
+    "chinese": "高内聚"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "horizontal-scaling",
+    "chinese": "水平扩展"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "hot-standby",
+    "chinese": "热备份"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "infrastructure",
+    "chinese": "基础设施；基础设施层"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "inversion-of-control",
+    "chinese": "控制反转"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "jitter",
+    "chinese": "抖动"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "law-of-Demeter",
+    "chinese": "迪米特法则"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "layered",
+    "chinese": "分层"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "least-connections",
+    "chinese": "最少连接"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "load-balancing",
+    "chinese": "负载均衡"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "load-shedding",
+    "chinese": "负载削减"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "loose-coupling",
+    "chinese": "松耦合"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "maintainable",
+    "chinese": "可维护的"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "methodology",
+    "chinese": "方法论"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "microservice",
+    "chinese": "微服务"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "modular",
+    "chinese": "模块化的；模块化"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "module",
+    "chinese": "模块"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "monolith",
+    "chinese": "单体"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "monolithic",
+    "chinese": "单体的；单体"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "multi-region",
+    "chinese": "多区域"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "n-tier",
+    "chinese": "N层"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "onion-architecture",
+    "chinese": "洋葱架构"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "paradigm",
+    "chinese": "范式"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "pattern",
+    "chinese": "模式"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "peer-to-peer",
+    "chinese": "对等"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "pipe-filter",
+    "chinese": "管道过滤器"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "practice",
+    "chinese": "实践"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "presentation",
+    "chinese": "表示层"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "principle",
+    "chinese": "原则"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "program-to-interface",
+    "chinese": "面向接口编程"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "protocol-buffer",
+    "chinese": "协议缓冲"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "redundancy",
+    "chinese": "冗余"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "resilience",
+    "chinese": "弹性"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "resilient",
+    "chinese": "有韧性的"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "robust",
+    "chinese": "健壮的"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "rolling-update",
+    "chinese": "滚动更新"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "round-robin",
+    "chinese": "轮询"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "scalable",
+    "chinese": "可扩展的"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "scale",
+    "chinese": "扩展"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "scale-out",
+    "chinese": "横向扩展"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "scale-up",
+    "chinese": "纵向扩展"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "separation-of-concerns",
+    "chinese": "关注点分离"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "serverless",
+    "chinese": "无服务器"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "service",
+    "chinese": "服务"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "service-discovery",
+    "chinese": "服务发现"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "service-mesh",
+    "chinese": "服务网格"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "service-registry",
+    "chinese": "服务注册"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "sidecar",
+    "chinese": "边车"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "single-source-of-truth",
+    "chinese": "单一数据源"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "stateful",
+    "chinese": "有状态的；有状态"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "stateless",
+    "chinese": "无状态的；无状态"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "statelessness",
+    "chinese": "无状态性"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "sticky-session",
+    "chinese": "粘性会话"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "tell-dont-ask",
+    "chinese": "告诉不要问"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "three-tier",
+    "chinese": "三层"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "Thrift",
+    "chinese": "Thrift"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "value-object",
+    "chinese": "值对象"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "vertical-scaling",
+    "chinese": "垂直扩展"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "warm-standby",
+    "chinese": "温备份"
+  },
+  {
+    "category": "Architecture & Design",
+    "english": "weighted",
+    "chinese": "加权"
+  },
+  {
+    "category": "Caching",
+    "english": "big-key",
+    "chinese": "大键"
+  },
+  {
+    "category": "Caching",
+    "english": "bitmap",
+    "chinese": "位图"
+  },
+  {
+    "category": "Caching",
+    "english": "cache",
+    "chinese": "缓存"
+  },
+  {
+    "category": "Caching",
+    "english": "cache-aside",
+    "chinese": "旁路缓存"
+  },
+  {
+    "category": "Caching",
+    "english": "cache-avalanche",
+    "chinese": "缓存雪崩"
+  },
+  {
+    "category": "Caching",
+    "english": "cache-breakdown",
+    "chinese": "缓存击穿"
+  },
+  {
+    "category": "Caching",
+    "english": "cache-hierarchy",
+    "chinese": "缓存层次"
+  },
+  {
+    "category": "Caching",
+    "english": "cache-hit",
+    "chinese": "缓存命中"
+  },
+  {
+    "category": "Caching",
+    "english": "cache-miss",
+    "chinese": "缓存未命中"
+  },
+  {
+    "category": "Caching",
+    "english": "cache-penetration",
+    "chinese": "缓存穿透"
+  },
+  {
+    "category": "Caching",
+    "english": "cache-stampede",
+    "chinese": "缓存击穿"
+  },
+  {
+    "category": "Caching",
+    "english": "cache-warming",
+    "chinese": "缓存预热"
+  },
+  {
+    "category": "Caching",
+    "english": "coherence",
+    "chinese": "一致性"
+  },
+  {
+    "category": "Caching",
+    "english": "cold-start",
+    "chinese": "冷启动"
+  },
+  {
+    "category": "Caching",
+    "english": "DECR",
+    "chinese": "自减"
+  },
+  {
+    "category": "Caching",
+    "english": "delayed-delete",
+    "chinese": "延迟删除"
+  },
+  {
+    "category": "Caching",
+    "english": "distributed-cache",
+    "chinese": "分布式缓存"
+  },
+  {
+    "category": "Caching",
+    "english": "distributed-lock",
+    "chinese": "分布式锁"
+  },
+  {
+    "category": "Caching",
+    "english": "double-delete",
+    "chinese": "双删"
+  },
+  {
+    "category": "Caching",
+    "english": "eager-loading",
+    "chinese": "饿加载"
+  },
+  {
+    "category": "Caching",
+    "english": "eviction",
+    "chinese": "驱逐"
+  },
+  {
+    "category": "Caching",
+    "english": "freshness",
+    "chinese": "新鲜度"
+  },
+  {
+    "category": "Caching",
+    "english": "geospatial",
+    "chinese": "地理空间"
+  },
+  {
+    "category": "Caching",
+    "english": "GETSET",
+    "chinese": "获取并设置"
+  },
+  {
+    "category": "Caching",
+    "english": "hash",
+    "chinese": "哈希"
+  },
+  {
+    "category": "Caching",
+    "english": "hit-rate",
+    "chinese": "命中率"
+  },
+  {
+    "category": "Caching",
+    "english": "hotkey",
+    "chinese": "热点键"
+  },
+  {
+    "category": "Caching",
+    "english": "hyperloglog",
+    "chinese": "HyperLogLog"
+  },
+  {
+    "category": "Caching",
+    "english": "in-memory",
+    "chinese": "内存"
+  },
+  {
+    "category": "Caching",
+    "english": "INCR",
+    "chinese": "自增"
+  },
+  {
+    "category": "Caching",
+    "english": "invalidation",
+    "chinese": "失效"
+  },
+  {
+    "category": "Caching",
+    "english": "lazy-loading",
+    "chinese": "懒加载"
+  },
+  {
+    "category": "Caching",
+    "english": "local-cache",
+    "chinese": "本地缓存"
+  },
+  {
+    "category": "Caching",
+    "english": "Lua-script",
+    "chinese": "Lua脚本"
+  },
+  {
+    "category": "Caching",
+    "english": "maxmemory",
+    "chinese": "最大内存"
+  },
+  {
+    "category": "Caching",
+    "english": "miss-rate",
+    "chinese": "未命中率"
+  },
+  {
+    "category": "Caching",
+    "english": "multi-level",
+    "chinese": "多级"
+  },
+  {
+    "category": "Caching",
+    "english": "null-cache",
+    "chinese": "空值缓存"
+  },
+  {
+    "category": "Caching",
+    "english": "persistence",
+    "chinese": "持久化"
+  },
+  {
+    "category": "Caching",
+    "english": "read-through",
+    "chinese": "读穿"
+  },
+  {
+    "category": "Caching",
+    "english": "Redis",
+    "chinese": "Redis"
+  },
+  {
+    "category": "Caching",
+    "english": "Redlock",
+    "chinese": "Redlock算法"
+  },
+  {
+    "category": "Caching",
+    "english": "refresh",
+    "chinese": "刷新"
+  },
+  {
+    "category": "Caching",
+    "english": "resharding",
+    "chinese": "重分片"
+  },
+  {
+    "category": "Caching",
+    "english": "rewrite",
+    "chinese": "重写"
+  },
+  {
+    "category": "Caching",
+    "english": "sentinel",
+    "chinese": "哨兵"
+  },
+  {
+    "category": "Caching",
+    "english": "SETNX",
+    "chinese": "不存在则设置"
+  },
+  {
+    "category": "Caching",
+    "english": "slot",
+    "chinese": "槽"
+  },
+  {
+    "category": "Caching",
+    "english": "sorted-set",
+    "chinese": "有序集合"
+  },
+  {
+    "category": "Caching",
+    "english": "staleness",
+    "chinese": "过时性"
+  },
+  {
+    "category": "Caching",
+    "english": "synchronization",
+    "chinese": "同步"
+  },
+  {
+    "category": "Caching",
+    "english": "tiered-cache",
+    "chinese": "分层缓存"
+  },
+  {
+    "category": "Caching",
+    "english": "WATCH",
+    "chinese": "监视"
+  },
+  {
+    "category": "Caching",
+    "english": "write-around",
+    "chinese": "绕写"
+  },
+  {
+    "category": "Caching",
+    "english": "write-behind",
+    "chinese": "写回"
+  },
+  {
+    "category": "Caching",
+    "english": "write-through",
+    "chinese": "写穿"
+  },
+  {
+    "category": "Communication",
+    "english": "advantage",
+    "chinese": "优势"
+  },
+  {
+    "category": "Communication",
+    "english": "after-that",
+    "chinese": "之后"
+  },
+  {
+    "category": "Communication",
+    "english": "all-in-all",
+    "chinese": "总的来说"
+  },
+  {
+    "category": "Communication",
+    "english": "alternatively",
+    "chinese": "或者"
+  },
+  {
+    "category": "Communication",
+    "english": "ambiguous",
+    "chinese": "模糊的"
+  },
+  {
+    "category": "Communication",
+    "english": "approach",
+    "chinese": "方法"
+  },
+  {
+    "category": "Communication",
+    "english": "as-an-illustration",
+    "chinese": "作为例证"
+  },
+  {
+    "category": "Communication",
+    "english": "assumption",
+    "chinese": "假设"
+  },
+  {
+    "category": "Communication",
+    "english": "at-a-high-level",
+    "chinese": "概括地说"
+  },
+  {
+    "category": "Communication",
+    "english": "at-the-end-of-the-day",
+    "chinese": "归根结底"
+  },
+  {
+    "category": "Communication",
+    "english": "at-the-same-time",
+    "chinese": "同时"
+  },
+  {
+    "category": "Communication",
+    "english": "based-on-my-understanding",
+    "chinese": "基于我的理解"
+  },
+  {
+    "category": "Communication",
+    "english": "basically",
+    "chinese": "基本上"
+  },
+  {
+    "category": "Communication",
+    "english": "benefit",
+    "chinese": "好处"
+  },
+  {
+    "category": "Communication",
+    "english": "big-picture",
+    "chinese": "全局"
+  },
+  {
+    "category": "Communication",
+    "english": "bottom-up",
+    "chinese": "自下而上"
+  },
+  {
+    "category": "Communication",
+    "english": "break-down",
+    "chinese": "分解"
+  },
+  {
+    "category": "Communication",
+    "english": "clarification",
+    "chinese": "澄清"
+  },
+  {
+    "category": "Communication",
+    "english": "clarify",
+    "chinese": "澄清"
+  },
+  {
+    "category": "Communication",
+    "english": "clarify-the-scope",
+    "chinese": "明确范围"
+  },
+  {
+    "category": "Communication",
+    "english": "clear",
+    "chinese": "清楚"
+  },
+  {
+    "category": "Communication",
+    "english": "comparatively",
+    "chinese": "相对地"
+  },
+  {
+    "category": "Communication",
+    "english": "concrete-example",
+    "chinese": "具体例子"
+  },
+  {
+    "category": "Communication",
+    "english": "consider",
+    "chinese": "考虑"
+  },
+  {
+    "category": "Communication",
+    "english": "corner-case",
+    "chinese": "极端情况"
+  },
+  {
+    "category": "Communication",
+    "english": "disadvantage",
+    "chinese": "劣势"
+  },
+  {
+    "category": "Communication",
+    "english": "dive-into",
+    "chinese": "深入"
+  },
+  {
+    "category": "Communication",
+    "english": "downside",
+    "chinese": "不利方面"
+  },
+  {
+    "category": "Communication",
+    "english": "drawback",
+    "chinese": "缺点"
+  },
+  {
+    "category": "Communication",
+    "english": "drill-down",
+    "chinese": "深入探讨"
+  },
+  {
+    "category": "Communication",
+    "english": "edge-case",
+    "chinese": "边界情况"
+  },
+  {
+    "category": "Communication",
+    "english": "essentially",
+    "chinese": "本质上"
+  },
+  {
+    "category": "Communication",
+    "english": "eventually",
+    "chinese": "最终"
+  },
+  {
+    "category": "Communication",
+    "english": "exactly",
+    "chinese": "正是"
+  },
+  {
+    "category": "Communication",
+    "english": "first-of-all",
+    "chinese": "首先"
+  },
+  {
+    "category": "Communication",
+    "english": "follow",
+    "chinese": "理解"
+  },
+  {
+    "category": "Communication",
+    "english": "following-that",
+    "chinese": "接着"
+  },
+  {
+    "category": "Communication",
+    "english": "for-example",
+    "chinese": "例如"
+  },
+  {
+    "category": "Communication",
+    "english": "for-instance",
+    "chinese": "例如"
+  },
+  {
+    "category": "Communication",
+    "english": "from-my-experience",
+    "chinese": "根据我的经验"
+  },
+  {
+    "category": "Communication",
+    "english": "from-my-perspective",
+    "chinese": "从我的角度"
+  },
+  {
+    "category": "Communication",
+    "english": "fundamentally",
+    "chinese": "从根本上"
+  },
+  {
+    "category": "Communication",
+    "english": "give-me-a-moment",
+    "chinese": "给我一会儿"
+  },
+  {
+    "category": "Communication",
+    "english": "going-forward",
+    "chinese": "未来"
+  },
+  {
+    "category": "Communication",
+    "english": "good-catch",
+    "chinese": "发现得好"
+  },
+  {
+    "category": "Communication",
+    "english": "good-question",
+    "chinese": "好问题"
+  },
+  {
+    "category": "Communication",
+    "english": "got-it",
+    "chinese": "明白了"
+  },
+  {
+    "category": "Communication",
+    "english": "high-level",
+    "chinese": "高层次"
+  },
+  {
+    "category": "Communication",
+    "english": "I'm-not-sure",
+    "chinese": "我不确定"
+  },
+  {
+    "category": "Communication",
+    "english": "I-believe",
+    "chinese": "我相信"
+  },
+  {
+    "category": "Communication",
+    "english": "I-don't-know",
+    "chinese": "我不知道"
+  },
+  {
+    "category": "Communication",
+    "english": "I-think",
+    "chinese": "我认为"
+  },
+  {
+    "category": "Communication",
+    "english": "I-would-say",
+    "chinese": "我会说"
+  },
+  {
+    "category": "Communication",
+    "english": "if-I-understand-correctly",
+    "chinese": "如果我理解正确"
+  },
+  {
+    "category": "Communication",
+    "english": "imagine",
+    "chinese": "想象"
+  },
+  {
+    "category": "Communication",
+    "english": "in-conclusion",
+    "chinese": "总之"
+  },
+  {
+    "category": "Communication",
+    "english": "in-contrast",
+    "chinese": "相比之下"
+  },
+  {
+    "category": "Communication",
+    "english": "in-my-opinion",
+    "chinese": "在我看来"
+  },
+  {
+    "category": "Communication",
+    "english": "in-other-words",
+    "chinese": "换句话说"
+  },
+  {
+    "category": "Communication",
+    "english": "in-summary",
+    "chinese": "总之"
+  },
+  {
+    "category": "Communication",
+    "english": "in-terms-of",
+    "chinese": "就...而言"
+  },
+  {
+    "category": "Communication",
+    "english": "in-the-meantime",
+    "chinese": "与此同时"
+  },
+  {
+    "category": "Communication",
+    "english": "incremental",
+    "chinese": "增量的"
+  },
+  {
+    "category": "Communication",
+    "english": "initially",
+    "chinese": "最初"
+  },
+  {
+    "category": "Communication",
+    "english": "interesting-point",
+    "chinese": "有趣的观点"
+  },
+  {
+    "category": "Communication",
+    "english": "it-seems-to-me",
+    "chinese": "在我看来"
+  },
+  {
+    "category": "Communication",
+    "english": "iterative",
+    "chinese": "迭代的"
+  },
+  {
+    "category": "Communication",
+    "english": "just-to-confirm",
+    "chinese": "确认一下"
+  },
+  {
+    "category": "Communication",
+    "english": "let's-say",
+    "chinese": "假设"
+  },
+  {
+    "category": "Communication",
+    "english": "let-me-think",
+    "chinese": "让我想想"
+  },
+  {
+    "category": "Communication",
+    "english": "like",
+    "chinese": "像"
+  },
+  {
+    "category": "Communication",
+    "english": "make-sense",
+    "chinese": "有道理"
+  },
+  {
+    "category": "Communication",
+    "english": "meanwhile",
+    "chinese": "同时"
+  },
+  {
+    "category": "Communication",
+    "english": "moving-forward",
+    "chinese": "继续前进"
+  },
+  {
+    "category": "Communication",
+    "english": "next",
+    "chinese": "接下来"
+  },
+  {
+    "category": "Communication",
+    "english": "on-the-other-hand",
+    "chinese": "另一方面"
+  },
+  {
+    "category": "Communication",
+    "english": "overall",
+    "chinese": "总体而言"
+  },
+  {
+    "category": "Communication",
+    "english": "pros-and-cons",
+    "chinese": "优缺点"
+  },
+  {
+    "category": "Communication",
+    "english": "relatively",
+    "chinese": "相对地"
+  },
+  {
+    "category": "Communication",
+    "english": "rephrase",
+    "chinese": "重新表述"
+  },
+  {
+    "category": "Communication",
+    "english": "requirement",
+    "chinese": "需求"
+  },
+  {
+    "category": "Communication",
+    "english": "say",
+    "chinese": "比方说"
+  },
+  {
+    "category": "Communication",
+    "english": "see-what-I-mean",
+    "chinese": "明白我的意思"
+  },
+  {
+    "category": "Communication",
+    "english": "speaking-of",
+    "chinese": "说到"
+  },
+  {
+    "category": "Communication",
+    "english": "step-by-step",
+    "chinese": "逐步"
+  },
+  {
+    "category": "Communication",
+    "english": "strategy",
+    "chinese": "策略"
+  },
+  {
+    "category": "Communication",
+    "english": "subsequently",
+    "chinese": "随后"
+  },
+  {
+    "category": "Communication",
+    "english": "such-as",
+    "chinese": "比如"
+  },
+  {
+    "category": "Communication",
+    "english": "suppose",
+    "chinese": "假设"
+  },
+  {
+    "category": "Communication",
+    "english": "take-for-example",
+    "chinese": "以...为例"
+  },
+  {
+    "category": "Communication",
+    "english": "that's-correct",
+    "chinese": "那是正确的"
+  },
+  {
+    "category": "Communication",
+    "english": "the-key-point",
+    "chinese": "关键点"
+  },
+  {
+    "category": "Communication",
+    "english": "the-main-takeaway",
+    "chinese": "主要收获"
+  },
+  {
+    "category": "Communication",
+    "english": "the-way-I-see-it",
+    "chinese": "我认为"
+  },
+  {
+    "category": "Communication",
+    "english": "then",
+    "chinese": "然后"
+  },
+  {
+    "category": "Communication",
+    "english": "to-be-specific",
+    "chinese": "具体来说"
+  },
+  {
+    "category": "Communication",
+    "english": "to-illustrate",
+    "chinese": "举例说明"
+  },
+  {
+    "category": "Communication",
+    "english": "to-make-sure",
+    "chinese": "确保"
+  },
+  {
+    "category": "Communication",
+    "english": "to-start-with",
+    "chinese": "首先"
+  },
+  {
+    "category": "Communication",
+    "english": "to-summarize",
+    "chinese": "总结一下"
+  },
+  {
+    "category": "Communication",
+    "english": "top-down",
+    "chinese": "自上而下"
+  },
+  {
+    "category": "Communication",
+    "english": "understand",
+    "chinese": "理解"
+  },
+  {
+    "category": "Communication",
+    "english": "upside",
+    "chinese": "有利方面"
+  },
+  {
+    "category": "Communication",
+    "english": "walk-through",
+    "chinese": "讲解"
+  },
+  {
+    "category": "Communication",
+    "english": "whereas",
+    "chinese": "然而"
+  },
+  {
+    "category": "Communication",
+    "english": "with-regard-to",
+    "chinese": "关于"
+  },
+  {
+    "category": "Communication",
+    "english": "you're-right",
+    "chinese": "你是对的"
+  },
+  {
+    "category": "Communication",
+    "english": "zoom-in",
+    "chinese": "放大"
+  },
+  {
+    "category": "Communication",
+    "english": "zoom-out",
+    "chinese": "缩小"
+  },
+  {
+    "category": "Concurrency",
+    "english": "acquire",
+    "chinese": "获取"
+  },
+  {
+    "category": "Concurrency",
+    "english": "asynchronous",
+    "chinese": "异步的；异步"
+  },
+  {
+    "category": "Concurrency",
+    "english": "atomic-array",
+    "chinese": "原子数组"
+  },
+  {
+    "category": "Concurrency",
+    "english": "atomic-operation",
+    "chinese": "原子操作"
+  },
+  {
+    "category": "Concurrency",
+    "english": "atomic-reference",
+    "chinese": "原子引用"
+  },
+  {
+    "category": "Concurrency",
+    "english": "atomic-variable",
+    "chinese": "原子变量"
+  },
+  {
+    "category": "Concurrency",
+    "english": "await",
+    "chinese": "等待"
+  },
+  {
+    "category": "Concurrency",
+    "english": "barrier",
+    "chinese": "屏障"
+  },
+  {
+    "category": "Concurrency",
+    "english": "BLOCKED",
+    "chinese": "阻塞"
+  },
+  {
+    "category": "Concurrency",
+    "english": "blocking",
+    "chinese": "阻塞的"
+  },
+  {
+    "category": "Concurrency",
+    "english": "callable",
+    "chinese": "可调用"
+  },
+  {
+    "category": "Concurrency",
+    "english": "completable-future",
+    "chinese": "可完成Future"
+  },
+  {
+    "category": "Concurrency",
+    "english": "composability",
+    "chinese": "可组合性"
+  },
+  {
+    "category": "Concurrency",
+    "english": "concurrency",
+    "chinese": "并发；并发数"
+  },
+  {
+    "category": "Concurrency",
+    "english": "concurrent",
+    "chinese": "并发的"
+  },
+  {
+    "category": "Concurrency",
+    "english": "condition",
+    "chinese": "条件"
+  },
+  {
+    "category": "Concurrency",
+    "english": "contention",
+    "chinese": "争用"
+  },
+  {
+    "category": "Concurrency",
+    "english": "context-switch",
+    "chinese": "上下文切换"
+  },
+  {
+    "category": "Concurrency",
+    "english": "cooperative",
+    "chinese": "协作式"
+  },
+  {
+    "category": "Concurrency",
+    "english": "countdown",
+    "chinese": "倒计数"
+  },
+  {
+    "category": "Concurrency",
+    "english": "critical-section",
+    "chinese": "临界区"
+  },
+  {
+    "category": "Concurrency",
+    "english": "daemon",
+    "chinese": "守护线程"
+  },
+  {
+    "category": "Concurrency",
+    "english": "data-race",
+    "chinese": "数据竞争"
+  },
+  {
+    "category": "Concurrency",
+    "english": "deadlock",
+    "chinese": "死锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "double-checked-locking",
+    "chinese": "双重检查锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "exchanger",
+    "chinese": "交换器"
+  },
+  {
+    "category": "Concurrency",
+    "english": "exclusive-lock",
+    "chinese": "独占锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "fair-lock",
+    "chinese": "公平锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "fence",
+    "chinese": "栅栏"
+  },
+  {
+    "category": "Concurrency",
+    "english": "field-updater",
+    "chinese": "字段更新器"
+  },
+  {
+    "category": "Concurrency",
+    "english": "final-field",
+    "chinese": "Final字段"
+  },
+  {
+    "category": "Concurrency",
+    "english": "fork-join",
+    "chinese": "分叉合并"
+  },
+  {
+    "category": "Concurrency",
+    "english": "happens-before",
+    "chinese": "先行发生"
+  },
+  {
+    "category": "Concurrency",
+    "english": "inheritable",
+    "chinese": "可继承"
+  },
+  {
+    "category": "Concurrency",
+    "english": "interrupted",
+    "chinese": "中断状态"
+  },
+  {
+    "category": "Concurrency",
+    "english": "intrinsic-lock",
+    "chinese": "内置锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "latch",
+    "chinese": "闩锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "lazy-initialization",
+    "chinese": "懒初始化"
+  },
+  {
+    "category": "Concurrency",
+    "english": "lifecycle",
+    "chinese": "生命周期"
+  },
+  {
+    "category": "Concurrency",
+    "english": "livelock",
+    "chinese": "活锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "lock",
+    "chinese": "锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "lock-free",
+    "chinese": "无锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "lockInterruptibly",
+    "chinese": "可中断锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "LockSupport",
+    "chinese": "锁支持"
+  },
+  {
+    "category": "Concurrency",
+    "english": "memory-barrier",
+    "chinese": "内存屏障"
+  },
+  {
+    "category": "Concurrency",
+    "english": "multiprocessing",
+    "chinese": "多进程"
+  },
+  {
+    "category": "Concurrency",
+    "english": "multithreading",
+    "chinese": "多线程"
+  },
+  {
+    "category": "Concurrency",
+    "english": "mutex",
+    "chinese": "互斥锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "mutual-exclusion",
+    "chinese": "互斥"
+  },
+  {
+    "category": "Concurrency",
+    "english": "NEW",
+    "chinese": "新建"
+  },
+  {
+    "category": "Concurrency",
+    "english": "non-blocking",
+    "chinese": "非阻塞的；非阻塞"
+  },
+  {
+    "category": "Concurrency",
+    "english": "non-reentrant",
+    "chinese": "不可重入"
+  },
+  {
+    "category": "Concurrency",
+    "english": "notify",
+    "chinese": "通知"
+  },
+  {
+    "category": "Concurrency",
+    "english": "notifyAll",
+    "chinese": "通知全部"
+  },
+  {
+    "category": "Concurrency",
+    "english": "parallel",
+    "chinese": "并行的"
+  },
+  {
+    "category": "Concurrency",
+    "english": "parallelism",
+    "chinese": "并行"
+  },
+  {
+    "category": "Concurrency",
+    "english": "park",
+    "chinese": "停靠"
+  },
+  {
+    "category": "Concurrency",
+    "english": "permit",
+    "chinese": "许可"
+  },
+  {
+    "category": "Concurrency",
+    "english": "phaser",
+    "chinese": "阶段器"
+  },
+  {
+    "category": "Concurrency",
+    "english": "preemption",
+    "chinese": "抢占"
+  },
+  {
+    "category": "Concurrency",
+    "english": "preemptive",
+    "chinese": "抢占式"
+  },
+  {
+    "category": "Concurrency",
+    "english": "priority",
+    "chinese": "优先级"
+  },
+  {
+    "category": "Concurrency",
+    "english": "priority-inversion",
+    "chinese": "优先级反转"
+  },
+  {
+    "category": "Concurrency",
+    "english": "process",
+    "chinese": "进程"
+  },
+  {
+    "category": "Concurrency",
+    "english": "race-condition",
+    "chinese": "竞态条件"
+  },
+  {
+    "category": "Concurrency",
+    "english": "read-lock",
+    "chinese": "读锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "read-write-lock",
+    "chinese": "读写锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "reentrant",
+    "chinese": "可重入"
+  },
+  {
+    "category": "Concurrency",
+    "english": "reordering",
+    "chinese": "重排序"
+  },
+  {
+    "category": "Concurrency",
+    "english": "run",
+    "chinese": "运行"
+  },
+  {
+    "category": "Concurrency",
+    "english": "runnable",
+    "chinese": "可运行"
+  },
+  {
+    "category": "Concurrency",
+    "english": "safe-publication",
+    "chinese": "安全发布"
+  },
+  {
+    "category": "Concurrency",
+    "english": "scheduler",
+    "chinese": "调度器"
+  },
+  {
+    "category": "Concurrency",
+    "english": "scheduling",
+    "chinese": "调度"
+  },
+  {
+    "category": "Concurrency",
+    "english": "semaphore",
+    "chinese": "信号量"
+  },
+  {
+    "category": "Concurrency",
+    "english": "sequential",
+    "chinese": "顺序的"
+  },
+  {
+    "category": "Concurrency",
+    "english": "shared-lock",
+    "chinese": "共享锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "signal",
+    "chinese": "信号"
+  },
+  {
+    "category": "Concurrency",
+    "english": "signalAll",
+    "chinese": "信号全部"
+  },
+  {
+    "category": "Concurrency",
+    "english": "singleton",
+    "chinese": "单例"
+  },
+  {
+    "category": "Concurrency",
+    "english": "sleep",
+    "chinese": "睡眠"
+  },
+  {
+    "category": "Concurrency",
+    "english": "spinlock",
+    "chinese": "自旋锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "stack-confinement",
+    "chinese": "栈限制"
+  },
+  {
+    "category": "Concurrency",
+    "english": "start",
+    "chinese": "启动"
+  },
+  {
+    "category": "Concurrency",
+    "english": "starvation",
+    "chinese": "饥饿"
+  },
+  {
+    "category": "Concurrency",
+    "english": "synchronized",
+    "chinese": "同步；同步的"
+  },
+  {
+    "category": "Concurrency",
+    "english": "synchronous",
+    "chinese": "同步的；同步"
+  },
+  {
+    "category": "Concurrency",
+    "english": "TERMINATED",
+    "chinese": "终止"
+  },
+  {
+    "category": "Concurrency",
+    "english": "thread",
+    "chinese": "线程"
+  },
+  {
+    "category": "Concurrency",
+    "english": "thread-confinement",
+    "chinese": "线程限制"
+  },
+  {
+    "category": "Concurrency",
+    "english": "thread-local",
+    "chinese": "线程本地"
+  },
+  {
+    "category": "Concurrency",
+    "english": "thread-pool",
+    "chinese": "线程池"
+  },
+  {
+    "category": "Concurrency",
+    "english": "thread-safe",
+    "chinese": "线程安全"
+  },
+  {
+    "category": "Concurrency",
+    "english": "thread-safety",
+    "chinese": "线程安全性"
+  },
+  {
+    "category": "Concurrency",
+    "english": "thread-unsafe",
+    "chinese": "线程不安全"
+  },
+  {
+    "category": "Concurrency",
+    "english": "time-slice",
+    "chinese": "时间片"
+  },
+  {
+    "category": "Concurrency",
+    "english": "TIMED_WAITING",
+    "chinese": "超时等待"
+  },
+  {
+    "category": "Concurrency",
+    "english": "tryLock",
+    "chinese": "尝试锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "unfair-lock",
+    "chinese": "非公平锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "unlock",
+    "chinese": "解锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "unpark",
+    "chinese": "唤醒"
+  },
+  {
+    "category": "Concurrency",
+    "english": "visibility",
+    "chinese": "可见性"
+  },
+  {
+    "category": "Concurrency",
+    "english": "volatile-read",
+    "chinese": "易失读"
+  },
+  {
+    "category": "Concurrency",
+    "english": "volatile-write",
+    "chinese": "易失写"
+  },
+  {
+    "category": "Concurrency",
+    "english": "wait",
+    "chinese": "等待"
+  },
+  {
+    "category": "Concurrency",
+    "english": "wait-free",
+    "chinese": "无等待"
+  },
+  {
+    "category": "Concurrency",
+    "english": "WAITING",
+    "chinese": "等待"
+  },
+  {
+    "category": "Concurrency",
+    "english": "work-stealing",
+    "chinese": "工作窃取"
+  },
+  {
+    "category": "Concurrency",
+    "english": "worker",
+    "chinese": "工作节点；工作线程"
+  },
+  {
+    "category": "Concurrency",
+    "english": "write-lock",
+    "chinese": "写锁"
+  },
+  {
+    "category": "Concurrency",
+    "english": "yield",
+    "chinese": "让步"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "algorithm",
+    "chinese": "算法"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "amortized",
+    "chinese": "摊还"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "ancestor",
+    "chinese": "祖先节点"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "array",
+    "chinese": "数组"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "asymptotic",
+    "chinese": "渐进"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "average-case",
+    "chinese": "平均情况"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "B-tree",
+    "chinese": "B树"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "backtracking",
+    "chinese": "回溯"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "balanced-tree",
+    "chinese": "平衡树"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "best-case",
+    "chinese": "最好情况"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "big-O",
+    "chinese": "大O记号"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "binary-search",
+    "chinese": "二分查找"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "binary-tree",
+    "chinese": "二叉树"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "bit-manipulation",
+    "chinese": "位操作"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "bloom-filter",
+    "chinese": "布隆过滤器"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "breadth-first",
+    "chinese": "广度优先"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "brute-force",
+    "chinese": "暴力；暴力破解"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "bucket",
+    "chinese": "桶"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "chaining",
+    "chinese": "链地址法"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "child",
+    "chinese": "子节点"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "collection",
+    "chinese": "集合"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "collision",
+    "chinese": "冲突"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "complexity",
+    "chinese": "复杂度"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "cubic",
+    "chinese": "立方"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "degree",
+    "chinese": "度"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "depth",
+    "chinese": "深度"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "depth-first",
+    "chinese": "深度优先"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "deque",
+    "chinese": "双端队列"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "descendant",
+    "chinese": "后代节点"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "divide-conquer",
+    "chinese": "分治"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "dynamic-programming",
+    "chinese": "动态规划"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "edge",
+    "chinese": "边"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "exponential",
+    "chinese": "指数"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "factorial",
+    "chinese": "阶乘"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "graph",
+    "chinese": "图"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "greedy",
+    "chinese": "贪心"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "hash-table",
+    "chinese": "哈希表"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "height",
+    "chinese": "高度"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "heuristic",
+    "chinese": "启发式"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "iteration",
+    "chinese": "迭代"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "iterator",
+    "chinese": "迭代器"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "leaf",
+    "chinese": "叶子节点"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "level",
+    "chinese": "层级"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "linear",
+    "chinese": "线性"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "linked-list",
+    "chinese": "链表"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "list",
+    "chinese": "列表"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "load-factor",
+    "chinese": "负载因子"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "logarithmic",
+    "chinese": "对数"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "lower-bound",
+    "chinese": "下界"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "map",
+    "chinese": "映射"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "memoization",
+    "chinese": "记忆化"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "memorization",
+    "chinese": "记忆化"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "minimum-spanning-tree",
+    "chinese": "最小生成树"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "node",
+    "chinese": "节点"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "parent",
+    "chinese": "父节点"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "path",
+    "chinese": "路径"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "polynomial",
+    "chinese": "多项式"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "prefix-sum",
+    "chinese": "前缀和"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "priority-queue",
+    "chinese": "优先队列"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "probing",
+    "chinese": "探测"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "pruning",
+    "chinese": "剪枝"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "quadratic",
+    "chinese": "平方"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "queue",
+    "chinese": "队列"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "recursion",
+    "chinese": "递归"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "red-black-tree",
+    "chinese": "红黑树"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "rehashing",
+    "chinese": "重哈希"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "root",
+    "chinese": "根节点；根"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "searching",
+    "chinese": "搜索"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "segment-tree",
+    "chinese": "线段树"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "set",
+    "chinese": "集合"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "shortest-path",
+    "chinese": "最短路径"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "sibling",
+    "chinese": "兄弟节点"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "skip-list",
+    "chinese": "跳表"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "sliding-window",
+    "chinese": "滑动窗口"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "sorting",
+    "chinese": "排序"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "space-complexity",
+    "chinese": "空间复杂度"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "tight-bound",
+    "chinese": "紧界"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "time-complexity",
+    "chinese": "时间复杂度"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "topological-sort",
+    "chinese": "拓扑排序"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "traversal",
+    "chinese": "遍历"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "tree",
+    "chinese": "树"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "trie",
+    "chinese": "字典树"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "two-pointer",
+    "chinese": "双指针"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "union-find",
+    "chinese": "并查集"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "upper-bound",
+    "chinese": "上界"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "vertex",
+    "chinese": "顶点"
+  },
+  {
+    "category": "Data Structures & Algorithms",
+    "english": "worst-case",
+    "chinese": "最坏情况"
+  },
+  {
+    "category": "Databases",
+    "english": "aggregation",
+    "chinese": "聚合"
+  },
+  {
+    "category": "Databases",
+    "english": "analyze",
+    "chinese": "分析"
+  },
+  {
+    "category": "Databases",
+    "english": "archive",
+    "chinese": "归档"
+  },
+  {
+    "category": "Databases",
+    "english": "atomicity",
+    "chinese": "原子性"
+  },
+  {
+    "category": "Databases",
+    "english": "backup",
+    "chinese": "备份"
+  },
+  {
+    "category": "Databases",
+    "english": "binlog",
+    "chinese": "二进制日志"
+  },
+  {
+    "category": "Databases",
+    "english": "buffer-pool",
+    "chinese": "缓冲池"
+  },
+  {
+    "category": "Databases",
+    "english": "bulk",
+    "chinese": "批量"
+  },
+  {
+    "category": "Databases",
+    "english": "cardinality",
+    "chinese": "基数"
+  },
+  {
+    "category": "Databases",
+    "english": "charset",
+    "chinese": "字符集"
+  },
+  {
+    "category": "Databases",
+    "english": "collation",
+    "chinese": "排序规则"
+  },
+  {
+    "category": "Databases",
+    "english": "column",
+    "chinese": "列"
+  },
+  {
+    "category": "Databases",
+    "english": "column-family",
+    "chinese": "列族"
+  },
+  {
+    "category": "Databases",
+    "english": "commit",
+    "chinese": "提交"
+  },
+  {
+    "category": "Databases",
+    "english": "compaction",
+    "chinese": "压缩"
+  },
+  {
+    "category": "Databases",
+    "english": "composite-index",
+    "chinese": "组合索引"
+  },
+  {
+    "category": "Databases",
+    "english": "consistency",
+    "chinese": "一致性"
+  },
+  {
+    "category": "Databases",
+    "english": "constraint",
+    "chinese": "约束"
+  },
+  {
+    "category": "Databases",
+    "english": "covering-index",
+    "chinese": "覆盖索引"
+  },
+  {
+    "category": "Databases",
+    "english": "database",
+    "chinese": "数据库"
+  },
+  {
+    "category": "Databases",
+    "english": "defragment",
+    "chinese": "碎片整理"
+  },
+  {
+    "category": "Databases",
+    "english": "denormalization",
+    "chinese": "反规范化"
+  },
+  {
+    "category": "Databases",
+    "english": "denormalized",
+    "chinese": "反规范化"
+  },
+  {
+    "category": "Databases",
+    "english": "dirty-read",
+    "chinese": "脏读"
+  },
+  {
+    "category": "Databases",
+    "english": "document",
+    "chinese": "文档"
+  },
+  {
+    "category": "Databases",
+    "english": "durability",
+    "chinese": "持久性"
+  },
+  {
+    "category": "Databases",
+    "english": "embedded",
+    "chinese": "嵌入"
+  },
+  {
+    "category": "Databases",
+    "english": "encoding",
+    "chinese": "编码"
+  },
+  {
+    "category": "Databases",
+    "english": "execution-plan",
+    "chinese": "执行计划"
+  },
+  {
+    "category": "Databases",
+    "english": "expiration",
+    "chinese": "过期"
+  },
+  {
+    "category": "Databases",
+    "english": "explain",
+    "chinese": "解释"
+  },
+  {
+    "category": "Databases",
+    "english": "foreign-key",
+    "chinese": "外键"
+  },
+  {
+    "category": "Databases",
+    "english": "FULL-JOIN",
+    "chinese": "全连接"
+  },
+  {
+    "category": "Databases",
+    "english": "full-table-scan",
+    "chinese": "全表扫描"
+  },
+  {
+    "category": "Databases",
+    "english": "GROUP-BY",
+    "chinese": "分组"
+  },
+  {
+    "category": "Databases",
+    "english": "HAVING",
+    "chinese": "分组条件"
+  },
+  {
+    "category": "Databases",
+    "english": "histogram",
+    "chinese": "直方图"
+  },
+  {
+    "category": "Databases",
+    "english": "index",
+    "chinese": "索引"
+  },
+  {
+    "category": "Databases",
+    "english": "index-scan",
+    "chinese": "索引扫描"
+  },
+  {
+    "category": "Databases",
+    "english": "INNER-JOIN",
+    "chinese": "内连接"
+  },
+  {
+    "category": "Databases",
+    "english": "INSERT",
+    "chinese": "插入"
+  },
+  {
+    "category": "Databases",
+    "english": "isolation",
+    "chinese": "隔离性"
+  },
+  {
+    "category": "Databases",
+    "english": "isolation-level",
+    "chinese": "隔离级别"
+  },
+  {
+    "category": "Databases",
+    "english": "JOIN",
+    "chinese": "连接；加入"
+  },
+  {
+    "category": "Databases",
+    "english": "key-value",
+    "chinese": "键值"
+  },
+  {
+    "category": "Databases",
+    "english": "LEFT-JOIN",
+    "chinese": "左连接"
+  },
+  {
+    "category": "Databases",
+    "english": "non-repeatable-read",
+    "chinese": "不可重复读"
+  },
+  {
+    "category": "Databases",
+    "english": "normalization",
+    "chinese": "规范化"
+  },
+  {
+    "category": "Databases",
+    "english": "optimistic-lock",
+    "chinese": "乐观锁"
+  },
+  {
+    "category": "Databases",
+    "english": "ORDER-BY",
+    "chinese": "排序"
+  },
+  {
+    "category": "Databases",
+    "english": "partitioning",
+    "chinese": "分区"
+  },
+  {
+    "category": "Databases",
+    "english": "pessimistic-lock",
+    "chinese": "悲观锁"
+  },
+  {
+    "category": "Databases",
+    "english": "phantom-read",
+    "chinese": "幻读"
+  },
+  {
+    "category": "Databases",
+    "english": "primary-key",
+    "chinese": "主键"
+  },
+  {
+    "category": "Databases",
+    "english": "projection",
+    "chinese": "投影"
+  },
+  {
+    "category": "Databases",
+    "english": "purge",
+    "chinese": "清除"
+  },
+  {
+    "category": "Databases",
+    "english": "query",
+    "chinese": "查询"
+  },
+  {
+    "category": "Databases",
+    "english": "read-committed",
+    "chinese": "读已提交"
+  },
+  {
+    "category": "Databases",
+    "english": "read-uncommitted",
+    "chinese": "读未提交"
+  },
+  {
+    "category": "Databases",
+    "english": "rebalancing",
+    "chinese": "重新平衡"
+  },
+  {
+    "category": "Databases",
+    "english": "record",
+    "chinese": "记录"
+  },
+  {
+    "category": "Databases",
+    "english": "redo-log",
+    "chinese": "重做日志"
+  },
+  {
+    "category": "Databases",
+    "english": "relationship",
+    "chinese": "关系"
+  },
+  {
+    "category": "Databases",
+    "english": "repeatable-read",
+    "chinese": "可重复读"
+  },
+  {
+    "category": "Databases",
+    "english": "restore",
+    "chinese": "恢复"
+  },
+  {
+    "category": "Databases",
+    "english": "RIGHT-JOIN",
+    "chinese": "右连接"
+  },
+  {
+    "category": "Databases",
+    "english": "row",
+    "chinese": "行"
+  },
+  {
+    "category": "Databases",
+    "english": "savepoint",
+    "chinese": "保存点"
+  },
+  {
+    "category": "Databases",
+    "english": "schema",
+    "chinese": "模式"
+  },
+  {
+    "category": "Databases",
+    "english": "SELECT",
+    "chinese": "查询"
+  },
+  {
+    "category": "Databases",
+    "english": "selectivity",
+    "chinese": "选择性"
+  },
+  {
+    "category": "Databases",
+    "english": "serializable",
+    "chinese": "可串行化"
+  },
+  {
+    "category": "Databases",
+    "english": "slow-query",
+    "chinese": "慢查询"
+  },
+  {
+    "category": "Databases",
+    "english": "snapshot",
+    "chinese": "快照"
+  },
+  {
+    "category": "Databases",
+    "english": "statistics",
+    "chinese": "统计信息"
+  },
+  {
+    "category": "Databases",
+    "english": "table",
+    "chinese": "表"
+  },
+  {
+    "category": "Databases",
+    "english": "time-to-live",
+    "chinese": "生存时间"
+  },
+  {
+    "category": "Databases",
+    "english": "transaction",
+    "chinese": "事务"
+  },
+  {
+    "category": "Databases",
+    "english": "undo-log",
+    "chinese": "撤销日志"
+  },
+  {
+    "category": "Databases",
+    "english": "unique",
+    "chinese": "唯一"
+  },
+  {
+    "category": "Databases",
+    "english": "UPDATE",
+    "chinese": "更新"
+  },
+  {
+    "category": "Databases",
+    "english": "upsert",
+    "chinese": "插入或更新"
+  },
+  {
+    "category": "Databases",
+    "english": "vacuum",
+    "chinese": "清理"
+  },
+  {
+    "category": "Databases",
+    "english": "WHERE",
+    "chinese": "条件"
+  },
+  {
+    "category": "DevOps",
+    "english": "ADD",
+    "chinese": "添加"
+  },
+  {
+    "category": "DevOps",
+    "english": "agent",
+    "chinese": "代理"
+  },
+  {
+    "category": "DevOps",
+    "english": "artifact",
+    "chinese": "构建产物；构件"
+  },
+  {
+    "category": "DevOps",
+    "english": "base-image",
+    "chinese": "基础镜像"
+  },
+  {
+    "category": "DevOps",
+    "english": "bind-mount",
+    "chinese": "绑定挂载"
+  },
+  {
+    "category": "DevOps",
+    "english": "bridge",
+    "chinese": "桥接"
+  },
+  {
+    "category": "DevOps",
+    "english": "build",
+    "chinese": "构建"
+  },
+  {
+    "category": "DevOps",
+    "english": "checkout",
+    "chinese": "检出"
+  },
+  {
+    "category": "DevOps",
+    "english": "CircleCI",
+    "chinese": "Circle CI"
+  },
+  {
+    "category": "DevOps",
+    "english": "CMD",
+    "chinese": "命令"
+  },
+  {
+    "category": "DevOps",
+    "english": "configure",
+    "chinese": "配置"
+  },
+  {
+    "category": "DevOps",
+    "english": "continuous-delivery",
+    "chinese": "持续交付"
+  },
+  {
+    "category": "DevOps",
+    "english": "continuous-deployment",
+    "chinese": "持续部署"
+  },
+  {
+    "category": "DevOps",
+    "english": "continuous-integration",
+    "chinese": "持续集成"
+  },
+  {
+    "category": "DevOps",
+    "english": "control-plane",
+    "chinese": "控制平面"
+  },
+  {
+    "category": "DevOps",
+    "english": "COPY",
+    "chinese": "复制"
+  },
+  {
+    "category": "DevOps",
+    "english": "deploy",
+    "chinese": "部署"
+  },
+  {
+    "category": "DevOps",
+    "english": "deployment",
+    "chinese": "部署"
+  },
+  {
+    "category": "DevOps",
+    "english": "Docker",
+    "chinese": "Docker"
+  },
+  {
+    "category": "DevOps",
+    "english": "docker-compose",
+    "chinese": "Docker Compose"
+  },
+  {
+    "category": "DevOps",
+    "english": "Dockerfile",
+    "chinese": "Dockerfile"
+  },
+  {
+    "category": "DevOps",
+    "english": "entrypoint",
+    "chinese": "入口点"
+  },
+  {
+    "category": "DevOps",
+    "english": "exec",
+    "chinese": "执行"
+  },
+  {
+    "category": "DevOps",
+    "english": "expose",
+    "chinese": "暴露"
+  },
+  {
+    "category": "DevOps",
+    "english": "GitHub-Actions",
+    "chinese": "GitHub Actions"
+  },
+  {
+    "category": "DevOps",
+    "english": "GitLab-CI",
+    "chinese": "GitLab CI"
+  },
+  {
+    "category": "DevOps",
+    "english": "host",
+    "chinese": "主机"
+  },
+  {
+    "category": "DevOps",
+    "english": "image",
+    "chinese": "镜像"
+  },
+  {
+    "category": "DevOps",
+    "english": "Ingress",
+    "chinese": "入口"
+  },
+  {
+    "category": "DevOps",
+    "english": "inspect",
+    "chinese": "检查"
+  },
+  {
+    "category": "DevOps",
+    "english": "Jenkins",
+    "chinese": "Jenkins"
+  },
+  {
+    "category": "DevOps",
+    "english": "Job",
+    "chinese": "任务"
+  },
+  {
+    "category": "DevOps",
+    "english": "kubectl",
+    "chinese": "kubectl"
+  },
+  {
+    "category": "DevOps",
+    "english": "Kubernetes",
+    "chinese": "Kubernetes"
+  },
+  {
+    "category": "DevOps",
+    "english": "label",
+    "chinese": "标签"
+  },
+  {
+    "category": "DevOps",
+    "english": "layer",
+    "chinese": "层"
+  },
+  {
+    "category": "DevOps",
+    "english": "limit-range",
+    "chinese": "限制范围"
+  },
+  {
+    "category": "DevOps",
+    "english": "liveness-probe",
+    "chinese": "存活探针"
+  },
+  {
+    "category": "DevOps",
+    "english": "logs",
+    "chinese": "日志"
+  },
+  {
+    "category": "DevOps",
+    "english": "monitor",
+    "chinese": "监控；监视器"
+  },
+  {
+    "category": "DevOps",
+    "english": "mount",
+    "chinese": "挂载"
+  },
+  {
+    "category": "DevOps",
+    "english": "multi-stage",
+    "chinese": "多阶段"
+  },
+  {
+    "category": "DevOps",
+    "english": "namespace",
+    "chinese": "命名空间"
+  },
+  {
+    "category": "DevOps",
+    "english": "network",
+    "chinese": "网络"
+  },
+  {
+    "category": "DevOps",
+    "english": "overlay",
+    "chinese": "覆盖"
+  },
+  {
+    "category": "DevOps",
+    "english": "pipeline",
+    "chinese": "流水线；管道"
+  },
+  {
+    "category": "DevOps",
+    "english": "pod",
+    "chinese": "Pod"
+  },
+  {
+    "category": "DevOps",
+    "english": "poll",
+    "chinese": "轮询"
+  },
+  {
+    "category": "DevOps",
+    "english": "port-mapping",
+    "chinese": "端口映射"
+  },
+  {
+    "category": "DevOps",
+    "english": "readiness-probe",
+    "chinese": "就绪探针"
+  },
+  {
+    "category": "DevOps",
+    "english": "registry",
+    "chinese": "镜像仓库"
+  },
+  {
+    "category": "DevOps",
+    "english": "release",
+    "chinese": "发布；释放"
+  },
+  {
+    "category": "DevOps",
+    "english": "resource-quota",
+    "chinese": "资源配额"
+  },
+  {
+    "category": "DevOps",
+    "english": "restart",
+    "chinese": "重启"
+  },
+  {
+    "category": "DevOps",
+    "english": "rollback",
+    "chinese": "回滚"
+  },
+  {
+    "category": "DevOps",
+    "english": "runner",
+    "chinese": "运行器"
+  },
+  {
+    "category": "DevOps",
+    "english": "Secret",
+    "chinese": "密钥"
+  },
+  {
+    "category": "DevOps",
+    "english": "selector",
+    "chinese": "选择器"
+  },
+  {
+    "category": "DevOps",
+    "english": "startup-probe",
+    "chinese": "启动探针"
+  },
+  {
+    "category": "DevOps",
+    "english": "stop",
+    "chinese": "停止"
+  },
+  {
+    "category": "DevOps",
+    "english": "swarm",
+    "chinese": "集群"
+  },
+  {
+    "category": "DevOps",
+    "english": "tag",
+    "chinese": "标签"
+  },
+  {
+    "category": "DevOps",
+    "english": "toolchain",
+    "chinese": "工具链"
+  },
+  {
+    "category": "DevOps",
+    "english": "Travis-CI",
+    "chinese": "Travis CI"
+  },
+  {
+    "category": "DevOps",
+    "english": "trigger",
+    "chinese": "触发器"
+  },
+  {
+    "category": "DevOps",
+    "english": "troubleshoot",
+    "chinese": "排查故障"
+  },
+  {
+    "category": "DevOps",
+    "english": "volume",
+    "chinese": "卷"
+  },
+  {
+    "category": "DevOps",
+    "english": "webhook",
+    "chinese": "Webhook"
+  },
+  {
+    "category": "DevOps",
+    "english": "WORKDIR",
+    "chinese": "工作目录"
+  },
+  {
+    "category": "DevOps",
+    "english": "workspace",
+    "chinese": "工作空间"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "anti-entropy",
+    "chinese": "反熵"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "atomic",
+    "chinese": "原子的；原子"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "availability",
+    "chinese": "可用性"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "backoff",
+    "chinese": "退避"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "baggage",
+    "chinese": "行李"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "basically-available",
+    "chinese": "基本可用"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "batch",
+    "chinese": "批处理"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "block-storage",
+    "chinese": "块存储"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "broadcast",
+    "chinese": "广播"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "bulkhead",
+    "chinese": "舱壁；舱壁隔离"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "causal-consistency",
+    "chinese": "因果一致性"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "centralized",
+    "chinese": "集中式的"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "change-data-capture",
+    "chinese": "变更数据捕获"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "checkpoint",
+    "chinese": "检查点"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "choreography",
+    "chinese": "协同"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "circuit-breaker",
+    "chinese": "熔断器"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "cluster",
+    "chinese": "集群"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "cold-storage",
+    "chinese": "冷存储"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "combiner",
+    "chinese": "合并器"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "command",
+    "chinese": "命令"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "commit-log",
+    "chinese": "提交日志"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "compensating-transaction",
+    "chinese": "补偿事务"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "compensation",
+    "chinese": "补偿"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "consensus",
+    "chinese": "共识"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "consistency-hash",
+    "chinese": "一致性哈希"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "consistent-hashing",
+    "chinese": "一致性哈希"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "data-locality",
+    "chinese": "数据本地性"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "data-ownership",
+    "chinese": "数据所有权"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "data-replication",
+    "chinese": "数据复制"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "database-per-service",
+    "chinese": "每服务一库"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "decentralized",
+    "chinese": "去中心化的"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "deduplication",
+    "chinese": "去重"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "distributed",
+    "chinese": "分布式的；分布式"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "distributed-storage",
+    "chinese": "分布式存储"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "driver",
+    "chinese": "驱动器"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "dual-write",
+    "chinese": "双写"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "erasure-coding",
+    "chinese": "纠删码"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "event-sourcing",
+    "chinese": "事件溯源"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "event-store",
+    "chinese": "事件存储"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "eventual-consistency",
+    "chinese": "最终一致性"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "eventually-consistent",
+    "chinese": "最终一致"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "executor",
+    "chinese": "执行器"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "failback",
+    "chinese": "故障恢复"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "failover",
+    "chinese": "故障转移"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "file-storage",
+    "chinese": "文件存储"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "follower",
+    "chinese": "跟随者"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "gossip-protocol",
+    "chinese": "Gossip协议"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "hash-based",
+    "chinese": "基于哈希"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "hinted-handoff",
+    "chinese": "暗示移交"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "hotspot",
+    "chinese": "热点"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "idempotency",
+    "chinese": "幂等性"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "idempotent",
+    "chinese": "幂等的；幂等"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "inbox-pattern",
+    "chinese": "收件箱模式"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "instrumentation",
+    "chinese": "埋点"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "leader",
+    "chinese": "领导者"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "linearizability",
+    "chinese": "线性一致性"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "mapper",
+    "chinese": "映射器"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "master",
+    "chinese": "主库；主节点"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "materialized-view",
+    "chinese": "物化视图"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "memtable",
+    "chinese": "内存表"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "merge",
+    "chinese": "合并"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "merkle-tree",
+    "chinese": "默克尔树"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "metrics",
+    "chinese": "指标"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "micro-batch",
+    "chinese": "微批处理"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "object-storage",
+    "chinese": "对象存储"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "observability",
+    "chinese": "可观测性"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "orchestration",
+    "chinese": "编排"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "outbox-pattern",
+    "chinese": "发件箱模式"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "partition",
+    "chinese": "分区"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "partition-tolerance",
+    "chinese": "分区容错"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "partitioner",
+    "chinese": "分区器"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "Paxos",
+    "chinese": "Paxos算法"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "peer",
+    "chinese": "对等节点"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "quorum",
+    "chinese": "法定人数"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "rack-awareness",
+    "chinese": "机架感知"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "Raft",
+    "chinese": "Raft算法"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "range-based",
+    "chinese": "基于范围"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "read-model",
+    "chinese": "读模型"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "read-repair",
+    "chinese": "读修复"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "read-replica",
+    "chinese": "只读副本；读副本"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "reducer",
+    "chinese": "归约器"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "replica",
+    "chinese": "副本"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "replica-set",
+    "chinese": "副本集"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "replication",
+    "chinese": "复制"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "replication-factor",
+    "chinese": "复制因子"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "sampling",
+    "chinese": "采样"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "serializability",
+    "chinese": "可串行化"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "session-window",
+    "chinese": "会话窗口"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "shard",
+    "chinese": "分片"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "sharding",
+    "chinese": "分片"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "shared-database",
+    "chinese": "共享数据库"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "shuffle",
+    "chinese": "洗牌"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "slave",
+    "chinese": "从库；从节点"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "sloppy-quorum",
+    "chinese": "宽松法定人数"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "soft-state",
+    "chinese": "软状态"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "sort",
+    "chinese": "排序"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "span",
+    "chinese": "跨度"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "split-brain",
+    "chinese": "脑裂"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "stage",
+    "chinese": "阶段"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "state",
+    "chinese": "状态"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "strong-consistency",
+    "chinese": "强一致性"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "task",
+    "chinese": "任务"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "telemetry",
+    "chinese": "遥测"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "three-phase-commit",
+    "chinese": "三阶段提交"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "tiering",
+    "chinese": "分层"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "tombstone",
+    "chinese": "墓碑标记"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "tracing",
+    "chinese": "追踪"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "tumbling-window",
+    "chinese": "滚动窗口"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "two-phase-commit",
+    "chinese": "两阶段提交"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "vector-clock",
+    "chinese": "向量时钟"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "version-vector",
+    "chinese": "版本向量"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "virtual-node",
+    "chinese": "虚拟节点"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "watermark",
+    "chinese": "水印"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "weak-consistency",
+    "chinese": "弱一致性"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "window",
+    "chinese": "窗口"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "write-ahead-log",
+    "chinese": "预写日志"
+  },
+  {
+    "category": "Distributed Systems",
+    "english": "write-model",
+    "chinese": "写模型"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "acceptance-criteria",
+    "chinese": "验收标准"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "agile",
+    "chinese": "敏捷"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "backlog",
+    "chinese": "待办事项"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "blocker",
+    "chinese": "阻塞"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "branching-strategy",
+    "chinese": "分支策略"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "breaking-change",
+    "chinese": "破坏性变更"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "burndown",
+    "chinese": "燃尽图"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "capacity",
+    "chinese": "产能"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "cherry-pick",
+    "chinese": "精选"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "clean-code",
+    "chinese": "整洁代码"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "code-review",
+    "chinese": "代码审查"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "code-smell",
+    "chinese": "代码异味"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "deadline",
+    "chinese": "截止日期"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "definition-of-done",
+    "chinese": "完成定义"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "deliverable",
+    "chinese": "交付物"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "deprecation",
+    "chinese": "弃用"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "documentation",
+    "chinese": "文档"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "duplication",
+    "chinese": "重复"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "epic",
+    "chinese": "史诗"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "estimation",
+    "chinese": "估算"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "feature-branch",
+    "chinese": "功能分支"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "formatter",
+    "chinese": "格式化工具"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "git-flow",
+    "chinese": "Git流程"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "handoff",
+    "chinese": "交接"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "hotfix",
+    "chinese": "热修复"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "increment",
+    "chinese": "增量"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "kanban",
+    "chinese": "看板"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "knowledge-transfer",
+    "chinese": "知识转移"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "lessons-learned",
+    "chinese": "经验教训"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "lint",
+    "chinese": "代码检查"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "linter",
+    "chinese": "检查工具"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "maintainability",
+    "chinese": "可维护性"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "merge-request",
+    "chinese": "合并请求"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "migration-guide",
+    "chinese": "迁移指南"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "milestone",
+    "chinese": "里程碑"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "mitigation",
+    "chinese": "缓解"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "mob-programming",
+    "chinese": "群组编程"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "onboarding",
+    "chinese": "入职培训"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "pair-programming",
+    "chinese": "结对编程"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "planning-poker",
+    "chinese": "计划扑克"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "post-mortem",
+    "chinese": "事后分析"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "product-owner",
+    "chinese": "产品负责人"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "pull-request",
+    "chinese": "拉取请求"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "readability",
+    "chinese": "可读性"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "rebase",
+    "chinese": "变基"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "refactor",
+    "chinese": "重构"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "refactoring",
+    "chinese": "重构"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "release-branch",
+    "chinese": "发布分支"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "release-notes",
+    "chinese": "发布说明"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "repository",
+    "chinese": "仓库；仓储"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "retrospective",
+    "chinese": "回顾会议"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "risk",
+    "chinese": "风险"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "root-cause-analysis",
+    "chinese": "根因分析"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "scope-creep",
+    "chinese": "范围蔓延"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "scrum",
+    "chinese": "Scrum"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "scrum-master",
+    "chinese": "Scrum大师"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "semantic-versioning",
+    "chinese": "语义化版本"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "sprint",
+    "chinese": "冲刺"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "squash",
+    "chinese": "压缩"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "stakeholder",
+    "chinese": "利益相关者"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "stakeholder-meeting",
+    "chinese": "干系人会议"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "standup",
+    "chinese": "站会"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "status-update",
+    "chinese": "状态更新"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "story-point",
+    "chinese": "故事点"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "technical-debt",
+    "chinese": "技术债务"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "testability",
+    "chinese": "可测试性"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "trunk-based",
+    "chinese": "主干开发"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "user-story",
+    "chinese": "用户故事"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "velocity",
+    "chinese": "速度"
+  },
+  {
+    "category": "Engineering Practices",
+    "english": "version-control",
+    "chinese": "版本控制"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "active-profile",
+    "chinese": "激活配置"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "actuator",
+    "chinese": "执行器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "application-loader",
+    "chinese": "应用类加载器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "args",
+    "chinese": "参数"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "around",
+    "chinese": "环绕"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "assembly",
+    "chinese": "组装"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "auto-configuration",
+    "chinese": "自动配置"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "autowire",
+    "chinese": "自动装配"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "banner",
+    "chinese": "横幅"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "base-package",
+    "chinese": "基础包"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "bootstrap-loader",
+    "chinese": "引导类加载器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "bytecode",
+    "chinese": "字节码"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "cascade",
+    "chinese": "级联"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "central",
+    "chinese": "中央仓库"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "classloader",
+    "chinese": "类加载器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "classpath",
+    "chinese": "类路径"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "clean",
+    "chinese": "清理"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "command-line",
+    "chinese": "命令行"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "component-scan",
+    "chinese": "组件扫描"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "concurrent-mark",
+    "chinese": "并发标记"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "conditional",
+    "chinese": "条件"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "configuration",
+    "chinese": "配置"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "container",
+    "chinese": "容器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "controller",
+    "chinese": "控制器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "copying",
+    "chinese": "复制"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "criteria",
+    "chinese": "条件"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "declare-parents",
+    "chinese": "声明父类"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "dependency-management",
+    "chinese": "依赖管理"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "detached",
+    "chinese": "分离"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "devtools",
+    "chinese": "开发工具"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "dirty-check",
+    "chinese": "脏检查"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "Eden",
+    "chinese": "伊甸园"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "embedded-server",
+    "chinese": "内嵌服务器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "env",
+    "chinese": "环境"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "environment",
+    "chinese": "环境"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "environment-variable",
+    "chinese": "环境变量"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "exclusion",
+    "chinese": "排除"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "execution",
+    "chinese": "执行"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "extension-loader",
+    "chinese": "扩展类加载器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "externalized-configuration",
+    "chinese": "外部化配置"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "fetch",
+    "chinese": "抓取"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "filter",
+    "chinese": "过滤器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "finalization",
+    "chinese": "终结"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "finalize",
+    "chinese": "终结方法"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "find",
+    "chinese": "查找"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "first-level",
+    "chinese": "一级"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "flush",
+    "chinese": "刷新"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "full-GC",
+    "chinese": "完全GC"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "garbage-collection",
+    "chinese": "垃圾回收"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "generational",
+    "chinese": "分代"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "goal",
+    "chinese": "目标"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "Gradle",
+    "chinese": "Gradle"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "health",
+    "chinese": "健康检查"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "Hibernate",
+    "chinese": "Hibernate"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "hot-reload",
+    "chinese": "热重载"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "inject",
+    "chinese": "注入"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "install",
+    "chinese": "安装"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "interceptor",
+    "chinese": "拦截器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "introduction",
+    "chinese": "引入"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "listener",
+    "chinese": "监听器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "major-GC",
+    "chinese": "大GC"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "manifest",
+    "chinese": "清单"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "mapping",
+    "chinese": "映射"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "mappings",
+    "chinese": "映射"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "mark-compact",
+    "chinese": "标记整理"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "mark-sweep",
+    "chinese": "标记清除"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "Maven",
+    "chinese": "Maven"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "metaspace",
+    "chinese": "元空间"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "minor-GC",
+    "chinese": "小GC"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "multi-module",
+    "chinese": "多模块"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "MyBatis",
+    "chinese": "MyBatis"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "named-query",
+    "chinese": "命名查询"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "native-query",
+    "chinese": "原生查询"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "old-generation",
+    "chinese": "老年代"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "order",
+    "chinese": "顺序"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "parent-delegation",
+    "chinese": "双亲委派"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "parent-POM",
+    "chinese": "父POM"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "persist",
+    "chinese": "持久化"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "phantom-reference",
+    "chinese": "虚引用"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "phase",
+    "chinese": "阶段"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "placeholder",
+    "chinese": "占位符"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "plugin",
+    "chinese": "插件"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "primary",
+    "chinese": "首选"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "proceed",
+    "chinese": "继续执行"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "property",
+    "chinese": "属性"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "prototype",
+    "chinese": "原型"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "provided",
+    "chinese": "已提供"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "qualifier",
+    "chinese": "限定符"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "query-cache",
+    "chinese": "查询缓存"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "reachability",
+    "chinese": "可达性"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "reference-counting",
+    "chinese": "引用计数"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "remove",
+    "chinese": "移除"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "runtime",
+    "chinese": "运行时"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "scope",
+    "chinese": "作用域；范围"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "second-level",
+    "chinese": "二级"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "shade",
+    "chinese": "遮蔽"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "Shenandoah",
+    "chinese": "Shenandoah收集器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "soft-reference",
+    "chinese": "软引用"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "starter",
+    "chinese": "启动器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "strong-reference",
+    "chinese": "强引用"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "Survivor",
+    "chinese": "幸存者"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "target",
+    "chinese": "目标对象"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "test",
+    "chinese": "测试"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "threaddump",
+    "chinese": "线程转储"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "transitive",
+    "chinese": "传递"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "validator",
+    "chinese": "验证器"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "value",
+    "chinese": "值"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "version",
+    "chinese": "版本"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "weak-reference",
+    "chinese": "弱引用"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "weaving",
+    "chinese": "织入"
+  },
+  {
+    "category": "Java Ecosystem",
+    "english": "young-generation",
+    "chinese": "年轻代"
+  },
+  {
+    "category": "Messaging",
+    "english": "acknowledgment",
+    "chinese": "确认"
+  },
+  {
+    "category": "Messaging",
+    "english": "alternate-exchange",
+    "chinese": "备用交换机"
+  },
+  {
+    "category": "Messaging",
+    "english": "at-least-once",
+    "chinese": "至少一次"
+  },
+  {
+    "category": "Messaging",
+    "english": "at-most-once",
+    "chinese": "至多一次"
+  },
+  {
+    "category": "Messaging",
+    "english": "auto-commit",
+    "chinese": "自动提交"
+  },
+  {
+    "category": "Messaging",
+    "english": "auto-delete",
+    "chinese": "自动删除"
+  },
+  {
+    "category": "Messaging",
+    "english": "backpressure",
+    "chinese": "背压"
+  },
+  {
+    "category": "Messaging",
+    "english": "binding",
+    "chinese": "绑定"
+  },
+  {
+    "category": "Messaging",
+    "english": "broker",
+    "chinese": "代理"
+  },
+  {
+    "category": "Messaging",
+    "english": "changelog",
+    "chinese": "变更日志"
+  },
+  {
+    "category": "Messaging",
+    "english": "consumer",
+    "chinese": "消费者"
+  },
+  {
+    "category": "Messaging",
+    "english": "consumer-group",
+    "chinese": "消费者组"
+  },
+  {
+    "category": "Messaging",
+    "english": "coordinator",
+    "chinese": "协调器"
+  },
+  {
+    "category": "Messaging",
+    "english": "correlation-id",
+    "chinese": "关联ID"
+  },
+  {
+    "category": "Messaging",
+    "english": "dead-letter",
+    "chinese": "死信"
+  },
+  {
+    "category": "Messaging",
+    "english": "delay",
+    "chinese": "延迟"
+  },
+  {
+    "category": "Messaging",
+    "english": "direct-exchange",
+    "chinese": "直连交换机"
+  },
+  {
+    "category": "Messaging",
+    "english": "durable",
+    "chinese": "持久化"
+  },
+  {
+    "category": "Messaging",
+    "english": "exactly-once",
+    "chinese": "恰好一次"
+  },
+  {
+    "category": "Messaging",
+    "english": "exchange",
+    "chinese": "交换机"
+  },
+  {
+    "category": "Messaging",
+    "english": "exclusive",
+    "chinese": "独占"
+  },
+  {
+    "category": "Messaging",
+    "english": "fanout-exchange",
+    "chinese": "扇出交换机"
+  },
+  {
+    "category": "Messaging",
+    "english": "federation",
+    "chinese": "联邦"
+  },
+  {
+    "category": "Messaging",
+    "english": "fire-and-forget",
+    "chinese": "即发即弃"
+  },
+  {
+    "category": "Messaging",
+    "english": "flow-control",
+    "chinese": "流量控制"
+  },
+  {
+    "category": "Messaging",
+    "english": "headers-exchange",
+    "chinese": "头部交换机"
+  },
+  {
+    "category": "Messaging",
+    "english": "immediate",
+    "chinese": "立即"
+  },
+  {
+    "category": "Messaging",
+    "english": "Kafka",
+    "chinese": "Kafka"
+  },
+  {
+    "category": "Messaging",
+    "english": "Kafka-Connect",
+    "chinese": "Kafka连接器"
+  },
+  {
+    "category": "Messaging",
+    "english": "Kafka-Streams",
+    "chinese": "Kafka流"
+  },
+  {
+    "category": "Messaging",
+    "english": "KStream",
+    "chinese": "KStream"
+  },
+  {
+    "category": "Messaging",
+    "english": "KTable",
+    "chinese": "KTable"
+  },
+  {
+    "category": "Messaging",
+    "english": "log-segment",
+    "chinese": "日志段"
+  },
+  {
+    "category": "Messaging",
+    "english": "mandatory",
+    "chinese": "强制"
+  },
+  {
+    "category": "Messaging",
+    "english": "manual-commit",
+    "chinese": "手动提交"
+  },
+  {
+    "category": "Messaging",
+    "english": "message-queue",
+    "chinese": "消息队列"
+  },
+  {
+    "category": "Messaging",
+    "english": "negative-ack",
+    "chinese": "负向确认"
+  },
+  {
+    "category": "Messaging",
+    "english": "offset",
+    "chinese": "偏移量"
+  },
+  {
+    "category": "Messaging",
+    "english": "ordering",
+    "chinese": "顺序；顺序性"
+  },
+  {
+    "category": "Messaging",
+    "english": "partition-key",
+    "chinese": "分区键"
+  },
+  {
+    "category": "Messaging",
+    "english": "point-to-point",
+    "chinese": "点对点"
+  },
+  {
+    "category": "Messaging",
+    "english": "poison-message",
+    "chinese": "毒药消息"
+  },
+  {
+    "category": "Messaging",
+    "english": "positive-ack",
+    "chinese": "正向确认"
+  },
+  {
+    "category": "Messaging",
+    "english": "prefetch",
+    "chinese": "预取"
+  },
+  {
+    "category": "Messaging",
+    "english": "producer",
+    "chinese": "生产者"
+  },
+  {
+    "category": "Messaging",
+    "english": "pub-sub",
+    "chinese": "发布订阅"
+  },
+  {
+    "category": "Messaging",
+    "english": "publish",
+    "chinese": "发布"
+  },
+  {
+    "category": "Messaging",
+    "english": "publisher-confirm",
+    "chinese": "发布者确认"
+  },
+  {
+    "category": "Messaging",
+    "english": "pull",
+    "chinese": "拉取"
+  },
+  {
+    "category": "Messaging",
+    "english": "push",
+    "chinese": "推送"
+  },
+  {
+    "category": "Messaging",
+    "english": "RabbitMQ",
+    "chinese": "RabbitMQ"
+  },
+  {
+    "category": "Messaging",
+    "english": "rebalance",
+    "chinese": "重平衡"
+  },
+  {
+    "category": "Messaging",
+    "english": "request-reply",
+    "chinese": "请求响应"
+  },
+  {
+    "category": "Messaging",
+    "english": "requeue",
+    "chinese": "重新入队"
+  },
+  {
+    "category": "Messaging",
+    "english": "retention",
+    "chinese": "保留"
+  },
+  {
+    "category": "Messaging",
+    "english": "routing-key",
+    "chinese": "路由键"
+  },
+  {
+    "category": "Messaging",
+    "english": "scheduled",
+    "chinese": "定时"
+  },
+  {
+    "category": "Messaging",
+    "english": "shovel",
+    "chinese": "铲子插件"
+  },
+  {
+    "category": "Messaging",
+    "english": "state-store",
+    "chinese": "状态存储"
+  },
+  {
+    "category": "Messaging",
+    "english": "streaming",
+    "chinese": "流式传输；流处理；流式"
+  },
+  {
+    "category": "Messaging",
+    "english": "subscribe",
+    "chinese": "订阅"
+  },
+  {
+    "category": "Messaging",
+    "english": "topic",
+    "chinese": "主题"
+  },
+  {
+    "category": "Messaging",
+    "english": "topic-exchange",
+    "chinese": "主题交换机"
+  },
+  {
+    "category": "Messaging",
+    "english": "vhost",
+    "chinese": "虚拟主机"
+  },
+  {
+    "category": "Messaging",
+    "english": "windowing",
+    "chinese": "窗口化"
+  },
+  {
+    "category": "Messaging",
+    "english": "Zookeeper",
+    "chinese": "Zookeeper"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "200-OK",
+    "chinese": "成功"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "201-Created",
+    "chinese": "已创建"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "400-BadRequest",
+    "chinese": "错误请求"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "401-Unauthorized",
+    "chinese": "未授权"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "403-Forbidden",
+    "chinese": "禁止访问"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "404-NotFound",
+    "chinese": "未找到"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "500-InternalError",
+    "chinese": "服务器错误"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "503-Unavailable",
+    "chinese": "服务不可用"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "accept",
+    "chinese": "接受"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "body",
+    "chinese": "主体"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "chunk",
+    "chinese": "数据块"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "compression",
+    "chinese": "压缩"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "congestion",
+    "chinese": "拥塞"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "connection",
+    "chinese": "连接"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "content-type",
+    "chinese": "内容类型"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "cookie",
+    "chinese": "Cookie"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "datagram",
+    "chinese": "数据报"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "DELETE",
+    "chinese": "删除"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "endpoint",
+    "chinese": "端点"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "filtering",
+    "chinese": "过滤"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "frame",
+    "chinese": "帧"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "gateway",
+    "chinese": "网关"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "GET",
+    "chinese": "获取"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "handshake",
+    "chinese": "握手"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "HEAD",
+    "chinese": "头部请求"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "header",
+    "chinese": "头部"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "keepalive",
+    "chinese": "保活"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "load-balancer",
+    "chinese": "负载均衡器"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "multiplexing",
+    "chinese": "多路复用"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "OPTIONS",
+    "chinese": "选项"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "packet",
+    "chinese": "数据包"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "pagination",
+    "chinese": "分页"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "PATCH",
+    "chinese": "部分更新"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "path-parameter",
+    "chinese": "路径参数"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "payload",
+    "chinese": "有效载荷"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "port",
+    "chinese": "端口"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "POST",
+    "chinese": "创建"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "protocol",
+    "chinese": "协议"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "proxy",
+    "chinese": "代理"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "PUT",
+    "chinese": "更新"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "query-parameter",
+    "chinese": "查询参数"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "rate-limiting",
+    "chinese": "速率限制；限流"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "request",
+    "chinese": "请求"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "request-body",
+    "chinese": "请求体"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "resource",
+    "chinese": "资源"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "response",
+    "chinese": "响应"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "response-body",
+    "chinese": "响应体"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "retry",
+    "chinese": "重试"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "route",
+    "chinese": "路由"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "routing",
+    "chinese": "路由"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "segment",
+    "chinese": "段"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "session",
+    "chinese": "会话"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "socket",
+    "chinese": "套接字"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "status-code",
+    "chinese": "状态码"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "throttling",
+    "chinese": "节流"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "timeout",
+    "chinese": "超时"
+  },
+  {
+    "category": "Networking & Protocols",
+    "english": "versioning",
+    "chinese": "版本控制"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "allocation",
+    "chinese": "分配"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "bootloader",
+    "chinese": "引导程序"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "buffer",
+    "chinese": "缓冲区"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "corruption",
+    "chinese": "损坏"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "deallocation",
+    "chinese": "释放"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "directory",
+    "chinese": "目录"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "file-system",
+    "chinese": "文件系统"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "fragmentation",
+    "chinese": "碎片"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "garbage",
+    "chinese": "垃圾"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "heap",
+    "chinese": "堆"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "inode",
+    "chinese": "索引节点"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "instruction",
+    "chinese": "指令"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "interrupt",
+    "chinese": "中断"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "kernel",
+    "chinese": "内核"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "leak",
+    "chinese": "泄漏"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "memory-management",
+    "chinese": "内存管理"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "overflow",
+    "chinese": "溢出"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "page-fault",
+    "chinese": "缺页错误"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "paging",
+    "chinese": "分页"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "pointer",
+    "chinese": "指针"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "register",
+    "chinese": "寄存器"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "segmentation",
+    "chinese": "分段"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "stack",
+    "chinese": "栈"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "swapping",
+    "chinese": "交换"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "system-call",
+    "chinese": "系统调用"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "thrashing",
+    "chinese": "颠簸"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "underflow",
+    "chinese": "下溢"
+  },
+  {
+    "category": "Operating Systems",
+    "english": "virtual-memory",
+    "chinese": "虚拟内存"
+  },
+  {
+    "category": "Performance",
+    "english": "average",
+    "chinese": "平均值"
+  },
+  {
+    "category": "Performance",
+    "english": "bandwidth",
+    "chinese": "带宽"
+  },
+  {
+    "category": "Performance",
+    "english": "batching",
+    "chinese": "批处理"
+  },
+  {
+    "category": "Performance",
+    "english": "benchmark",
+    "chinese": "基准测试"
+  },
+  {
+    "category": "Performance",
+    "english": "benchmarking",
+    "chinese": "基准测试"
+  },
+  {
+    "category": "Performance",
+    "english": "bottleneck",
+    "chinese": "瓶颈"
+  },
+  {
+    "category": "Performance",
+    "english": "bundling",
+    "chinese": "打包"
+  },
+  {
+    "category": "Performance",
+    "english": "caching",
+    "chinese": "缓存"
+  },
+  {
+    "category": "Performance",
+    "english": "code-cache",
+    "chinese": "代码缓存"
+  },
+  {
+    "category": "Performance",
+    "english": "compilation",
+    "chinese": "编译；编辑；汇编"
+  },
+  {
+    "category": "Performance",
+    "english": "concurrent-threads",
+    "chinese": "并发线程数"
+  },
+  {
+    "category": "Performance",
+    "english": "connection-pool",
+    "chinese": "连接池"
+  },
+  {
+    "category": "Performance",
+    "english": "connection-reuse",
+    "chinese": "连接复用"
+  },
+  {
+    "category": "Performance",
+    "english": "debouncing",
+    "chinese": "防抖"
+  },
+  {
+    "category": "Performance",
+    "english": "degradation",
+    "chinese": "降级"
+  },
+  {
+    "category": "Performance",
+    "english": "downtime",
+    "chinese": "停机时间"
+  },
+  {
+    "category": "Performance",
+    "english": "dynamic-content",
+    "chinese": "动态内容"
+  },
+  {
+    "category": "Performance",
+    "english": "edge-caching",
+    "chinese": "边缘缓存"
+  },
+  {
+    "category": "Performance",
+    "english": "efficient",
+    "chinese": "高效"
+  },
+  {
+    "category": "Performance",
+    "english": "error-rate",
+    "chinese": "错误率"
+  },
+  {
+    "category": "Performance",
+    "english": "footprint",
+    "chinese": "内存占用"
+  },
+  {
+    "category": "Performance",
+    "english": "heap-dump",
+    "chinese": "堆转储"
+  },
+  {
+    "category": "Performance",
+    "english": "heap-size",
+    "chinese": "堆大小"
+  },
+  {
+    "category": "Performance",
+    "english": "indexing",
+    "chinese": "索引"
+  },
+  {
+    "category": "Performance",
+    "english": "inefficient",
+    "chinese": "低效"
+  },
+  {
+    "category": "Performance",
+    "english": "keep-alive",
+    "chinese": "保持连接"
+  },
+  {
+    "category": "Performance",
+    "english": "latency",
+    "chinese": "延迟"
+  },
+  {
+    "category": "Performance",
+    "english": "median",
+    "chinese": "中位数"
+  },
+  {
+    "category": "Performance",
+    "english": "memory-mapping",
+    "chinese": "内存映射"
+  },
+  {
+    "category": "Performance",
+    "english": "memory-usage",
+    "chinese": "内存使用"
+  },
+  {
+    "category": "Performance",
+    "english": "minification",
+    "chinese": "最小化"
+  },
+  {
+    "category": "Performance",
+    "english": "network-bandwidth",
+    "chinese": "网络带宽"
+  },
+  {
+    "category": "Performance",
+    "english": "object-pooling",
+    "chinese": "对象池"
+  },
+  {
+    "category": "Performance",
+    "english": "optimal",
+    "chinese": "最优"
+  },
+  {
+    "category": "Performance",
+    "english": "optimization",
+    "chinese": "优化"
+  },
+  {
+    "category": "Performance",
+    "english": "optimize",
+    "chinese": "优化"
+  },
+  {
+    "category": "Performance",
+    "english": "overhead",
+    "chinese": "开销"
+  },
+  {
+    "category": "Performance",
+    "english": "parallel-processing",
+    "chinese": "并行处理"
+  },
+  {
+    "category": "Performance",
+    "english": "parallel-threads",
+    "chinese": "并行线程数"
+  },
+  {
+    "category": "Performance",
+    "english": "pause-time",
+    "chinese": "暂停时间"
+  },
+  {
+    "category": "Performance",
+    "english": "percentile",
+    "chinese": "百分位"
+  },
+  {
+    "category": "Performance",
+    "english": "performance",
+    "chinese": "性能"
+  },
+  {
+    "category": "Performance",
+    "english": "pipelining",
+    "chinese": "流水线"
+  },
+  {
+    "category": "Performance",
+    "english": "pooling",
+    "chinese": "池化"
+  },
+  {
+    "category": "Performance",
+    "english": "prefetching",
+    "chinese": "预取"
+  },
+  {
+    "category": "Performance",
+    "english": "preloading",
+    "chinese": "预加载"
+  },
+  {
+    "category": "Performance",
+    "english": "profile",
+    "chinese": "性能分析；配置文件"
+  },
+  {
+    "category": "Performance",
+    "english": "profiling",
+    "chinese": "性能分析"
+  },
+  {
+    "category": "Performance",
+    "english": "reliability",
+    "chinese": "可靠性"
+  },
+  {
+    "category": "Performance",
+    "english": "resource-pooling",
+    "chinese": "资源池化"
+  },
+  {
+    "category": "Performance",
+    "english": "response-time",
+    "chinese": "响应时间"
+  },
+  {
+    "category": "Performance",
+    "english": "retry-rate",
+    "chinese": "重试率"
+  },
+  {
+    "category": "Performance",
+    "english": "saturation",
+    "chinese": "饱和"
+  },
+  {
+    "category": "Performance",
+    "english": "scalability",
+    "chinese": "可扩展性"
+  },
+  {
+    "category": "Performance",
+    "english": "standard-deviation",
+    "chinese": "标准差"
+  },
+  {
+    "category": "Performance",
+    "english": "static-content",
+    "chinese": "静态内容"
+  },
+  {
+    "category": "Performance",
+    "english": "suboptimal",
+    "chinese": "次优"
+  },
+  {
+    "category": "Performance",
+    "english": "success-rate",
+    "chinese": "成功率"
+  },
+  {
+    "category": "Performance",
+    "english": "survivor-ratio",
+    "chinese": "幸存区比例"
+  },
+  {
+    "category": "Performance",
+    "english": "tenuring-threshold",
+    "chinese": "晋升阈值"
+  },
+  {
+    "category": "Performance",
+    "english": "thread-dump",
+    "chinese": "线程转储"
+  },
+  {
+    "category": "Performance",
+    "english": "throughput",
+    "chinese": "吞吐量"
+  },
+  {
+    "category": "Performance",
+    "english": "timeout-rate",
+    "chinese": "超时率"
+  },
+  {
+    "category": "Performance",
+    "english": "trade-off",
+    "chinese": "权衡"
+  },
+  {
+    "category": "Performance",
+    "english": "uptime",
+    "chinese": "正常运行时间"
+  },
+  {
+    "category": "Performance",
+    "english": "utilization",
+    "chinese": "利用率"
+  },
+  {
+    "category": "Performance",
+    "english": "variance",
+    "chinese": "方差"
+  },
+  {
+    "category": "Performance",
+    "english": "write-buffer",
+    "chinese": "写缓冲"
+  },
+  {
+    "category": "Performance",
+    "english": "zero-copy",
+    "chinese": "零拷贝"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "abstract",
+    "chinese": "抽象"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "abstraction",
+    "chinese": "抽象"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "annotation",
+    "chinese": "注解"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "argument",
+    "chinese": "实参"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "aspect-oriented",
+    "chinese": "面向切面"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "assert",
+    "chinese": "断言"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "autoboxing",
+    "chinese": "自动装箱"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "boolean",
+    "chinese": "布尔"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "byte",
+    "chinese": "字节"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "callback",
+    "chinese": "回调"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "casting",
+    "chinese": "类型转换"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "char",
+    "chinese": "字符"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "class",
+    "chinese": "类"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "closure",
+    "chinese": "闭包"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "coercion",
+    "chinese": "强制转换"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "comparable",
+    "chinese": "可比较"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "comparator",
+    "chinese": "比较器"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "compile",
+    "chinese": "编译"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "composition",
+    "chinese": "组合"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "constant",
+    "chinese": "常量；常数"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "constructor",
+    "chinese": "构造函数"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "contravariance",
+    "chinese": "逆变"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "conversion",
+    "chinese": "转换"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "covariance",
+    "chinese": "协变"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "currying",
+    "chinese": "柯里化"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "declarative",
+    "chinese": "声明式"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "default",
+    "chinese": "默认"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "delegate",
+    "chinese": "委托"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "dependency",
+    "chinese": "依赖"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "deserialize",
+    "chinese": "反序列化"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "destructor",
+    "chinese": "析构函数"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "destructuring",
+    "chinese": "解构"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "deterministic",
+    "chinese": "确定的；确定性"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "double",
+    "chinese": "双精度"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "duck-typing",
+    "chinese": "鸭子类型"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "dynamic",
+    "chinese": "动态的"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "eager",
+    "chinese": "饿加载的"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "eager-evaluation",
+    "chinese": "饿汉求值"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "encapsulation",
+    "chinese": "封装"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "enum",
+    "chinese": "枚举"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "event-driven",
+    "chinese": "事件驱动"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "execute",
+    "chinese": "执行"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "extends",
+    "chinese": "继承"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "field",
+    "chinese": "字段"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "final",
+    "chinese": "最终"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "finally",
+    "chinese": "最终；最后"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "first-class",
+    "chinese": "一等公民"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "float",
+    "chinese": "浮点"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "format",
+    "chinese": "格式化"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "functional",
+    "chinese": "函数式"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "future",
+    "chinese": "Future"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "generic",
+    "chinese": "泛型"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "higher-order",
+    "chinese": "高阶"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "immutability",
+    "chinese": "不可变性"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "immutable",
+    "chinese": "不可变的"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "imperative",
+    "chinese": "命令式"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "implement",
+    "chinese": "实现"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "implements",
+    "chinese": "实现"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "import",
+    "chinese": "导入"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "inheritance",
+    "chinese": "继承"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "initialize",
+    "chinese": "初始化"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "instance",
+    "chinese": "实例"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "instantiate",
+    "chinese": "实例化"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "integer",
+    "chinese": "整数"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "interface",
+    "chinese": "接口"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "introspection",
+    "chinese": "内省"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "invariance",
+    "chinese": "不变"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "invoke",
+    "chinese": "调用"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "lambda",
+    "chinese": "Lambda表达式"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "lazy",
+    "chinese": "懒加载的"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "lazy-evaluation",
+    "chinese": "惰性求值"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "literal",
+    "chinese": "字面量"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "long",
+    "chinese": "长整型"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "meta-programming",
+    "chinese": "元编程"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "method",
+    "chinese": "方法"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "mutable",
+    "chinese": "可变的"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "native",
+    "chinese": "本地"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "non-deterministic",
+    "chinese": "不确定的"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "null",
+    "chinese": "空；空值"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "object",
+    "chinese": "对象"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "object-oriented",
+    "chinese": "面向对象"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "optional",
+    "chinese": "可选"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "overload",
+    "chinese": "重载"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "override",
+    "chinese": "重写"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "package",
+    "chinese": "打包；包"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "parameter",
+    "chinese": "参数"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "parse",
+    "chinese": "解析"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "partial-application",
+    "chinese": "部分应用"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "pattern-matching",
+    "chinese": "模式匹配"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "persistent",
+    "chinese": "持久的"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "polymorphism",
+    "chinese": "多态"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "primitive",
+    "chinese": "基本类型"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "private",
+    "chinese": "私有"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "procedural",
+    "chinese": "过程式"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "promise",
+    "chinese": "Promise"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "protected",
+    "chinese": "受保护"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "public",
+    "chinese": "公共"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "pure-function",
+    "chinese": "纯函数"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "reactive",
+    "chinese": "响应式"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "reference",
+    "chinese": "引用类型；引用"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "reflection",
+    "chinese": "反射"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "rest-parameter",
+    "chinese": "剩余参数"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "return",
+    "chinese": "返回"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "serialize",
+    "chinese": "序列化"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "short",
+    "chinese": "短整型"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "side-effect",
+    "chinese": "副作用"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "spread-operator",
+    "chinese": "展开运算符"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "static",
+    "chinese": "静态的；静态"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "stream",
+    "chinese": "流"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "string",
+    "chinese": "字符串"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "strong-typing",
+    "chinese": "强类型"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "throws",
+    "chinese": "抛出"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "transform",
+    "chinese": "转换"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "transient",
+    "chinese": "瞬态的；瞬态；非持久"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "try-catch",
+    "chinese": "尝试捕获"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "type-inference",
+    "chinese": "类型推断"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "unboxing",
+    "chinese": "自动拆箱"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "undefined",
+    "chinese": "未定义"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "variable",
+    "chinese": "变量"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "void",
+    "chinese": "空"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "volatile",
+    "chinese": "易失的；易失"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "weak-typing",
+    "chinese": "弱类型"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "wildcard",
+    "chinese": "通配符"
+  },
+  {
+    "category": "Programming Basics",
+    "english": "wrapper",
+    "chinese": "包装类"
+  },
+  {
+    "category": "Security",
+    "english": "access-control",
+    "chinese": "访问控制"
+  },
+  {
+    "category": "Security",
+    "english": "asymmetric",
+    "chinese": "非对称"
+  },
+  {
+    "category": "Security",
+    "english": "attack-surface",
+    "chinese": "攻击面"
+  },
+  {
+    "category": "Security",
+    "english": "authentication",
+    "chinese": "认证"
+  },
+  {
+    "category": "Security",
+    "english": "authorization",
+    "chinese": "授权"
+  },
+  {
+    "category": "Security",
+    "english": "backdoor",
+    "chinese": "后门"
+  },
+  {
+    "category": "Security",
+    "english": "basic-auth",
+    "chinese": "基本认证"
+  },
+  {
+    "category": "Security",
+    "english": "bearer",
+    "chinese": "持有者"
+  },
+  {
+    "category": "Security",
+    "english": "bearer-token",
+    "chinese": "持有者令牌"
+  },
+  {
+    "category": "Security",
+    "english": "biometric",
+    "chinese": "生物识别"
+  },
+  {
+    "category": "Security",
+    "english": "blacklist",
+    "chinese": "黑名单"
+  },
+  {
+    "category": "Security",
+    "english": "buffer-overflow",
+    "chinese": "缓冲区溢出"
+  },
+  {
+    "category": "Security",
+    "english": "bug-bounty",
+    "chinese": "漏洞赏金"
+  },
+  {
+    "category": "Security",
+    "english": "certificate",
+    "chinese": "证书"
+  },
+  {
+    "category": "Security",
+    "english": "claim",
+    "chinese": "声明"
+  },
+  {
+    "category": "Security",
+    "english": "code-injection",
+    "chinese": "代码注入"
+  },
+  {
+    "category": "Security",
+    "english": "command-injection",
+    "chinese": "命令注入"
+  },
+  {
+    "category": "Security",
+    "english": "compliance",
+    "chinese": "合规"
+  },
+  {
+    "category": "Security",
+    "english": "credential",
+    "chinese": "凭证"
+  },
+  {
+    "category": "Security",
+    "english": "data-breach",
+    "chinese": "数据泄露"
+  },
+  {
+    "category": "Security",
+    "english": "decrypt",
+    "chinese": "解密"
+  },
+  {
+    "category": "Security",
+    "english": "decryption",
+    "chinese": "解密"
+  },
+  {
+    "category": "Security",
+    "english": "defense-in-depth",
+    "chinese": "纵深防御"
+  },
+  {
+    "category": "Security",
+    "english": "digest-auth",
+    "chinese": "摘要认证"
+  },
+  {
+    "category": "Security",
+    "english": "disclosure",
+    "chinese": "披露"
+  },
+  {
+    "category": "Security",
+    "english": "encrypt",
+    "chinese": "加密"
+  },
+  {
+    "category": "Security",
+    "english": "encryption",
+    "chinese": "加密"
+  },
+  {
+    "category": "Security",
+    "english": "exploit",
+    "chinese": "利用"
+  },
+  {
+    "category": "Security",
+    "english": "firewall",
+    "chinese": "防火墙"
+  },
+  {
+    "category": "Security",
+    "english": "forensics",
+    "chinese": "取证"
+  },
+  {
+    "category": "Security",
+    "english": "hardening",
+    "chinese": "加固"
+  },
+  {
+    "category": "Security",
+    "english": "hashing",
+    "chinese": "哈希"
+  },
+  {
+    "category": "Security",
+    "english": "identity",
+    "chinese": "身份"
+  },
+  {
+    "category": "Security",
+    "english": "incident-response",
+    "chinese": "事件响应"
+  },
+  {
+    "category": "Security",
+    "english": "intrusion-detection",
+    "chinese": "入侵检测"
+  },
+  {
+    "category": "Security",
+    "english": "least-privilege",
+    "chinese": "最小权限"
+  },
+  {
+    "category": "Security",
+    "english": "malware",
+    "chinese": "恶意软件"
+  },
+  {
+    "category": "Security",
+    "english": "man-in-the-middle",
+    "chinese": "中间人攻击"
+  },
+  {
+    "category": "Security",
+    "english": "multifactor",
+    "chinese": "多因素"
+  },
+  {
+    "category": "Security",
+    "english": "patching",
+    "chinese": "补丁"
+  },
+  {
+    "category": "Security",
+    "english": "path-traversal",
+    "chinese": "路径遍历"
+  },
+  {
+    "category": "Security",
+    "english": "penetration-testing",
+    "chinese": "渗透测试"
+  },
+  {
+    "category": "Security",
+    "english": "permission",
+    "chinese": "权限"
+  },
+  {
+    "category": "Security",
+    "english": "phishing",
+    "chinese": "钓鱼"
+  },
+  {
+    "category": "Security",
+    "english": "principal",
+    "chinese": "主体"
+  },
+  {
+    "category": "Security",
+    "english": "private-key",
+    "chinese": "私钥"
+  },
+  {
+    "category": "Security",
+    "english": "privilege",
+    "chinese": "特权"
+  },
+  {
+    "category": "Security",
+    "english": "privilege-escalation",
+    "chinese": "权限提升"
+  },
+  {
+    "category": "Security",
+    "english": "public-key",
+    "chinese": "公钥"
+  },
+  {
+    "category": "Security",
+    "english": "ransomware",
+    "chinese": "勒索软件"
+  },
+  {
+    "category": "Security",
+    "english": "refresh-token",
+    "chinese": "刷新令牌"
+  },
+  {
+    "category": "Security",
+    "english": "replay-attack",
+    "chinese": "重放攻击"
+  },
+  {
+    "category": "Security",
+    "english": "rootkit",
+    "chinese": "根工具包"
+  },
+  {
+    "category": "Security",
+    "english": "salting",
+    "chinese": "加盐"
+  },
+  {
+    "category": "Security",
+    "english": "sanitization",
+    "chinese": "净化"
+  },
+  {
+    "category": "Security",
+    "english": "sanitize",
+    "chinese": "清理"
+  },
+  {
+    "category": "Security",
+    "english": "security-audit",
+    "chinese": "安全审计"
+  },
+  {
+    "category": "Security",
+    "english": "security-by-design",
+    "chinese": "安全设计"
+  },
+  {
+    "category": "Security",
+    "english": "session-hijacking",
+    "chinese": "会话劫持"
+  },
+  {
+    "category": "Security",
+    "english": "signature",
+    "chinese": "签名"
+  },
+  {
+    "category": "Security",
+    "english": "spoofing",
+    "chinese": "欺骗"
+  },
+  {
+    "category": "Security",
+    "english": "symmetric",
+    "chinese": "对称"
+  },
+  {
+    "category": "Security",
+    "english": "threat",
+    "chinese": "威胁"
+  },
+  {
+    "category": "Security",
+    "english": "token",
+    "chinese": "令牌"
+  },
+  {
+    "category": "Security",
+    "english": "two-factor",
+    "chinese": "两因素"
+  },
+  {
+    "category": "Security",
+    "english": "validation",
+    "chinese": "验证"
+  },
+  {
+    "category": "Security",
+    "english": "vulnerability",
+    "chinese": "漏洞"
+  },
+  {
+    "category": "Security",
+    "english": "vulnerability-scan",
+    "chinese": "漏洞扫描"
+  },
+  {
+    "category": "Security",
+    "english": "whitelist",
+    "chinese": "白名单"
+  },
+  {
+    "category": "Security",
+    "english": "zero-day",
+    "chinese": "零日漏洞"
+  },
+  {
+    "category": "Security",
+    "english": "zero-trust",
+    "chinese": "零信任"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "available",
+    "chinese": "可用的"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "consistent",
+    "chinese": "一致的"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "convention",
+    "chinese": "约定"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "debug",
+    "chinese": "调试"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "ecosystem",
+    "chinese": "生态系统"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "implementation",
+    "chinese": "实现"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "inconsistent",
+    "chinese": "不一致的"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "migrate",
+    "chinese": "迁移"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "reliable",
+    "chinese": "可靠的"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "specification",
+    "chinese": "规范"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "stable",
+    "chinese": "稳定的"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "standard",
+    "chinese": "标准"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "unavailable",
+    "chinese": "不可用的"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "unreliable",
+    "chinese": "不可靠的"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "unstable",
+    "chinese": "不稳定的"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "validate",
+    "chinese": "验证"
+  },
+  {
+    "category": "Software Engineering",
+    "english": "workflow",
+    "chinese": "工作流"
+  },
+  {
+    "category": "Testing",
+    "english": "acceptance-test",
+    "chinese": "验收测试"
+  },
+  {
+    "category": "Testing",
+    "english": "arrange-act-assert",
+    "chinese": "准备执行断言"
+  },
+  {
+    "category": "Testing",
+    "english": "assertion",
+    "chinese": "断言"
+  },
+  {
+    "category": "Testing",
+    "english": "assertion-error",
+    "chinese": "断言错误"
+  },
+  {
+    "category": "Testing",
+    "english": "assertion-library",
+    "chinese": "断言库"
+  },
+  {
+    "category": "Testing",
+    "english": "boundary-value",
+    "chinese": "边界值"
+  },
+  {
+    "category": "Testing",
+    "english": "branch-coverage",
+    "chinese": "分支覆盖率"
+  },
+  {
+    "category": "Testing",
+    "english": "broken",
+    "chinese": "损坏"
+  },
+  {
+    "category": "Testing",
+    "english": "build-failure",
+    "chinese": "构建失败"
+  },
+  {
+    "category": "Testing",
+    "english": "canary-test",
+    "chinese": "金丝雀测试"
+  },
+  {
+    "category": "Testing",
+    "english": "code-coverage",
+    "chinese": "代码覆盖率"
+  },
+  {
+    "category": "Testing",
+    "english": "compatibility-test",
+    "chinese": "兼容性测试"
+  },
+  {
+    "category": "Testing",
+    "english": "continuous-testing",
+    "chinese": "持续测试"
+  },
+  {
+    "category": "Testing",
+    "english": "contract-test",
+    "chinese": "契约测试"
+  },
+  {
+    "category": "Testing",
+    "english": "dummy",
+    "chinese": "哑元"
+  },
+  {
+    "category": "Testing",
+    "english": "end-to-end",
+    "chinese": "端到端测试"
+  },
+  {
+    "category": "Testing",
+    "english": "equivalence-partitioning",
+    "chinese": "等价类划分"
+  },
+  {
+    "category": "Testing",
+    "english": "exploratory-test",
+    "chinese": "探索性测试"
+  },
+  {
+    "category": "Testing",
+    "english": "failing",
+    "chinese": "失败"
+  },
+  {
+    "category": "Testing",
+    "english": "fake",
+    "chinese": "伪造"
+  },
+  {
+    "category": "Testing",
+    "english": "fixture",
+    "chinese": "测试夹具"
+  },
+  {
+    "category": "Testing",
+    "english": "flaky",
+    "chinese": "不稳定"
+  },
+  {
+    "category": "Testing",
+    "english": "fuzz-test",
+    "chinese": "模糊测试"
+  },
+  {
+    "category": "Testing",
+    "english": "given-when-then",
+    "chinese": "给定当则"
+  },
+  {
+    "category": "Testing",
+    "english": "happy-path",
+    "chinese": "正常路径"
+  },
+  {
+    "category": "Testing",
+    "english": "integration-test",
+    "chinese": "集成测试"
+  },
+  {
+    "category": "Testing",
+    "english": "intermittent",
+    "chinese": "间歇性"
+  },
+  {
+    "category": "Testing",
+    "english": "line-coverage",
+    "chinese": "行覆盖率"
+  },
+  {
+    "category": "Testing",
+    "english": "load-test",
+    "chinese": "负载测试"
+  },
+  {
+    "category": "Testing",
+    "english": "matcher",
+    "chinese": "匹配器"
+  },
+  {
+    "category": "Testing",
+    "english": "mock",
+    "chinese": "模拟"
+  },
+  {
+    "category": "Testing",
+    "english": "mocking-framework",
+    "chinese": "模拟框架"
+  },
+  {
+    "category": "Testing",
+    "english": "mutation-coverage",
+    "chinese": "变异覆盖率"
+  },
+  {
+    "category": "Testing",
+    "english": "mutation-test",
+    "chinese": "变异测试"
+  },
+  {
+    "category": "Testing",
+    "english": "negative-test",
+    "chinese": "负面测试"
+  },
+  {
+    "category": "Testing",
+    "english": "non-reproducible",
+    "chinese": "不可重现"
+  },
+  {
+    "category": "Testing",
+    "english": "pact",
+    "chinese": "契约"
+  },
+  {
+    "category": "Testing",
+    "english": "passing",
+    "chinese": "通过"
+  },
+  {
+    "category": "Testing",
+    "english": "path-coverage",
+    "chinese": "路径覆盖率"
+  },
+  {
+    "category": "Testing",
+    "english": "pending",
+    "chinese": "待定"
+  },
+  {
+    "category": "Testing",
+    "english": "penetration-test",
+    "chinese": "渗透测试"
+  },
+  {
+    "category": "Testing",
+    "english": "performance-test",
+    "chinese": "性能测试"
+  },
+  {
+    "category": "Testing",
+    "english": "positive-test",
+    "chinese": "正面测试"
+  },
+  {
+    "category": "Testing",
+    "english": "property-based",
+    "chinese": "基于属性"
+  },
+  {
+    "category": "Testing",
+    "english": "quarantined",
+    "chinese": "隔离"
+  },
+  {
+    "category": "Testing",
+    "english": "red-green-refactor",
+    "chinese": "红绿重构"
+  },
+  {
+    "category": "Testing",
+    "english": "regression-test",
+    "chinese": "回归测试"
+  },
+  {
+    "category": "Testing",
+    "english": "reproducible",
+    "chinese": "可重现"
+  },
+  {
+    "category": "Testing",
+    "english": "sanity-test",
+    "chinese": "健全性测试"
+  },
+  {
+    "category": "Testing",
+    "english": "security-test",
+    "chinese": "安全测试"
+  },
+  {
+    "category": "Testing",
+    "english": "setup",
+    "chinese": "设置"
+  },
+  {
+    "category": "Testing",
+    "english": "skipped",
+    "chinese": "跳过"
+  },
+  {
+    "category": "Testing",
+    "english": "smoke-test",
+    "chinese": "冒烟测试"
+  },
+  {
+    "category": "Testing",
+    "english": "snapshot-test",
+    "chinese": "快照测试"
+  },
+  {
+    "category": "Testing",
+    "english": "SonarQube",
+    "chinese": "SonarQube"
+  },
+  {
+    "category": "Testing",
+    "english": "spy",
+    "chinese": "间谍"
+  },
+  {
+    "category": "Testing",
+    "english": "static-analysis",
+    "chinese": "静态分析"
+  },
+  {
+    "category": "Testing",
+    "english": "stress-test",
+    "chinese": "压力测试"
+  },
+  {
+    "category": "Testing",
+    "english": "stub",
+    "chinese": "存根；桩"
+  },
+  {
+    "category": "Testing",
+    "english": "system-test",
+    "chinese": "系统测试"
+  },
+  {
+    "category": "Testing",
+    "english": "teardown",
+    "chinese": "清理"
+  },
+  {
+    "category": "Testing",
+    "english": "test-automation",
+    "chinese": "测试自动化"
+  },
+  {
+    "category": "Testing",
+    "english": "test-case",
+    "chinese": "测试用例"
+  },
+  {
+    "category": "Testing",
+    "english": "test-coverage",
+    "chinese": "测试覆盖率"
+  },
+  {
+    "category": "Testing",
+    "english": "test-data",
+    "chinese": "测试数据"
+  },
+  {
+    "category": "Testing",
+    "english": "test-double",
+    "chinese": "测试替身"
+  },
+  {
+    "category": "Testing",
+    "english": "test-environment",
+    "chinese": "测试环境"
+  },
+  {
+    "category": "Testing",
+    "english": "test-failure",
+    "chinese": "测试失败"
+  },
+  {
+    "category": "Testing",
+    "english": "test-first",
+    "chinese": "测试优先"
+  },
+  {
+    "category": "Testing",
+    "english": "test-framework",
+    "chinese": "测试框架"
+  },
+  {
+    "category": "Testing",
+    "english": "test-harness",
+    "chinese": "测试工具"
+  },
+  {
+    "category": "Testing",
+    "english": "test-pyramid",
+    "chinese": "测试金字塔"
+  },
+  {
+    "category": "Testing",
+    "english": "test-report",
+    "chinese": "测试报告"
+  },
+  {
+    "category": "Testing",
+    "english": "test-runner",
+    "chinese": "测试运行器"
+  },
+  {
+    "category": "Testing",
+    "english": "test-suite",
+    "chinese": "测试套件"
+  },
+  {
+    "category": "Testing",
+    "english": "unit-test",
+    "chinese": "单元测试"
+  },
+  {
+    "category": "Testing",
+    "english": "usability-test",
+    "chinese": "可用性测试"
+  },
+  {
+    "category": "Testing",
+    "english": "visual-regression",
+    "chinese": "视觉回归"
+  }
+]

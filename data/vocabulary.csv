@@ -1,0 +1,1431 @@
+﻿category,english,chinese
+Architecture & Design,active-active,双活
+Architecture & Design,active-passive,主备
+Architecture & Design,adapter,适配器
+Architecture & Design,aggregate,聚合
+Architecture & Design,anti-corruption,防腐层
+Architecture & Design,architecture,架构
+Architecture & Design,auto-scaling,自动扩展
+Architecture & Design,backward-compatibility,向后兼容
+Architecture & Design,blackboard,黑板
+Architecture & Design,blue-green,蓝绿部署
+Architecture & Design,bounded-context,限界上下文
+Architecture & Design,business,业务层
+Architecture & Design,canary-deployment,金丝雀部署
+Architecture & Design,capacity-planning,容量规划
+Architecture & Design,clean-architecture,整洁架构
+Architecture & Design,client-server,客户端服务器
+Architecture & Design,cohesion,内聚
+Architecture & Design,cold-standby,冷备份
+Architecture & Design,component,组件
+Architecture & Design,composition-over-inheritance,组合优于继承
+Architecture & Design,consumer-driven,消费者驱动
+Architecture & Design,contract,契约
+Architecture & Design,convention-over-configuration,约定优于配置
+Architecture & Design,coupling,耦合
+Architecture & Design,data-access,数据访问层
+Architecture & Design,defensive-programming,防御式编程
+Architecture & Design,dependency-injection,依赖注入
+Architecture & Design,disaster-recovery,灾难恢复
+Architecture & Design,domain,领域；领域层
+Architecture & Design,domain-driven,领域驱动
+Architecture & Design,elasticity,弹性
+Architecture & Design,entity,实体
+Architecture & Design,exponential-backoff,指数退避
+Architecture & Design,fail-fast,快速失败
+Architecture & Design,fallback,降级
+Architecture & Design,fault-tolerance,容错
+Architecture & Design,fault-tolerant,容错的
+Architecture & Design,feature-flag,特性开关
+Architecture & Design,framework,框架
+Architecture & Design,geo-redundancy,地理冗余
+Architecture & Design,graceful-degradation,优雅降级
+Architecture & Design,health-check,健康检查
+Architecture & Design,heartbeat,心跳
+Architecture & Design,hexagonal,六边形
+Architecture & Design,high-availability,高可用
+Architecture & Design,high-cohesion,高内聚
+Architecture & Design,horizontal-scaling,水平扩展
+Architecture & Design,hot-standby,热备份
+Architecture & Design,infrastructure,基础设施；基础设施层
+Architecture & Design,inversion-of-control,控制反转
+Architecture & Design,jitter,抖动
+Architecture & Design,law-of-Demeter,迪米特法则
+Architecture & Design,layered,分层
+Architecture & Design,least-connections,最少连接
+Architecture & Design,load-balancing,负载均衡
+Architecture & Design,load-shedding,负载削减
+Architecture & Design,loose-coupling,松耦合
+Architecture & Design,maintainable,可维护的
+Architecture & Design,methodology,方法论
+Architecture & Design,microservice,微服务
+Architecture & Design,modular,模块化的；模块化
+Architecture & Design,module,模块
+Architecture & Design,monolith,单体
+Architecture & Design,monolithic,单体的；单体
+Architecture & Design,multi-region,多区域
+Architecture & Design,n-tier,N层
+Architecture & Design,onion-architecture,洋葱架构
+Architecture & Design,paradigm,范式
+Architecture & Design,pattern,模式
+Architecture & Design,peer-to-peer,对等
+Architecture & Design,pipe-filter,管道过滤器
+Architecture & Design,practice,实践
+Architecture & Design,presentation,表示层
+Architecture & Design,principle,原则
+Architecture & Design,program-to-interface,面向接口编程
+Architecture & Design,protocol-buffer,协议缓冲
+Architecture & Design,redundancy,冗余
+Architecture & Design,resilience,弹性
+Architecture & Design,resilient,有韧性的
+Architecture & Design,robust,健壮的
+Architecture & Design,rolling-update,滚动更新
+Architecture & Design,round-robin,轮询
+Architecture & Design,scalable,可扩展的
+Architecture & Design,scale,扩展
+Architecture & Design,scale-out,横向扩展
+Architecture & Design,scale-up,纵向扩展
+Architecture & Design,separation-of-concerns,关注点分离
+Architecture & Design,serverless,无服务器
+Architecture & Design,service,服务
+Architecture & Design,service-discovery,服务发现
+Architecture & Design,service-mesh,服务网格
+Architecture & Design,service-registry,服务注册
+Architecture & Design,sidecar,边车
+Architecture & Design,single-source-of-truth,单一数据源
+Architecture & Design,stateful,有状态的；有状态
+Architecture & Design,stateless,无状态的；无状态
+Architecture & Design,statelessness,无状态性
+Architecture & Design,sticky-session,粘性会话
+Architecture & Design,tell-dont-ask,告诉不要问
+Architecture & Design,three-tier,三层
+Architecture & Design,Thrift,Thrift
+Architecture & Design,value-object,值对象
+Architecture & Design,vertical-scaling,垂直扩展
+Architecture & Design,warm-standby,温备份
+Architecture & Design,weighted,加权
+Caching,big-key,大键
+Caching,bitmap,位图
+Caching,cache,缓存
+Caching,cache-aside,旁路缓存
+Caching,cache-avalanche,缓存雪崩
+Caching,cache-breakdown,缓存击穿
+Caching,cache-hierarchy,缓存层次
+Caching,cache-hit,缓存命中
+Caching,cache-miss,缓存未命中
+Caching,cache-penetration,缓存穿透
+Caching,cache-stampede,缓存击穿
+Caching,cache-warming,缓存预热
+Caching,coherence,一致性
+Caching,cold-start,冷启动
+Caching,DECR,自减
+Caching,delayed-delete,延迟删除
+Caching,distributed-cache,分布式缓存
+Caching,distributed-lock,分布式锁
+Caching,double-delete,双删
+Caching,eager-loading,饿加载
+Caching,eviction,驱逐
+Caching,freshness,新鲜度
+Caching,geospatial,地理空间
+Caching,GETSET,获取并设置
+Caching,hash,哈希
+Caching,hit-rate,命中率
+Caching,hotkey,热点键
+Caching,hyperloglog,HyperLogLog
+Caching,in-memory,内存
+Caching,INCR,自增
+Caching,invalidation,失效
+Caching,lazy-loading,懒加载
+Caching,local-cache,本地缓存
+Caching,Lua-script,Lua脚本
+Caching,maxmemory,最大内存
+Caching,miss-rate,未命中率
+Caching,multi-level,多级
+Caching,null-cache,空值缓存
+Caching,persistence,持久化
+Caching,read-through,读穿
+Caching,Redis,Redis
+Caching,Redlock,Redlock算法
+Caching,refresh,刷新
+Caching,resharding,重分片
+Caching,rewrite,重写
+Caching,sentinel,哨兵
+Caching,SETNX,不存在则设置
+Caching,slot,槽
+Caching,sorted-set,有序集合
+Caching,staleness,过时性
+Caching,synchronization,同步
+Caching,tiered-cache,分层缓存
+Caching,WATCH,监视
+Caching,write-around,绕写
+Caching,write-behind,写回
+Caching,write-through,写穿
+Communication,advantage,优势
+Communication,after-that,之后
+Communication,all-in-all,总的来说
+Communication,alternatively,或者
+Communication,ambiguous,模糊的
+Communication,approach,方法
+Communication,as-an-illustration,作为例证
+Communication,assumption,假设
+Communication,at-a-high-level,概括地说
+Communication,at-the-end-of-the-day,归根结底
+Communication,at-the-same-time,同时
+Communication,based-on-my-understanding,基于我的理解
+Communication,basically,基本上
+Communication,benefit,好处
+Communication,big-picture,全局
+Communication,bottom-up,自下而上
+Communication,break-down,分解
+Communication,clarification,澄清
+Communication,clarify,澄清
+Communication,clarify-the-scope,明确范围
+Communication,clear,清楚
+Communication,comparatively,相对地
+Communication,concrete-example,具体例子
+Communication,consider,考虑
+Communication,corner-case,极端情况
+Communication,disadvantage,劣势
+Communication,dive-into,深入
+Communication,downside,不利方面
+Communication,drawback,缺点
+Communication,drill-down,深入探讨
+Communication,edge-case,边界情况
+Communication,essentially,本质上
+Communication,eventually,最终
+Communication,exactly,正是
+Communication,first-of-all,首先
+Communication,follow,理解
+Communication,following-that,接着
+Communication,for-example,例如
+Communication,for-instance,例如
+Communication,from-my-experience,根据我的经验
+Communication,from-my-perspective,从我的角度
+Communication,fundamentally,从根本上
+Communication,give-me-a-moment,给我一会儿
+Communication,going-forward,未来
+Communication,good-catch,发现得好
+Communication,good-question,好问题
+Communication,got-it,明白了
+Communication,high-level,高层次
+Communication,I'm-not-sure,我不确定
+Communication,I-believe,我相信
+Communication,I-don't-know,我不知道
+Communication,I-think,我认为
+Communication,I-would-say,我会说
+Communication,if-I-understand-correctly,如果我理解正确
+Communication,imagine,想象
+Communication,in-conclusion,总之
+Communication,in-contrast,相比之下
+Communication,in-my-opinion,在我看来
+Communication,in-other-words,换句话说
+Communication,in-summary,总之
+Communication,in-terms-of,就...而言
+Communication,in-the-meantime,与此同时
+Communication,incremental,增量的
+Communication,initially,最初
+Communication,interesting-point,有趣的观点
+Communication,it-seems-to-me,在我看来
+Communication,iterative,迭代的
+Communication,just-to-confirm,确认一下
+Communication,let's-say,假设
+Communication,let-me-think,让我想想
+Communication,like,像
+Communication,make-sense,有道理
+Communication,meanwhile,同时
+Communication,moving-forward,继续前进
+Communication,next,接下来
+Communication,on-the-other-hand,另一方面
+Communication,overall,总体而言
+Communication,pros-and-cons,优缺点
+Communication,relatively,相对地
+Communication,rephrase,重新表述
+Communication,requirement,需求
+Communication,say,比方说
+Communication,see-what-I-mean,明白我的意思
+Communication,speaking-of,说到
+Communication,step-by-step,逐步
+Communication,strategy,策略
+Communication,subsequently,随后
+Communication,such-as,比如
+Communication,suppose,假设
+Communication,take-for-example,以...为例
+Communication,that's-correct,那是正确的
+Communication,the-key-point,关键点
+Communication,the-main-takeaway,主要收获
+Communication,the-way-I-see-it,我认为
+Communication,then,然后
+Communication,to-be-specific,具体来说
+Communication,to-illustrate,举例说明
+Communication,to-make-sure,确保
+Communication,to-start-with,首先
+Communication,to-summarize,总结一下
+Communication,top-down,自上而下
+Communication,understand,理解
+Communication,upside,有利方面
+Communication,walk-through,讲解
+Communication,whereas,然而
+Communication,with-regard-to,关于
+Communication,you're-right,你是对的
+Communication,zoom-in,放大
+Communication,zoom-out,缩小
+Concurrency,acquire,获取
+Concurrency,asynchronous,异步的；异步
+Concurrency,atomic-array,原子数组
+Concurrency,atomic-operation,原子操作
+Concurrency,atomic-reference,原子引用
+Concurrency,atomic-variable,原子变量
+Concurrency,await,等待
+Concurrency,barrier,屏障
+Concurrency,BLOCKED,阻塞
+Concurrency,blocking,阻塞的
+Concurrency,callable,可调用
+Concurrency,completable-future,可完成Future
+Concurrency,composability,可组合性
+Concurrency,concurrency,并发；并发数
+Concurrency,concurrent,并发的
+Concurrency,condition,条件
+Concurrency,contention,争用
+Concurrency,context-switch,上下文切换
+Concurrency,cooperative,协作式
+Concurrency,countdown,倒计数
+Concurrency,critical-section,临界区
+Concurrency,daemon,守护线程
+Concurrency,data-race,数据竞争
+Concurrency,deadlock,死锁
+Concurrency,double-checked-locking,双重检查锁
+Concurrency,exchanger,交换器
+Concurrency,exclusive-lock,独占锁
+Concurrency,fair-lock,公平锁
+Concurrency,fence,栅栏
+Concurrency,field-updater,字段更新器
+Concurrency,final-field,Final字段
+Concurrency,fork-join,分叉合并
+Concurrency,happens-before,先行发生
+Concurrency,inheritable,可继承
+Concurrency,interrupted,中断状态
+Concurrency,intrinsic-lock,内置锁
+Concurrency,latch,闩锁
+Concurrency,lazy-initialization,懒初始化
+Concurrency,lifecycle,生命周期
+Concurrency,livelock,活锁
+Concurrency,lock,锁
+Concurrency,lock-free,无锁
+Concurrency,lockInterruptibly,可中断锁
+Concurrency,LockSupport,锁支持
+Concurrency,memory-barrier,内存屏障
+Concurrency,multiprocessing,多进程
+Concurrency,multithreading,多线程
+Concurrency,mutex,互斥锁
+Concurrency,mutual-exclusion,互斥
+Concurrency,NEW,新建
+Concurrency,non-blocking,非阻塞的；非阻塞
+Concurrency,non-reentrant,不可重入
+Concurrency,notify,通知
+Concurrency,notifyAll,通知全部
+Concurrency,parallel,并行的
+Concurrency,parallelism,并行
+Concurrency,park,停靠
+Concurrency,permit,许可
+Concurrency,phaser,阶段器
+Concurrency,preemption,抢占
+Concurrency,preemptive,抢占式
+Concurrency,priority,优先级
+Concurrency,priority-inversion,优先级反转
+Concurrency,process,进程
+Concurrency,race-condition,竞态条件
+Concurrency,read-lock,读锁
+Concurrency,read-write-lock,读写锁
+Concurrency,reentrant,可重入
+Concurrency,reordering,重排序
+Concurrency,run,运行
+Concurrency,runnable,可运行
+Concurrency,safe-publication,安全发布
+Concurrency,scheduler,调度器
+Concurrency,scheduling,调度
+Concurrency,semaphore,信号量
+Concurrency,sequential,顺序的
+Concurrency,shared-lock,共享锁
+Concurrency,signal,信号
+Concurrency,signalAll,信号全部
+Concurrency,singleton,单例
+Concurrency,sleep,睡眠
+Concurrency,spinlock,自旋锁
+Concurrency,stack-confinement,栈限制
+Concurrency,start,启动
+Concurrency,starvation,饥饿
+Concurrency,synchronized,同步；同步的
+Concurrency,synchronous,同步的；同步
+Concurrency,TERMINATED,终止
+Concurrency,thread,线程
+Concurrency,thread-confinement,线程限制
+Concurrency,thread-local,线程本地
+Concurrency,thread-pool,线程池
+Concurrency,thread-safe,线程安全
+Concurrency,thread-safety,线程安全性
+Concurrency,thread-unsafe,线程不安全
+Concurrency,time-slice,时间片
+Concurrency,TIMED_WAITING,超时等待
+Concurrency,tryLock,尝试锁
+Concurrency,unfair-lock,非公平锁
+Concurrency,unlock,解锁
+Concurrency,unpark,唤醒
+Concurrency,visibility,可见性
+Concurrency,volatile-read,易失读
+Concurrency,volatile-write,易失写
+Concurrency,wait,等待
+Concurrency,wait-free,无等待
+Concurrency,WAITING,等待
+Concurrency,work-stealing,工作窃取
+Concurrency,worker,工作节点；工作线程
+Concurrency,write-lock,写锁
+Concurrency,yield,让步
+Data Structures & Algorithms,algorithm,算法
+Data Structures & Algorithms,amortized,摊还
+Data Structures & Algorithms,ancestor,祖先节点
+Data Structures & Algorithms,array,数组
+Data Structures & Algorithms,asymptotic,渐进
+Data Structures & Algorithms,average-case,平均情况
+Data Structures & Algorithms,B-tree,B树
+Data Structures & Algorithms,backtracking,回溯
+Data Structures & Algorithms,balanced-tree,平衡树
+Data Structures & Algorithms,best-case,最好情况
+Data Structures & Algorithms,big-O,大O记号
+Data Structures & Algorithms,binary-search,二分查找
+Data Structures & Algorithms,binary-tree,二叉树
+Data Structures & Algorithms,bit-manipulation,位操作
+Data Structures & Algorithms,bloom-filter,布隆过滤器
+Data Structures & Algorithms,breadth-first,广度优先
+Data Structures & Algorithms,brute-force,暴力；暴力破解
+Data Structures & Algorithms,bucket,桶
+Data Structures & Algorithms,chaining,链地址法
+Data Structures & Algorithms,child,子节点
+Data Structures & Algorithms,collection,集合
+Data Structures & Algorithms,collision,冲突
+Data Structures & Algorithms,complexity,复杂度
+Data Structures & Algorithms,cubic,立方
+Data Structures & Algorithms,degree,度
+Data Structures & Algorithms,depth,深度
+Data Structures & Algorithms,depth-first,深度优先
+Data Structures & Algorithms,deque,双端队列
+Data Structures & Algorithms,descendant,后代节点
+Data Structures & Algorithms,divide-conquer,分治
+Data Structures & Algorithms,dynamic-programming,动态规划
+Data Structures & Algorithms,edge,边
+Data Structures & Algorithms,exponential,指数
+Data Structures & Algorithms,factorial,阶乘
+Data Structures & Algorithms,graph,图
+Data Structures & Algorithms,greedy,贪心
+Data Structures & Algorithms,hash-table,哈希表
+Data Structures & Algorithms,height,高度
+Data Structures & Algorithms,heuristic,启发式
+Data Structures & Algorithms,iteration,迭代
+Data Structures & Algorithms,iterator,迭代器
+Data Structures & Algorithms,leaf,叶子节点
+Data Structures & Algorithms,level,层级
+Data Structures & Algorithms,linear,线性
+Data Structures & Algorithms,linked-list,链表
+Data Structures & Algorithms,list,列表
+Data Structures & Algorithms,load-factor,负载因子
+Data Structures & Algorithms,logarithmic,对数
+Data Structures & Algorithms,lower-bound,下界
+Data Structures & Algorithms,map,映射
+Data Structures & Algorithms,memoization,记忆化
+Data Structures & Algorithms,memorization,记忆化
+Data Structures & Algorithms,minimum-spanning-tree,最小生成树
+Data Structures & Algorithms,node,节点
+Data Structures & Algorithms,parent,父节点
+Data Structures & Algorithms,path,路径
+Data Structures & Algorithms,polynomial,多项式
+Data Structures & Algorithms,prefix-sum,前缀和
+Data Structures & Algorithms,priority-queue,优先队列
+Data Structures & Algorithms,probing,探测
+Data Structures & Algorithms,pruning,剪枝
+Data Structures & Algorithms,quadratic,平方
+Data Structures & Algorithms,queue,队列
+Data Structures & Algorithms,recursion,递归
+Data Structures & Algorithms,red-black-tree,红黑树
+Data Structures & Algorithms,rehashing,重哈希
+Data Structures & Algorithms,root,根节点；根
+Data Structures & Algorithms,searching,搜索
+Data Structures & Algorithms,segment-tree,线段树
+Data Structures & Algorithms,set,集合
+Data Structures & Algorithms,shortest-path,最短路径
+Data Structures & Algorithms,sibling,兄弟节点
+Data Structures & Algorithms,skip-list,跳表
+Data Structures & Algorithms,sliding-window,滑动窗口
+Data Structures & Algorithms,sorting,排序
+Data Structures & Algorithms,space-complexity,空间复杂度
+Data Structures & Algorithms,tight-bound,紧界
+Data Structures & Algorithms,time-complexity,时间复杂度
+Data Structures & Algorithms,topological-sort,拓扑排序
+Data Structures & Algorithms,traversal,遍历
+Data Structures & Algorithms,tree,树
+Data Structures & Algorithms,trie,字典树
+Data Structures & Algorithms,two-pointer,双指针
+Data Structures & Algorithms,union-find,并查集
+Data Structures & Algorithms,upper-bound,上界
+Data Structures & Algorithms,vertex,顶点
+Data Structures & Algorithms,worst-case,最坏情况
+Databases,aggregation,聚合
+Databases,analyze,分析
+Databases,archive,归档
+Databases,atomicity,原子性
+Databases,backup,备份
+Databases,binlog,二进制日志
+Databases,buffer-pool,缓冲池
+Databases,bulk,批量
+Databases,cardinality,基数
+Databases,charset,字符集
+Databases,collation,排序规则
+Databases,column,列
+Databases,column-family,列族
+Databases,commit,提交
+Databases,compaction,压缩
+Databases,composite-index,组合索引
+Databases,consistency,一致性
+Databases,constraint,约束
+Databases,covering-index,覆盖索引
+Databases,database,数据库
+Databases,defragment,碎片整理
+Databases,denormalization,反规范化
+Databases,denormalized,反规范化
+Databases,dirty-read,脏读
+Databases,document,文档
+Databases,durability,持久性
+Databases,embedded,嵌入
+Databases,encoding,编码
+Databases,execution-plan,执行计划
+Databases,expiration,过期
+Databases,explain,解释
+Databases,foreign-key,外键
+Databases,FULL-JOIN,全连接
+Databases,full-table-scan,全表扫描
+Databases,GROUP-BY,分组
+Databases,HAVING,分组条件
+Databases,histogram,直方图
+Databases,index,索引
+Databases,index-scan,索引扫描
+Databases,INNER-JOIN,内连接
+Databases,INSERT,插入
+Databases,isolation,隔离性
+Databases,isolation-level,隔离级别
+Databases,JOIN,连接；加入
+Databases,key-value,键值
+Databases,LEFT-JOIN,左连接
+Databases,non-repeatable-read,不可重复读
+Databases,normalization,规范化
+Databases,optimistic-lock,乐观锁
+Databases,ORDER-BY,排序
+Databases,partitioning,分区
+Databases,pessimistic-lock,悲观锁
+Databases,phantom-read,幻读
+Databases,primary-key,主键
+Databases,projection,投影
+Databases,purge,清除
+Databases,query,查询
+Databases,read-committed,读已提交
+Databases,read-uncommitted,读未提交
+Databases,rebalancing,重新平衡
+Databases,record,记录
+Databases,redo-log,重做日志
+Databases,relationship,关系
+Databases,repeatable-read,可重复读
+Databases,restore,恢复
+Databases,RIGHT-JOIN,右连接
+Databases,row,行
+Databases,savepoint,保存点
+Databases,schema,模式
+Databases,SELECT,查询
+Databases,selectivity,选择性
+Databases,serializable,可串行化
+Databases,slow-query,慢查询
+Databases,snapshot,快照
+Databases,statistics,统计信息
+Databases,table,表
+Databases,time-to-live,生存时间
+Databases,transaction,事务
+Databases,undo-log,撤销日志
+Databases,unique,唯一
+Databases,UPDATE,更新
+Databases,upsert,插入或更新
+Databases,vacuum,清理
+Databases,WHERE,条件
+DevOps,ADD,添加
+DevOps,agent,代理
+DevOps,artifact,构建产物；构件
+DevOps,base-image,基础镜像
+DevOps,bind-mount,绑定挂载
+DevOps,bridge,桥接
+DevOps,build,构建
+DevOps,checkout,检出
+DevOps,CircleCI,Circle CI
+DevOps,CMD,命令
+DevOps,configure,配置
+DevOps,continuous-delivery,持续交付
+DevOps,continuous-deployment,持续部署
+DevOps,continuous-integration,持续集成
+DevOps,control-plane,控制平面
+DevOps,COPY,复制
+DevOps,deploy,部署
+DevOps,deployment,部署
+DevOps,Docker,Docker
+DevOps,docker-compose,Docker Compose
+DevOps,Dockerfile,Dockerfile
+DevOps,entrypoint,入口点
+DevOps,exec,执行
+DevOps,expose,暴露
+DevOps,GitHub-Actions,GitHub Actions
+DevOps,GitLab-CI,GitLab CI
+DevOps,host,主机
+DevOps,image,镜像
+DevOps,Ingress,入口
+DevOps,inspect,检查
+DevOps,Jenkins,Jenkins
+DevOps,Job,任务
+DevOps,kubectl,kubectl
+DevOps,Kubernetes,Kubernetes
+DevOps,label,标签
+DevOps,layer,层
+DevOps,limit-range,限制范围
+DevOps,liveness-probe,存活探针
+DevOps,logs,日志
+DevOps,monitor,监控；监视器
+DevOps,mount,挂载
+DevOps,multi-stage,多阶段
+DevOps,namespace,命名空间
+DevOps,network,网络
+DevOps,overlay,覆盖
+DevOps,pipeline,流水线；管道
+DevOps,pod,Pod
+DevOps,poll,轮询
+DevOps,port-mapping,端口映射
+DevOps,readiness-probe,就绪探针
+DevOps,registry,镜像仓库
+DevOps,release,发布；释放
+DevOps,resource-quota,资源配额
+DevOps,restart,重启
+DevOps,rollback,回滚
+DevOps,runner,运行器
+DevOps,Secret,密钥
+DevOps,selector,选择器
+DevOps,startup-probe,启动探针
+DevOps,stop,停止
+DevOps,swarm,集群
+DevOps,tag,标签
+DevOps,toolchain,工具链
+DevOps,Travis-CI,Travis CI
+DevOps,trigger,触发器
+DevOps,troubleshoot,排查故障
+DevOps,volume,卷
+DevOps,webhook,Webhook
+DevOps,WORKDIR,工作目录
+DevOps,workspace,工作空间
+Distributed Systems,anti-entropy,反熵
+Distributed Systems,atomic,原子的；原子
+Distributed Systems,availability,可用性
+Distributed Systems,backoff,退避
+Distributed Systems,baggage,行李
+Distributed Systems,basically-available,基本可用
+Distributed Systems,batch,批处理
+Distributed Systems,block-storage,块存储
+Distributed Systems,broadcast,广播
+Distributed Systems,bulkhead,舱壁；舱壁隔离
+Distributed Systems,causal-consistency,因果一致性
+Distributed Systems,centralized,集中式的
+Distributed Systems,change-data-capture,变更数据捕获
+Distributed Systems,checkpoint,检查点
+Distributed Systems,choreography,协同
+Distributed Systems,circuit-breaker,熔断器
+Distributed Systems,cluster,集群
+Distributed Systems,cold-storage,冷存储
+Distributed Systems,combiner,合并器
+Distributed Systems,command,命令
+Distributed Systems,commit-log,提交日志
+Distributed Systems,compensating-transaction,补偿事务
+Distributed Systems,compensation,补偿
+Distributed Systems,consensus,共识
+Distributed Systems,consistency-hash,一致性哈希
+Distributed Systems,consistent-hashing,一致性哈希
+Distributed Systems,data-locality,数据本地性
+Distributed Systems,data-ownership,数据所有权
+Distributed Systems,data-replication,数据复制
+Distributed Systems,database-per-service,每服务一库
+Distributed Systems,decentralized,去中心化的
+Distributed Systems,deduplication,去重
+Distributed Systems,distributed,分布式的；分布式
+Distributed Systems,distributed-storage,分布式存储
+Distributed Systems,driver,驱动器
+Distributed Systems,dual-write,双写
+Distributed Systems,erasure-coding,纠删码
+Distributed Systems,event-sourcing,事件溯源
+Distributed Systems,event-store,事件存储
+Distributed Systems,eventual-consistency,最终一致性
+Distributed Systems,eventually-consistent,最终一致
+Distributed Systems,executor,执行器
+Distributed Systems,failback,故障恢复
+Distributed Systems,failover,故障转移
+Distributed Systems,file-storage,文件存储
+Distributed Systems,follower,跟随者
+Distributed Systems,gossip-protocol,Gossip协议
+Distributed Systems,hash-based,基于哈希
+Distributed Systems,hinted-handoff,暗示移交
+Distributed Systems,hotspot,热点
+Distributed Systems,idempotency,幂等性
+Distributed Systems,idempotent,幂等的；幂等
+Distributed Systems,inbox-pattern,收件箱模式
+Distributed Systems,instrumentation,埋点
+Distributed Systems,leader,领导者
+Distributed Systems,linearizability,线性一致性
+Distributed Systems,mapper,映射器
+Distributed Systems,master,主库；主节点
+Distributed Systems,materialized-view,物化视图
+Distributed Systems,memtable,内存表
+Distributed Systems,merge,合并
+Distributed Systems,merkle-tree,默克尔树
+Distributed Systems,metrics,指标
+Distributed Systems,micro-batch,微批处理
+Distributed Systems,object-storage,对象存储
+Distributed Systems,observability,可观测性
+Distributed Systems,orchestration,编排
+Distributed Systems,outbox-pattern,发件箱模式
+Distributed Systems,partition,分区
+Distributed Systems,partition-tolerance,分区容错
+Distributed Systems,partitioner,分区器
+Distributed Systems,Paxos,Paxos算法
+Distributed Systems,peer,对等节点
+Distributed Systems,quorum,法定人数
+Distributed Systems,rack-awareness,机架感知
+Distributed Systems,Raft,Raft算法
+Distributed Systems,range-based,基于范围
+Distributed Systems,read-model,读模型
+Distributed Systems,read-repair,读修复
+Distributed Systems,read-replica,只读副本；读副本
+Distributed Systems,reducer,归约器
+Distributed Systems,replica,副本
+Distributed Systems,replica-set,副本集
+Distributed Systems,replication,复制
+Distributed Systems,replication-factor,复制因子
+Distributed Systems,sampling,采样
+Distributed Systems,serializability,可串行化
+Distributed Systems,session-window,会话窗口
+Distributed Systems,shard,分片
+Distributed Systems,sharding,分片
+Distributed Systems,shared-database,共享数据库
+Distributed Systems,shuffle,洗牌
+Distributed Systems,slave,从库；从节点
+Distributed Systems,sloppy-quorum,宽松法定人数
+Distributed Systems,soft-state,软状态
+Distributed Systems,sort,排序
+Distributed Systems,span,跨度
+Distributed Systems,split-brain,脑裂
+Distributed Systems,stage,阶段
+Distributed Systems,state,状态
+Distributed Systems,strong-consistency,强一致性
+Distributed Systems,task,任务
+Distributed Systems,telemetry,遥测
+Distributed Systems,three-phase-commit,三阶段提交
+Distributed Systems,tiering,分层
+Distributed Systems,tombstone,墓碑标记
+Distributed Systems,tracing,追踪
+Distributed Systems,tumbling-window,滚动窗口
+Distributed Systems,two-phase-commit,两阶段提交
+Distributed Systems,vector-clock,向量时钟
+Distributed Systems,version-vector,版本向量
+Distributed Systems,virtual-node,虚拟节点
+Distributed Systems,watermark,水印
+Distributed Systems,weak-consistency,弱一致性
+Distributed Systems,window,窗口
+Distributed Systems,write-ahead-log,预写日志
+Distributed Systems,write-model,写模型
+Engineering Practices,acceptance-criteria,验收标准
+Engineering Practices,agile,敏捷
+Engineering Practices,backlog,待办事项
+Engineering Practices,blocker,阻塞
+Engineering Practices,branching-strategy,分支策略
+Engineering Practices,breaking-change,破坏性变更
+Engineering Practices,burndown,燃尽图
+Engineering Practices,capacity,产能
+Engineering Practices,cherry-pick,精选
+Engineering Practices,clean-code,整洁代码
+Engineering Practices,code-review,代码审查
+Engineering Practices,code-smell,代码异味
+Engineering Practices,deadline,截止日期
+Engineering Practices,definition-of-done,完成定义
+Engineering Practices,deliverable,交付物
+Engineering Practices,deprecation,弃用
+Engineering Practices,documentation,文档
+Engineering Practices,duplication,重复
+Engineering Practices,epic,史诗
+Engineering Practices,estimation,估算
+Engineering Practices,feature-branch,功能分支
+Engineering Practices,formatter,格式化工具
+Engineering Practices,git-flow,Git流程
+Engineering Practices,handoff,交接
+Engineering Practices,hotfix,热修复
+Engineering Practices,increment,增量
+Engineering Practices,kanban,看板
+Engineering Practices,knowledge-transfer,知识转移
+Engineering Practices,lessons-learned,经验教训
+Engineering Practices,lint,代码检查
+Engineering Practices,linter,检查工具
+Engineering Practices,maintainability,可维护性
+Engineering Practices,merge-request,合并请求
+Engineering Practices,migration-guide,迁移指南
+Engineering Practices,milestone,里程碑
+Engineering Practices,mitigation,缓解
+Engineering Practices,mob-programming,群组编程
+Engineering Practices,onboarding,入职培训
+Engineering Practices,pair-programming,结对编程
+Engineering Practices,planning-poker,计划扑克
+Engineering Practices,post-mortem,事后分析
+Engineering Practices,product-owner,产品负责人
+Engineering Practices,pull-request,拉取请求
+Engineering Practices,readability,可读性
+Engineering Practices,rebase,变基
+Engineering Practices,refactor,重构
+Engineering Practices,refactoring,重构
+Engineering Practices,release-branch,发布分支
+Engineering Practices,release-notes,发布说明
+Engineering Practices,repository,仓库；仓储
+Engineering Practices,retrospective,回顾会议
+Engineering Practices,risk,风险
+Engineering Practices,root-cause-analysis,根因分析
+Engineering Practices,scope-creep,范围蔓延
+Engineering Practices,scrum,Scrum
+Engineering Practices,scrum-master,Scrum大师
+Engineering Practices,semantic-versioning,语义化版本
+Engineering Practices,sprint,冲刺
+Engineering Practices,squash,压缩
+Engineering Practices,stakeholder,利益相关者
+Engineering Practices,stakeholder-meeting,干系人会议
+Engineering Practices,standup,站会
+Engineering Practices,status-update,状态更新
+Engineering Practices,story-point,故事点
+Engineering Practices,technical-debt,技术债务
+Engineering Practices,testability,可测试性
+Engineering Practices,trunk-based,主干开发
+Engineering Practices,user-story,用户故事
+Engineering Practices,velocity,速度
+Engineering Practices,version-control,版本控制
+Java Ecosystem,active-profile,激活配置
+Java Ecosystem,actuator,执行器
+Java Ecosystem,application-loader,应用类加载器
+Java Ecosystem,args,参数
+Java Ecosystem,around,环绕
+Java Ecosystem,assembly,组装
+Java Ecosystem,auto-configuration,自动配置
+Java Ecosystem,autowire,自动装配
+Java Ecosystem,banner,横幅
+Java Ecosystem,base-package,基础包
+Java Ecosystem,bootstrap-loader,引导类加载器
+Java Ecosystem,bytecode,字节码
+Java Ecosystem,cascade,级联
+Java Ecosystem,central,中央仓库
+Java Ecosystem,classloader,类加载器
+Java Ecosystem,classpath,类路径
+Java Ecosystem,clean,清理
+Java Ecosystem,command-line,命令行
+Java Ecosystem,component-scan,组件扫描
+Java Ecosystem,concurrent-mark,并发标记
+Java Ecosystem,conditional,条件
+Java Ecosystem,configuration,配置
+Java Ecosystem,container,容器
+Java Ecosystem,controller,控制器
+Java Ecosystem,copying,复制
+Java Ecosystem,criteria,条件
+Java Ecosystem,declare-parents,声明父类
+Java Ecosystem,dependency-management,依赖管理
+Java Ecosystem,detached,分离
+Java Ecosystem,devtools,开发工具
+Java Ecosystem,dirty-check,脏检查
+Java Ecosystem,Eden,伊甸园
+Java Ecosystem,embedded-server,内嵌服务器
+Java Ecosystem,env,环境
+Java Ecosystem,environment,环境
+Java Ecosystem,environment-variable,环境变量
+Java Ecosystem,exclusion,排除
+Java Ecosystem,execution,执行
+Java Ecosystem,extension-loader,扩展类加载器
+Java Ecosystem,externalized-configuration,外部化配置
+Java Ecosystem,fetch,抓取
+Java Ecosystem,filter,过滤器
+Java Ecosystem,finalization,终结
+Java Ecosystem,finalize,终结方法
+Java Ecosystem,find,查找
+Java Ecosystem,first-level,一级
+Java Ecosystem,flush,刷新
+Java Ecosystem,full-GC,完全GC
+Java Ecosystem,garbage-collection,垃圾回收
+Java Ecosystem,generational,分代
+Java Ecosystem,goal,目标
+Java Ecosystem,Gradle,Gradle
+Java Ecosystem,health,健康检查
+Java Ecosystem,Hibernate,Hibernate
+Java Ecosystem,hot-reload,热重载
+Java Ecosystem,inject,注入
+Java Ecosystem,install,安装
+Java Ecosystem,interceptor,拦截器
+Java Ecosystem,introduction,引入
+Java Ecosystem,listener,监听器
+Java Ecosystem,major-GC,大GC
+Java Ecosystem,manifest,清单
+Java Ecosystem,mapping,映射
+Java Ecosystem,mappings,映射
+Java Ecosystem,mark-compact,标记整理
+Java Ecosystem,mark-sweep,标记清除
+Java Ecosystem,Maven,Maven
+Java Ecosystem,metaspace,元空间
+Java Ecosystem,minor-GC,小GC
+Java Ecosystem,multi-module,多模块
+Java Ecosystem,MyBatis,MyBatis
+Java Ecosystem,named-query,命名查询
+Java Ecosystem,native-query,原生查询
+Java Ecosystem,old-generation,老年代
+Java Ecosystem,order,顺序
+Java Ecosystem,parent-delegation,双亲委派
+Java Ecosystem,parent-POM,父POM
+Java Ecosystem,persist,持久化
+Java Ecosystem,phantom-reference,虚引用
+Java Ecosystem,phase,阶段
+Java Ecosystem,placeholder,占位符
+Java Ecosystem,plugin,插件
+Java Ecosystem,primary,首选
+Java Ecosystem,proceed,继续执行
+Java Ecosystem,property,属性
+Java Ecosystem,prototype,原型
+Java Ecosystem,provided,已提供
+Java Ecosystem,qualifier,限定符
+Java Ecosystem,query-cache,查询缓存
+Java Ecosystem,reachability,可达性
+Java Ecosystem,reference-counting,引用计数
+Java Ecosystem,remove,移除
+Java Ecosystem,runtime,运行时
+Java Ecosystem,scope,作用域；范围
+Java Ecosystem,second-level,二级
+Java Ecosystem,shade,遮蔽
+Java Ecosystem,Shenandoah,Shenandoah收集器
+Java Ecosystem,soft-reference,软引用
+Java Ecosystem,starter,启动器
+Java Ecosystem,strong-reference,强引用
+Java Ecosystem,Survivor,幸存者
+Java Ecosystem,target,目标对象
+Java Ecosystem,test,测试
+Java Ecosystem,threaddump,线程转储
+Java Ecosystem,transitive,传递
+Java Ecosystem,validator,验证器
+Java Ecosystem,value,值
+Java Ecosystem,version,版本
+Java Ecosystem,weak-reference,弱引用
+Java Ecosystem,weaving,织入
+Java Ecosystem,young-generation,年轻代
+Messaging,acknowledgment,确认
+Messaging,alternate-exchange,备用交换机
+Messaging,at-least-once,至少一次
+Messaging,at-most-once,至多一次
+Messaging,auto-commit,自动提交
+Messaging,auto-delete,自动删除
+Messaging,backpressure,背压
+Messaging,binding,绑定
+Messaging,broker,代理
+Messaging,changelog,变更日志
+Messaging,consumer,消费者
+Messaging,consumer-group,消费者组
+Messaging,coordinator,协调器
+Messaging,correlation-id,关联ID
+Messaging,dead-letter,死信
+Messaging,delay,延迟
+Messaging,direct-exchange,直连交换机
+Messaging,durable,持久化
+Messaging,exactly-once,恰好一次
+Messaging,exchange,交换机
+Messaging,exclusive,独占
+Messaging,fanout-exchange,扇出交换机
+Messaging,federation,联邦
+Messaging,fire-and-forget,即发即弃
+Messaging,flow-control,流量控制
+Messaging,headers-exchange,头部交换机
+Messaging,immediate,立即
+Messaging,Kafka,Kafka
+Messaging,Kafka-Connect,Kafka连接器
+Messaging,Kafka-Streams,Kafka流
+Messaging,KStream,KStream
+Messaging,KTable,KTable
+Messaging,log-segment,日志段
+Messaging,mandatory,强制
+Messaging,manual-commit,手动提交
+Messaging,message-queue,消息队列
+Messaging,negative-ack,负向确认
+Messaging,offset,偏移量
+Messaging,ordering,顺序；顺序性
+Messaging,partition-key,分区键
+Messaging,point-to-point,点对点
+Messaging,poison-message,毒药消息
+Messaging,positive-ack,正向确认
+Messaging,prefetch,预取
+Messaging,producer,生产者
+Messaging,pub-sub,发布订阅
+Messaging,publish,发布
+Messaging,publisher-confirm,发布者确认
+Messaging,pull,拉取
+Messaging,push,推送
+Messaging,RabbitMQ,RabbitMQ
+Messaging,rebalance,重平衡
+Messaging,request-reply,请求响应
+Messaging,requeue,重新入队
+Messaging,retention,保留
+Messaging,routing-key,路由键
+Messaging,scheduled,定时
+Messaging,shovel,铲子插件
+Messaging,state-store,状态存储
+Messaging,streaming,流式传输；流处理；流式
+Messaging,subscribe,订阅
+Messaging,topic,主题
+Messaging,topic-exchange,主题交换机
+Messaging,vhost,虚拟主机
+Messaging,windowing,窗口化
+Messaging,Zookeeper,Zookeeper
+Networking & Protocols,200-OK,成功
+Networking & Protocols,201-Created,已创建
+Networking & Protocols,400-BadRequest,错误请求
+Networking & Protocols,401-Unauthorized,未授权
+Networking & Protocols,403-Forbidden,禁止访问
+Networking & Protocols,404-NotFound,未找到
+Networking & Protocols,500-InternalError,服务器错误
+Networking & Protocols,503-Unavailable,服务不可用
+Networking & Protocols,accept,接受
+Networking & Protocols,body,主体
+Networking & Protocols,chunk,数据块
+Networking & Protocols,compression,压缩
+Networking & Protocols,congestion,拥塞
+Networking & Protocols,connection,连接
+Networking & Protocols,content-type,内容类型
+Networking & Protocols,cookie,Cookie
+Networking & Protocols,datagram,数据报
+Networking & Protocols,DELETE,删除
+Networking & Protocols,endpoint,端点
+Networking & Protocols,filtering,过滤
+Networking & Protocols,frame,帧
+Networking & Protocols,gateway,网关
+Networking & Protocols,GET,获取
+Networking & Protocols,handshake,握手
+Networking & Protocols,HEAD,头部请求
+Networking & Protocols,header,头部
+Networking & Protocols,keepalive,保活
+Networking & Protocols,load-balancer,负载均衡器
+Networking & Protocols,multiplexing,多路复用
+Networking & Protocols,OPTIONS,选项
+Networking & Protocols,packet,数据包
+Networking & Protocols,pagination,分页
+Networking & Protocols,PATCH,部分更新
+Networking & Protocols,path-parameter,路径参数
+Networking & Protocols,payload,有效载荷
+Networking & Protocols,port,端口
+Networking & Protocols,POST,创建
+Networking & Protocols,protocol,协议
+Networking & Protocols,proxy,代理
+Networking & Protocols,PUT,更新
+Networking & Protocols,query-parameter,查询参数
+Networking & Protocols,rate-limiting,速率限制；限流
+Networking & Protocols,request,请求
+Networking & Protocols,request-body,请求体
+Networking & Protocols,resource,资源
+Networking & Protocols,response,响应
+Networking & Protocols,response-body,响应体
+Networking & Protocols,retry,重试
+Networking & Protocols,route,路由
+Networking & Protocols,routing,路由
+Networking & Protocols,segment,段
+Networking & Protocols,session,会话
+Networking & Protocols,socket,套接字
+Networking & Protocols,status-code,状态码
+Networking & Protocols,throttling,节流
+Networking & Protocols,timeout,超时
+Networking & Protocols,versioning,版本控制
+Operating Systems,allocation,分配
+Operating Systems,bootloader,引导程序
+Operating Systems,buffer,缓冲区
+Operating Systems,corruption,损坏
+Operating Systems,deallocation,释放
+Operating Systems,directory,目录
+Operating Systems,file-system,文件系统
+Operating Systems,fragmentation,碎片
+Operating Systems,garbage,垃圾
+Operating Systems,heap,堆
+Operating Systems,inode,索引节点
+Operating Systems,instruction,指令
+Operating Systems,interrupt,中断
+Operating Systems,kernel,内核
+Operating Systems,leak,泄漏
+Operating Systems,memory-management,内存管理
+Operating Systems,overflow,溢出
+Operating Systems,page-fault,缺页错误
+Operating Systems,paging,分页
+Operating Systems,pointer,指针
+Operating Systems,register,寄存器
+Operating Systems,segmentation,分段
+Operating Systems,stack,栈
+Operating Systems,swapping,交换
+Operating Systems,system-call,系统调用
+Operating Systems,thrashing,颠簸
+Operating Systems,underflow,下溢
+Operating Systems,virtual-memory,虚拟内存
+Performance,average,平均值
+Performance,bandwidth,带宽
+Performance,batching,批处理
+Performance,benchmark,基准测试
+Performance,benchmarking,基准测试
+Performance,bottleneck,瓶颈
+Performance,bundling,打包
+Performance,caching,缓存
+Performance,code-cache,代码缓存
+Performance,compilation,编译；编辑；汇编
+Performance,concurrent-threads,并发线程数
+Performance,connection-pool,连接池
+Performance,connection-reuse,连接复用
+Performance,debouncing,防抖
+Performance,degradation,降级
+Performance,downtime,停机时间
+Performance,dynamic-content,动态内容
+Performance,edge-caching,边缘缓存
+Performance,efficient,高效
+Performance,error-rate,错误率
+Performance,footprint,内存占用
+Performance,heap-dump,堆转储
+Performance,heap-size,堆大小
+Performance,indexing,索引
+Performance,inefficient,低效
+Performance,keep-alive,保持连接
+Performance,latency,延迟
+Performance,median,中位数
+Performance,memory-mapping,内存映射
+Performance,memory-usage,内存使用
+Performance,minification,最小化
+Performance,network-bandwidth,网络带宽
+Performance,object-pooling,对象池
+Performance,optimal,最优
+Performance,optimization,优化
+Performance,optimize,优化
+Performance,overhead,开销
+Performance,parallel-processing,并行处理
+Performance,parallel-threads,并行线程数
+Performance,pause-time,暂停时间
+Performance,percentile,百分位
+Performance,performance,性能
+Performance,pipelining,流水线
+Performance,pooling,池化
+Performance,prefetching,预取
+Performance,preloading,预加载
+Performance,profile,性能分析；配置文件
+Performance,profiling,性能分析
+Performance,reliability,可靠性
+Performance,resource-pooling,资源池化
+Performance,response-time,响应时间
+Performance,retry-rate,重试率
+Performance,saturation,饱和
+Performance,scalability,可扩展性
+Performance,standard-deviation,标准差
+Performance,static-content,静态内容
+Performance,suboptimal,次优
+Performance,success-rate,成功率
+Performance,survivor-ratio,幸存区比例
+Performance,tenuring-threshold,晋升阈值
+Performance,thread-dump,线程转储
+Performance,throughput,吞吐量
+Performance,timeout-rate,超时率
+Performance,trade-off,权衡
+Performance,uptime,正常运行时间
+Performance,utilization,利用率
+Performance,variance,方差
+Performance,write-buffer,写缓冲
+Performance,zero-copy,零拷贝
+Programming Basics,abstract,抽象
+Programming Basics,abstraction,抽象
+Programming Basics,annotation,注解
+Programming Basics,argument,实参
+Programming Basics,aspect-oriented,面向切面
+Programming Basics,assert,断言
+Programming Basics,autoboxing,自动装箱
+Programming Basics,boolean,布尔
+Programming Basics,byte,字节
+Programming Basics,callback,回调
+Programming Basics,casting,类型转换
+Programming Basics,char,字符
+Programming Basics,class,类
+Programming Basics,closure,闭包
+Programming Basics,coercion,强制转换
+Programming Basics,comparable,可比较
+Programming Basics,comparator,比较器
+Programming Basics,compile,编译
+Programming Basics,composition,组合
+Programming Basics,constant,常量；常数
+Programming Basics,constructor,构造函数
+Programming Basics,contravariance,逆变
+Programming Basics,conversion,转换
+Programming Basics,covariance,协变
+Programming Basics,currying,柯里化
+Programming Basics,declarative,声明式
+Programming Basics,default,默认
+Programming Basics,delegate,委托
+Programming Basics,dependency,依赖
+Programming Basics,deserialize,反序列化
+Programming Basics,destructor,析构函数
+Programming Basics,destructuring,解构
+Programming Basics,deterministic,确定的；确定性
+Programming Basics,double,双精度
+Programming Basics,duck-typing,鸭子类型
+Programming Basics,dynamic,动态的
+Programming Basics,eager,饿加载的
+Programming Basics,eager-evaluation,饿汉求值
+Programming Basics,encapsulation,封装
+Programming Basics,enum,枚举
+Programming Basics,event-driven,事件驱动
+Programming Basics,execute,执行
+Programming Basics,extends,继承
+Programming Basics,field,字段
+Programming Basics,final,最终
+Programming Basics,finally,最终；最后
+Programming Basics,first-class,一等公民
+Programming Basics,float,浮点
+Programming Basics,format,格式化
+Programming Basics,functional,函数式
+Programming Basics,future,Future
+Programming Basics,generic,泛型
+Programming Basics,higher-order,高阶
+Programming Basics,immutability,不可变性
+Programming Basics,immutable,不可变的
+Programming Basics,imperative,命令式
+Programming Basics,implement,实现
+Programming Basics,implements,实现
+Programming Basics,import,导入
+Programming Basics,inheritance,继承
+Programming Basics,initialize,初始化
+Programming Basics,instance,实例
+Programming Basics,instantiate,实例化
+Programming Basics,integer,整数
+Programming Basics,interface,接口
+Programming Basics,introspection,内省
+Programming Basics,invariance,不变
+Programming Basics,invoke,调用
+Programming Basics,lambda,Lambda表达式
+Programming Basics,lazy,懒加载的
+Programming Basics,lazy-evaluation,惰性求值
+Programming Basics,literal,字面量
+Programming Basics,long,长整型
+Programming Basics,meta-programming,元编程
+Programming Basics,method,方法
+Programming Basics,mutable,可变的
+Programming Basics,native,本地
+Programming Basics,non-deterministic,不确定的
+Programming Basics,null,空；空值
+Programming Basics,object,对象
+Programming Basics,object-oriented,面向对象
+Programming Basics,optional,可选
+Programming Basics,overload,重载
+Programming Basics,override,重写
+Programming Basics,package,打包；包
+Programming Basics,parameter,参数
+Programming Basics,parse,解析
+Programming Basics,partial-application,部分应用
+Programming Basics,pattern-matching,模式匹配
+Programming Basics,persistent,持久的
+Programming Basics,polymorphism,多态
+Programming Basics,primitive,基本类型
+Programming Basics,private,私有
+Programming Basics,procedural,过程式
+Programming Basics,promise,Promise
+Programming Basics,protected,受保护
+Programming Basics,public,公共
+Programming Basics,pure-function,纯函数
+Programming Basics,reactive,响应式
+Programming Basics,reference,引用类型；引用
+Programming Basics,reflection,反射
+Programming Basics,rest-parameter,剩余参数
+Programming Basics,return,返回
+Programming Basics,serialize,序列化
+Programming Basics,short,短整型
+Programming Basics,side-effect,副作用
+Programming Basics,spread-operator,展开运算符
+Programming Basics,static,静态的；静态
+Programming Basics,stream,流
+Programming Basics,string,字符串
+Programming Basics,strong-typing,强类型
+Programming Basics,throws,抛出
+Programming Basics,transform,转换
+Programming Basics,transient,瞬态的；瞬态；非持久
+Programming Basics,try-catch,尝试捕获
+Programming Basics,type-inference,类型推断
+Programming Basics,unboxing,自动拆箱
+Programming Basics,undefined,未定义
+Programming Basics,variable,变量
+Programming Basics,void,空
+Programming Basics,volatile,易失的；易失
+Programming Basics,weak-typing,弱类型
+Programming Basics,wildcard,通配符
+Programming Basics,wrapper,包装类
+Security,access-control,访问控制
+Security,asymmetric,非对称
+Security,attack-surface,攻击面
+Security,authentication,认证
+Security,authorization,授权
+Security,backdoor,后门
+Security,basic-auth,基本认证
+Security,bearer,持有者
+Security,bearer-token,持有者令牌
+Security,biometric,生物识别
+Security,blacklist,黑名单
+Security,buffer-overflow,缓冲区溢出
+Security,bug-bounty,漏洞赏金
+Security,certificate,证书
+Security,claim,声明
+Security,code-injection,代码注入
+Security,command-injection,命令注入
+Security,compliance,合规
+Security,credential,凭证
+Security,data-breach,数据泄露
+Security,decrypt,解密
+Security,decryption,解密
+Security,defense-in-depth,纵深防御
+Security,digest-auth,摘要认证
+Security,disclosure,披露
+Security,encrypt,加密
+Security,encryption,加密
+Security,exploit,利用
+Security,firewall,防火墙
+Security,forensics,取证
+Security,hardening,加固
+Security,hashing,哈希
+Security,identity,身份
+Security,incident-response,事件响应
+Security,intrusion-detection,入侵检测
+Security,least-privilege,最小权限
+Security,malware,恶意软件
+Security,man-in-the-middle,中间人攻击
+Security,multifactor,多因素
+Security,patching,补丁
+Security,path-traversal,路径遍历
+Security,penetration-testing,渗透测试
+Security,permission,权限
+Security,phishing,钓鱼
+Security,principal,主体
+Security,private-key,私钥
+Security,privilege,特权
+Security,privilege-escalation,权限提升
+Security,public-key,公钥
+Security,ransomware,勒索软件
+Security,refresh-token,刷新令牌
+Security,replay-attack,重放攻击
+Security,rootkit,根工具包
+Security,salting,加盐
+Security,sanitization,净化
+Security,sanitize,清理
+Security,security-audit,安全审计
+Security,security-by-design,安全设计
+Security,session-hijacking,会话劫持
+Security,signature,签名
+Security,spoofing,欺骗
+Security,symmetric,对称
+Security,threat,威胁
+Security,token,令牌
+Security,two-factor,两因素
+Security,validation,验证
+Security,vulnerability,漏洞
+Security,vulnerability-scan,漏洞扫描
+Security,whitelist,白名单
+Security,zero-day,零日漏洞
+Security,zero-trust,零信任
+Software Engineering,available,可用的
+Software Engineering,consistent,一致的
+Software Engineering,convention,约定
+Software Engineering,debug,调试
+Software Engineering,ecosystem,生态系统
+Software Engineering,implementation,实现
+Software Engineering,inconsistent,不一致的
+Software Engineering,migrate,迁移
+Software Engineering,reliable,可靠的
+Software Engineering,specification,规范
+Software Engineering,stable,稳定的
+Software Engineering,standard,标准
+Software Engineering,unavailable,不可用的
+Software Engineering,unreliable,不可靠的
+Software Engineering,unstable,不稳定的
+Software Engineering,validate,验证
+Software Engineering,workflow,工作流
+Testing,acceptance-test,验收测试
+Testing,arrange-act-assert,准备执行断言
+Testing,assertion,断言
+Testing,assertion-error,断言错误
+Testing,assertion-library,断言库
+Testing,boundary-value,边界值
+Testing,branch-coverage,分支覆盖率
+Testing,broken,损坏
+Testing,build-failure,构建失败
+Testing,canary-test,金丝雀测试
+Testing,code-coverage,代码覆盖率
+Testing,compatibility-test,兼容性测试
+Testing,continuous-testing,持续测试
+Testing,contract-test,契约测试
+Testing,dummy,哑元
+Testing,end-to-end,端到端测试
+Testing,equivalence-partitioning,等价类划分
+Testing,exploratory-test,探索性测试
+Testing,failing,失败
+Testing,fake,伪造
+Testing,fixture,测试夹具
+Testing,flaky,不稳定
+Testing,fuzz-test,模糊测试
+Testing,given-when-then,给定当则
+Testing,happy-path,正常路径
+Testing,integration-test,集成测试
+Testing,intermittent,间歇性
+Testing,line-coverage,行覆盖率
+Testing,load-test,负载测试
+Testing,matcher,匹配器
+Testing,mock,模拟
+Testing,mocking-framework,模拟框架
+Testing,mutation-coverage,变异覆盖率
+Testing,mutation-test,变异测试
+Testing,negative-test,负面测试
+Testing,non-reproducible,不可重现
+Testing,pact,契约
+Testing,passing,通过
+Testing,path-coverage,路径覆盖率
+Testing,pending,待定
+Testing,penetration-test,渗透测试
+Testing,performance-test,性能测试
+Testing,positive-test,正面测试
+Testing,property-based,基于属性
+Testing,quarantined,隔离
+Testing,red-green-refactor,红绿重构
+Testing,regression-test,回归测试
+Testing,reproducible,可重现
+Testing,sanity-test,健全性测试
+Testing,security-test,安全测试
+Testing,setup,设置
+Testing,skipped,跳过
+Testing,smoke-test,冒烟测试
+Testing,snapshot-test,快照测试
+Testing,SonarQube,SonarQube
+Testing,spy,间谍
+Testing,static-analysis,静态分析
+Testing,stress-test,压力测试
+Testing,stub,存根；桩
+Testing,system-test,系统测试
+Testing,teardown,清理
+Testing,test-automation,测试自动化
+Testing,test-case,测试用例
+Testing,test-coverage,测试覆盖率
+Testing,test-data,测试数据
+Testing,test-double,测试替身
+Testing,test-environment,测试环境
+Testing,test-failure,测试失败
+Testing,test-first,测试优先
+Testing,test-framework,测试框架
+Testing,test-harness,测试工具
+Testing,test-pyramid,测试金字塔
+Testing,test-report,测试报告
+Testing,test-runner,测试运行器
+Testing,test-suite,测试套件
+Testing,unit-test,单元测试
+Testing,usability-test,可用性测试
+Testing,visual-regression,视觉回归

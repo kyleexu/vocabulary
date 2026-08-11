@@ -1,0 +1,113 @@
+﻿category,english,chinese
+Architecture & Design,API-gateway,API网关
+Architecture & Design,API-versioning,API版本控制
+Architecture & Design,BaaS,后端即服务
+Architecture & Design,DIP,依赖倒置
+Architecture & Design,DRY,不要重复
+Architecture & Design,FaaS,函数即服务
+Architecture & Design,GraphQL,GraphQL
+Architecture & Design,gRPC,gRPC
+Architecture & Design,HA,高可用
+Architecture & Design,ISP,接口隔离
+Architecture & Design,KISS,保持简单
+Architecture & Design,LSP,里氏替换
+Architecture & Design,MVC,MVC模式
+Architecture & Design,MVP,MVP模式
+Architecture & Design,MVVM,MVVM模式
+Architecture & Design,OCP,开闭原则
+Architecture & Design,RPC,远程过程调用
+Architecture & Design,SOLID,SOLID原则
+Architecture & Design,SRP,单一职责
+Architecture & Design,YAGNI,不需要就别做
+Caching,AOF,追加文件
+Caching,LFU,最不经常使用
+Caching,LRU,最近最少使用
+Caching,RDB,RDB快照
+Concurrency,ABA-problem,ABA问题
+Concurrency,CAS,比较交换
+Concurrency,CPU-bound,CPU密集
+Concurrency,I/O-bound,I/O密集
+Data Structures & Algorithms,AVL-tree,AVL树
+Databases,ACID,ACID特性
+Databases,NoSQL,非关系型数据库
+DevOps,CI/CD,持续集成/持续部署
+DevOps,ClusterIP,集群IP
+DevOps,ConfigMap,配置映射
+DevOps,CronJob,定时任务
+DevOps,DaemonSet,守护集
+DevOps,HPA,水平Pod自动扩展
+DevOps,K8s,K8s
+DevOps,LoadBalancer,负载均衡器
+DevOps,NodePort,节点端口
+DevOps,PV,持久卷
+DevOps,PVC,持久卷声明
+DevOps,ReplicaSet,副本集
+DevOps,StatefulSet,有状态集
+DevOps,StorageClass,存储类
+Distributed Systems,BASE,BASE理论
+Distributed Systems,CAP-theorem,CAP定理
+Distributed Systems,CQRS,命令查询分离
+Distributed Systems,DAG,有向无环图
+Distributed Systems,LSM-tree,LSM树
+Distributed Systems,MapReduce,MapReduce
+Distributed Systems,SAGA,Saga模式
+Distributed Systems,SSTable,有序字符串表
+Java Ecosystem,AOT,提前编译
+Java Ecosystem,EAR,EAR包
+Java Ecosystem,G1,G1收集器
+Java Ecosystem,GC,垃圾回收
+Java Ecosystem,HQL,Hibernate查询语言
+Java Ecosystem,JAR,JAR包
+Java Ecosystem,JIT,即时编译
+Java Ecosystem,JPA,Java持久化API
+Java Ecosystem,JPQL,Java持久化查询语言
+Java Ecosystem,JVM,Java虚拟机
+Java Ecosystem,ORM,对象关系映射
+Java Ecosystem,PermGen,永久代
+Java Ecosystem,POM,项目对象模型
+Java Ecosystem,STW,停顿世界
+Java Ecosystem,WAR,WAR包
+Java Ecosystem,XML,XML
+Java Ecosystem,ZGC,ZGC收集器
+Messaging,AMQP,高级消息队列协议
+Messaging,FIFO,先进先出
+Messaging,ISR,同步副本集
+Messaging,QoS,服务质量
+Messaging,TTL,生存时间
+Networking & Protocols,CRUD,增删改查
+Networking & Protocols,DNS,域名系统
+Networking & Protocols,HTTP,超文本传输协议
+Networking & Protocols,HTTPS,安全HTTP；HTTPS
+Networking & Protocols,IP,网际协议
+Networking & Protocols,REST,表述性状态转移；REST
+Networking & Protocols,TCP,传输控制协议
+Networking & Protocols,UDP,用户数据报协议
+Operating Systems,DMA,直接内存访问
+Operating Systems,I/O,输入输出
+Security,ABAC,基于属性
+Security,AES,AES加密
+Security,API-key,API密钥
+Security,CSRF,跨站请求伪造
+Security,DDoS,分布式拒绝
+Security,GDPR,通用数据保护
+Security,HIPAA,健康保险法
+Security,HMAC,HMAC
+Security,JWT,JWT令牌
+Security,OAuth,OAuth
+Security,OpenID,OpenID
+Security,PCI-DSS,PCI数据安全
+Security,RBAC,基于角色
+Security,RSA,RSA算法
+Security,SAML,SAML
+Security,SHA,SHA哈希
+Security,SQL-injection,SQL注入
+Security,SSL,安全套接层
+Security,SSL/TLS,安全套接层
+Security,SSO,单点登录
+Security,TLS,传输层安全
+Security,WAF,Web应用防火墙
+Security,XSS,跨站脚本
+Testing,A/B-test,A/B测试
+Testing,ATDD,验收测试驱动
+Testing,BDD,行为驱动开发
+Testing,TDD,测试驱动开发
