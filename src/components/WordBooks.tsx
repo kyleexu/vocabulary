@@ -11,18 +11,22 @@ import {
 type Tab = "wrong" | "favorites" | "easy";
 
 type Props = {
+  words: Word[];
   wrong: Word[];
   favorites: Word[];
   easy: Word[];
-  onChange: () => void;
+  onWordPatched: (word: Word) => void;
+  onImported: (words: Word[]) => void;
   onBack: () => void;
 };
 
 export function WordBooks({
+  words,
   wrong,
   favorites,
   easy,
-  onChange,
+  onWordPatched,
+  onImported,
   onBack,
 }: Props) {
   const [tab, setTab] = useState<Tab>("wrong");
@@ -33,11 +37,18 @@ export function WordBooks({
   const list =
     tab === "wrong" ? wrong : tab === "favorites" ? favorites : easy;
 
-  const remove = (entry: Word) => {
-    if (tab === "wrong") setWrong(entry.english, entry.id, false);
-    else if (tab === "favorites") setFavorite(entry.english, entry.id, false);
-    else setEasy(entry.english, entry.id, false);
-    onChange();
+  const remove = async (entry: Word) => {
+    try {
+      const updated =
+        tab === "wrong"
+          ? await setWrong(entry.id, false)
+          : tab === "favorites"
+            ? await setFavorite(entry.id, false)
+            : await setEasy(entry.id, false);
+      onWordPatched(updated);
+    } catch (err) {
+      setMessage(err instanceof Error ? err.message : String(err));
+    }
   };
 
   const onPickCsv = async (file: File | null) => {
@@ -46,9 +57,9 @@ export function WordBooks({
     setMessage("");
     try {
       const text = await file.text();
-      const words = await importVocabularyFromCsv(text);
-      onChange();
-      setMessage(`已导入 ${words.length} 词，已覆盖 vocabulary.json`);
+      const next = await importVocabularyFromCsv(text);
+      onImported(next);
+      setMessage(`已导入 ${next.length} 词，已写入 vocabulary.json`);
     } catch (err) {
       setMessage(err instanceof Error ? err.message : String(err));
     } finally {
@@ -76,7 +87,7 @@ export function WordBooks({
           >
             {importing ? "导入中…" : "导入 CSV"}
           </button>
-          <button className="btn" onClick={() => downloadVocabularyCsv()}>
+          <button className="btn" onClick={() => downloadVocabularyCsv(words)}>
             导出 CSV
           </button>
           <button className="btn ghost" onClick={onBack}>
@@ -116,7 +127,7 @@ export function WordBooks({
                 #{w.id} · {w.category}
               </div>
             </div>
-            <button className="btn danger" onClick={() => remove(w)}>
+            <button className="btn danger" onClick={() => void remove(w)}>
               删除
             </button>
           </div>

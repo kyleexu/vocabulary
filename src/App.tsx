@@ -1,14 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Accent, Word } from "./types";
 import { WordsPractice, WordsSetup } from "./components/Words";
 import { WordBooks } from "./components/WordBooks";
-import {
-  getEasyWords,
-  getFavorites,
-  getVocabulary,
-  getWrongWords,
-  loadVocabularyFromDisk,
-} from "./lib/storage";
+import { loadVocabularyFromDisk } from "./lib/storage";
 import "./styles.css";
 
 type View = "home" | "words-setup" | "words-practice" | "books";
@@ -16,27 +10,34 @@ type View = "home" | "words-setup" | "words-practice" | "books";
 export default function App() {
   const [view, setView] = useState<View>("home");
   const [words, setWords] = useState<Word[]>([]);
-  const [wrong, setWrong] = useState<Word[]>([]);
-  const [favorites, setFavorites] = useState<Word[]>([]);
-  const [easy, setEasy] = useState<Word[]>([]);
   const [practiceList, setPracticeList] = useState<Word[]>([]);
   const [practiceMeta, setPracticeMeta] = useState<{
     accent: Accent;
     autoSpeak: boolean;
   } | null>(null);
 
-  const refreshFromStore = () => {
-    const list = getVocabulary();
-    setWords([...list]);
-    setWrong(getWrongWords());
-    setFavorites(getFavorites());
-    setEasy(getEasyWords());
+  const wrong = useMemo(() => words.filter((w) => w.isWrong === 1), [words]);
+  const favorites = useMemo(
+    () => words.filter((w) => w.isFavorites === 1),
+    [words],
+  );
+  const easy = useMemo(() => words.filter((w) => w.isEasy === 1), [words]);
+
+  const patchWord = (updated: Word) => {
+    setWords((prev) => prev.map((w) => (w.id === updated.id ? updated : w)));
+    setPracticeList((prev) =>
+      prev.map((w) => (w.id === updated.id ? updated : w)),
+    );
   };
 
   useEffect(() => {
     void (async () => {
-      await loadVocabularyFromDisk();
-      refreshFromStore();
+      try {
+        setWords(await loadVocabularyFromDisk());
+      } catch (err) {
+        console.error(err);
+        setWords([]);
+      }
     })();
   }, []);
 
@@ -109,16 +110,18 @@ export default function App() {
           accent={practiceMeta.accent}
           autoSpeak={practiceMeta.autoSpeak}
           onBack={() => setView("words-setup")}
-          onBooksChange={refreshFromStore}
+          onWordPatched={patchWord}
         />
       )}
 
       {view === "books" && (
         <WordBooks
+          words={words}
           wrong={wrong}
           favorites={favorites}
           easy={easy}
-          onChange={refreshFromStore}
+          onWordPatched={patchWord}
+          onImported={setWords}
           onBack={() => setView("home")}
         />
       )}

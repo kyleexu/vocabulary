@@ -2,9 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { Accent, DisplayMode, Word, WordOrder } from "../types";
 import {
   getSettings,
-  isEasy,
-  isFavorite,
-  isWrong,
   saveSettings,
   setEasy,
   setFavorite,
@@ -325,13 +322,13 @@ export function WordsPractice({
   accent,
   autoSpeak,
   onBack,
-  onBooksChange,
+  onWordPatched,
 }: {
   list: Word[];
   accent: Accent;
   autoSpeak: boolean;
   onBack: () => void;
-  onBooksChange: () => void;
+  onWordPatched: (word: Word) => void;
 }) {
   const [index, setIndex] = useState(0);
   const [displayMode, setDisplayMode] = useState<DisplayMode>("hidden");
@@ -365,9 +362,9 @@ export function WordsPractice({
 
   useEffect(() => {
     if (!word) return;
-    setInWrong(isWrong(word.english, word.id));
-    setInEasy(isEasy(word.english, word.id));
-    setInFav(isFavorite(word.english, word.id));
+    setInWrong(word.isWrong === 1);
+    setInEasy(word.isEasy === 1);
+    setInFav(word.isFavorites === 1);
     const t = window.setTimeout(() => inputShellRef.current?.focus(), 0);
 
     if (autoSpeak) {
@@ -489,26 +486,44 @@ export function WordsPractice({
 
   const toggleWrong = () => {
     const next = !inWrong;
-    setWrong(word.english, word.id, next);
-    setInWrong(next);
-    flash(next ? "已加入错词本" : "已移出错词本");
-    onBooksChange();
+    void (async () => {
+      try {
+        const updated = await setWrong(word.id, next);
+        setInWrong(updated.isWrong === 1);
+        onWordPatched(updated);
+        flash(updated.isWrong === 1 ? "已加入错词本" : "已移出错词本");
+      } catch (err) {
+        flash(err instanceof Error ? err.message : String(err));
+      }
+    })();
   };
 
   const toggleEasy = () => {
     const next = !inEasy;
-    setEasy(word.english, word.id, next);
-    setInEasy(next);
-    flash(next ? "已加入简单词本" : "已移出简单词本");
-    onBooksChange();
+    void (async () => {
+      try {
+        const updated = await setEasy(word.id, next);
+        setInEasy(updated.isEasy === 1);
+        onWordPatched(updated);
+        flash(updated.isEasy === 1 ? "已加入简单词本" : "已移出简单词本");
+      } catch (err) {
+        flash(err instanceof Error ? err.message : String(err));
+      }
+    })();
   };
 
   const toggleFav = () => {
     const next = !inFav;
-    setFavorite(word.english, word.id, next);
-    setInFav(next);
-    flash(next ? "已加入收藏本" : "已移出收藏本");
-    onBooksChange();
+    void (async () => {
+      try {
+        const updated = await setFavorite(word.id, next);
+        setInFav(updated.isFavorites === 1);
+        onWordPatched(updated);
+        flash(updated.isFavorites === 1 ? "已加入收藏本" : "已移出收藏本");
+      } catch (err) {
+        flash(err instanceof Error ? err.message : String(err));
+      }
+    })();
   };
 
   if (done || !word) {
