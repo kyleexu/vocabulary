@@ -115,9 +115,9 @@ export function WordsSetup({
   const [source, setSource] = useState<SourceMode>("categories");
   const [accent, setAccent] = useState<Accent>(settings.accent);
   const [autoSpeak, setAutoSpeak] = useState(settings.autoSpeak);
-  const [limit, setLimit] = useState(50);
+  const [limit, setLimit] = useState<number | "">(50);
   const [order, setOrder] = useState<WordOrder>(settings.order ?? "random");
-  const [startIndex, setStartIndex] = useState(1);
+  const [startIndex, setStartIndex] = useState<number | "">(1);
 
   const toggleCat = (categoryId: number) => {
     setSelected((prev) =>
@@ -141,13 +141,14 @@ export function WordsSetup({
   }, [source, wrongWords, favoriteWords, selected, categories, words]);
 
   const start = () => {
-    const n = Math.max(1, limit);
+    const n = Math.max(1, typeof limit === "number" ? limit : 1);
+    const startAt = typeof startIndex === "number" ? startIndex : 1;
     let list: Word[];
     if (order === "random") {
       list = shuffle(pool).slice(0, n);
     } else {
       const from = Math.min(
-        Math.max(0, startIndex - 1),
+        Math.max(0, startAt - 1),
         Math.max(0, pool.length - 1),
       );
       list = pool.slice(from, from + n);
@@ -245,7 +246,15 @@ export function WordsSetup({
             min={1}
             max={200}
             value={limit}
-            onChange={(e) => setLimit(Number(e.target.value) || 1)}
+            onChange={(e) => {
+              const raw = e.target.value;
+              if (raw === "") {
+                setLimit("");
+                return;
+              }
+              const n = Number(raw);
+              if (!Number.isNaN(n)) setLimit(n);
+            }}
           />
         </label>
       </div>
@@ -275,8 +284,13 @@ export function WordsSetup({
               max={Math.max(1, pool.length)}
               value={startIndex}
               onChange={(e) => {
-                const v = Number(e.target.value) || 1;
-                setStartIndex(Math.max(1, v));
+                const raw = e.target.value;
+                if (raw === "") {
+                  setStartIndex("");
+                  return;
+                }
+                const n = Number(raw);
+                if (!Number.isNaN(n)) setStartIndex(n);
               }}
             />
           </label>
@@ -285,11 +299,16 @@ export function WordsSetup({
 
       <p className="muted">
         {(() => {
+          const n = Math.max(1, typeof limit === "number" ? limit : 1);
+          const startAt = Math.max(
+            1,
+            typeof startIndex === "number" ? startIndex : 1,
+          );
           if (order === "random") {
-            return `候选 ${pool.length} 词 · 将随机抽取 ${Math.min(limit, pool.length)} 词`;
+            return `候选 ${pool.length} 词 · 将随机抽取 ${Math.min(n, pool.length)} 词`;
           }
-          const from = Math.min(Math.max(1, startIndex), Math.max(1, pool.length));
-          const count = Math.min(limit, Math.max(0, pool.length - from + 1));
+          const from = Math.min(startAt, Math.max(1, pool.length));
+          const count = Math.min(n, Math.max(0, pool.length - from + 1));
           return `候选 ${pool.length} 词 · 将从第 ${from} 词起按顺序取 ${count} 词`;
         })()}
       </p>
