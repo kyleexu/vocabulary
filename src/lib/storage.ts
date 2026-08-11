@@ -37,6 +37,7 @@ export function normalizeWord(raw: Partial<Word> & {
     category: raw.category ?? "",
     english: raw.english,
     chinese: raw.chinese,
+    pos: String(raw.pos ?? "").trim(),
     isWrong: asFlag(raw.isWrong ?? raw.iswrong),
     isFavorites: asFlag(raw.isFavorites ?? raw.isfavorites),
     isEasy: asFlag(raw.isEasy ?? raw.iseasy),
@@ -114,7 +115,7 @@ function parseCsvLine(line: string): string[] {
 /**
  * Parse vocabulary CSV.
  * Required: category, english, chinese
- * Optional: id, categoryId, isWrong, isFavorites, isEasy
+ * Optional: id, categoryId, pos, isWrong, isFavorites, isEasy
  */
 export function parseVocabularyCsv(text: string): Word[] {
   const lines = text.replace(/^\uFEFF/, "").split(/\r?\n/).filter((l) => l.trim());
@@ -133,6 +134,7 @@ export function parseVocabularyCsv(text: string): Word[] {
   const catI = idx("category");
   const enI = idx("english");
   const zhI = idx("chinese");
+  const posI = Math.max(idx("pos"), idx("partofspeech"), idx("词性"));
   const wrongI = Math.max(idx("iswrong"), idx("is_wrong"));
   const favI = Math.max(idx("isfavorites"), idx("is_favorites"));
   const easyI = Math.max(idx("iseasy"), idx("is_easy"));
@@ -155,6 +157,7 @@ export function parseVocabularyCsv(text: string): Word[] {
         category: (cols[catI] ?? "").trim(),
         english,
         chinese: (cols[zhI] ?? "").trim(),
+        pos: posI >= 0 ? (cols[posI] ?? "").trim() : "",
         isWrong: asFlag(wrongI >= 0 ? cols[wrongI] : 0),
         isFavorites: asFlag(favI >= 0 ? cols[favI] : 0),
         isEasy: asFlag(easyI >= 0 ? cols[easyI] : 0),
@@ -171,7 +174,7 @@ export function parseVocabularyCsv(text: string): Word[] {
 /** Export vocabulary.json → CSV (including book flags). */
 export function vocabularyToCsv(list: Word[]): string {
   const lines = [
-    "id,categoryId,category,english,chinese,isWrong,isFavorites,isEasy",
+    "id,categoryId,category,english,chinese,pos,isWrong,isFavorites,isEasy",
   ];
   for (const w of list) {
     lines.push(
@@ -181,6 +184,7 @@ export function vocabularyToCsv(list: Word[]): string {
         escapeCsvField(w.category),
         escapeCsvField(w.english),
         escapeCsvField(w.chinese),
+        escapeCsvField(w.pos ?? ""),
         String(w.isWrong ?? 0),
         String(w.isFavorites ?? 0),
         String(w.isEasy ?? 0),

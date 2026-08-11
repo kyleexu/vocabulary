@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ClipboardEvent } from "react";
 import type {
   Accent,
   DisplayMode,
@@ -47,8 +47,19 @@ function WordSlots({
   const chars = [...target];
   const revealGhost = mode === "full" || hoverReveal;
 
+  const copyWord = (e: ClipboardEvent) => {
+    // Grid slots copy as one char per line in some browsers — force plain word.
+    e.preventDefault();
+    e.clipboardData.setData("text/plain", target);
+  };
+
   return (
-    <div className="word-slots" style={{ ["--n" as string]: String(chars.length) }}>
+    <div
+      className="word-slots"
+      style={{ ["--n" as string]: String(chars.length) }}
+      onCopy={copyWord}
+      onCut={copyWord}
+    >
       {chars.map((ch, i) => {
         if (ch === "-") {
           return (
@@ -620,6 +631,7 @@ export function WordsPractice({
           </button>
         </div>
 
+        <p className="flash-pos">词性 · {word.pos || "—"}</p>
         <p className="flash-chinese">{word.chinese}</p>
         <span className="category">
           #{word.id} / {formatCategoryLabel(word.category, word.categoryId)}

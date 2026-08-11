@@ -122,7 +122,10 @@ export function WordBooks({
           <div className="list-item" key={`${tab}-${w.id}-${w.english}`}>
             <div>
               <strong>{w.english}</strong>
-              <div className="muted">{w.chinese}</div>
+              <div className="muted">
+                {w.pos ? `${w.pos} · ` : ""}
+                {w.chinese}
+              </div>
               <div className="faint">
                 #{w.id} · {w.category}
               </div>

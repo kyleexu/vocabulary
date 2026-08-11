@@ -13,6 +13,8 @@ export type Word = {
   category: string;
   english: string;
   chinese: string;
+  /** Part of speech, e.g. n. / v. / adj. */
+  pos: string;
   /** 1 = in wrong-words book */
   isWrong: Flag01;
   /** 1 = in favorites book */

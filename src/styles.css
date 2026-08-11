@@ -415,6 +415,14 @@ input[type="number"]::-webkit-inner-spin-button {
   color: var(--faint);
 }
 
+.flash-pos {
+  margin: 10px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
 .flash-chinese {
   margin: 4px 0 0;
   font-size: 1.25rem;
