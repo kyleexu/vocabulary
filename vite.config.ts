@@ -6,13 +6,23 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
-const dataDir = path.join(rootDir, "data");
+const dataVocabPath = path.join(rootDir, "data/vocabulary.json");
+const publicVocabPath = path.join(rootDir, "public/data/vocabulary.json");
 
-const ALLOWED = new Set([
-  "wrong-words.csv",
-  "favorites.csv",
-  "easy-words.json",
-]);
+async function readVocabularyFile(): Promise<string> {
+  try {
+    return await fs.readFile(dataVocabPath, "utf8");
+  } catch {
+    return await fs.readFile(publicVocabPath, "utf8");
+  }
+}
+
+async function writeVocabularyFile(body: string) {
+  await fs.mkdir(path.dirname(dataVocabPath), { recursive: true });
+  await fs.writeFile(dataVocabPath, body, "utf8");
+  await fs.mkdir(path.dirname(publicVocabPath), { recursive: true });
+  await fs.writeFile(publicVocabPath, body, "utf8");
+}
 
 function readRequestBody(req: Connect.IncomingMessage): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -25,38 +35,26 @@ function readRequestBody(req: Connect.IncomingMessage): Promise<string> {
   });
 }
 
-function attachBooksApi(middlewares: Connect.Server) {
+function attachVocabularyApi(middlewares: Connect.Server) {
   middlewares.use(async (req, res, next) => {
-    const url = req.url ?? "";
-    if (!url.startsWith("/api/books/")) {
+    const url = (req.url ?? "").split("?")[0];
+    if (url !== "/api/vocabulary.json") {
       next();
       return;
     }
 
-    const name = decodeURIComponent(url.slice("/api/books/".length).split("?")[0]);
-    if (!ALLOWED.has(name)) {
-      res.statusCode = 404;
-      res.end("Not found");
-      return;
-    }
-
-    const filePath = path.join(dataDir, name);
-
     try {
       if (req.method === "GET") {
-        const body = await fs.readFile(filePath, "utf8");
-        res.setHeader(
-          "Content-Type",
-          name.endsWith(".csv") ? "text/csv; charset=utf-8" : "application/json",
-        );
+        const body = await readVocabularyFile();
+        res.setHeader("Content-Type", "application/json; charset=utf-8");
         res.end(body);
         return;
       }
 
       if (req.method === "PUT") {
         const body = await readRequestBody(req);
-        await fs.mkdir(dataDir, { recursive: true });
-        await fs.writeFile(filePath, body, "utf8");
+        JSON.parse(body); // validate
+        await writeVocabularyFile(body.endsWith("\n") ? body : `${body}\n`);
         res.statusCode = 204;
         res.end();
         return;
@@ -71,18 +69,30 @@ function attachBooksApi(middlewares: Connect.Server) {
   });
 }
 
-function booksDataPlugin(): Plugin {
+/** Serve/persist data/vocabulary.json; mirror to public for static builds. */
+function vocabularyDataPlugin(): Plugin {
   return {
-    name: "books-data-api",
+    name: "vocabulary-data-api",
+    async buildStart() {
+      try {
+        const body = await readVocabularyFile();
+        await writeVocabularyFile(body.endsWith("\n") ? body : `${body}\n`);
+      } catch (err) {
+        console.warn(
+          "[vocabulary] could not sync vocabulary.json:",
+          err instanceof Error ? err.message : err,
+        );
+      }
+    },
     configureServer(server: ViteDevServer) {
-      attachBooksApi(server.middlewares);
+      attachVocabularyApi(server.middlewares);
     },
     configurePreviewServer(server: PreviewServer) {
-      attachBooksApi(server.middlewares);
+      attachVocabularyApi(server.middlewares);
     },
   };
 }
 
 export default defineConfig({
-  plugins: [react(), booksDataPlugin()],
+  plugins: [react(), vocabularyDataPlugin()],
 });

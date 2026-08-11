@@ -1,13 +1,13 @@
-import { useEffect, useMemo, useState } from "react";
-import type { Accent, Word, WordEntry } from "./types";
+import { useEffect, useState } from "react";
+import type { Accent, Word } from "./types";
 import { WordsPractice, WordsSetup } from "./components/Words";
 import { WordBooks } from "./components/WordBooks";
 import {
   getEasyWords,
   getFavorites,
+  getVocabulary,
   getWrongWords,
-  loadBooksFromDisk,
-  syncBooksToDisk,
+  loadVocabularyFromDisk,
 } from "./lib/storage";
 import "./styles.css";
 
@@ -16,9 +16,9 @@ type View = "home" | "words-setup" | "words-practice" | "books";
 export default function App() {
   const [view, setView] = useState<View>("home");
   const [words, setWords] = useState<Word[]>([]);
-  const [wrong, setWrong] = useState<WordEntry[]>([]);
-  const [favorites, setFavorites] = useState<WordEntry[]>([]);
-  const [easy, setEasy] = useState<WordEntry[]>([]);
+  const [wrong, setWrong] = useState<Word[]>([]);
+  const [favorites, setFavorites] = useState<Word[]>([]);
+  const [easy, setEasy] = useState<Word[]>([]);
   const [practiceList, setPracticeList] = useState<Word[]>([]);
   const [practiceMeta, setPracticeMeta] = useState<{
     accent: Accent;
@@ -26,7 +26,9 @@ export default function App() {
     autoSpeak: boolean;
   } | null>(null);
 
-  const refreshBooks = () => {
+  const refreshFromStore = () => {
+    const list = getVocabulary();
+    setWords([...list]);
     setWrong(getWrongWords());
     setFavorites(getFavorites());
     setEasy(getEasyWords());
@@ -34,39 +36,10 @@ export default function App() {
 
   useEffect(() => {
     void (async () => {
-      await loadBooksFromDisk();
-      refreshBooks();
-      await syncBooksToDisk();
+      await loadVocabularyFromDisk();
+      refreshFromStore();
     })();
-    fetch("/data/vocabulary.json")
-      .then((r) => r.json())
-      .then((data: Word[]) => setWords(data))
-      .catch(() => setWords([]));
   }, []);
-
-  const wrongAsWords: Word[] = useMemo(
-    () =>
-      wrong.map((w) => ({
-        id: w.id ?? 0,
-        categoryId: w.categoryId ?? 9999,
-        english: w.english,
-        chinese: w.chinese,
-        category: w.category ?? "Wrong Words",
-      })),
-    [wrong],
-  );
-
-  const favAsWords: Word[] = useMemo(
-    () =>
-      favorites.map((w) => ({
-        id: w.id ?? 0,
-        categoryId: w.categoryId ?? 9999,
-        english: w.english,
-        chinese: w.chinese,
-        category: w.category ?? "Favorites",
-      })),
-    [favorites],
-  );
 
   return (
     <div className="app-shell">
@@ -100,16 +73,11 @@ export default function App() {
       {view === "home" && (
         <>
           <section className="hero">
-            <h1>把专业词汇练进肌肉记忆</h1>
-            <p>
-              展示 / 隐藏模式复习；按分类抽词；错词、收藏与简单词保存在{" "}
-              <code>data/</code>。
-            </p>
+            <h1>把词汇练进肌肉记忆</h1>
           </section>
           <div className="grid-home">
             <button className="tile" onClick={() => setView("words-setup")}>
               <h2>背单词</h2>
-              <p>展示与隐藏悬停 · 音标发音 · 多分类随机/顺序</p>
             </button>
             <button className="tile" onClick={() => setView("books")}>
               <h2>词本</h2>
@@ -119,17 +87,14 @@ export default function App() {
               </p>
             </button>
           </div>
-          <p className="muted" style={{ marginTop: 22 }}>
-            词库已加载 {words.length} 词
-          </p>
         </>
       )}
 
       {view === "words-setup" && (
         <WordsSetup
           words={words}
-          wrongWords={wrongAsWords}
-          favoriteWords={favAsWords}
+          wrongWords={wrong}
+          favoriteWords={favorites}
           onBack={() => setView("home")}
           onStart={({ list, accent, showPhonetic, autoSpeak }) => {
             setPracticeList(list);
@@ -146,7 +111,7 @@ export default function App() {
           showPhonetic={practiceMeta.showPhonetic}
           autoSpeak={practiceMeta.autoSpeak}
           onBack={() => setView("words-setup")}
-          onBooksChange={refreshBooks}
+          onBooksChange={refreshFromStore}
         />
       )}
 
@@ -155,7 +120,7 @@ export default function App() {
           wrong={wrong}
           favorites={favorites}
           easy={easy}
-          onChange={refreshBooks}
+          onChange={refreshFromStore}
           onBack={() => setView("home")}
         />
       )}

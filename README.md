@@ -5,8 +5,9 @@
 ## 功能
 
 - **背单词**：展示 / 隐藏悬停；按一个或多个 category 抽词；音标、美音/英音发音
-- **词本**：错词本、收藏本（生词本）、简单词
-- **本地文件**：词本保存在项目 `data/` 目录
+- **词本**：错词本、收藏本（生词本）、简单词（写在词库 JSON 的 0/1 标记里）
+- **导出**：可将 `vocabulary.json` 导出为 CSV
+- **导入**：在「词本」页手动选择 CSV，整库覆盖写入 `vocabulary.json`
 
 ## 启动
 
@@ -19,19 +20,9 @@ npm run dev
 
 | 文件 | 说明 |
 |---|---|
-| `data/vocabulary.csv` | 词库源文件（含 `id` / `categoryId`，顺序以本文件为准） |
-| `public/data/vocabulary.json` | 前端加载的词库（由 CSV 生成） |
-| `data/abbreviations.csv` | 缩写词库（同样含 id / categoryId） |
-| `data/wrong-words.csv` | 错词本 |
-| `data/favorites.csv` | 收藏本 |
-| `data/easy-words.json` | 简单词 |
+| `data/vocabulary.json` | 词库与词本状态（唯一数据源） |
+| `public/data/vocabulary.json` | 构建/静态访问用的镜像，dev 时会与上面同步 |
 
-修改 `data/vocabulary.csv` 后执行：
+词库字段：`id, categoryId, category, english, chinese, isWrong, isFavorites, isEasy`。后三列为 `0` / `1`。
 
-```bash
-npm run data:json
-```
-
-`npm run build` 会自动先跑 `data:json`。`npm run dev` 时，练习中的词本增删会自动写回上述 `data/` 文件。
-
-词库 CSV 列：`id,categoryId,category,english,chinese`。分类学习顺序由 `categoryId` 决定，不要在代码里硬编码。
+`npm run dev` 时，练习中改词本标记会写回 `data/vocabulary.json`。在「词本」页可导入 / 导出 CSV。

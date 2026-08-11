@@ -7,18 +7,14 @@ import type {
   WordOrder,
 } from "../types";
 import {
-  addEasy,
-  addFavorite,
   getSettings,
   isEasy,
   isFavorite,
   isWrong,
-  removeEasy,
-  removeFavorite,
-  removeWrong,
   saveSettings,
-  syncBooksToDisk,
-  upsertWrongWord,
+  setEasy,
+  setFavorite,
+  setWrong,
 } from "../lib/storage";
 import {
   fetchPhonetics,
@@ -212,7 +208,6 @@ export function WordsSetup({
             <button className="btn ghost" onClick={() => setSelected([])}>
               清空
             </button>
-            <span className="muted">可多选分类</span>
           </div>
           <div className="row">
             {categories.map((cat) => (
@@ -314,9 +309,6 @@ export function WordsSetup({
           const count = Math.min(limit, Math.max(0, pool.length - from + 1));
           return `候选 ${pool.length} 词 · 将从第 ${from} 词起按顺序取 ${count} 词`;
         })()}
-        {source === "categories" && selected.length === 0
-          ? "（未选分类时默认全部）"
-          : ""}
       </p>
 
       <button className="btn primary" onClick={start}>
@@ -487,6 +479,14 @@ export function WordsPractice({
     const onKey = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
       if (target?.closest("input, textarea, select")) return;
+
+      // ⌘K / Ctrl+K → speak current word
+      if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        void speakWord(word.english, accent, phonetic);
+        return;
+      }
+
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       // Let focused buttons keep Enter/Space for accessibility
       if (
@@ -500,65 +500,29 @@ export function WordsPractice({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- handlers close over latest word/input
-  }, [done, word, input, index]);
+  }, [done, word, input, index, accent, phonetic]);
 
   const toggleWrong = () => {
-    if (inWrong) {
-      removeWrong(word.english, word.id);
-      setInWrong(false);
-      flash("已移出错词本");
-    } else {
-      upsertWrongWord({
-        id: word.id,
-        categoryId: word.categoryId,
-        english: word.english,
-        chinese: word.chinese,
-        category: word.category,
-      });
-      setInWrong(true);
-      flash("已加入错词本");
-    }
-    void syncBooksToDisk();
+    const next = !inWrong;
+    setWrong(word.english, word.id, next);
+    setInWrong(next);
+    flash(next ? "已加入错词本" : "已移出错词本");
     onBooksChange();
   };
 
   const toggleEasy = () => {
-    if (inEasy) {
-      removeEasy(word.english, word.id);
-      setInEasy(false);
-      flash("已移出简单词本");
-    } else {
-      addEasy({
-        id: word.id,
-        categoryId: word.categoryId,
-        english: word.english,
-        chinese: word.chinese,
-        category: word.category,
-      });
-      setInEasy(true);
-      flash("已加入简单词本");
-    }
-    void syncBooksToDisk();
+    const next = !inEasy;
+    setEasy(word.english, word.id, next);
+    setInEasy(next);
+    flash(next ? "已加入简单词本" : "已移出简单词本");
     onBooksChange();
   };
 
   const toggleFav = () => {
-    if (inFav) {
-      removeFavorite(word.english, word.id);
-      setInFav(false);
-      flash("已移出收藏本");
-    } else {
-      addFavorite({
-        id: word.id,
-        categoryId: word.categoryId,
-        english: word.english,
-        chinese: word.chinese,
-        category: word.category,
-      });
-      setInFav(true);
-      flash("已加入收藏本");
-    }
-    void syncBooksToDisk();
+    const next = !inFav;
+    setFavorite(word.english, word.id, next);
+    setInFav(next);
+    flash(next ? "已加入收藏本" : "已移出收藏本");
     onBooksChange();
   };
 
@@ -651,9 +615,6 @@ export function WordsPractice({
         <span className="category">
           #{word.id} / {formatCategoryLabel(word.category, word.categoryId)}
         </span>
-        <p className="faint" style={{ margin: "8px 0 0", fontSize: "0.8rem" }}>
-          直接键盘输入 · Enter 检查
-        </p>
       </div>
 
       <p className={`feedback ${toast ? (toast === "正确" || toast.startsWith("已") ? "ok" : toast === "再试一次" ? "bad" : "ok") : ""}`}>

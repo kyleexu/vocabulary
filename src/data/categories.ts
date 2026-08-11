@@ -1,4 +1,4 @@
-/** Format "01 · Software Engineering" from CSV categoryId. */
+/** Format "01 · Software Engineering" from categoryId. */
 export function formatCategoryLabel(category: string, categoryId?: number): string {
   if (categoryId != null && categoryId > 0) {
     return `${String(categoryId).padStart(2, "0")} · ${category}`;
@@ -6,7 +6,7 @@ export function formatCategoryLabel(category: string, categoryId?: number): stri
   return category;
 }
 
-/** Unique categories in CSV order (by categoryId). */
+/** Unique categories in vocabulary order (by categoryId). */
 export function categoriesFromWords(
   words: Array<{ category: string; categoryId: number }>,
 ): Array<{ categoryId: number; category: string }> {
@@ -19,7 +19,7 @@ export function categoriesFromWords(
     .sort((a, b) => a.categoryId - b.categoryId || a.category.localeCompare(b.category));
 }
 
-/** Preserve CSV file order: categoryId, then word id. */
+/** Preserve vocabulary order: categoryId, then word id. */
 export function sortWordsByCsvOrder<
   T extends { id?: number; categoryId?: number; english?: string },
 >(words: T[]): T[] {

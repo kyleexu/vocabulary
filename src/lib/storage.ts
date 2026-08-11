@@ -1,9 +1,7 @@
-import type { WordEntry } from "../types";
+import type { Flag01, Word } from "../types";
 
-const WRONG_KEY = "vocab.wrong-words";
-const FAVORITES_KEY = "vocab.favorites";
-const EASY_KEY = "vocab.easy-words";
 const SETTINGS_KEY = "vocab.settings";
+const VOCAB_URL = "/api/vocabulary.json";
 
 export type Settings = {
   accent: "us" | "uk";
@@ -19,126 +17,108 @@ const defaultSettings: Settings = {
   order: "random",
 };
 
-function readList(key: string): WordEntry[] {
-  try {
-    const raw = localStorage.getItem(key);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
+/** In-memory copy of data/vocabulary.json (source of truth on disk). */
+let vocabulary: Word[] = [];
+
+function asFlag(value: unknown): Flag01 {
+  return value === 1 || value === "1" || value === true ? 1 : 0;
+}
+
+export function normalizeWord(raw: Partial<Word> & {
+  english: string;
+  chinese: string;
+  category: string;
+  // legacy lowercase keys
+  iswrong?: unknown;
+  isfavorites?: unknown;
+  iseasy?: unknown;
+}): Word {
+  return {
+    id: Number(raw.id) || 0,
+    categoryId: Number(raw.categoryId) || 0,
+    category: raw.category ?? "",
+    english: raw.english,
+    chinese: raw.chinese,
+    isWrong: asFlag(raw.isWrong ?? raw.iswrong),
+    isFavorites: asFlag(raw.isFavorites ?? raw.isfavorites),
+    isEasy: asFlag(raw.isEasy ?? raw.iseasy),
+  };
+}
+
+export function getVocabulary(): Word[] {
+  return vocabulary;
+}
+
+export function setVocabulary(words: Word[]) {
+  vocabulary = words.map(normalizeWord);
+}
+
+export function getWrongWords(): Word[] {
+  return vocabulary.filter((w) => w.isWrong === 1);
+}
+
+export function getFavorites(): Word[] {
+  return vocabulary.filter((w) => w.isFavorites === 1);
+}
+
+export function getEasyWords(): Word[] {
+  return vocabulary.filter((w) => w.isEasy === 1);
+}
+
+function findIndex(english: string, id?: number): number {
+  if (id != null) {
+    const byId = vocabulary.findIndex((w) => w.id === id);
+    if (byId >= 0) return byId;
   }
+  return vocabulary.findIndex(
+    (w) => w.english.toLowerCase() === english.toLowerCase(),
+  );
 }
 
-function writeList(key: string, list: WordEntry[]) {
-  localStorage.setItem(key, JSON.stringify(list, null, 2));
-}
-
-/** Match by vocabulary id when present; otherwise fall back to english. */
-function sameWord(
-  entry: WordEntry,
+function setFlag(
   english: string,
-  id?: number,
-): boolean {
-  if (id != null && entry.id != null) return entry.id === id;
-  return entry.english.toLowerCase() === english.toLowerCase();
+  id: number | undefined,
+  key: "isWrong" | "isFavorites" | "isEasy",
+  value: Flag01,
+): Word[] {
+  const idx = findIndex(english, id);
+  if (idx < 0) return vocabulary;
+  vocabulary = vocabulary.map((w, i) =>
+    i === idx ? { ...w, [key]: value } : w,
+  );
+  void syncVocabularyToDisk();
+  return vocabulary;
 }
 
-export function getWrongWords(): WordEntry[] {
-  return readList(WRONG_KEY);
+export function setWrong(english: string, id: number | undefined, on: boolean) {
+  return setFlag(english, id, "isWrong", on ? 1 : 0);
 }
 
-export function getFavorites(): WordEntry[] {
-  return readList(FAVORITES_KEY);
+export function setFavorite(
+  english: string,
+  id: number | undefined,
+  on: boolean,
+) {
+  return setFlag(english, id, "isFavorites", on ? 1 : 0);
 }
 
-export function getEasyWords(): WordEntry[] {
-  return readList(EASY_KEY);
-}
-
-export function setWrongWords(list: WordEntry[]) {
-  writeList(WRONG_KEY, list);
-  void syncBooksToDisk();
-}
-
-export function setFavorites(list: WordEntry[]) {
-  writeList(FAVORITES_KEY, list);
-  void syncBooksToDisk();
-}
-
-export function setEasyWords(list: WordEntry[]) {
-  writeList(EASY_KEY, list);
-  void syncBooksToDisk();
-}
-
-export function upsertWrongWord(entry: Omit<WordEntry, "addedAt" | "wrongCount">) {
-  const list = getWrongWords();
-  const idx = list.findIndex((w) => sameWord(w, entry.english, entry.id));
-  if (idx >= 0) {
-    list[idx] = {
-      ...list[idx],
-      ...entry,
-      wrongCount: (list[idx].wrongCount ?? 1) + 1,
-    };
-  } else {
-    list.unshift({
-      ...entry,
-      addedAt: new Date().toISOString(),
-      wrongCount: 1,
-    });
-  }
-  setWrongWords(list);
-  return list;
-}
-
-export function addFavorite(entry: Omit<WordEntry, "addedAt">) {
-  const list = getFavorites();
-  if (list.some((w) => sameWord(w, entry.english, entry.id))) {
-    return list;
-  }
-  list.unshift({ ...entry, addedAt: new Date().toISOString() });
-  setFavorites(list);
-  return list;
-}
-
-export function removeFavorite(english: string, id?: number) {
-  const list = getFavorites().filter((w) => !sameWord(w, english, id));
-  setFavorites(list);
-  return list;
-}
-
-export function removeWrong(english: string, id?: number) {
-  const list = getWrongWords().filter((w) => !sameWord(w, english, id));
-  setWrongWords(list);
-  return list;
-}
-
-export function addEasy(entry: Omit<WordEntry, "addedAt">) {
-  const list = getEasyWords();
-  if (list.some((w) => sameWord(w, entry.english, entry.id))) {
-    return list;
-  }
-  list.unshift({ ...entry, addedAt: new Date().toISOString() });
-  setEasyWords(list);
-  return list;
-}
-
-export function removeEasy(english: string, id?: number) {
-  const list = getEasyWords().filter((w) => !sameWord(w, english, id));
-  setEasyWords(list);
-  return list;
-}
-
-export function isEasy(english: string, id?: number): boolean {
-  return getEasyWords().some((w) => sameWord(w, english, id));
+export function setEasy(english: string, id: number | undefined, on: boolean) {
+  return setFlag(english, id, "isEasy", on ? 1 : 0);
 }
 
 export function isWrong(english: string, id?: number): boolean {
-  return getWrongWords().some((w) => sameWord(w, english, id));
+  const idx = findIndex(english, id);
+  return idx >= 0 && vocabulary[idx].isWrong === 1;
 }
 
 export function isFavorite(english: string, id?: number): boolean {
-  return getFavorites().some((w) => sameWord(w, english, id));
+  const idx = findIndex(english, id);
+  return idx >= 0 && vocabulary[idx].isFavorites === 1;
+}
+
+export function isEasy(english: string, id?: number): boolean {
+  const idx = findIndex(english, id);
+  return idx >= 0 && vocabulary[idx].isEasy === 1;
 }
 
 export function getSettings(): Settings {
@@ -190,181 +170,143 @@ function parseCsvLine(line: string): string[] {
   return cols;
 }
 
-/** Basic word CSV: id,categoryId,category,english,chinese (id/categoryId optional for legacy) */
-export function entriesToCsv(list: WordEntry[]): string {
-  const hasIds = list.some((w) => w.id != null);
-  const lines = [
-    hasIds ? "id,categoryId,category,english,chinese" : "category,english,chinese",
-  ];
-  for (const w of list) {
-    if (hasIds) {
-      lines.push(
-        [
-          w.id != null ? String(w.id) : "",
-          w.categoryId != null ? String(w.categoryId) : "",
-          escapeCsvField(w.category ?? ""),
-          escapeCsvField(w.english),
-          escapeCsvField(w.chinese),
-        ].join(","),
-      );
-    } else {
-      lines.push(
-        [
-          escapeCsvField(w.category ?? ""),
-          escapeCsvField(w.english),
-          escapeCsvField(w.chinese),
-        ].join(","),
-      );
-    }
-  }
-  return `${lines.join("\n")}\n`;
-}
-
-/** Wrong words CSV includes wrongCount. */
-export function wrongWordsToCsv(list: WordEntry[] = getWrongWords()): string {
-  const hasIds = list.some((w) => w.id != null);
-  const lines = [
-    hasIds
-      ? "id,categoryId,category,english,chinese,wrongCount"
-      : "category,english,chinese,wrongCount",
-  ];
-  for (const w of list) {
-    if (hasIds) {
-      lines.push(
-        [
-          w.id != null ? String(w.id) : "",
-          w.categoryId != null ? String(w.categoryId) : "",
-          escapeCsvField(w.category ?? ""),
-          escapeCsvField(w.english),
-          escapeCsvField(w.chinese),
-          String(w.wrongCount ?? 1),
-        ].join(","),
-      );
-    } else {
-      lines.push(
-        [
-          escapeCsvField(w.category ?? ""),
-          escapeCsvField(w.english),
-          escapeCsvField(w.chinese),
-          String(w.wrongCount ?? 1),
-        ].join(","),
-      );
-    }
-  }
-  return `${lines.join("\n")}\n`;
-}
-
-export function parseEntriesCsv(text: string): WordEntry[] {
+/**
+ * Parse vocabulary CSV.
+ * Required: category, english, chinese
+ * Optional: id, categoryId, isWrong, isFavorites, isEasy
+ */
+export function parseVocabularyCsv(text: string): Word[] {
   const lines = text.replace(/^\uFEFF/, "").split(/\r?\n/).filter((l) => l.trim());
-  if (lines.length === 0) return [];
-  const header = lines[0].toLowerCase();
-  const hasHeader = header.includes("english");
-  const start = hasHeader ? 1 : 0;
-  const headerCols = hasHeader
-    ? parseCsvLine(lines[0]).map((c) => c.trim().toLowerCase())
-    : [];
-  const idIdx = headerCols.indexOf("id");
-  const catIdIdx = headerCols.indexOf("categoryid");
-  const wrongIdx = headerCols.indexOf("wrongcount");
-  const catIdx = headerCols.indexOf("category");
-  const enIdx = headerCols.indexOf("english");
-  const zhIdx = headerCols.indexOf("chinese");
-
-  const out: WordEntry[] = [];
-  for (let i = start; i < lines.length; i++) {
-    const cols = parseCsvLine(lines[i]);
-    if (cols.length < 2) continue;
-
-    let category = "";
-    let english = "";
-    let chinese = "";
-    if (hasHeader && enIdx >= 0) {
-      category = cols[catIdx >= 0 ? catIdx : 0]?.trim() ?? "";
-      english = cols[enIdx]?.trim() ?? "";
-      chinese = cols[zhIdx >= 0 ? zhIdx : enIdx + 1]?.trim() ?? "";
-    } else {
-      // legacy: category,english,chinese
-      category = cols[0]?.trim() ?? "";
-      english = cols[1]?.trim() ?? "";
-      chinese = cols[2]?.trim() ?? "";
-    }
-    if (!english) continue;
-    const entry: WordEntry = {
-      category,
-      english,
-      chinese,
-      addedAt: new Date().toISOString(),
-    };
-    if (idIdx >= 0 && cols[idIdx]) {
-      const n = Number(cols[idIdx]);
-      if (!Number.isNaN(n)) entry.id = n;
-    }
-    if (catIdIdx >= 0 && cols[catIdIdx]) {
-      const n = Number(cols[catIdIdx]);
-      if (!Number.isNaN(n)) entry.categoryId = n;
-    }
-    if (wrongIdx >= 0 && cols[wrongIdx]) {
-      const n = Number(cols[wrongIdx]);
-      if (!Number.isNaN(n)) entry.wrongCount = n;
-    } else if (cols[3] && headerCols.length === 0) {
-      const n = Number(cols[3]);
-      if (!Number.isNaN(n)) entry.wrongCount = n;
-    }
-    out.push(entry);
+  if (!lines.length) {
+    throw new Error("CSV 为空");
   }
-  return out;
+
+  const header = parseCsvLine(lines[0]).map((h) => h.trim().toLowerCase());
+  const hasHeader = header.includes("english");
+  if (!hasHeader) {
+    throw new Error("CSV 需包含表头，且至少有 english 列");
+  }
+
+  const idx = (name: string) => header.indexOf(name);
+  const idI = idx("id");
+  const catIdI = idx("categoryid");
+  const catI = idx("category");
+  const enI = idx("english");
+  const zhI = idx("chinese");
+  const wrongI = Math.max(idx("iswrong"), idx("is_wrong"));
+  const favI = Math.max(idx("isfavorites"), idx("is_favorites"));
+  const easyI = Math.max(idx("iseasy"), idx("is_easy"));
+
+  if (enI < 0 || zhI < 0 || catI < 0) {
+    throw new Error("CSV 必须包含 category, english, chinese 列");
+  }
+
+  const words: Word[] = [];
+  for (let i = 1; i < lines.length; i++) {
+    const cols = parseCsvLine(lines[i]);
+    const english = (cols[enI] ?? "").trim();
+    if (!english) continue;
+    const idRaw = idI >= 0 ? Number(cols[idI]) : i;
+    const catIdRaw = catIdI >= 0 ? Number(cols[catIdI]) : 0;
+    words.push(
+      normalizeWord({
+        id: Number.isFinite(idRaw) ? idRaw : i,
+        categoryId: Number.isFinite(catIdRaw) ? catIdRaw : 0,
+        category: (cols[catI] ?? "").trim(),
+        english,
+        chinese: (cols[zhI] ?? "").trim(),
+        isWrong: asFlag(wrongI >= 0 ? cols[wrongI] : 0),
+        isFavorites: asFlag(favI >= 0 ? cols[favI] : 0),
+        isEasy: asFlag(easyI >= 0 ? cols[easyI] : 0),
+      }),
+    );
+  }
+
+  if (!words.length) {
+    throw new Error("CSV 中没有有效单词行");
+  }
+  return words;
+}
+
+/** Export vocabulary.json → CSV (including book flags). */
+export function vocabularyToCsv(list: Word[] = vocabulary): string {
+  const lines = [
+    "id,categoryId,category,english,chinese,isWrong,isFavorites,isEasy",
+  ];
+  for (const w of list) {
+    lines.push(
+      [
+        String(w.id),
+        String(w.categoryId),
+        escapeCsvField(w.category),
+        escapeCsvField(w.english),
+        escapeCsvField(w.chinese),
+        String(w.isWrong ?? 0),
+        String(w.isFavorites ?? 0),
+        String(w.isEasy ?? 0),
+      ].join(","),
+    );
+  }
+  return `${lines.join("\n")}\n`;
+}
+
+export function downloadVocabularyCsv(list?: Word[]) {
+  const csv = vocabularyToCsv(list);
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "vocabulary.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+/** Replace vocabulary from CSV text and persist to disk. */
+export async function importVocabularyFromCsv(text: string): Promise<Word[]> {
+  const words = parseVocabularyCsv(text);
+  await syncVocabularyToDisk(words);
+  return vocabulary;
 }
 
 let syncing: Promise<void> | null = null;
 
-/** Persist word books into project `data/` via Vite API. */
-export async function syncBooksToDisk() {
-  if (syncing) {
-    await syncing;
-  }
+/** Persist vocabulary into project `data/vocabulary.json` via Vite API. */
+export async function syncVocabularyToDisk(list: Word[] = vocabulary) {
+  vocabulary = list.map(normalizeWord);
+  if (syncing) await syncing;
   syncing = (async () => {
-    const puts: Array<[string, string, string]> = [
-      ["/api/books/wrong-words.csv", "text/csv;charset=utf-8", wrongWordsToCsv()],
-      ["/api/books/favorites.csv", "text/csv;charset=utf-8", entriesToCsv(getFavorites())],
-      ["/api/books/easy-words.json", "application/json", JSON.stringify(getEasyWords(), null, 2)],
-    ];
-    await Promise.all(
-      puts.map(async ([url, type, body]) => {
-        try {
-          await fetch(url, {
-            method: "PUT",
-            headers: { "Content-Type": type },
-            body,
-          });
-        } catch {
-          // static preview without API — keep localStorage only
-        }
-      }),
-    );
+    try {
+      await fetch(VOCAB_URL, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(vocabulary, null, 2) + "\n",
+      });
+    } catch {
+      // static preview without API — keep in-memory only
+    }
   })();
   await syncing;
   syncing = null;
 }
 
-/** Load word books from project `data/` files. */
-export async function loadBooksFromDisk() {
+/** Load vocabulary from project file (falls back to public static JSON). */
+export async function loadVocabularyFromDisk(): Promise<Word[]> {
   try {
-    const [wrongRes, favRes, easyRes] = await Promise.all([
-      fetch("/api/books/wrong-words.csv"),
-      fetch("/api/books/favorites.csv"),
-      fetch("/api/books/easy-words.json"),
-    ]);
-    if (wrongRes.ok) {
-      writeList(WRONG_KEY, parseEntriesCsv(await wrongRes.text()));
-    }
-    if (favRes.ok) {
-      writeList(FAVORITES_KEY, parseEntriesCsv(await favRes.text()));
-    }
-    if (easyRes.ok) {
-      const data = (await easyRes.json()) as WordEntry[];
-      if (Array.isArray(data)) writeList(EASY_KEY, data);
-    }
+    let res = await fetch(VOCAB_URL);
+    if (!res.ok) res = await fetch("/data/vocabulary.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = (await res.json()) as unknown;
+    if (!Array.isArray(data)) throw new Error("vocabulary is not an array");
+    vocabulary = data.map((row) =>
+      normalizeWord(row as Partial<Word> & {
+        english: string;
+        chinese: string;
+        category: string;
+      }),
+    );
+    return vocabulary;
   } catch {
-    // keep whatever is in localStorage
+    vocabulary = [];
+    return vocabulary;
   }
 }
