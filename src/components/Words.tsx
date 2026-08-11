@@ -373,13 +373,17 @@ export function WordsPractice({
   useEffect(() => {
     if (!word) return;
     const english = word.english;
-    const t = window.setTimeout(() => inputShellRef.current?.focus(), 0);
-    if (autoSpeak) {
-      void speakWord(english, accent);
-    }
+    const focusT = window.setTimeout(() => inputShellRef.current?.focus(), 0);
+    // Delay speak so React Strict Mode cleanup / cancel() doesn't swallow it.
+    const speakT = autoSpeak
+      ? window.setTimeout(() => {
+          void speakWord(english, accent);
+        }, 80)
+      : 0;
     return () => {
+      window.clearTimeout(focusT);
+      window.clearTimeout(speakT);
       stopSpeaking();
-      window.clearTimeout(t);
     };
   }, [word?.id, word?.english, autoSpeak, accent]);
 
