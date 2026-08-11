@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { Accent, DisplayMode, Word, WordOrder } from "../types";
-import {
-  getSettings,
-  saveSettings,
-  setEasy,
-  setFavorite,
-  setWrong,
-} from "../lib/storage";
+import type {
+  Accent,
+  DisplayMode,
+  SpeakMode,
+  Word,
+  WordOrder,
+} from "../types";
+import { getSettings, saveSettings, setEasy, setFavorite, setWrong } from "../lib/storage";
 import {
   normalizeAnswer,
   shuffle,
@@ -19,7 +19,7 @@ import {
   sortWordsByCsvOrder,
 } from "../data/categories";
 
-type SourceMode = "categories" | "wrong" | "favorites";
+type SourceMode = "categories" | "wrong" | "favorites" | "easy";
 
 function SpeakerIcon() {
   return (
@@ -93,25 +93,21 @@ export function WordsSetup({
   words,
   wrongWords,
   favoriteWords,
+  easyWords,
   onStart,
   onBack,
 }: {
   words: Word[];
   wrongWords: Word[];
   favoriteWords: Word[];
-  onStart: (payload: {
-    list: Word[];
-    accent: Accent;
-    autoSpeak: boolean;
-  }) => void;
+  easyWords: Word[];
+  onStart: (payload: { list: Word[] }) => void;
   onBack: () => void;
 }) {
   const categories = useMemo(() => categoriesFromWords(words), [words]);
   const settings = getSettings();
   const [selected, setSelected] = useState<number[]>([]);
   const [source, setSource] = useState<SourceMode>("categories");
-  const [accent, setAccent] = useState<Accent>(settings.accent);
-  const [autoSpeak, setAutoSpeak] = useState(settings.autoSpeak);
   const [limit, setLimit] = useState<number | "">(50);
   const [order, setOrder] = useState<WordOrder>(settings.order ?? "random");
   const [startIndex, setStartIndex] = useState<number | "">(1);
@@ -128,6 +124,7 @@ export function WordsSetup({
     let list: Word[];
     if (source === "wrong") list = wrongWords;
     else if (source === "favorites") list = favoriteWords;
+    else if (source === "easy") list = easyWords;
     else {
       const cats = selected.length
         ? selected
@@ -135,7 +132,15 @@ export function WordsSetup({
       list = words.filter((w) => cats.includes(w.categoryId));
     }
     return sortWordsByCsvOrder(list);
-  }, [source, wrongWords, favoriteWords, selected, categories, words]);
+  }, [
+    source,
+    wrongWords,
+    favoriteWords,
+    easyWords,
+    selected,
+    categories,
+    words,
+  ]);
 
   const start = () => {
     const n = Math.max(1, typeof limit === "number" ? limit : 1);
@@ -154,8 +159,8 @@ export function WordsSetup({
       alert("当前词库为空，请先选择分类或添加单词。");
       return;
     }
-    saveSettings({ accent, autoSpeak, order });
-    onStart({ list, accent, autoSpeak });
+    saveSettings({ ...getSettings(), order });
+    onStart({ list });
   };
 
   return (
@@ -173,6 +178,7 @@ export function WordsSetup({
             ["categories", "按分类"],
             ["wrong", `错词本 (${wrongWords.length})`],
             ["favorites", `收藏本 (${favoriteWords.length})`],
+            ["easy", `简单词本 (${easyWords.length})`],
           ] as const
         ).map(([k, label]) => (
           <button
@@ -212,50 +218,6 @@ export function WordsSetup({
         </div>
       )}
 
-      <div className="settings-bar">
-        <span className="muted">发音</span>
-        <button
-          className={`chip ${accent === "us" ? "on" : ""}`}
-          onClick={() => setAccent("us")}
-        >
-          美音
-        </button>
-        <button
-          className={`chip ${accent === "uk" ? "on" : ""}`}
-          onClick={() => setAccent("uk")}
-        >
-          英音
-        </button>
-        <label className="toggle">
-          <input
-            type="checkbox"
-            checked={autoSpeak}
-            onChange={(e) => setAutoSpeak(e.target.checked)}
-          />
-          自动发音
-        </label>
-        <label className="toggle">
-          数量
-          <input
-            className="field"
-            style={{ width: 80, padding: "6px 8px" }}
-            type="number"
-            min={1}
-            max={200}
-            value={limit}
-            onChange={(e) => {
-              const raw = e.target.value;
-              if (raw === "") {
-                setLimit("");
-                return;
-              }
-              const n = Number(raw);
-              if (!Number.isNaN(n)) setLimit(n);
-            }}
-          />
-        </label>
-      </div>
-
       <div className="row">
         <span className="muted">顺序</span>
         <button
@@ -292,6 +254,26 @@ export function WordsSetup({
             />
           </label>
         )}
+        <label className="toggle">
+          数量
+          <input
+            className="field"
+            style={{ width: 80, padding: "6px 8px" }}
+            type="number"
+            min={1}
+            max={200}
+            value={limit}
+            onChange={(e) => {
+              const raw = e.target.value;
+              if (raw === "") {
+                setLimit("");
+                return;
+              }
+              const n = Number(raw);
+              if (!Number.isNaN(n)) setLimit(n);
+            }}
+          />
+        </label>
       </div>
 
       <p className="muted">
@@ -317,24 +299,26 @@ export function WordsSetup({
   );
 }
 
+function speakAccent(mode: SpeakMode): Accent {
+  return mode === "uk" ? "uk" : "us";
+}
+
 export function WordsPractice({
   list,
-  accent,
-  autoSpeak,
   onBack,
   onWordPatched,
 }: {
   list: Word[];
-  accent: Accent;
-  autoSpeak: boolean;
   onBack: () => void;
   onWordPatched: (word: Word) => void;
 }) {
+  const settings = getSettings();
   const [index, setIndex] = useState(0);
   const [displayMode, setDisplayMode] = useState<DisplayMode>("hidden");
   const [hoverReveal, setHoverReveal] = useState(false);
   const [input, setInput] = useState("");
   const [inputForId, setInputForId] = useState<number | null>(null);
+  const [speakMode, setSpeakMode] = useState<SpeakMode>(settings.speakMode);
   const [inWrong, setInWrong] = useState(false);
   const [inEasy, setInEasy] = useState(false);
   const [inFav, setInFav] = useState(false);
@@ -343,6 +327,13 @@ export function WordsPractice({
   const inputShellRef = useRef<HTMLDivElement>(null);
 
   const word = list[index];
+  const accent = speakAccent(speakMode);
+  const autoSpeak = speakMode !== "off";
+
+  const changeSpeakMode = (mode: SpeakMode) => {
+    setSpeakMode(mode);
+    saveSettings({ ...getSettings(), speakMode: mode });
+  };
 
   // Reset typing state in the same render as word change — avoids one-frame
   // mismatch (old input vs new word) that flashes letters red.
@@ -365,17 +356,21 @@ export function WordsPractice({
     setInWrong(word.isWrong === 1);
     setInEasy(word.isEasy === 1);
     setInFav(word.isFavorites === 1);
+  }, [word?.id, word?.isWrong, word?.isEasy, word?.isFavorites]);
+
+  // Speak / focus only when the practice word changes — not when book flags update.
+  useEffect(() => {
+    if (!word) return;
+    const english = word.english;
     const t = window.setTimeout(() => inputShellRef.current?.focus(), 0);
-
     if (autoSpeak) {
-      void speakWord(word.english, accent);
+      void speakWord(english, accent);
     }
-
     return () => {
       stopSpeaking();
       window.clearTimeout(t);
     };
-  }, [word, autoSpeak, accent]);
+  }, [word?.id, word?.english, autoSpeak, accent]);
 
   const next = () => {
     if (index >= list.length - 1) {
@@ -485,10 +480,10 @@ export function WordsPractice({
   }, [done, word, input, index, accent]);
 
   const toggleWrong = () => {
-    const next = !inWrong;
+    const nextOn = !inWrong;
     void (async () => {
       try {
-        const updated = await setWrong(word.id, next);
+        const updated = await setWrong(word.id, nextOn);
         setInWrong(updated.isWrong === 1);
         onWordPatched(updated);
         flash(updated.isWrong === 1 ? "已加入错词本" : "已移出错词本");
@@ -499,10 +494,10 @@ export function WordsPractice({
   };
 
   const toggleEasy = () => {
-    const next = !inEasy;
+    const nextOn = !inEasy;
     void (async () => {
       try {
-        const updated = await setEasy(word.id, next);
+        const updated = await setEasy(word.id, nextOn);
         setInEasy(updated.isEasy === 1);
         onWordPatched(updated);
         flash(updated.isEasy === 1 ? "已加入简单词本" : "已移出简单词本");
@@ -513,10 +508,10 @@ export function WordsPractice({
   };
 
   const toggleFav = () => {
-    const next = !inFav;
+    const nextOn = !inFav;
     void (async () => {
       try {
-        const updated = await setFavorite(word.id, next);
+        const updated = await setFavorite(word.id, nextOn);
         setInFav(updated.isFavorites === 1);
         onWordPatched(updated);
         flash(updated.isFavorites === 1 ? "已加入收藏本" : "已移出收藏本");
@@ -541,22 +536,44 @@ export function WordsPractice({
   return (
     <div className="panel practice-panel">
       <div className="row" style={{ justifyContent: "space-between" }}>
-        <div className="row">
-          <button
-            className={`chip ${displayMode === "full" ? "on" : ""}`}
-            onClick={() => setDisplayMode("full")}
-          >
-            展示
-          </button>
-          <button
-            className={`chip ${displayMode === "hidden" ? "on" : ""}`}
-            onClick={() => {
-              setDisplayMode("hidden");
-              setHoverReveal(false);
-            }}
-          >
-            隐藏
-          </button>
+        <div className="practice-controls">
+          <div className="control-group">
+            <label className="choice">
+              单词展示
+              <input
+                type="checkbox"
+                checked={displayMode === "full"}
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    setDisplayMode("full");
+                  } else {
+                    setDisplayMode("hidden");
+                    setHoverReveal(false);
+                  }
+                }}
+              />
+            </label>
+          </div>
+          <div className="control-group">
+            <span className="control-label">自动发音</span>
+            {(
+              [
+                ["off", "不发音"],
+                ["us", "美音"],
+                ["uk", "英音"],
+              ] as const
+            ).map(([mode, label]) => (
+              <label key={mode} className="choice">
+                <input
+                  type="radio"
+                  name="speakMode"
+                  checked={speakMode === mode}
+                  onChange={() => changeSpeakMode(mode)}
+                />
+                {label}
+              </label>
+            ))}
+          </div>
         </div>
         <button className="btn ghost" onClick={onBack}>
           结束

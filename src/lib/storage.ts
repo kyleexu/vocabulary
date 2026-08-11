@@ -1,23 +1,26 @@
-import type { Flag01, Word } from "../types";
+import type { Flag01, SpeakMode, Word } from "../types";
 
 const SETTINGS_KEY = "vocab.settings";
 const VOCAB_URL = "/api/vocabulary.json";
 const FLAG_URL = "/api/vocabulary/flag";
 
 export type Settings = {
-  accent: "us" | "uk";
-  autoSpeak: boolean;
+  speakMode: SpeakMode;
   order: "random" | "sequential";
 };
 
 const defaultSettings: Settings = {
-  accent: "us",
-  autoSpeak: true,
+  speakMode: "us",
   order: "random",
 };
 
 function asFlag(value: unknown): Flag01 {
   return value === 1 || value === "1" || value === true ? 1 : 0;
+}
+
+function normalizeSpeakMode(raw: unknown): SpeakMode {
+  if (raw === "off" || raw === "us" || raw === "uk") return raw;
+  return defaultSettings.speakMode;
 }
 
 export function normalizeWord(raw: Partial<Word> & {
@@ -44,7 +47,26 @@ export function getSettings(): Settings {
   try {
     const raw = localStorage.getItem(SETTINGS_KEY);
     if (!raw) return { ...defaultSettings };
-    return { ...defaultSettings, ...JSON.parse(raw) };
+    const parsed = JSON.parse(raw) as Partial<Settings> & {
+      accent?: "us" | "uk";
+      autoSpeak?: boolean;
+    };
+    let speakMode = normalizeSpeakMode(parsed.speakMode);
+    if (
+      parsed.speakMode == null &&
+      (parsed.accent != null || parsed.autoSpeak != null)
+    ) {
+      speakMode =
+        parsed.autoSpeak === false
+          ? "off"
+          : parsed.accent === "uk"
+            ? "uk"
+            : "us";
+    }
+    return {
+      speakMode,
+      order: parsed.order === "sequential" ? "sequential" : "random",
+    };
   } catch {
     return { ...defaultSettings };
   }

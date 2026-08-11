@@ -1,5 +1,8 @@
 export type Accent = "us" | "uk";
 
+/** Practice auto-speak: off, or US/UK voice. */
+export type SpeakMode = "off" | Accent;
+
 export type Flag01 = 0 | 1;
 
 export type Word = {

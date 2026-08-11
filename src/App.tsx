@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Accent, Word } from "./types";
+import type { Word } from "./types";
 import { WordsPractice, WordsSetup } from "./components/Words";
 import { WordBooks } from "./components/WordBooks";
 import { loadVocabularyFromDisk } from "./lib/storage";
@@ -11,10 +11,6 @@ export default function App() {
   const [view, setView] = useState<View>("home");
   const [words, setWords] = useState<Word[]>([]);
   const [practiceList, setPracticeList] = useState<Word[]>([]);
-  const [practiceMeta, setPracticeMeta] = useState<{
-    accent: Accent;
-    autoSpeak: boolean;
-  } | null>(null);
 
   const wrong = useMemo(() => words.filter((w) => w.isWrong === 1), [words]);
   const favorites = useMemo(
@@ -95,20 +91,18 @@ export default function App() {
           words={words}
           wrongWords={wrong}
           favoriteWords={favorites}
+          easyWords={easy}
           onBack={() => setView("home")}
-          onStart={({ list, accent, autoSpeak }) => {
+          onStart={({ list }) => {
             setPracticeList(list);
-            setPracticeMeta({ accent, autoSpeak });
             setView("words-practice");
           }}
         />
       )}
 
-      {view === "words-practice" && practiceMeta && (
+      {view === "words-practice" && (
         <WordsPractice
           list={practiceList}
-          accent={practiceMeta.accent}
-          autoSpeak={practiceMeta.autoSpeak}
           onBack={() => setView("words-setup")}
           onWordPatched={patchWord}
         />
