@@ -21,6 +21,18 @@ import {
 
 type SourceMode = "categories" | "wrong" | "favorites" | "easy";
 
+/** Prefill leading "-" / " " so caret starts on the first letter. */
+function structuralPrefix(english: string): string {
+  let seed = "";
+  while (
+    seed.length < english.length &&
+    (english[seed.length] === "-" || english[seed.length] === " ")
+  ) {
+    seed += english[seed.length];
+  }
+  return seed;
+}
+
 function SpeakerIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
@@ -61,18 +73,38 @@ function WordSlots({
       onCut={copyWord}
     >
       {chars.map((ch, i) => {
-        if (ch === "-") {
+        const typed = value[i];
+
+        // Hyphen / space: never mask a real typed char behind the structural glyph.
+        if (ch === "-" || ch === " ") {
+          if (typed !== undefined) {
+            const ok = typed === ch;
+            return (
+              <span
+                key={i}
+                className={`word-slot typed ${ok ? "ok" : "bad"}${ch === " " ? " space" : ""}`}
+              >
+                {ch === " " && ok ? "" : typed}
+              </span>
+            );
+          }
+          if (ch === " ") {
+            return <span key={i} className="word-slot space" />;
+          }
+          if (revealGhost) {
+            return (
+              <span key={i} className="word-slot hyphen ghost">
+                -
+              </span>
+            );
+          }
           return (
             <span key={i} className="word-slot hyphen">
               -
             </span>
           );
         }
-        if (ch === " ") {
-          return <span key={i} className="word-slot space" />;
-        }
 
-        const typed = value[i];
         if (typed !== undefined) {
           const ok = typed.toLowerCase() === ch.toLowerCase();
           return (
@@ -350,14 +382,7 @@ export function WordsPractice({
   // mismatch (old input vs new word) that flashes letters red.
   if (word && inputForId !== word.id) {
     setInputForId(word.id);
-    let seed = "";
-    while (
-      seed.length < word.english.length &&
-      word.english[seed.length] === "-"
-    ) {
-      seed += "-";
-    }
-    setInput(seed);
+    setInput(structuralPrefix(word.english));
     setToast("");
     setHoverReveal(false);
   }
@@ -387,6 +412,11 @@ export function WordsPractice({
     };
   }, [word?.id, word?.english, autoSpeak, accent]);
 
+  const prev = () => {
+    if (index <= 0) return;
+    setIndex((i) => i - 1);
+  };
+
   const next = () => {
     if (index >= list.length - 1) {
       setDone(true);
@@ -400,17 +430,33 @@ export function WordsPractice({
     window.setTimeout(() => setToast(""), 1200);
   };
 
+  const fillStructural = (value: string) => {
+    let nextVal = value;
+    while (
+      nextVal.length < word.english.length &&
+      (word.english[nextVal.length] === "-" ||
+        word.english[nextVal.length] === " ")
+    ) {
+      nextVal += word.english[nextVal.length];
+    }
+    return nextVal;
+  };
+
   const appendInput = (ch: string) => {
     setInput((prev) => {
-      if (prev.length >= word.english.length) return prev;
-      let nextVal = prev + ch;
-      while (
-        nextVal.length < word.english.length &&
-        word.english[nextVal.length] === "-"
+      const before = prev.length;
+      let nextVal = fillStructural(prev);
+      // "-" / " " already auto-filled at this caret — don't insert a second hidden char
+      if (
+        nextVal.length > before &&
+        (ch === "-" || ch === " ") &&
+        nextVal.endsWith(ch)
       ) {
-        nextVal += "-";
+        return nextVal;
       }
-      return nextVal;
+      if (nextVal.length >= word.english.length) return nextVal;
+      nextVal += ch;
+      return fillStructural(nextVal);
     });
   };
 
@@ -418,7 +464,12 @@ export function WordsPractice({
     setInput((prev) => {
       if (!prev) return prev;
       let nextVal = prev.slice(0, -1);
-      while (nextVal.endsWith("-") && word.english[nextVal.length] === "-") {
+      // Also clear auto-filled trailing "-" / " " so delete doesn't leave a hidden structural char
+      while (
+        nextVal.length > 0 &&
+        (nextVal.endsWith("-") || nextVal.endsWith(" ")) &&
+        nextVal[nextVal.length - 1] === word.english[nextVal.length - 1]
+      ) {
         nextVal = nextVal.slice(0, -1);
       }
       return nextVal;
@@ -449,14 +500,7 @@ export function WordsPractice({
     }
     if (e.key === "Escape") {
       e.preventDefault();
-      let seed = "";
-      while (
-        seed.length < word.english.length &&
-        word.english[seed.length] === "-"
-      ) {
-        seed += "-";
-      }
-      setInput(seed);
+      setInput(structuralPrefix(word.english));
       return;
     }
     if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
@@ -655,6 +699,9 @@ export function WordsPractice({
         </button>
         <button className="btn" onClick={toggleFav}>
           {inFav ? "移出收藏本" : "加入收藏本"}
+        </button>
+        <button className="btn" onClick={prev} disabled={index <= 0}>
+          上一个
         </button>
         <button className="btn primary" onClick={next}>
           下一个
