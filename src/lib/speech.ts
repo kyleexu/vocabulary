@@ -28,15 +28,20 @@ function loadVoices(): Promise<SpeechSynthesisVoice[]> {
 }
 
 /** Speak with the browser's local speechSynthesis (no network). */
-export function speakWord(word: string, accent: Accent): Promise<void> {
+export function speakWord(
+  word: string,
+  accent: Accent,
+  ratePercent = 100,
+): Promise<void> {
   const token = ++speakToken;
-  return speakWithSynthesis(word, accent, token);
+  return speakWithSynthesis(word, accent, token, ratePercent);
 }
 
 export async function speakWithSynthesis(
   text: string,
   accent: Accent,
   token = ++speakToken,
+  ratePercent = 100,
 ): Promise<void> {
   if (!("speechSynthesis" in window) || token !== speakToken) return;
 
@@ -55,6 +60,9 @@ export async function speakWithSynthesis(
 
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = accent === "uk" ? "en-GB" : "en-US";
+  // Utterance rate default is 1 ≈ 100% in UI settings.
+  const pct = Number.isFinite(ratePercent) ? ratePercent : 100;
+  utter.rate = Math.min(1.25, Math.max(0.5, pct / 100));
   const preferred = voices.find((v) =>
     accent === "uk"
       ? /en-GB|British/i.test(`${v.lang} ${v.name}`)

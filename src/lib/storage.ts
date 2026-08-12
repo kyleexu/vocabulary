@@ -6,13 +6,20 @@ const FLAG_URL = "/api/vocabulary/flag";
 
 export type Settings = {
   speakMode: SpeakMode;
+  /** Speech rate as percent of default (100 = utterance.rate 1). */
+  speakRate: number;
   order: "random" | "sequential";
 };
 
 const defaultSettings: Settings = {
   speakMode: "us",
+  speakRate: 100,
   order: "random",
 };
+
+const SPEAK_RATE_OPTIONS = [50, 75, 100, 125] as const;
+
+export const SPEAK_RATE_CHOICES = [...SPEAK_RATE_OPTIONS];
 
 function asFlag(value: unknown): Flag01 {
   return value === 1 || value === "1" || value === true ? 1 : 0;
@@ -21,6 +28,14 @@ function asFlag(value: unknown): Flag01 {
 function normalizeSpeakMode(raw: unknown): SpeakMode {
   if (raw === "off" || raw === "us" || raw === "uk") return raw;
   return defaultSettings.speakMode;
+}
+
+function normalizeSpeakRate(raw: unknown): number {
+  const n = typeof raw === "number" ? raw : Number(raw);
+  if (SPEAK_RATE_OPTIONS.includes(n as (typeof SPEAK_RATE_OPTIONS)[number])) {
+    return n;
+  }
+  return defaultSettings.speakRate;
 }
 
 export function normalizeWord(raw: Partial<Word> & {
@@ -66,6 +81,7 @@ export function getSettings(): Settings {
     }
     return {
       speakMode,
+      speakRate: normalizeSpeakRate(parsed.speakRate),
       order: parsed.order === "sequential" ? "sequential" : "random",
     };
   } catch {

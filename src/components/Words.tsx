@@ -6,7 +6,7 @@ import type {
   Word,
   WordOrder,
 } from "../types";
-import { getSettings, saveSettings, setEasy, setFavorite, setWrong } from "../lib/storage";
+import { getSettings, saveSettings, setEasy, setFavorite, setWrong, SPEAK_RATE_CHOICES } from "../lib/storage";
 import {
   normalizeAnswer,
   shuffle,
@@ -359,9 +359,11 @@ export function WordsPractice({
   const [index, setIndex] = useState(0);
   const [displayMode, setDisplayMode] = useState<DisplayMode>("hidden");
   const [hoverReveal, setHoverReveal] = useState(false);
+  const [keyReveal, setKeyReveal] = useState(false);
   const [input, setInput] = useState("");
   const [inputForId, setInputForId] = useState<number | null>(null);
   const [speakMode, setSpeakMode] = useState<SpeakMode>(settings.speakMode);
+  const [speakRate, setSpeakRate] = useState(settings.speakRate);
   const [inWrong, setInWrong] = useState(false);
   const [inEasy, setInEasy] = useState(false);
   const [inFav, setInFav] = useState(false);
@@ -378,6 +380,11 @@ export function WordsPractice({
     saveSettings({ ...getSettings(), speakMode: mode });
   };
 
+  const changeSpeakRate = (rate: number) => {
+    setSpeakRate(rate);
+    saveSettings({ ...getSettings(), speakRate: rate });
+  };
+
   // Reset typing state in the same render as word change — avoids one-frame
   // mismatch (old input vs new word) that flashes letters red.
   if (word && inputForId !== word.id) {
@@ -385,6 +392,7 @@ export function WordsPractice({
     setInput(structuralPrefix(word.english));
     setToast("");
     setHoverReveal(false);
+    setKeyReveal(false);
   }
 
   useEffect(() => {
@@ -402,7 +410,7 @@ export function WordsPractice({
     // Delay speak so React Strict Mode cleanup / cancel() doesn't swallow it.
     const speakT = autoSpeak
       ? window.setTimeout(() => {
-          void speakWord(english, accent);
+          void speakWord(english, accent, speakRate);
         }, 80)
       : 0;
     return () => {
@@ -410,7 +418,7 @@ export function WordsPractice({
       window.clearTimeout(speakT);
       stopSpeaking();
     };
-  }, [word?.id, word?.english, autoSpeak, accent]);
+  }, [word?.id, word?.english, autoSpeak, accent, speakRate]);
 
   const prev = () => {
     if (index <= 0) return;
@@ -512,14 +520,42 @@ export function WordsPractice({
   // Capture typing even after clicking action buttons (focus left the shell)
   useEffect(() => {
     if (done || !word) return;
-    const onKey = (e: KeyboardEvent) => {
+
+    // macOS often suppresses keyup for the non-meta key while ⌘ is held.
+    // Keep peek alive via key-repeat heartbeats; hide shortly after repeats stop.
+    let peekHoldTimer = 0;
+    const hidePeek = () => {
+      window.clearTimeout(peekHoldTimer);
+      peekHoldTimer = 0;
+      setKeyReveal(false);
+    };
+    const keepPeek = (fromRepeat: boolean) => {
+      setKeyReveal(true);
+      window.clearTimeout(peekHoldTimer);
+      // First keydown: cover OS delay-until-repeat (~500ms+). Repeats: hide soon after release.
+      peekHoldTimer = window.setTimeout(hidePeek, fromRepeat ? 140 : 700);
+    };
+
+    const onKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
       if (target?.closest("input, textarea, select")) return;
+
+      // ⌘J / Ctrl+J hold → peek word (only when 单词展示 is off)
+      if (
+        displayMode === "hidden" &&
+        (e.metaKey || e.ctrlKey) &&
+        !e.altKey &&
+        e.key.toLowerCase() === "j"
+      ) {
+        e.preventDefault();
+        keepPeek(e.repeat);
+        return;
+      }
 
       // ⌘K / Ctrl+K → speak current word
       if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        void speakWord(word.english, accent);
+        void speakWord(word.english, accent, speakRate);
         return;
       }
 
@@ -533,10 +569,23 @@ export function WordsPractice({
       }
       handleTypeKey(e);
     };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    const onKeyUp = (e: KeyboardEvent) => {
+      const key = e.key.toLowerCase();
+      if (key === "j" || key === "meta" || key === "control") {
+        hidePeek();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keyup", onKeyUp);
+    window.addEventListener("blur", hidePeek);
+    return () => {
+      window.clearTimeout(peekHoldTimer);
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("keyup", onKeyUp);
+      window.removeEventListener("blur", hidePeek);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps -- handlers close over latest word/input
-  }, [done, word, input, index, accent]);
+  }, [done, word, input, index, accent, speakRate, displayMode]);
 
   const toggleWrong = () => {
     const nextOn = !inWrong;
@@ -614,7 +663,7 @@ export function WordsPractice({
             </label>
           </div>
           <div className="control-group">
-            <span className="control-label">自动发音</span>
+            <span className="control-label">发音配置</span>
             {(
               [
                 ["off", "不发音"],
@@ -632,6 +681,23 @@ export function WordsPractice({
                 {label}
               </label>
             ))}
+            <span className="control-sep" aria-hidden="true" />
+            <label className="speak-rate">
+              <span className="control-label">速度</span>
+              <select
+                className="rate-select"
+                value={speakRate}
+                disabled={speakMode === "off"}
+                onChange={(e) => changeSpeakRate(Number(e.target.value))}
+                aria-label="发音速度"
+              >
+                {SPEAK_RATE_CHOICES.map((rate) => (
+                  <option key={rate} value={rate}>
+                    {rate}%
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
         </div>
         <button className="btn ghost" onClick={onBack}>
@@ -663,7 +729,7 @@ export function WordsPractice({
               target={word.english}
               value={inputForId === word.id ? input : ""}
               mode={displayMode}
-              hoverReveal={hoverReveal}
+              hoverReveal={hoverReveal || keyReveal}
             />
           </div>
           <button
@@ -672,7 +738,7 @@ export function WordsPractice({
             title="发音"
             onClick={(e) => {
               e.stopPropagation();
-              void speakWord(word.english, accent);
+              void speakWord(word.english, accent, speakRate);
             }}
           >
             <SpeakerIcon />
