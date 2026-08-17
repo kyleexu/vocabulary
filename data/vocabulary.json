@@ -226,7 +226,7 @@
     "english": "argument",
     "chinese": "实参",
     "pos": "n.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 1,
     "isEasy": 0
   },
@@ -236,9 +236,9 @@
     "category": "Programming Basics",
     "english": "aspect-oriented",
     "chinese": "面向切面",
-    "pos": "n.",
-    "isWrong": 1,
-    "isFavorites": 0,
+    "pos": "adj.",
+    "isWrong": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -347,7 +347,7 @@
     "english": "coercion",
     "chinese": "强制转换",
     "pos": "n.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -370,7 +370,7 @@
     "chinese": "比较器",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -424,7 +424,7 @@
     "english": "contravariance",
     "chinese": "逆变",
     "pos": "n.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -435,7 +435,7 @@
     "english": "conversion",
     "chinese": "转换",
     "pos": "n.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -468,7 +468,7 @@
     "english": "declarative",
     "chinese": "声明式",
     "pos": "n.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -491,7 +491,7 @@
     "chinese": "委托",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -512,8 +512,8 @@
     "english": "deserialize",
     "chinese": "反序列化",
     "pos": "v.",
-    "isWrong": 1,
-    "isFavorites": 0,
+    "isWrong": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -534,8 +534,8 @@
     "english": "destructuring",
     "chinese": "解构",
     "pos": "n.",
-    "isWrong": 1,
-    "isFavorites": 0,
+    "isWrong": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -579,7 +579,7 @@
     "chinese": "动态的",
     "pos": "adj.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -601,7 +601,7 @@
     "chinese": "饿汉求值",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -612,7 +612,7 @@
     "chinese": "封装",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -799,7 +799,7 @@
     "chinese": "命令式",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -875,8 +875,8 @@
     "english": "instantiate",
     "chinese": "实例化",
     "pos": "v.",
-    "isWrong": 0,
-    "isFavorites": 0,
+    "isWrong": 1,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1161,7 +1161,7 @@
     "english": "pattern-matching",
     "chinese": "模式匹配",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -1194,8 +1194,8 @@
     "english": "primitive",
     "chinese": "基本类型",
     "pos": "n.",
-    "isWrong": 0,
-    "isFavorites": 0,
+    "isWrong": 1,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1225,7 +1225,7 @@
     "categoryId": 2,
     "category": "Programming Basics",
     "english": "promise",
-    "chinese": "Promise",
+    "chinese": "承诺",
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
@@ -1293,8 +1293,8 @@
     "english": "reflection",
     "chinese": "反射",
     "pos": "n.",
-    "isWrong": 0,
-    "isFavorites": 0,
+    "isWrong": 1,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1436,8 +1436,8 @@
     "english": "transient",
     "chinese": "瞬态的；瞬态；非持久",
     "pos": "adj.",
-    "isWrong": 0,
-    "isFavorites": 0,
+    "isWrong": 1,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1513,8 +1513,8 @@
     "english": "volatile",
     "chinese": "易失的；易失",
     "pos": "adj.",
-    "isWrong": 0,
-    "isFavorites": 0,
+    "isWrong": 1,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1547,7 +1547,7 @@
     "chinese": "包装类",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -15165,7 +15165,7 @@
     "chinese": "在我看来",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
