@@ -1,16 +1,22 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Word } from "./types";
+import type { AppView, Word } from "./types";
 import { WordsPractice, WordsSetup } from "./components/Words";
 import { WordBooks } from "./components/WordBooks";
-import { loadVocabularyFromDisk } from "./lib/storage";
+import { VocabFiles } from "./components/VocabFiles";
+import {
+  getDataFile,
+  loadVocabularyFromDisk,
+  resolveDataFile,
+  setDataFile,
+} from "./lib/storage";
 import "./styles.css";
 
-type View = "home" | "words-setup" | "words-practice" | "books";
-
 export default function App() {
-  const [view, setView] = useState<View>("home");
+  const [view, setView] = useState<AppView>("home");
   const [words, setWords] = useState<Word[]>([]);
   const [practiceList, setPracticeList] = useState<Word[]>([]);
+  const [dataFile, setDataFileState] = useState(getDataFile);
+  const [switching, setSwitching] = useState(false);
 
   const wrong = useMemo(() => words.filter((w) => w.isWrong === 1), [words]);
   const favorites = useMemo(
@@ -26,10 +32,28 @@ export default function App() {
     );
   };
 
+  const switchDataFile = async (file: string) => {
+    if (file === dataFile) return;
+    setSwitching(true);
+    try {
+      const next = await loadVocabularyFromDisk(file);
+      setDataFile(file);
+      setDataFileState(file);
+      setPracticeList([]);
+      setWords(next);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setSwitching(false);
+    }
+  };
+
   useEffect(() => {
     void (async () => {
       try {
-        setWords(await loadVocabularyFromDisk());
+        const file = await resolveDataFile();
+        setDataFileState(file);
+        setWords(await loadVocabularyFromDisk(file));
       } catch (err) {
         console.error(err);
         setWords([]);
@@ -42,7 +66,7 @@ export default function App() {
       <header className="topbar">
         <div className="brand">
           <strong>Vocabulary Trainer</strong>
-          <span>背单词 · 词本</span>
+          <span>背单词 · 词本 · {dataFile}</span>
         </div>
         <nav className="nav">
           <button
@@ -63,6 +87,12 @@ export default function App() {
           >
             词本
           </button>
+          <button
+            className={view === "files" ? "active" : ""}
+            onClick={() => setView("files")}
+          >
+            词库
+          </button>
         </nav>
       </header>
 
@@ -81,6 +111,10 @@ export default function App() {
                 错词本 {wrong.length} · 收藏本 {favorites.length} · 简单词{" "}
                 {easy.length}
               </p>
+            </button>
+            <button className="tile" onClick={() => setView("files")}>
+              <h2>词库</h2>
+              <p>当前 {dataFile} · {words.length} 词</p>
             </button>
           </div>
         </>
@@ -116,6 +150,16 @@ export default function App() {
           easy={easy}
           onWordPatched={patchWord}
           onImported={setWords}
+          onBack={() => setView("home")}
+        />
+      )}
+
+      {view === "files" && (
+        <VocabFiles
+          currentFile={dataFile}
+          wordCount={words.length}
+          switching={switching}
+          onSelect={(file) => void switchDataFile(file)}
           onBack={() => setView("home")}
         />
       )}

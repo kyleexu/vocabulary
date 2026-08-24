@@ -347,7 +347,7 @@
     "english": "coercion",
     "chinese": "强制转换",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -424,7 +424,7 @@
     "english": "contravariance",
     "chinese": "逆变",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -755,7 +755,7 @@
     "chinese": "泛型",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -766,7 +766,7 @@
     "chinese": "高阶",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -777,7 +777,7 @@
     "chinese": "不可变性",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -843,7 +843,7 @@
     "chinese": "继承",
     "pos": "v.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -854,7 +854,7 @@
     "chinese": "初始化",
     "pos": "v.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -909,7 +909,7 @@
     "chinese": "内省",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -920,7 +920,7 @@
     "chinese": "不变",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1184,7 +1184,7 @@
     "chinese": "多态",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {

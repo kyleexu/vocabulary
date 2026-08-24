@@ -1,8 +1,13 @@
 import type { Flag01, SpeakMode, Word } from "../types";
 
 const SETTINGS_KEY = "vocab.settings";
+const DATA_FILE_KEY = "vocab.dataFile";
 const VOCAB_URL = "/api/vocabulary.json";
 const FLAG_URL = "/api/vocabulary/flag";
+const FILES_URL = "/api/vocabulary/files";
+
+export const DEFAULT_DATA_FILE = "vocabulary.json";
+const DATA_FILE_RE = /^[A-Za-z0-9][A-Za-z0-9._-]*\.json$/;
 
 export type Settings = {
   speakMode: SpeakMode;
@@ -20,6 +25,52 @@ const defaultSettings: Settings = {
 const SPEAK_RATE_OPTIONS = [50, 75, 100, 125] as const;
 
 export const SPEAK_RATE_CHOICES = [...SPEAK_RATE_OPTIONS];
+
+export function isDataFileName(name: string): boolean {
+  return DATA_FILE_RE.test(name);
+}
+
+/** Last chosen data/*.json; default until the user explicitly switches. */
+export function getDataFile(): string {
+  try {
+    const raw = localStorage.getItem(DATA_FILE_KEY);
+    if (raw && isDataFileName(raw)) return raw;
+  } catch {
+    // private mode / disabled storage
+  }
+  return DEFAULT_DATA_FILE;
+}
+
+export function setDataFile(name: string) {
+  const file = isDataFileName(name) ? name : DEFAULT_DATA_FILE;
+  localStorage.setItem(DATA_FILE_KEY, file);
+}
+
+function withDataFile(path: string, file = getDataFile()): string {
+  const sep = path.includes("?") ? "&" : "?";
+  return `${path}${sep}file=${encodeURIComponent(file)}`;
+}
+
+export async function listVocabularyFiles(): Promise<string[]> {
+  const res = await fetch(FILES_URL);
+  if (!res.ok) throw new Error(`列出词库失败: HTTP ${res.status}`);
+  const data = (await res.json()) as { files?: unknown };
+  if (!Array.isArray(data.files)) return [DEFAULT_DATA_FILE];
+  const files = data.files.filter(
+    (name): name is string => typeof name === "string" && isDataFileName(name),
+  );
+  return files.length ? files : [DEFAULT_DATA_FILE];
+}
+
+/** Cached file if it still exists; otherwise the first file on disk. */
+export async function resolveDataFile(): Promise<string> {
+  const files = await listVocabularyFiles();
+  const cached = getDataFile();
+  if (files.includes(cached)) return cached;
+  const next = files[0] ?? DEFAULT_DATA_FILE;
+  if (files.includes(next)) setDataFile(next);
+  return next;
+}
 
 function asFlag(value: unknown): Flag01 {
   return value === 1 || value === "1" || value === true ? 1 : 0;
@@ -221,10 +272,11 @@ export function downloadVocabularyCsv(list: Word[]) {
   URL.revokeObjectURL(url);
 }
 
-/** Load vocabulary from physical data/vocabulary.json via Vite API. */
-export async function loadVocabularyFromDisk(): Promise<Word[]> {
-  let res = await fetch(VOCAB_URL);
-  if (!res.ok) res = await fetch("/data/vocabulary.json");
+/** Load vocabulary from the cached (or given) data/*.json via Vite API. */
+export async function loadVocabularyFromDisk(
+  file = getDataFile(),
+): Promise<Word[]> {
+  const res = await fetch(withDataFile(VOCAB_URL, file));
   if (!res.ok) throw new Error(`加载词库失败: HTTP ${res.status}`);
   const data = (await res.json()) as unknown;
   if (!Array.isArray(data)) throw new Error("vocabulary is not an array");
@@ -240,7 +292,7 @@ export async function loadVocabularyFromDisk(): Promise<Word[]> {
 /** Replace entire vocabulary.json on disk (CSV import). */
 export async function replaceVocabularyOnDisk(words: Word[]): Promise<Word[]> {
   const list = words.map(normalizeWord);
-  const res = await fetch(VOCAB_URL, {
+  const res = await fetch(withDataFile(VOCAB_URL), {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(list, null, 2) + "\n",
@@ -262,7 +314,7 @@ export async function patchWordFlags(
   id: number,
   flags: Partial<Pick<Word, FlagKey>>,
 ): Promise<Word> {
-  const res = await fetch(FLAG_URL, {
+  const res = await fetch(withDataFile(FLAG_URL), {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ id, ...flags }),

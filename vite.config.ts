@@ -6,8 +6,9 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
-const dataVocabPath = path.join(rootDir, "data/vocabulary.json");
-const publicVocabPath = path.join(rootDir, "public/data/vocabulary.json");
+const dataDir = path.join(rootDir, "data");
+const DEFAULT_VOCAB_FILE = "vocabulary.json";
+const VOCAB_FILE_RE = /^[A-Za-z0-9][A-Za-z0-9._-]*\.json$/;
 
 /** Serialize disk reads/writes so concurrent flag updates don't clobber. */
 let diskQueue: Promise<void> = Promise.resolve();
@@ -21,20 +22,50 @@ function enqueueDisk<T>(fn: () => Promise<T>): Promise<T> {
   return run;
 }
 
-async function readVocabularyFile(): Promise<string> {
+function sanitizeVocabFile(raw: string | null): string {
+  const name = (raw ?? "").trim() || DEFAULT_VOCAB_FILE;
+  if (!VOCAB_FILE_RE.test(name)) {
+    throw new Error("invalid vocabulary file name");
+  }
+  return name;
+}
+
+function vocabPath(file: string) {
+  return path.join(dataDir, file);
+}
+
+function fileFromRequest(url: string): string {
+  const query = url.includes("?") ? url.slice(url.indexOf("?") + 1) : "";
+  return sanitizeVocabFile(new URLSearchParams(query).get("file"));
+}
+
+async function listVocabFiles(): Promise<string[]> {
   try {
-    return await fs.readFile(dataVocabPath, "utf8");
+    const entries = await fs.readdir(dataDir);
+    return entries.filter((entry) => VOCAB_FILE_RE.test(entry)).sort((a, b) => {
+      if (a === DEFAULT_VOCAB_FILE) return -1;
+      if (b === DEFAULT_VOCAB_FILE) return 1;
+      return a.localeCompare(b);
+    });
   } catch {
-    return await fs.readFile(publicVocabPath, "utf8");
+    return [];
   }
 }
 
-async function writeVocabularyFile(body: string) {
+async function readVocabularyFile(file: string): Promise<string> {
+  try {
+    return await fs.readFile(vocabPath(file), "utf8");
+  } catch {
+    const error = new Error(`vocabulary file not found: ${file}`);
+    (error as Error & { statusCode: number }).statusCode = 404;
+    throw error;
+  }
+}
+
+async function writeVocabularyFile(file: string, body: string) {
   const text = body.endsWith("\n") ? body : `${body}\n`;
-  await fs.mkdir(path.dirname(dataVocabPath), { recursive: true });
-  await fs.writeFile(dataVocabPath, text, "utf8");
-  await fs.mkdir(path.dirname(publicVocabPath), { recursive: true });
-  await fs.writeFile(publicVocabPath, text, "utf8");
+  await fs.mkdir(dataDir, { recursive: true });
+  await fs.writeFile(vocabPath(file), text, "utf8");
 }
 
 function readRequestBody(req: Connect.IncomingMessage): Promise<string> {
@@ -54,13 +85,27 @@ function asFlag(value: unknown): 0 | 1 {
 
 function attachVocabularyApi(middlewares: Connect.Server) {
   middlewares.use(async (req, res, next) => {
-    const url = (req.url ?? "").split("?")[0];
+    const rawUrl = req.url ?? "";
+    const url = rawUrl.split("?")[0];
 
     try {
+      if (url === "/api/vocabulary/files") {
+        if (req.method !== "GET") {
+          res.statusCode = 405;
+          res.end("Method not allowed");
+          return;
+        }
+        const files = await enqueueDisk(() => listVocabFiles());
+        res.setHeader("Content-Type", "application/json; charset=utf-8");
+        res.end(JSON.stringify({ files }));
+        return;
+      }
+
       // Full vocabulary file
       if (url === "/api/vocabulary.json") {
+        const file = fileFromRequest(rawUrl);
         if (req.method === "GET") {
-          const body = await enqueueDisk(() => readVocabularyFile());
+          const body = await enqueueDisk(() => readVocabularyFile(file));
           res.setHeader("Content-Type", "application/json; charset=utf-8");
           res.end(body);
           return;
@@ -69,7 +114,7 @@ function attachVocabularyApi(middlewares: Connect.Server) {
         if (req.method === "PUT") {
           const body = await readRequestBody(req);
           JSON.parse(body); // validate
-          await enqueueDisk(() => writeVocabularyFile(body));
+          await enqueueDisk(() => writeVocabularyFile(file, body));
           res.statusCode = 204;
           res.end();
           return;
@@ -88,6 +133,7 @@ function attachVocabularyApi(middlewares: Connect.Server) {
           return;
         }
 
+        const file = fileFromRequest(rawUrl);
         const raw = JSON.parse(await readRequestBody(req)) as {
           id?: unknown;
           isWrong?: unknown;
@@ -102,7 +148,7 @@ function attachVocabularyApi(middlewares: Connect.Server) {
         }
 
         const updated = await enqueueDisk(async () => {
-          const list = JSON.parse(await readVocabularyFile()) as Array<
+          const list = JSON.parse(await readVocabularyFile(file)) as Array<
             Record<string, unknown>
           >;
           const idx = list.findIndex((w) => Number(w.id) === id);
@@ -118,7 +164,7 @@ function attachVocabularyApi(middlewares: Connect.Server) {
           delete word.isfavorites;
           delete word.iseasy;
           list[idx] = word;
-          await writeVocabularyFile(JSON.stringify(list, null, 2));
+          await writeVocabularyFile(file, JSON.stringify(list, null, 2));
           return word;
         });
 
@@ -129,27 +175,26 @@ function attachVocabularyApi(middlewares: Connect.Server) {
 
       next();
     } catch (err) {
-      res.statusCode = 500;
-      res.end(err instanceof Error ? err.message : String(err));
+      const message = err instanceof Error ? err.message : String(err);
+      const status =
+        typeof err === "object" &&
+        err &&
+        "statusCode" in err &&
+        typeof err.statusCode === "number"
+          ? err.statusCode
+          : message.includes("invalid vocabulary file")
+            ? 400
+            : 500;
+      res.statusCode = status;
+      res.end(message);
     }
   });
 }
 
-/** Serve/persist data/vocabulary.json; mirror to public for static builds. */
+/** Serve/persist JSON files in data/. */
 function vocabularyDataPlugin(): Plugin {
   return {
     name: "vocabulary-data-api",
-    async buildStart() {
-      try {
-        const body = await readVocabularyFile();
-        await writeVocabularyFile(body);
-      } catch (err) {
-        console.warn(
-          "[vocabulary] could not sync vocabulary.json:",
-          err instanceof Error ? err.message : err,
-        );
-      }
-    },
     configureServer(server: ViteDevServer) {
       attachVocabularyApi(server.middlewares);
     },

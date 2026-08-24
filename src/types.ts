@@ -28,4 +28,4 @@ export type DisplayMode = "full" | "hidden";
 
 export type WordOrder = "random" | "sequential";
 
-export type AppView = "home" | "words-setup" | "words-practice" | "books";
+export type AppView = "home" | "words-setup" | "words-practice" | "books" | "files";

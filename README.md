@@ -20,9 +20,8 @@ npm run dev
 
 | 文件 | 说明 |
 |---|---|
-| `data/vocabulary.json` | 词库与词本状态（唯一数据源） |
-| `public/data/vocabulary.json` | 构建/静态访问用的镜像，dev 时会与上面同步 |
+| `data/*.json` | 词库与词本状态（唯一数据源）。应用内「词库」选项卡可切换文件 |
 
 词库字段：`id, categoryId, category, english, chinese, pos, isWrong, isFavorites, isEasy`。`pos` 为词性；后三列为 `0` / `1`。
 
-`npm run dev` 时，练习中改词本标记会写回 `data/vocabulary.json`。在「词本」页可导入 / 导出 CSV。
+`npm run dev` 时，练习中改词本标记会写回当前选中的 `data/*.json`。在「词本」页可导入 / 导出 CSV。

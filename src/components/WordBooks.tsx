@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import type { Word } from "../types";
 import {
   downloadVocabularyCsv,
+  getDataFile,
   importVocabularyFromCsv,
   setEasy,
   setFavorite,
@@ -59,7 +60,7 @@ export function WordBooks({
       const text = await file.text();
       const next = await importVocabularyFromCsv(text);
       onImported(next);
-      setMessage(`已导入 ${next.length} 词，已写入 vocabulary.json`);
+      setMessage(`已导入 ${next.length} 词，已写入 ${getDataFile()}`);
     } catch (err) {
       setMessage(err instanceof Error ? err.message : String(err));
     } finally {
