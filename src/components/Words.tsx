@@ -439,6 +439,7 @@ export function WordsPractice({
   const [keyReveal, setKeyReveal] = useState(false);
   const [chineseKeyReveal, setChineseKeyReveal] = useState(false);
   const [chineseHoverReveal, setChineseHoverReveal] = useState(false);
+  const [chineseCorrectReveal, setChineseCorrectReveal] = useState(false);
   const [input, setInput] = useState("");
   const [inputForId, setInputForId] = useState<number | null>(null);
   const [speakMode, setSpeakMode] = useState<SpeakMode>(settings.speakMode);
@@ -495,6 +496,7 @@ export function WordsPractice({
     setKeyReveal(false);
     setChineseKeyReveal(false);
     setChineseHoverReveal(false);
+    setChineseCorrectReveal(false);
     correctHandledIdRef.current = null;
     clearAdvanceTimer();
   }
@@ -548,6 +550,10 @@ export function WordsPractice({
     if (!word || correctHandledIdRef.current === word.id) return;
     correctHandledIdRef.current = word.id;
     flash("正确");
+    // 中文隐藏 + 自动翻页：答对时同步揭开中文含义
+    if (chineseDisplayMode === "hidden") {
+      setChineseCorrectReveal(true);
+    }
     if (!autoAdvance) return;
     clearAdvanceTimer();
     advanceTimerRef.current = window.setTimeout(() => {
@@ -563,6 +569,7 @@ export function WordsPractice({
     if (correctHandledIdRef.current === word.id) {
       correctHandledIdRef.current = null;
       clearAdvanceTimer();
+      setChineseCorrectReveal(false);
     }
   }, [input, word?.id, word?.english]);
 
@@ -877,6 +884,7 @@ export function WordsPractice({
                     setChineseDisplayMode("hidden");
                     setChineseKeyReveal(false);
                     setChineseHoverReveal(false);
+                    setChineseCorrectReveal(false);
                   }
                 }}
               />
@@ -1021,7 +1029,8 @@ export function WordsPractice({
             const revealed =
               chineseDisplayMode === "full" ||
               chineseKeyReveal ||
-              chineseHoverReveal;
+              chineseHoverReveal ||
+              chineseCorrectReveal;
             return (
               <span key={i} className="chinese-slot">
                 <span className="chinese-slot-ghost" aria-hidden="true">

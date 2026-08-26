@@ -1,0 +1,14 @@
+---
+description: Never verify the web app in browser or by hitting public URLs after deploy
+alwaysApply: true
+---
+
+# No web verification
+
+After code changes, deploys, or VPS restarts:
+
+- Do **not** open the app in a browser (including cursor-ide-browser / browsermcp)
+- Do **not** curl/fetch the public site or local preview URL to "verify" the page
+- Do **not** screenshot or interact with the UI for confirmation
+
+The user verifies the webpage themselves. Report commit/push/service status only; stop after deploy/restart succeeds.
