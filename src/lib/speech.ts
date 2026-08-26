@@ -69,21 +69,60 @@ export function speakWord(
   return speakWithYoudao(word, accent, token, ratePercent);
 }
 
-function wait(ms: number): Promise<void> {
-  return new Promise((resolve) => window.setTimeout(resolve, ms));
+function discardAudio(audio: HTMLAudioElement) {
+  audio.pause();
+  audio.removeAttribute("src");
+  audio.load();
 }
 
-async function playYoudaoClip(
+function preloadYoudaoClip(
   text: string,
   accent: Accent,
-  token: number,
   ratePercent: number,
+): Promise<HTMLAudioElement> {
+  return new Promise((resolve, reject) => {
+    const audio = new Audio();
+    audio.preload = "auto";
+    audio.playbackRate = clampPlaybackRate(ratePercent);
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(timer);
+      audio.oncanplaythrough = null;
+      audio.onloadeddata = null;
+      audio.onerror = null;
+      resolve(audio);
+    };
+    const fail = () => {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(timer);
+      discardAudio(audio);
+      reject(new Error("youdao audio error"));
+    };
+    const timer = window.setTimeout(fail, 8000);
+    audio.oncanplaythrough = finish;
+    audio.onloadeddata = () => {
+      if (audio.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) finish();
+    };
+    audio.onerror = fail;
+    audio.src = youdaoDictVoiceUrl(text, accent);
+    audio.load();
+  });
+}
+
+async function playLoadedClip(
+  audio: HTMLAudioElement,
+  token: number,
 ): Promise<void> {
-  if (token !== speakToken) return;
+  if (token !== speakToken) {
+    discardAudio(audio);
+    return;
+  }
   stopCurrentAudio();
-  const audio = new Audio(youdaoDictVoiceUrl(text, accent));
   currentAudio = audio;
-  audio.playbackRate = clampPlaybackRate(ratePercent);
+  audio.currentTime = 0;
   await new Promise<void>((resolve, reject) => {
     audio.onended = () => resolve();
     audio.onerror = () => reject(new Error("youdao audio error"));
@@ -103,19 +142,33 @@ async function speakWithYoudao(
   stopCurrentAudio();
   if ("speechSynthesis" in window) window.speechSynthesis.cancel();
 
-  for (let i = 0; i < segments.length; i++) {
+  const preloaded = await Promise.all(
+    segments.map((part) =>
+      preloadYoudaoClip(part, accent, ratePercent).then(
+        (audio) => ({ ok: true as const, audio, part }),
+        () => ({ ok: false as const, audio: null, part }),
+      ),
+    ),
+  );
+  if (token !== speakToken) {
+    for (const item of preloaded) {
+      if (item.audio) discardAudio(item.audio);
+    }
+    return;
+  }
+
+  for (const item of preloaded) {
     if (token !== speakToken) return;
-    const part = segments[i];
-    try {
-      await playYoudaoClip(part, accent, token, ratePercent);
-    } catch {
-      if (token !== speakToken) return;
-      stopCurrentAudio();
-      await speakWithSynthesis(part, accent, token, ratePercent);
+    if (item.ok && item.audio) {
+      try {
+        await playLoadedClip(item.audio, token);
+        continue;
+      } catch {
+        if (token !== speakToken) return;
+        stopCurrentAudio();
+      }
     }
-    if (i < segments.length - 1 && token === speakToken) {
-      await wait(80);
-    }
+    await speakWithSynthesis(item.part, accent, token, ratePercent);
   }
 }
 
