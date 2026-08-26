@@ -19,7 +19,22 @@ die() {
 }
 
 need_cmd() {
-  command -v "$1" >/dev/null 2>&1 || die "未找到命令: $1"
+  if command -v "$1" >/dev/null 2>&1; then
+    return 0
+  fi
+  if [[ "$1" == "node" || "$1" == "npm" ]]; then
+    die "未找到命令: $1
+
+请先安装 Node.js 18+（Ubuntu 示例）:
+  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  node -v && npm -v
+
+然后执行:
+  ./scripts/ops.sh setup
+  ./scripts/ops.sh systemd-install"
+  fi
+  die "未找到命令: $1"
 }
 
 node_bin() {

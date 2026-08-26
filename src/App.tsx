@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import type { AppView, Word } from "./types";
+import { Login } from "./components/Login";
 import { WordsPractice, WordsSetup } from "./components/Words";
 import { WordBooks } from "./components/WordBooks";
 import { VocabFiles } from "./components/VocabFiles";
+import { isAuthenticated, logout } from "./lib/auth";
 import {
   getDataFile,
   loadVocabularyFromDisk,
@@ -12,6 +14,7 @@ import {
 import "./styles.css";
 
 export default function App() {
+  const [authed, setAuthed] = useState(isAuthenticated);
   const [view, setView] = useState<AppView>("home");
   const [words, setWords] = useState<Word[]>([]);
   const [practiceList, setPracticeList] = useState<Word[]>([]);
@@ -49,6 +52,7 @@ export default function App() {
   };
 
   useEffect(() => {
+    if (!authed) return;
     void (async () => {
       try {
         const file = await resolveDataFile();
@@ -59,7 +63,19 @@ export default function App() {
         setWords([]);
       }
     })();
-  }, []);
+  }, [authed]);
+
+  if (!authed) {
+    return <Login onSuccess={() => setAuthed(true)} />;
+  }
+
+  const handleLogout = () => {
+    logout();
+    setAuthed(false);
+    setView("home");
+    setWords([]);
+    setPracticeList([]);
+  };
 
   return (
     <div className="app-shell">
@@ -92,6 +108,9 @@ export default function App() {
             onClick={() => setView("files")}
           >
             词库
+          </button>
+          <button type="button" className="nav-logout" onClick={handleLogout}>
+            退出
           </button>
         </nav>
       </header>
