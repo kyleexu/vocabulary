@@ -6,7 +6,7 @@ import type {
   Word,
   WordOrder,
 } from "../types";
-import { getSettings, saveSettings, setEasy, setFavorite, setWrong, SPEAK_RATE_CHOICES } from "../lib/storage";
+import { getSettings, saveSettings, setEasy, setFavorite, setWrong, SPEAK_RATE_CHOICES, AUTO_ADVANCE_DELAY_CHOICES } from "../lib/storage";
 import {
   normalizeAnswer,
   shuffle,
@@ -19,7 +19,7 @@ import {
   sortWordsByCsvOrder,
 } from "../data/categories";
 
-type SourceMode = "categories" | "wrong" | "favorites" | "easy";
+type SourceMode = "all" | "wrong" | "favorites" | "easy";
 
 /** Prefill leading "-" / " " so caret starts on the first letter. */
 function structuralPrefix(english: string): string {
@@ -150,10 +150,42 @@ export function WordsSetup({
   const categories = useMemo(() => categoriesFromWords(words), [words]);
   const settings = getSettings();
   const [selected, setSelected] = useState<number[]>([]);
-  const [source, setSource] = useState<SourceMode>("categories");
+  const [source, setSource] = useState<SourceMode>("all");
+  const [includeEasy, setIncludeEasy] = useState(false);
   const [limit, setLimit] = useState<number | "">(50);
   const [order, setOrder] = useState<WordOrder>(settings.order ?? "random");
   const [startIndex, setStartIndex] = useState<number | "">(1);
+
+  /** Book/source list before category filter; drops easy words unless checked (or viewing 简单词本). */
+  const sourceWords = useMemo(() => {
+    const raw =
+      source === "wrong"
+        ? wrongWords
+        : source === "favorites"
+          ? favoriteWords
+          : source === "easy"
+            ? easyWords
+            : words;
+    if (source !== "easy" && !includeEasy) {
+      return raw.filter((w) => w.isEasy !== 1);
+    }
+    return raw;
+  }, [
+    source,
+    includeEasy,
+    wrongWords,
+    favoriteWords,
+    easyWords,
+    words,
+  ]);
+
+  const countByCategory = useMemo(() => {
+    const map = new Map<number, number>();
+    for (const w of sourceWords) {
+      map.set(w.categoryId, (map.get(w.categoryId) ?? 0) + 1);
+    }
+    return map;
+  }, [sourceWords]);
 
   const toggleCat = (categoryId: number) => {
     setSelected((prev) =>
@@ -163,20 +195,31 @@ export function WordsSetup({
     );
   };
 
-  const pool = useMemo(() => {
-    let list: Word[];
-    if (source === "wrong") list = wrongWords;
-    else if (source === "favorites") list = favoriteWords;
-    else if (source === "easy") list = easyWords;
-    else {
-      const cats = selected.length
-        ? selected
-        : categories.map((c) => c.categoryId);
-      list = words.filter((w) => cats.includes(w.categoryId));
-    }
-    return sortWordsByCsvOrder(list);
+  const { pool, excludedEasyCount } = useMemo(() => {
+    const cats = selected.length
+      ? selected
+      : categories.map((c) => c.categoryId);
+    const raw =
+      source === "wrong"
+        ? wrongWords
+        : source === "favorites"
+          ? favoriteWords
+          : source === "easy"
+            ? easyWords
+            : words;
+    const afterCats = raw.filter((w) => cats.includes(w.categoryId));
+    // Same rule as sourceWords: dual-tagged easy+wrong/fav stay out unless 简单词 is checked.
+    const list =
+      source !== "easy" && !includeEasy
+        ? afterCats.filter((w) => w.isEasy !== 1)
+        : afterCats;
+    return {
+      pool: sortWordsByCsvOrder(list),
+      excludedEasyCount: afterCats.length - list.length,
+    };
   }, [
     source,
+    includeEasy,
     wrongWords,
     favoriteWords,
     easyWords,
@@ -206,22 +249,48 @@ export function WordsSetup({
     onStart({ list });
   };
 
+  const tabCounts = useMemo(() => {
+    const withoutEasy = (list: Word[]) =>
+      includeEasy ? list : list.filter((w) => w.isEasy !== 1);
+    return {
+      all: withoutEasy(words).length,
+      wrong: withoutEasy(wrongWords).length,
+      favorites: withoutEasy(favoriteWords).length,
+      easy: easyWords.length,
+    };
+  }, [includeEasy, words, wrongWords, favoriteWords, easyWords]);
+
   return (
     <div className="panel stack">
       <div className="row" style={{ justifyContent: "space-between" }}>
         <h2>背单词</h2>
-        <button className="btn ghost" onClick={onBack}>
-          返回
-        </button>
+        <div className="row">
+          {source !== "easy" && (
+            <label
+              className="choice"
+              title="未勾选时：简单词不进练习；同时标了错词/收藏的也会排除"
+            >
+              简单词：
+              <input
+                type="checkbox"
+                checked={includeEasy}
+                onChange={(e) => setIncludeEasy(e.target.checked)}
+              />
+            </label>
+          )}
+          <button className="btn ghost" onClick={onBack}>
+            返回
+          </button>
+        </div>
       </div>
 
       <div className="tabs">
         {(
           [
-            ["categories", "按分类"],
-            ["wrong", `错词本 (${wrongWords.length})`],
-            ["favorites", `收藏本 (${favoriteWords.length})`],
-            ["easy", `简单词本 (${easyWords.length})`],
+            ["all", `全部 (${tabCounts.all})`],
+            ["wrong", `错词本 (${tabCounts.wrong})`],
+            ["favorites", `收藏本 (${tabCounts.favorites})`],
+            ["easy", `简单词本 (${tabCounts.easy})`],
           ] as const
         ).map(([k, label]) => (
           <button
@@ -234,32 +303,34 @@ export function WordsSetup({
         ))}
       </div>
 
-      {source === "categories" && (
-        <div className="stack">
-          <div className="row">
-            <button
-              className="btn ghost"
-              onClick={() => setSelected(categories.map((c) => c.categoryId))}
-            >
-              全选
-            </button>
-            <button className="btn ghost" onClick={() => setSelected([])}>
-              清空
-            </button>
-          </div>
-          <div className="row">
-            {categories.map((cat) => (
-              <button
-                key={cat.categoryId}
-                className={`chip ${selected.includes(cat.categoryId) ? "on" : ""}`}
-                onClick={() => toggleCat(cat.categoryId)}
-              >
-                {formatCategoryLabel(cat.category, cat.categoryId)}
-              </button>
-            ))}
-          </div>
+      <div className="stack">
+        <div className="row">
+          <button
+            className="btn ghost"
+            onClick={() => setSelected(categories.map((c) => c.categoryId))}
+          >
+            全选
+          </button>
+          <button className="btn ghost" onClick={() => setSelected([])}>
+            清空
+          </button>
+          <span className="muted">
+            {selected.length ? "按所选分类筛选" : "未选分类 · 当前来源全部章节"}
+          </span>
         </div>
-      )}
+        <div className="row">
+          {categories.map((cat) => (
+            <button
+              key={cat.categoryId}
+              className={`chip ${selected.includes(cat.categoryId) ? "on" : ""}`}
+              onClick={() => toggleCat(cat.categoryId)}
+            >
+              {formatCategoryLabel(cat.category, cat.categoryId)} (
+              {countByCategory.get(cat.categoryId) ?? 0})
+            </button>
+          ))}
+        </div>
+      </div>
 
       <div className="row">
         <span className="muted">顺序</span>
@@ -326,12 +397,16 @@ export function WordsSetup({
             1,
             typeof startIndex === "number" ? startIndex : 1,
           );
+          const easyNote =
+            excludedEasyCount > 0
+              ? ` · 已排除 ${excludedEasyCount} 个简单词`
+              : "";
           if (order === "random") {
-            return `候选 ${pool.length} 词 · 将随机抽取 ${Math.min(n, pool.length)} 词`;
+            return `候选 ${pool.length} 词${easyNote} · 将随机抽取 ${Math.min(n, pool.length)} 词`;
           }
           const from = Math.min(startAt, Math.max(1, pool.length));
           const count = Math.min(n, Math.max(0, pool.length - from + 1));
-          return `候选 ${pool.length} 词 · 将从第 ${from} 词起按顺序取 ${count} 词`;
+          return `候选 ${pool.length} 词${easyNote} · 将从第 ${from} 词起按顺序取 ${count} 词`;
         })()}
       </p>
 
@@ -358,18 +433,28 @@ export function WordsPractice({
   const settings = getSettings();
   const [index, setIndex] = useState(0);
   const [displayMode, setDisplayMode] = useState<DisplayMode>("hidden");
+  const [chineseDisplayMode, setChineseDisplayMode] =
+    useState<DisplayMode>("hidden");
   const [hoverReveal, setHoverReveal] = useState(false);
   const [keyReveal, setKeyReveal] = useState(false);
+  const [chineseKeyReveal, setChineseKeyReveal] = useState(false);
+  const [chineseHoverReveal, setChineseHoverReveal] = useState(false);
   const [input, setInput] = useState("");
   const [inputForId, setInputForId] = useState<number | null>(null);
   const [speakMode, setSpeakMode] = useState<SpeakMode>(settings.speakMode);
   const [speakRate, setSpeakRate] = useState(settings.speakRate);
+  const [autoAdvance, setAutoAdvance] = useState(settings.autoAdvance);
+  const [autoAdvanceDelayMs, setAutoAdvanceDelayMs] = useState(
+    settings.autoAdvanceDelayMs,
+  );
   const [inWrong, setInWrong] = useState(false);
   const [inEasy, setInEasy] = useState(false);
   const [inFav, setInFav] = useState(false);
   const [done, setDone] = useState(false);
   const [toast, setToast] = useState("");
   const inputShellRef = useRef<HTMLDivElement>(null);
+  const advanceTimerRef = useRef(0);
+  const correctHandledIdRef = useRef<number | null>(null);
 
   const word = list[index];
   const accent = speakAccent(speakMode);
@@ -385,6 +470,21 @@ export function WordsPractice({
     saveSettings({ ...getSettings(), speakRate: rate });
   };
 
+  const changeAutoAdvance = (on: boolean) => {
+    setAutoAdvance(on);
+    saveSettings({ ...getSettings(), autoAdvance: on });
+  };
+
+  const changeAutoAdvanceDelayMs = (ms: number) => {
+    setAutoAdvanceDelayMs(ms);
+    saveSettings({ ...getSettings(), autoAdvanceDelayMs: ms });
+  };
+
+  const clearAdvanceTimer = () => {
+    window.clearTimeout(advanceTimerRef.current);
+    advanceTimerRef.current = 0;
+  };
+
   // Reset typing state in the same render as word change — avoids one-frame
   // mismatch (old input vs new word) that flashes letters red.
   if (word && inputForId !== word.id) {
@@ -393,6 +493,10 @@ export function WordsPractice({
     setToast("");
     setHoverReveal(false);
     setKeyReveal(false);
+    setChineseKeyReveal(false);
+    setChineseHoverReveal(false);
+    correctHandledIdRef.current = null;
+    clearAdvanceTimer();
   }
 
   useEffect(() => {
@@ -420,12 +524,8 @@ export function WordsPractice({
     };
   }, [word?.id, word?.english, autoSpeak, accent, speakRate]);
 
-  const prev = () => {
-    if (index <= 0) return;
-    setIndex((i) => i - 1);
-  };
-
   const next = () => {
+    clearAdvanceTimer();
     if (index >= list.length - 1) {
       setDone(true);
       return;
@@ -433,10 +533,60 @@ export function WordsPractice({
     setIndex((i) => i + 1);
   };
 
+  const prev = () => {
+    clearAdvanceTimer();
+    if (index <= 0) return;
+    setIndex((i) => i - 1);
+  };
+
   const flash = (msg: string) => {
     setToast(msg);
     window.setTimeout(() => setToast(""), 1200);
   };
+
+  const onCorrect = () => {
+    if (!word || correctHandledIdRef.current === word.id) return;
+    correctHandledIdRef.current = word.id;
+    flash("正确");
+    if (!autoAdvance) return;
+    clearAdvanceTimer();
+    advanceTimerRef.current = window.setTimeout(() => {
+      advanceTimerRef.current = 0;
+      next();
+    }, autoAdvanceDelayMs);
+  };
+
+  // If the answer is edited after being correct, cancel pending advance.
+  useEffect(() => {
+    if (!word) return;
+    if (normalizeAnswer(input) === normalizeAnswer(word.english)) return;
+    if (correctHandledIdRef.current === word.id) {
+      correctHandledIdRef.current = null;
+      clearAdvanceTimer();
+    }
+  }, [input, word?.id, word?.english]);
+
+  // Auto-advance when the typed answer becomes fully correct (no Enter needed).
+  useEffect(() => {
+    if (done || !word || !autoAdvance) return;
+    if (normalizeAnswer(input) !== normalizeAnswer(word.english)) return;
+    onCorrect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- latch per word via onCorrect
+  }, [input, word?.id, word?.english, autoAdvance, autoAdvanceDelayMs, done]);
+
+  useEffect(() => {
+    return () => clearAdvanceTimer();
+  }, []);
+
+  // While waiting to auto-advance, any mouse move cancels for this word.
+  useEffect(() => {
+    const onMouseMove = () => {
+      if (!advanceTimerRef.current) return;
+      clearAdvanceTimer();
+    };
+    window.addEventListener("mousemove", onMouseMove);
+    return () => window.removeEventListener("mousemove", onMouseMove);
+  }, []);
 
   const fillStructural = (value: string) => {
     let nextVal = value;
@@ -494,8 +644,13 @@ export function WordsPractice({
     if (e.key === "Enter") {
       e.preventDefault();
       if (normalizeAnswer(input) === normalizeAnswer(word.english)) {
-        flash("正确");
-        window.setTimeout(next, 280);
+        // Fully correct → Enter always advances (even if auto-advance was cancelled).
+        clearAdvanceTimer();
+        if (correctHandledIdRef.current !== word.id) {
+          correctHandledIdRef.current = word.id;
+          flash("正确");
+        }
+        next();
       } else {
         flash("再试一次");
       }
@@ -524,6 +679,7 @@ export function WordsPractice({
     // macOS often suppresses keyup for the non-meta key while ⌘ is held.
     // Keep peek alive via key-repeat heartbeats; hide shortly after repeats stop.
     let peekHoldTimer = 0;
+    let chinesePeekHoldTimer = 0;
     const hidePeek = () => {
       window.clearTimeout(peekHoldTimer);
       peekHoldTimer = 0;
@@ -534,6 +690,19 @@ export function WordsPractice({
       window.clearTimeout(peekHoldTimer);
       // First keydown: cover OS delay-until-repeat (~500ms+). Repeats: hide soon after release.
       peekHoldTimer = window.setTimeout(hidePeek, fromRepeat ? 140 : 700);
+    };
+    const hideChinesePeek = () => {
+      window.clearTimeout(chinesePeekHoldTimer);
+      chinesePeekHoldTimer = 0;
+      setChineseKeyReveal(false);
+    };
+    const keepChinesePeek = (fromRepeat: boolean) => {
+      setChineseKeyReveal(true);
+      window.clearTimeout(chinesePeekHoldTimer);
+      chinesePeekHoldTimer = window.setTimeout(
+        hideChinesePeek,
+        fromRepeat ? 140 : 700,
+      );
     };
 
     const onKeyDown = (e: KeyboardEvent) => {
@@ -552,10 +721,40 @@ export function WordsPractice({
         return;
       }
 
+      // ⌘U / Ctrl+U hold → peek Chinese (only when 中文展示 is off)
+      if (
+        chineseDisplayMode === "hidden" &&
+        (e.metaKey || e.ctrlKey) &&
+        !e.altKey &&
+        e.key.toLowerCase() === "u"
+      ) {
+        e.preventDefault();
+        keepChinesePeek(e.repeat);
+        return;
+      }
+
       // ⌘K / Ctrl+K → speak current word
       if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === "k") {
         e.preventDefault();
         void speakWord(word.english, accent, speakRate);
+        return;
+      }
+
+      // ⌘↑ / Ctrl+↑ → previous word
+      if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key === "ArrowUp") {
+        e.preventDefault();
+        if (index > 0) setIndex((i) => i - 1);
+        return;
+      }
+
+      // ⌘↓ / Ctrl+↓ → next word
+      if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key === "ArrowDown") {
+        e.preventDefault();
+        if (index >= list.length - 1) {
+          setDone(true);
+        } else {
+          setIndex((i) => i + 1);
+        }
         return;
       }
 
@@ -574,18 +773,38 @@ export function WordsPractice({
       if (key === "j" || key === "meta" || key === "control") {
         hidePeek();
       }
+      if (key === "u" || key === "meta" || key === "control") {
+        hideChinesePeek();
+      }
+    };
+    const hideAllPeeks = () => {
+      hidePeek();
+      hideChinesePeek();
     };
     window.addEventListener("keydown", onKeyDown);
     window.addEventListener("keyup", onKeyUp);
-    window.addEventListener("blur", hidePeek);
+    window.addEventListener("blur", hideAllPeeks);
     return () => {
       window.clearTimeout(peekHoldTimer);
+      window.clearTimeout(chinesePeekHoldTimer);
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("keyup", onKeyUp);
-      window.removeEventListener("blur", hidePeek);
+      window.removeEventListener("blur", hideAllPeeks);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps -- handlers close over latest word/input
-  }, [done, word, input, index, accent, speakRate, displayMode]);
+  }, [
+    done,
+    word,
+    input,
+    index,
+    list.length,
+    accent,
+    speakRate,
+    displayMode,
+    chineseDisplayMode,
+    autoAdvance,
+    autoAdvanceDelayMs,
+  ]);
 
   const toggleWrong = () => {
     const nextOn = !inWrong;
@@ -647,6 +866,22 @@ export function WordsPractice({
         <div className="practice-controls">
           <div className="control-group">
             <label className="choice">
+              中文展示
+              <input
+                type="checkbox"
+                checked={chineseDisplayMode === "full"}
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    setChineseDisplayMode("full");
+                  } else {
+                    setChineseDisplayMode("hidden");
+                    setChineseKeyReveal(false);
+                    setChineseHoverReveal(false);
+                  }
+                }}
+              />
+            </label>
+            <label className="choice">
               单词展示
               <input
                 type="checkbox"
@@ -699,6 +934,33 @@ export function WordsPractice({
               </select>
             </label>
           </div>
+          <div className="control-group">
+            <label className="choice">
+              自动翻页
+              <input
+                type="checkbox"
+                checked={autoAdvance}
+                onChange={(e) => changeAutoAdvance(e.target.checked)}
+              />
+            </label>
+            <label className="speak-rate">
+              <select
+                className="rate-select"
+                value={autoAdvanceDelayMs}
+                disabled={!autoAdvance}
+                onChange={(e) =>
+                  changeAutoAdvanceDelayMs(Number(e.target.value))
+                }
+                aria-label="自动翻页间隔"
+              >
+                {AUTO_ADVANCE_DELAY_CHOICES.map((ms) => (
+                  <option key={ms} value={ms}>
+                    {ms === 500 ? "0.5s" : `${ms / 1000}s`}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
         </div>
         <button className="btn ghost" onClick={onBack}>
           结束
@@ -746,7 +1008,32 @@ export function WordsPractice({
         </div>
 
         <p className="flash-pos">词性 · {word.pos || "—"}</p>
-        <p className="flash-chinese">{word.chinese}</p>
+        <p
+          className="flash-chinese"
+          onMouseEnter={() => {
+            if (chineseDisplayMode === "hidden") setChineseHoverReveal(true);
+          }}
+          onMouseLeave={() => {
+            if (chineseDisplayMode === "hidden") setChineseHoverReveal(false);
+          }}
+        >
+          {[...word.chinese].map((ch, i) => {
+            const revealed =
+              chineseDisplayMode === "full" ||
+              chineseKeyReveal ||
+              chineseHoverReveal;
+            return (
+              <span key={i} className="chinese-slot">
+                <span className="chinese-slot-ghost" aria-hidden="true">
+                  {ch === " " ? "\u00a0" : ch}
+                </span>
+                <span className="chinese-slot-face">
+                  {revealed ? (ch === " " ? "\u00a0" : ch) : "＊"}
+                </span>
+              </span>
+            );
+          })}
+        </p>
         <span className="category">
           #{word.id} / {formatCategoryLabel(word.category, word.categoryId)}
         </span>

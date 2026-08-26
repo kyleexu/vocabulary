@@ -1,5 +1,10 @@
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import type { Word } from "../types";
+import {
+  categoriesFromWords,
+  formatCategoryLabel,
+  sortWordsByCsvOrder,
+} from "../data/categories";
 import {
   downloadVocabularyCsv,
   getDataFile,
@@ -31,12 +36,35 @@ export function WordBooks({
   onBack,
 }: Props) {
   const [tab, setTab] = useState<Tab>("wrong");
+  const [selected, setSelected] = useState<number[]>([]);
   const [importing, setImporting] = useState(false);
   const [message, setMessage] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const list =
+  const categories = useMemo(() => categoriesFromWords(words), [words]);
+  const bookList =
     tab === "wrong" ? wrong : tab === "favorites" ? favorites : easy;
+  const countByCategory = useMemo(() => {
+    const map = new Map<number, number>();
+    for (const w of bookList) {
+      map.set(w.categoryId, (map.get(w.categoryId) ?? 0) + 1);
+    }
+    return map;
+  }, [bookList]);
+  const list = useMemo(() => {
+    const filtered = selected.length
+      ? bookList.filter((w) => selected.includes(w.categoryId))
+      : bookList;
+    return sortWordsByCsvOrder(filtered);
+  }, [bookList, selected]);
+
+  const toggleCat = (categoryId: number) => {
+    setSelected((prev) =>
+      prev.includes(categoryId)
+        ? prev.filter((c) => c !== categoryId)
+        : [...prev, categoryId],
+    );
+  };
 
   const remove = async (entry: Word) => {
     try {
@@ -117,8 +145,47 @@ export function WordBooks({
         ))}
       </div>
 
+      <div className="stack">
+        <div className="row">
+          <button
+            className="btn ghost"
+            onClick={() => setSelected(categories.map((c) => c.categoryId))}
+          >
+            全选
+          </button>
+          <button className="btn ghost" onClick={() => setSelected([])}>
+            清空
+          </button>
+          <span className="muted">
+            {selected.length
+              ? `显示 ${list.length} / ${bookList.length} 词`
+              : `未选章节 · 显示全部 ${bookList.length} 词`}
+          </span>
+        </div>
+        <div className="row">
+          {categories.map((cat) => {
+            const n = countByCategory.get(cat.categoryId) ?? 0;
+            return (
+              <button
+                key={cat.categoryId}
+                className={`chip ${selected.includes(cat.categoryId) ? "on" : ""}`}
+                onClick={() => toggleCat(cat.categoryId)}
+              >
+                {formatCategoryLabel(cat.category, cat.categoryId)} ({n})
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       <div className="list">
-        {list.length === 0 && <p className="muted">暂无内容</p>}
+        {list.length === 0 && (
+          <p className="muted">
+            {bookList.length === 0
+              ? "暂无内容"
+              : "当前章节下没有词，请改选章节或清空筛选。"}
+          </p>
+        )}
         {list.map((w) => (
           <div className="list-item" key={`${tab}-${w.id}-${w.english}`}>
             <div>

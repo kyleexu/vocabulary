@@ -14,17 +14,25 @@ export type Settings = {
   /** Speech rate as percent of default (100 = utterance.rate 1). */
   speakRate: number;
   order: "random" | "sequential";
+  /** After a correct answer, advance to the next word automatically. */
+  autoAdvance: boolean;
+  /** Delay before auto-advance, in milliseconds. */
+  autoAdvanceDelayMs: number;
 };
 
 const defaultSettings: Settings = {
   speakMode: "us",
   speakRate: 100,
   order: "random",
+  autoAdvance: false,
+  autoAdvanceDelayMs: 1000,
 };
 
 const SPEAK_RATE_OPTIONS = [50, 75, 100, 125] as const;
+const AUTO_ADVANCE_DELAY_OPTIONS = [500, 1000, 1500, 2000] as const;
 
 export const SPEAK_RATE_CHOICES = [...SPEAK_RATE_OPTIONS];
+export const AUTO_ADVANCE_DELAY_CHOICES = [...AUTO_ADVANCE_DELAY_OPTIONS];
 
 export function isDataFileName(name: string): boolean {
   return DATA_FILE_RE.test(name);
@@ -89,6 +97,18 @@ function normalizeSpeakRate(raw: unknown): number {
   return defaultSettings.speakRate;
 }
 
+function normalizeAutoAdvanceDelayMs(raw: unknown): number {
+  const n = typeof raw === "number" ? raw : Number(raw);
+  if (
+    AUTO_ADVANCE_DELAY_OPTIONS.includes(
+      n as (typeof AUTO_ADVANCE_DELAY_OPTIONS)[number],
+    )
+  ) {
+    return n;
+  }
+  return defaultSettings.autoAdvanceDelayMs;
+}
+
 export function normalizeWord(raw: Partial<Word> & {
   english: string;
   chinese: string;
@@ -134,6 +154,8 @@ export function getSettings(): Settings {
       speakMode,
       speakRate: normalizeSpeakRate(parsed.speakRate),
       order: parsed.order === "sequential" ? "sequential" : "random",
+      autoAdvance: parsed.autoAdvance === true,
+      autoAdvanceDelayMs: normalizeAutoAdvanceDelayMs(parsed.autoAdvanceDelayMs),
     };
   } catch {
     return { ...defaultSettings };
