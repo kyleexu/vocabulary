@@ -152,7 +152,7 @@ export function WordsSetup({
   const [selected, setSelected] = useState<number[]>([]);
   const [source, setSource] = useState<SourceMode>("all");
   const [includeEasy, setIncludeEasy] = useState(false);
-  const [limit, setLimit] = useState<number | "">(50);
+  const [limit, setLimit] = useState<number | "">(60);
   const [order, setOrder] = useState<WordOrder>(settings.order ?? "random");
   const [startIndex, setStartIndex] = useState<number | "">(1);
 
