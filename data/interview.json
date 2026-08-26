@@ -41,7 +41,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 5,
@@ -184,7 +184,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 18,
@@ -261,7 +261,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 25,
@@ -272,7 +272,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 26,
@@ -283,7 +283,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 27,
@@ -294,7 +294,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 28,
@@ -316,7 +316,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 30,
@@ -327,7 +327,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 31,
@@ -424,7 +424,7 @@
     "english": "contravariance",
     "chinese": "逆变",
     "pos": "n.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -436,7 +436,7 @@
     "chinese": "转换",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -469,7 +469,7 @@
     "chinese": "声明式",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -481,7 +481,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 45,
@@ -558,7 +558,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 52,
@@ -569,7 +569,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 53,
@@ -668,7 +668,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 62,
@@ -679,7 +679,7 @@
     "pos": "adj.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 63,
@@ -690,7 +690,7 @@
     "pos": "adv.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 64,
@@ -701,7 +701,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 65,
@@ -712,7 +712,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 66,
@@ -723,7 +723,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 67,
@@ -734,7 +734,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 68,
@@ -745,7 +745,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 69,
@@ -788,7 +788,7 @@
     "chinese": "不可变的",
     "pos": "adj.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -798,7 +798,7 @@
     "english": "imperative",
     "chinese": "命令式",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 1,
     "isEasy": 0
   },
@@ -888,7 +888,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 82,
@@ -908,7 +908,7 @@
     "english": "introspection",
     "chinese": "内省",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 1,
     "isEasy": 0
   },
@@ -975,7 +975,7 @@
     "chinese": "字面量",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -987,7 +987,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 91,
@@ -1031,7 +1031,7 @@
     "pos": "adj.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 95,
@@ -1053,7 +1053,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 97,
@@ -1064,7 +1064,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 98,
@@ -1161,7 +1161,7 @@
     "english": "pattern-matching",
     "chinese": "模式匹配",
     "pos": "n.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -1183,7 +1183,7 @@
     "english": "polymorphism",
     "chinese": "多态",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 1,
     "isEasy": 0
   },
@@ -1207,7 +1207,7 @@
     "pos": "adj.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 111,
@@ -1216,8 +1216,8 @@
     "english": "procedural",
     "chinese": "过程式",
     "pos": "n.",
-    "isWrong": 0,
-    "isFavorites": 0,
+    "isWrong": 1,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1251,7 +1251,7 @@
     "pos": "adj.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 115,
@@ -1293,7 +1293,7 @@
     "english": "reflection",
     "chinese": "反射",
     "pos": "n.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 1,
     "isEasy": 0
   },
@@ -1317,7 +1317,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 121,
@@ -1339,7 +1339,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 123,
@@ -1360,7 +1360,7 @@
     "chinese": "展开运算符",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1436,7 +1436,7 @@
     "english": "transient",
     "chinese": "瞬态的；瞬态；非持久",
     "pos": "adj.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 1,
     "isEasy": 0
   },
@@ -1504,7 +1504,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 138,
@@ -1513,7 +1513,7 @@
     "english": "volatile",
     "chinese": "易失的；易失",
     "pos": "adj.",
-    "isWrong": 1,
+    "isWrong": 0,
     "isFavorites": 1,
     "isEasy": 0
   },
@@ -1536,7 +1536,7 @@
     "chinese": "通配符",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1558,7 +1558,7 @@
     "chinese": "算法",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1569,7 +1569,7 @@
     "chinese": "摊还",
     "pos": "adj.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1580,7 +1580,7 @@
     "chinese": "祖先节点",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1592,7 +1592,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 146,
@@ -1602,7 +1602,7 @@
     "chinese": "渐进",
     "pos": "adj.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1625,7 +1625,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 149,
@@ -1658,7 +1658,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 152,
@@ -1669,7 +1669,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 153,
@@ -1680,7 +1680,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 154,
@@ -1691,7 +1691,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 155,
@@ -1701,7 +1701,7 @@
     "chinese": "位操作",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1713,7 +1713,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 157,
@@ -1734,7 +1734,7 @@
     "chinese": "暴力；暴力破解",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1745,8 +1745,8 @@
     "chinese": "桶",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
-    "isEasy": 0
+    "isFavorites": 1,
+    "isEasy": 1
   },
   {
     "id": 160,
@@ -1757,7 +1757,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 161,
@@ -1768,7 +1768,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 162,
@@ -1779,7 +1779,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 163,
@@ -1789,7 +1789,7 @@
     "chinese": "冲突",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1800,7 +1800,7 @@
     "chinese": "复杂度",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1811,7 +1811,7 @@
     "chinese": "立方",
     "pos": "adj.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1834,7 +1834,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 168,
@@ -1856,7 +1856,7 @@
     "pos": "adj.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 170,
@@ -1877,7 +1877,7 @@
     "chinese": "分治",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1900,7 +1900,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 174,
@@ -1910,7 +1910,7 @@
     "chinese": "指数",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1921,7 +1921,7 @@
     "chinese": "阶乘",
     "pos": "adj.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1933,7 +1933,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 177,
@@ -1943,7 +1943,7 @@
     "chinese": "贪心",
     "pos": "adj.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1955,7 +1955,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 179,
@@ -1966,7 +1966,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 180,
@@ -1976,7 +1976,7 @@
     "chinese": "启发式",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -1988,7 +1988,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 182,
@@ -2010,7 +2010,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 184,
@@ -2021,7 +2021,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 185,
@@ -2043,7 +2043,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 187,
@@ -2054,7 +2054,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 188,
@@ -2065,7 +2065,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 189,
@@ -2098,7 +2098,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 192,
@@ -2108,7 +2108,7 @@
     "chinese": "记忆化",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -2119,7 +2119,7 @@
     "chinese": "记忆化",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -2130,7 +2130,7 @@
     "chinese": "最小生成树",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -2142,7 +2142,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 196,
@@ -2153,7 +2153,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 197,
@@ -2164,7 +2164,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 198,
@@ -2174,7 +2174,7 @@
     "chinese": "多项式",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -2208,7 +2208,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 202,
@@ -2241,7 +2241,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 205,
@@ -2251,7 +2251,7 @@
     "chinese": "递归",
     "pos": "v.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -2263,7 +2263,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 207,
@@ -2274,7 +2274,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 208,
@@ -2285,7 +2285,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 209,
@@ -2318,7 +2318,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 212,
@@ -2329,7 +2329,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 213,
@@ -2373,7 +2373,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 217,
@@ -2461,7 +2461,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 225,
@@ -2505,7 +2505,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 229,
@@ -2516,7 +2516,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 230,
@@ -2527,7 +2527,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 231,
@@ -2538,7 +2538,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 232,
@@ -2547,7 +2547,7 @@
     "english": "corruption",
     "chinese": "损坏",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -2571,7 +2571,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 235,
@@ -2582,7 +2582,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 236,
@@ -2591,8 +2591,8 @@
     "english": "fragmentation",
     "chinese": "碎片",
     "pos": "n.",
-    "isWrong": 0,
-    "isFavorites": 0,
+    "isWrong": 1,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -2604,7 +2604,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 238,
@@ -2615,7 +2615,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 239,
@@ -2626,7 +2626,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 240,
@@ -2648,7 +2648,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 242,
@@ -2659,7 +2659,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 243,
@@ -2670,7 +2670,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 244,
@@ -2681,7 +2681,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 245,
@@ -2692,7 +2692,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 246,
@@ -2703,7 +2703,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 247,
@@ -2714,7 +2714,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 248,
@@ -2725,7 +2725,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 249,
@@ -2736,7 +2736,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 250,
@@ -2758,7 +2758,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 252,
@@ -2769,7 +2769,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 253,
@@ -2780,7 +2780,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 254,
@@ -2789,7 +2789,7 @@
     "english": "thrashing",
     "chinese": "颠簸",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -2802,7 +2802,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 256,
@@ -2824,7 +2824,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 258,
@@ -2835,7 +2835,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 259,
@@ -2846,7 +2846,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 260,
@@ -2857,7 +2857,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 261,
@@ -2868,7 +2868,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 262,
@@ -2879,7 +2879,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 263,
@@ -2890,7 +2890,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 264,
@@ -2901,7 +2901,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 265,
@@ -2923,7 +2923,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 267,
@@ -2954,7 +2954,7 @@
     "english": "congestion",
     "chinese": "拥塞",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -2967,7 +2967,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 271,
@@ -2989,7 +2989,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 273,
@@ -3000,7 +3000,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 274,
@@ -3011,7 +3011,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 275,
@@ -3022,7 +3022,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 276,
@@ -3033,7 +3033,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 277,
@@ -3066,7 +3066,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 280,
@@ -3088,7 +3088,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 282,
@@ -3099,7 +3099,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 283,
@@ -3110,7 +3110,7 @@
     "pos": "adj.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 284,
@@ -3121,7 +3121,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 285,
@@ -3143,7 +3143,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 287,
@@ -3176,7 +3176,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 290,
@@ -3209,7 +3209,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 293,
@@ -3220,7 +3220,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 294,
@@ -3253,7 +3253,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 297,
@@ -3286,7 +3286,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 300,
@@ -3297,7 +3297,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 301,
@@ -3341,7 +3341,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 305,
@@ -3396,7 +3396,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 310,
@@ -3407,7 +3407,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 311,
@@ -3429,7 +3429,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 313,
@@ -3495,7 +3495,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 319,
@@ -3506,7 +3506,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 320,
@@ -3517,7 +3517,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 321,
@@ -3550,7 +3550,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 324,
@@ -3559,7 +3559,7 @@
     "english": "collation",
     "chinese": "排序规则",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -3594,7 +3594,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 328,
@@ -3660,7 +3660,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 334,
@@ -3669,7 +3669,7 @@
     "english": "defragment",
     "chinese": "碎片整理",
     "pos": "n.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -3715,7 +3715,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 339,
@@ -3725,7 +3725,7 @@
     "chinese": "持久性",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -3748,7 +3748,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 342,
@@ -3803,7 +3803,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 347,
@@ -3814,7 +3814,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 348,
@@ -3825,7 +3825,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 349,
@@ -3836,7 +3836,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 350,
@@ -3858,7 +3858,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 352,
@@ -3869,7 +3869,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 353,
@@ -3880,7 +3880,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 354,
@@ -3891,7 +3891,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 355,
@@ -3901,7 +3901,7 @@
     "chinese": "隔离性",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -3912,7 +3912,7 @@
     "chinese": "隔离级别",
     "pos": "n.",
     "isWrong": 0,
-    "isFavorites": 0,
+    "isFavorites": 1,
     "isEasy": 0
   },
   {
@@ -3924,7 +3924,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 358,
@@ -3935,7 +3935,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 359,
@@ -3946,7 +3946,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 360,
@@ -3990,7 +3990,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 364,
@@ -4067,7 +4067,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 371,
@@ -4078,7 +4078,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 372,
@@ -4089,7 +4089,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 373,
@@ -4111,7 +4111,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 375,
@@ -4122,7 +4122,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 376,
@@ -4166,7 +4166,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 380,
@@ -4177,7 +4177,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 381,
@@ -4188,7 +4188,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 382,
@@ -4210,7 +4210,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 384,
@@ -4243,7 +4243,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 387,
@@ -4254,7 +4254,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 388,
@@ -4276,7 +4276,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 390,
@@ -4287,7 +4287,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 391,
@@ -4309,7 +4309,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 393,
@@ -4331,7 +4331,7 @@
     "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 395,
@@ -4342,7 +4342,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 396,
@@ -4364,7 +4364,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 398,
