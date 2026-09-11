@@ -18035,7 +18035,7 @@
     "english": "fascinate",
     "chinese": "迷住",
     "pos": "v.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
@@ -19245,7 +19245,7 @@
     "english": "gourmet",
     "chinese": "美食家/美味佳肴的",
     "pos": "n./adj.",
-    "isWrong": 0,
+    "isWrong": 1,
     "isFavorites": 0,
     "isEasy": 0
   },
