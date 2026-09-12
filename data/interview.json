@@ -5426,7 +5426,7 @@
     "id": 494,
     "categoryId": 7,
     "category": "Concurrency",
-    "english": "TIMED_WAITING",
+    "english": "TIMED-WAITING",
     "chinese": "超时等待",
     "pos": "n.",
     "isWrong": 0,

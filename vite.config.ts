@@ -83,6 +83,18 @@ function asFlag(value: unknown): 0 | 1 {
   return value === 1 || value === "1" || value === true ? 1 : 0;
 }
 
+/** Spaces / underscores / dash variants → ASCII hyphen; "a / b" → "a/b". */
+function normalizeEnglishPhrase(raw: string): string {
+  return String(raw)
+    .trim()
+    .replace(/_/g, "-")
+    .replace(/[–—−‐]/g, "-")
+    .replace(/\s+/g, "-")
+    .replace(/-*\/-*/g, "/")
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 function attachVocabularyApi(middlewares: Connect.Server) {
   middlewares.use(async (req, res, next) => {
     const rawUrl = req.url ?? "";
@@ -193,7 +205,7 @@ function attachVocabularyApi(middlewares: Connect.Server) {
           isEasy?: unknown;
         };
 
-        const english = String(raw.english ?? "").trim();
+        const english = normalizeEnglishPhrase(String(raw.english ?? ""));
         const chinese = String(raw.chinese ?? "").trim();
         const category = String(raw.category ?? "").trim();
         const pos = String(raw.pos ?? "").trim();

@@ -85,6 +85,18 @@ function asFlag(value: unknown): Flag01 {
   return value === 1 || value === "1" || value === true ? 1 : 0;
 }
 
+/** Spaces / underscores / dash variants → ASCII hyphen; "a / b" → "a/b". */
+export function normalizeEnglishPhrase(raw: string): string {
+  return String(raw)
+    .trim()
+    .replace(/_/g, "-")
+    .replace(/[–—−‐]/g, "-")
+    .replace(/\s+/g, "-")
+    .replace(/-*\/-*/g, "/")
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 function normalizeSpeakMode(raw: unknown): SpeakMode {
   if (raw === "off" || raw === "us" || raw === "uk") return raw;
   return defaultSettings.speakMode;
@@ -122,7 +134,7 @@ export function normalizeWord(raw: Partial<Word> & {
     id: Number(raw.id) || 0,
     categoryId: Number(raw.categoryId) || 0,
     category: raw.category ?? "",
-    english: raw.english,
+    english: normalizeEnglishPhrase(raw.english),
     chinese: raw.chinese,
     pos: String(raw.pos ?? "").trim(),
     isWrong: asFlag(raw.isWrong ?? raw.iswrong),
