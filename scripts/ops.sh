@@ -61,6 +61,11 @@ read_pid() {
   tr -d '[:space:]' <"$PID_FILE"
 }
 
+require_git() {
+  need_cmd git
+  [[ -d "$ROOT/.git" ]] || die "不是 git 仓库: $ROOT"
+}
+
 usage() {
   cat <<EOF
 用法: $0 <命令>
@@ -73,19 +78,25 @@ usage() {
   restart            先停再启
   status             进程 / 端口状态
   logs               看日志（systemd 走 journalctl，否则看 .ops/vocabulary.log）
-  update             git pull（若有）+ setup + restart
+  commit-push        提交全部本地变更并 push 到 GitHub（一次性同步用）
+  update             检查本地已同步后 git pull + setup + restart；有未提交/未推送则失败
   systemd-install    安装并启用开机自启（需 sudo）
   systemd-uninstall  停用并删除 unit（需 sudo）
 
 环境变量:
-  HOST       监听地址，默认 0.0.0.0
-  PORT       端口，默认 4173
-  UNIT_NAME  systemd 服务名，默认 vocabulary
+  HOST               监听地址，默认 0.0.0.0
+  PORT               端口，默认 4173
+  UNIT_NAME          systemd 服务名，默认 vocabulary
+  COMMIT_MSG         commit-push 提交说明（默认: chore: sync VPS local changes）
+  GIT_AUTHOR_NAME    commit-push 作者名（未配置 git user.name 时必填）
+  GIT_AUTHOR_EMAIL   commit-push 作者邮箱（未配置 git user.email 时必填）
 
 示例:
   ./scripts/ops.sh setup
   PORT=8080 ./scripts/ops.sh start
   ./scripts/ops.sh systemd-install
+  GIT_AUTHOR_NAME='vps' GIT_AUTHOR_EMAIL='vps@local' ./scripts/ops.sh commit-push
+  ./scripts/ops.sh update
 EOF
 }
 
@@ -201,14 +212,92 @@ cmd_logs() {
   tail -n 200 -f "$LOG_FILE"
 }
 
-cmd_update() {
+cmd_commit_push() {
+  require_git
   cd "$ROOT"
-  if [[ -d .git ]] && command -v git >/dev/null 2>&1; then
-    echo "==> git pull"
-    git pull --ff-only
-  else
-    echo "跳过 git pull（不是 git 仓库或未安装 git）"
+
+  local branch
+  branch="$(git rev-parse --abbrev-ref HEAD)"
+  [[ "$branch" != "HEAD" ]] || die "处于 detached HEAD，无法 commit-push"
+
+  echo "==> git fetch origin"
+  git fetch origin
+
+  local dirty=0
+  if [[ -n "$(git status --porcelain)" ]]; then
+    dirty=1
   fi
+
+  local ahead=0
+  if git rev-parse --abbrev-ref '@{u}' >/dev/null 2>&1; then
+    ahead="$(git rev-list --count '@{u}..HEAD')"
+  elif [[ "$dirty" -eq 0 ]]; then
+    # No upstream yet: still push if we have commits to publish after first commit.
+    ahead=0
+  fi
+
+  if [[ "$dirty" -eq 0 && "$ahead" -eq 0 ]]; then
+    echo "没有需要提交或推送的变更（已与 upstream 同步）"
+    return 0
+  fi
+
+  if [[ "$dirty" -eq 1 ]]; then
+    local name email
+    name="${GIT_AUTHOR_NAME:-$(git config user.name 2>/dev/null || true)}"
+    email="${GIT_AUTHOR_EMAIL:-$(git config user.email 2>/dev/null || true)}"
+    [[ -n "$name" && -n "$email" ]] || die "缺少提交身份。请一次性传入（不会写入 git config）:
+  GIT_AUTHOR_NAME='Your Name' GIT_AUTHOR_EMAIL='you@example.com' $0 commit-push"
+
+    local msg="${COMMIT_MSG:-chore: sync VPS local changes}"
+    echo "==> git add -A"
+    git add -A
+    echo "==> git commit"
+    git -c "user.name=$name" -c "user.email=$email" commit -m "$msg"
+  else
+    echo "==> 工作区干净，跳过 commit（仍有 $ahead 个未推送提交）"
+  fi
+
+  echo "==> git push -u origin HEAD"
+  git push -u origin HEAD
+  echo "完成: 已推送到 origin/$(git rev-parse --abbrev-ref HEAD)"
+}
+
+cmd_update() {
+  require_git
+  cd "$ROOT"
+
+  echo "==> 检查本地是否与 remote 同步"
+  git fetch origin
+
+  if [[ -n "$(git status --porcelain)" ]]; then
+    die "本地有未提交变更，拒绝 pull。请先处理后再 update:
+
+$(git status -sb)
+
+提示: 若要提交并推送，执行:
+  GIT_AUTHOR_NAME='...' GIT_AUTHOR_EMAIL='...' $0 commit-push"
+  fi
+
+  if ! git rev-parse --abbrev-ref '@{u}' >/dev/null 2>&1; then
+    die "当前分支未设置 upstream（例如 origin/main），拒绝 pull"
+  fi
+
+  local ahead behind
+  ahead="$(git rev-list --count '@{u}..HEAD')"
+  behind="$(git rev-list --count 'HEAD..@{u}')"
+
+  if [[ "$ahead" -gt 0 ]]; then
+    die "本地有 ${ahead} 个未推送提交，拒绝 pull。请先:
+  $0 commit-push"
+  fi
+
+  if [[ "$behind" -eq 0 ]]; then
+    echo "已与 remote 同步，无需 pull"
+  else
+    echo "==> git pull --ff-only（落后 ${behind} 个提交）"
+    git pull --ff-only
+  fi
+
   cmd_setup
   cmd_restart
 }
@@ -274,6 +363,7 @@ main() {
     restart) cmd_restart ;;
     status) cmd_status ;;
     logs) cmd_logs ;;
+    commit-push) cmd_commit_push ;;
     update) cmd_update ;;
     systemd-install) cmd_systemd_install ;;
     systemd-uninstall) cmd_systemd_uninstall ;;
