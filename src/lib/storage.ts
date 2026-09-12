@@ -85,9 +85,9 @@ function asFlag(value: unknown): Flag01 {
   return value === 1 || value === "1" || value === true ? 1 : 0;
 }
 
-/** Spaces / underscores / dash variants → ASCII hyphen; "a / b" → "a/b". */
+/** Spaces / underscores / dash variants → ASCII hyphen; spelling pairs keep the first form. */
 export function normalizeEnglishPhrase(raw: string): string {
-  return String(raw)
+  let s = String(raw)
     .trim()
     .replace(/_/g, "-")
     .replace(/[–—−‐]/g, "-")
@@ -95,6 +95,26 @@ export function normalizeEnglishPhrase(raw: string): string {
     .replace(/-*\/-*/g, "/")
     .replace(/-{2,}/g, "-")
     .replace(/^-+|-+$/g, "");
+
+  const slash = s.indexOf("/");
+  if (slash > 0) {
+    const left = s.slice(0, slash);
+    const right = s.slice(slash + 1);
+    if (isSpellingVariantPair(left, right)) {
+      s = left;
+    }
+  }
+  return s;
+}
+
+function isSpellingVariantPair(a: string, b: string): boolean {
+  if (!a || !b) return false;
+  if (/^\d+$/.test(b)) return false;
+  if (a.length <= 1 || b.length <= 1) return false;
+  // short tech tokens: CI/CD, pub/sub, I/O
+  if (a.length <= 3 && b.length <= 3) return false;
+  const word = /^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\-']*$/;
+  return word.test(a) && word.test(b);
 }
 
 function normalizeSpeakMode(raw: unknown): SpeakMode {
