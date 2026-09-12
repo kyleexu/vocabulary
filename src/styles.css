@@ -875,6 +875,19 @@ textarea.field {
   border-radius: inherit;
 }
 
+.vocab-search-block {
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+  margin-top: 4px;
+}
+
+.vocab-browse {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 8px 0 4px;
+}
+
 .word-add-form {
   max-width: 520px;
 }

@@ -4,7 +4,6 @@ import { Login } from "./components/Login";
 import { WordsPractice, WordsSetup } from "./components/Words";
 import { WordBooks } from "./components/WordBooks";
 import { VocabFiles } from "./components/VocabFiles";
-import { WordLookup } from "./components/WordLookup";
 import { isAuthenticated, logout } from "./lib/auth";
 import {
   getDataFile,
@@ -87,7 +86,7 @@ export default function App() {
       <header className="topbar">
         <div className="brand">
           <strong>Vocabulary Trainer</strong>
-          <span>背单词 · 查词 · 词本 · {dataFile}</span>
+          <span>背单词 · 词本 · 词库 · {dataFile}</span>
         </div>
         <nav className="nav">
           <button
@@ -101,12 +100,6 @@ export default function App() {
             onClick={() => setView("words-setup")}
           >
             背单词
-          </button>
-          <button
-            className={view === "lookup" ? "active" : ""}
-            onClick={() => setView("lookup")}
-          >
-            查词
           </button>
           <button
             className={view === "books" ? "active" : ""}
@@ -135,10 +128,6 @@ export default function App() {
             <button className="tile" onClick={() => setView("words-setup")}>
               <h2>背单词</h2>
             </button>
-            <button className="tile" onClick={() => setView("lookup")}>
-              <h2>查词 / 加词</h2>
-              <p>搜索当前词库，或手动添加单词</p>
-            </button>
             <button className="tile" onClick={() => setView("books")}>
               <h2>词本</h2>
               <p>
@@ -148,7 +137,7 @@ export default function App() {
             </button>
             <button className="tile" onClick={() => setView("files")}>
               <h2>词库</h2>
-              <p>当前 {dataFile} · {words.length} 词</p>
+              <p>查词 · 浏览 · 当前 {dataFile} · {words.length} 词</p>
             </button>
           </div>
         </>
@@ -190,17 +179,12 @@ export default function App() {
 
       {view === "files" && (
         <VocabFiles
+          words={words}
           currentFile={dataFile}
           wordCount={words.length}
           switching={switching}
-          onSelect={(file) => void switchDataFile(file)}
-          onBack={() => setView("home")}
-        />
-      )}
-
-      {view === "lookup" && (
-        <WordLookup
-          words={words}
+          onSelectFile={(file) => void switchDataFile(file)}
+          onWordPatched={patchWord}
           onWordAdded={addWord}
           onBack={() => setView("home")}
         />

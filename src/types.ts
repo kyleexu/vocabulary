@@ -33,5 +33,4 @@ export type AppView =
   | "words-setup"
   | "words-practice"
   | "books"
-  | "files"
-  | "lookup";
+  | "files";

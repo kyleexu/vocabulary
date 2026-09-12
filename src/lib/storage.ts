@@ -431,3 +431,28 @@ export async function addWordOnDisk(input: NewWordInput): Promise<Word> {
   }
   return normalizeWord(await res.json());
 }
+
+export type EditWordInput = {
+  id: number;
+  english?: string;
+  chinese?: string;
+  pos?: string;
+};
+
+/** Patch english / chinese / pos for one word by id. */
+export async function editWordOnDisk(input: EditWordInput): Promise<Word> {
+  const body: Record<string, unknown> = { id: input.id };
+  if (input.english != null) body.english = input.english;
+  if (input.chinese != null) body.chinese = input.chinese;
+  if (input.pos != null) body.pos = input.pos;
+
+  const res = await fetch(withDataFile(WORD_URL), {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    throw new Error(`编辑单词失败: HTTP ${res.status} ${await res.text()}`);
+  }
+  return normalizeWord(await res.json());
+}

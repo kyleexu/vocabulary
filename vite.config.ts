@@ -204,15 +204,62 @@ function attachVocabularyApi(middlewares: Connect.Server) {
         return;
       }
 
-      // Append one word to the vocabulary file
+      // Append or update one word in the vocabulary file
       if (url === "/api/vocabulary/word") {
+        const file = fileFromRequest(rawUrl);
+
+        if (req.method === "PUT") {
+          const raw = JSON.parse(await readRequestBody(req)) as {
+            id?: unknown;
+            english?: unknown;
+            chinese?: unknown;
+            pos?: unknown;
+          };
+          const id = Number(raw.id);
+          if (!Number.isFinite(id)) {
+            res.statusCode = 400;
+            res.end("id required");
+            return;
+          }
+
+          const updated = await enqueueDisk(async () => {
+            const list = JSON.parse(await readVocabularyFile(file)) as Array<
+              Record<string, unknown>
+            >;
+            const idx = list.findIndex((w) => Number(w.id) === id);
+            if (idx < 0) {
+              throw new Error(`word id ${id} not found`);
+            }
+            const word = { ...list[idx] };
+            if ("english" in raw) {
+              const english = normalizeEnglishPhrase(String(raw.english ?? ""));
+              if (!english) throw Object.assign(new Error("english required"), { statusCode: 400 });
+              word.english = english;
+            }
+            if ("chinese" in raw) {
+              const chinese = String(raw.chinese ?? "").trim();
+              if (!chinese) throw Object.assign(new Error("chinese required"), { statusCode: 400 });
+              word.chinese = chinese;
+            }
+            if ("pos" in raw) {
+              word.pos = String(raw.pos ?? "").trim();
+            }
+            list[idx] = word;
+            await writeVocabularyFile(file, JSON.stringify(list, null, 2));
+            return word;
+          });
+
+          res.setHeader("Content-Type", "application/json; charset=utf-8");
+          res.end(JSON.stringify(updated));
+          return;
+        }
+
         if (req.method !== "POST") {
           res.statusCode = 405;
           res.end("Method not allowed");
           return;
         }
 
-        const file = fileFromRequest(rawUrl);
         const raw = JSON.parse(await readRequestBody(req)) as {
           english?: unknown;
           chinese?: unknown;
