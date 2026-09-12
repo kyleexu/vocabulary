@@ -888,6 +888,27 @@ textarea.field {
   padding: 8px 0 4px;
 }
 
+.vocab-word-list {
+  max-height: min(70vh, 720px);
+}
+
+.vocab-list-item {
+  align-items: flex-start;
+}
+
+.vocab-list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  max-width: min(100%, 420px);
+}
+
+.vocab-list-actions .btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
 .word-add-form {
   max-width: 520px;
 }

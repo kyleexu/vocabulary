@@ -7,6 +7,7 @@ import {
 } from "../data/categories";
 import {
   addWordOnDisk,
+  deleteWordOnDisk,
   editWordOnDisk,
   getDataFile,
   getSettings,
@@ -25,6 +26,7 @@ type Props = {
   onSelectFile: (file: string) => void;
   onWordPatched: (word: Word) => void;
   onWordAdded: (word: Word) => void;
+  onWordDeleted: (id: number) => void;
   onBack: () => void;
 };
 
@@ -59,6 +61,7 @@ export function VocabFiles({
   onSelectFile,
   onWordPatched,
   onWordAdded,
+  onWordDeleted,
   onBack,
 }: Props) {
   const [files, setFiles] = useState<string[]>([currentFile]);
@@ -80,11 +83,11 @@ export function VocabFiles({
   const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(
     null,
   );
-  const [browseIndex, setBrowseIndex] = useState(0);
 
-  const [editing, setEditing] = useState(false);
+  const [editingId, setEditingId] = useState<number | null>(null);
   const [editEnglish, setEditEnglish] = useState("");
   const [editChinese, setEditChinese] = useState("");
+  const [editPos, setEditPos] = useState("");
   const [editSaving, setEditSaving] = useState(false);
 
   const categories = useMemo(() => categoriesFromWords(words), [words]);
@@ -105,13 +108,6 @@ export function VocabFiles({
     );
   }, [words, selectedCategoryId]);
 
-  const current =
-    categoryWords.length > 0
-      ? categoryWords[
-          Math.min(browseIndex, Math.max(0, categoryWords.length - 1))
-        ]
-      : null;
-
   useEffect(() => {
     void (async () => {
       try {
@@ -122,27 +118,17 @@ export function VocabFiles({
     })();
   }, []);
 
-  // Keep browse index valid when list changes (flags / edits / file switch).
-  useEffect(() => {
-    if (selectedCategoryId == null) return;
-    if (categoryWords.length === 0) {
-      setBrowseIndex(0);
-      return;
-    }
-    setBrowseIndex((i) => Math.min(i, categoryWords.length - 1));
-  }, [categoryWords.length, selectedCategoryId]);
-
   useEffect(() => {
     setSelectedCategoryId(null);
-    setBrowseIndex(0);
     setQuery("");
-    setEditing(false);
+    setEditingId(null);
   }, [currentFile]);
 
   const selectCategory = (categoryId: number) => {
-    setSelectedCategoryId(categoryId);
-    setBrowseIndex(0);
-    setEditing(false);
+    setSelectedCategoryId((prev) =>
+      prev === categoryId ? null : categoryId,
+    );
+    setEditingId(null);
     setQuery("");
   };
 
@@ -218,24 +204,26 @@ export function VocabFiles({
   };
 
   const openEdit = (word: Word) => {
+    setEditingId(word.id);
     setEditEnglish(word.english);
     setEditChinese(word.chinese);
-    setEditing(true);
+    setEditPos(word.pos ?? "");
   };
 
   const onEditSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!current) return;
+    if (editingId == null) return;
     setEditSaving(true);
     setMessage("");
     try {
       const updated = await editWordOnDisk({
-        id: current.id,
+        id: editingId,
         english: editEnglish,
         chinese: editChinese,
+        pos: editPos,
       });
       onWordPatched(updated);
-      setEditing(false);
+      setEditingId(null);
       setMessage(`已保存 #${updated.id}`);
     } catch (err) {
       setMessage(err instanceof Error ? err.message : String(err));
@@ -244,9 +232,130 @@ export function VocabFiles({
     }
   };
 
+  const removeWord = async (word: Word) => {
+    if (!window.confirm(`确定删除「${word.english}」？`)) return;
+    try {
+      await deleteWordOnDisk(word.id);
+      onWordDeleted(word.id);
+      if (editingId === word.id) setEditingId(null);
+      setMessage(`已删除 #${word.id} ${word.english}`);
+    } catch (err) {
+      setMessage(err instanceof Error ? err.message : String(err));
+    }
+  };
+
   const speak = (word: Word) => {
     const rate = getSettings().speakRate;
     void speakWord(word.english, speakAccent(), rate);
+  };
+
+  const renderWordRow = (w: Word) => {
+    if (editingId === w.id) {
+      return (
+        <div className="list-item vocab-list-item" key={`edit-${w.id}`}>
+          <form
+            className="stack word-add-form"
+            style={{ width: "100%", maxWidth: "100%" }}
+            onSubmit={(e) => void onEditSubmit(e)}
+          >
+            <label className="form-field">
+              <span>英文</span>
+              <input
+                className="field"
+                value={editEnglish}
+                onChange={(e) => setEditEnglish(e.target.value)}
+                required
+                autoFocus
+              />
+            </label>
+            <label className="form-field">
+              <span>中文</span>
+              <input
+                className="field"
+                value={editChinese}
+                onChange={(e) => setEditChinese(e.target.value)}
+                required
+              />
+            </label>
+            <label className="form-field">
+              <span>词性</span>
+              <input
+                className="field"
+                value={editPos}
+                onChange={(e) => setEditPos(e.target.value)}
+                placeholder="e.g. n."
+              />
+            </label>
+            <div className="row">
+              <button className="btn primary" type="submit" disabled={editSaving}>
+                {editSaving ? "保存中…" : "保存"}
+              </button>
+              <button
+                type="button"
+                className="btn ghost"
+                onClick={() => setEditingId(null)}
+              >
+                取消
+              </button>
+            </div>
+          </form>
+        </div>
+      );
+    }
+
+    return (
+      <div className="list-item vocab-list-item" key={w.id}>
+        <div>
+          <strong>{w.english}</strong>
+          <div className="muted">
+            {w.pos ? `${w.pos} · ` : ""}
+            {w.chinese}
+          </div>
+          <div className="faint">
+            #{w.id} · {formatCategoryLabel(w.category, w.categoryId)}
+            {w.isWrong === 1 ? " · 错词" : ""}
+            {w.isFavorites === 1 ? " · 收藏" : ""}
+            {w.isEasy === 1 ? " · 简单" : ""}
+          </div>
+        </div>
+        <div className="vocab-list-actions">
+          <button type="button" className="btn ghost" onClick={() => speak(w)}>
+            发音
+          </button>
+          <button
+            type="button"
+            className="btn ghost"
+            onClick={() => void patchFlag(w, "wrong", w.isWrong !== 1)}
+          >
+            {w.isWrong === 1 ? "移出错词" : "加入错词"}
+          </button>
+          <button
+            type="button"
+            className="btn ghost"
+            onClick={() => void patchFlag(w, "favorites", w.isFavorites !== 1)}
+          >
+            {w.isFavorites === 1 ? "移出收藏" : "加入收藏"}
+          </button>
+          <button
+            type="button"
+            className="btn ghost"
+            onClick={() => void patchFlag(w, "easy", w.isEasy !== 1)}
+          >
+            {w.isEasy === 1 ? "移出简单词" : "加入简单词"}
+          </button>
+          <button type="button" className="btn" onClick={() => openEdit(w)}>
+            编辑
+          </button>
+          <button
+            type="button"
+            className="btn danger"
+            onClick={() => void removeWord(w)}
+          >
+            删除
+          </button>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -259,7 +368,7 @@ export function VocabFiles({
       </div>
 
       <p className="muted" style={{ margin: 0 }}>
-        当前 <strong>{currentFile}</strong> · {wordCount} 词。可查词、加词，或选分类顺序浏览（不打字）。
+        当前 <strong>{currentFile}</strong> · {wordCount} 词。先查词/加词，再选分类查看列表。
       </p>
 
       {message && <p className="muted">{message}</p>}
@@ -299,7 +408,10 @@ export function VocabFiles({
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
-            if (e.target.value.trim()) setSelectedCategoryId(null);
+            if (e.target.value.trim()) {
+              setSelectedCategoryId(null);
+              setEditingId(null);
+            }
           }}
           placeholder="输入英文 / 中文 / 分类 / id 查询…"
         />
@@ -309,52 +421,16 @@ export function VocabFiles({
               找到 {searchResults.length}
               {searchResults.length >= 80 ? "+" : ""} 条
             </p>
-            <div className="list">
+            <div className="list vocab-word-list">
               {searchResults.length === 0 && (
                 <p className="muted">没有匹配结果</p>
               )}
-              {searchResults.map((w) => (
-                <div className="list-item" key={`search-${w.id}`}>
-                  <div>
-                    <strong>{w.english}</strong>
-                    <div className="muted">
-                      {w.pos ? `${w.pos} · ` : ""}
-                      {w.chinese}
-                    </div>
-                    <div className="faint">
-                      #{w.id} · {formatCategoryLabel(w.category, w.categoryId)}
-                    </div>
-                  </div>
-                  <div className="row">
-                    <button
-                      type="button"
-                      className="btn ghost"
-                      onClick={() => speak(w)}
-                    >
-                      发音
-                    </button>
-                    <button
-                      type="button"
-                      className="btn ghost"
-                      onClick={() => {
-                        selectCategory(w.categoryId);
-                        const list = sortWordsByCsvOrder(
-                          words.filter((x) => x.categoryId === w.categoryId),
-                        );
-                        const idx = list.findIndex((x) => x.id === w.id);
-                        setBrowseIndex(idx >= 0 ? idx : 0);
-                      }}
-                    >
-                      浏览
-                    </button>
-                  </div>
-                </div>
-              ))}
+              {searchResults.map((w) => renderWordRow(w))}
             </div>
           </>
         ) : (
           <p className="muted" style={{ margin: 0 }}>
-            在当前文件 {getDataFile()} 中搜索；下方可选分类浏览。
+            在当前文件 {getDataFile()} 中搜索；下方可选分类查看全部单词。
           </p>
         )}
 
@@ -468,150 +544,22 @@ export function VocabFiles({
           })}
         </div>
 
-        {selectedCategoryId == null && (
-          <p className="muted">选择一个分类后，可按顺序浏览该分类下全部单词。</p>
+        {selectedCategoryId == null && !query.trim() && (
+          <p className="muted">选择一个分类后，按列表查看该分类下全部单词。</p>
         )}
 
-        {selectedCategoryId != null && categoryWords.length === 0 && (
-          <p className="muted">该分类下暂无单词。</p>
-        )}
-
-        {current && (
-          <div className="vocab-browse">
-            <p className="muted" style={{ textAlign: "center", margin: 0 }}>
-              {browseIndex + 1} / {categoryWords.length} ·{" "}
-              {formatCategoryLabel(current.category, current.categoryId)}
+        {selectedCategoryId != null && (
+          <>
+            <p className="muted" style={{ margin: 0 }}>
+              共 {categoryWords.length} 词
             </p>
-
-            {!editing ? (
-              <div className="word-stage">
-                <p className="english">{current.english}</p>
-                <p className="chinese">{current.chinese}</p>
-                <p className="muted" style={{ marginTop: 8 }}>
-                  {current.pos ? `${current.pos} · ` : ""}#{current.id}
-                  {current.isWrong === 1 ? " · 错词" : ""}
-                  {current.isFavorites === 1 ? " · 收藏" : ""}
-                  {current.isEasy === 1 ? " · 简单" : ""}
-                </p>
-              </div>
-            ) : (
-              <form
-                className="stack word-add-form"
-                style={{ margin: "0 auto" }}
-                onSubmit={(e) => void onEditSubmit(e)}
-              >
-                <h3 style={{ margin: 0 }}>编辑单词</h3>
-                <label className="form-field">
-                  <span>英文</span>
-                  <input
-                    className="field"
-                    value={editEnglish}
-                    onChange={(e) => setEditEnglish(e.target.value)}
-                    required
-                    autoFocus
-                  />
-                </label>
-                <label className="form-field">
-                  <span>中文</span>
-                  <input
-                    className="field"
-                    value={editChinese}
-                    onChange={(e) => setEditChinese(e.target.value)}
-                    required
-                  />
-                </label>
-                <div className="row">
-                  <button
-                    className="btn primary"
-                    type="submit"
-                    disabled={editSaving}
-                  >
-                    {editSaving ? "保存中…" : "保存"}
-                  </button>
-                  <button
-                    type="button"
-                    className="btn ghost"
-                    onClick={() => setEditing(false)}
-                  >
-                    取消
-                  </button>
-                </div>
-              </form>
-            )}
-
-            <div className="practice-actions">
-              <button
-                type="button"
-                className="btn"
-                onClick={() => speak(current)}
-              >
-                发音
-              </button>
-              <button
-                type="button"
-                className="btn"
-                onClick={() =>
-                  void patchFlag(current, "wrong", current.isWrong !== 1)
-                }
-              >
-                {current.isWrong === 1 ? "移出错词" : "加入错词"}
-              </button>
-              <button
-                type="button"
-                className="btn"
-                onClick={() =>
-                  void patchFlag(
-                    current,
-                    "favorites",
-                    current.isFavorites !== 1,
-                  )
-                }
-              >
-                {current.isFavorites === 1 ? "移出收藏" : "加入收藏"}
-              </button>
-              <button
-                type="button"
-                className="btn"
-                onClick={() =>
-                  void patchFlag(current, "easy", current.isEasy !== 1)
-                }
-              >
-                {current.isEasy === 1 ? "移出简单词" : "加入简单词"}
-              </button>
-              <button
-                type="button"
-                className="btn"
-                disabled={editing}
-                onClick={() => openEdit(current)}
-              >
-                编辑
-              </button>
-              <button
-                type="button"
-                className="btn"
-                disabled={browseIndex <= 0 || editing}
-                onClick={() => {
-                  setEditing(false);
-                  setBrowseIndex((i) => Math.max(0, i - 1));
-                }}
-              >
-                上一个
-              </button>
-              <button
-                type="button"
-                className="btn primary"
-                disabled={browseIndex >= categoryWords.length - 1 || editing}
-                onClick={() => {
-                  setEditing(false);
-                  setBrowseIndex((i) =>
-                    Math.min(categoryWords.length - 1, i + 1),
-                  );
-                }}
-              >
-                下一个
-              </button>
+            <div className="list vocab-word-list">
+              {categoryWords.length === 0 && (
+                <p className="muted">该分类下暂无单词。</p>
+              )}
+              {categoryWords.map((w) => renderWordRow(w))}
             </div>
-          </div>
+          </>
         )}
       </section>
     </div>

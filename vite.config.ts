@@ -254,6 +254,32 @@ function attachVocabularyApi(middlewares: Connect.Server) {
           return;
         }
 
+        if (req.method === "DELETE") {
+          const raw = JSON.parse(await readRequestBody(req)) as { id?: unknown };
+          const id = Number(raw.id);
+          if (!Number.isFinite(id)) {
+            res.statusCode = 400;
+            res.end("id required");
+            return;
+          }
+
+          await enqueueDisk(async () => {
+            const list = JSON.parse(await readVocabularyFile(file)) as Array<
+              Record<string, unknown>
+            >;
+            const idx = list.findIndex((w) => Number(w.id) === id);
+            if (idx < 0) {
+              throw new Error(`word id ${id} not found`);
+            }
+            list.splice(idx, 1);
+            await writeVocabularyFile(file, JSON.stringify(list, null, 2));
+          });
+
+          res.statusCode = 204;
+          res.end();
+          return;
+        }
+
         if (req.method !== "POST") {
           res.statusCode = 405;
           res.end("Method not allowed");

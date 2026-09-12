@@ -39,6 +39,11 @@ export default function App() {
     setWords((prev) => [...prev, created]);
   };
 
+  const removeWord = (id: number) => {
+    setWords((prev) => prev.filter((w) => w.id !== id));
+    setPracticeList((prev) => prev.filter((w) => w.id !== id));
+  };
+
   const switchDataFile = async (file: string) => {
     if (file === dataFile) return;
     setSwitching(true);
@@ -186,6 +191,7 @@ export default function App() {
           onSelectFile={(file) => void switchDataFile(file)}
           onWordPatched={patchWord}
           onWordAdded={addWord}
+          onWordDeleted={removeWord}
           onBack={() => setView("home")}
         />
       )}

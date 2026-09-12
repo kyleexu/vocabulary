@@ -456,3 +456,15 @@ export async function editWordOnDisk(input: EditWordInput): Promise<Word> {
   }
   return normalizeWord(await res.json());
 }
+
+/** Remove one word by id from the current data/*.json. */
+export async function deleteWordOnDisk(id: number): Promise<void> {
+  const res = await fetch(withDataFile(WORD_URL), {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id }),
+  });
+  if (!res.ok) {
+    throw new Error(`删除单词失败: HTTP ${res.status} ${await res.text()}`);
+  }
+}
