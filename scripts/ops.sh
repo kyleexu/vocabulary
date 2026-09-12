@@ -254,7 +254,22 @@ cmd_commit_push() {
     echo "==> git commit"
     git -c "user.name=$name" -c "user.email=$email" commit -m "$msg"
   else
-    echo "==> 工作区干净，跳过 commit（仍有 $ahead 个未推送提交）"
+    echo "==> 工作区干净，跳过 commit"
+  fi
+
+  # Rebase onto upstream when behind so push stays fast-forward.
+  local upstream=""
+  if git rev-parse --abbrev-ref '@{u}' >/dev/null 2>&1; then
+    upstream="$(git rev-parse --abbrev-ref '@{u}')"
+  else
+    upstream="origin/$branch"
+  fi
+
+  local behind
+  behind="$(git rev-list --count "HEAD..$upstream" 2>/dev/null || echo 0)"
+  if [[ "$behind" -gt 0 ]]; then
+    echo "==> 落后 $upstream ${behind} 个提交，执行 rebase"
+    git rebase "$upstream" || die "rebase 失败，请手动解决冲突后再 $0 commit-push"
   fi
 
   echo "==> git push -u origin HEAD"
