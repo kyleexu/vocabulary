@@ -173,6 +173,87 @@ function attachVocabularyApi(middlewares: Connect.Server) {
         return;
       }
 
+      // Append one word to the vocabulary file
+      if (url === "/api/vocabulary/word") {
+        if (req.method !== "POST") {
+          res.statusCode = 405;
+          res.end("Method not allowed");
+          return;
+        }
+
+        const file = fileFromRequest(rawUrl);
+        const raw = JSON.parse(await readRequestBody(req)) as {
+          english?: unknown;
+          chinese?: unknown;
+          pos?: unknown;
+          category?: unknown;
+          categoryId?: unknown;
+          isWrong?: unknown;
+          isFavorites?: unknown;
+          isEasy?: unknown;
+        };
+
+        const english = String(raw.english ?? "").trim();
+        const chinese = String(raw.chinese ?? "").trim();
+        const category = String(raw.category ?? "").trim();
+        const pos = String(raw.pos ?? "").trim();
+
+        if (!english || !chinese || !category) {
+          res.statusCode = 400;
+          res.end("english, chinese, category required");
+          return;
+        }
+
+        const created = await enqueueDisk(async () => {
+          const list = JSON.parse(await readVocabularyFile(file)) as Array<
+            Record<string, unknown>
+          >;
+          let maxId = 0;
+          let maxCategoryId = 0;
+          let matchedCategoryId: number | null = null;
+          for (const w of list) {
+            const wid = Number(w.id);
+            if (Number.isFinite(wid) && wid > maxId) maxId = wid;
+            const cid = Number(w.categoryId);
+            if (Number.isFinite(cid) && cid > maxCategoryId) maxCategoryId = cid;
+            if (
+              matchedCategoryId == null &&
+              String(w.category ?? "").trim() === category
+            ) {
+              matchedCategoryId = Number.isFinite(cid) ? cid : null;
+            }
+          }
+
+          const requestedCategoryId = Number(raw.categoryId);
+          const categoryId =
+            Number.isFinite(requestedCategoryId) && requestedCategoryId > 0
+              ? requestedCategoryId
+              : matchedCategoryId != null && matchedCategoryId > 0
+                ? matchedCategoryId
+                : maxCategoryId + 1;
+
+          const word = {
+            id: maxId + 1,
+            categoryId,
+            category,
+            english,
+            chinese,
+            pos,
+            isWrong: asFlag(raw.isWrong),
+            isFavorites: asFlag(raw.isFavorites),
+            isEasy: asFlag(raw.isEasy),
+          };
+          list.push(word);
+          await writeVocabularyFile(file, JSON.stringify(list, null, 2));
+          return word;
+        });
+
+        res.statusCode = 201;
+        res.setHeader("Content-Type", "application/json; charset=utf-8");
+        res.end(JSON.stringify(created));
+        return;
+      }
+
       next();
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);

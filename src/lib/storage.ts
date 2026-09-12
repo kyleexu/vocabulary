@@ -4,6 +4,7 @@ const SETTINGS_KEY = "vocab.settings";
 const DATA_FILE_KEY = "vocab.dataFile";
 const VOCAB_URL = "/api/vocabulary.json";
 const FLAG_URL = "/api/vocabulary/flag";
+const WORD_URL = "/api/vocabulary/word";
 const FILES_URL = "/api/vocabulary/files";
 
 export const DEFAULT_DATA_FILE = "vocabulary.json";
@@ -357,4 +358,44 @@ export function setFavorite(id: number, on: boolean): Promise<Word> {
 
 export function setEasy(id: number, on: boolean): Promise<Word> {
   return patchWordFlags(id, { isEasy: on ? 1 : 0 });
+}
+
+export type NewWordInput = {
+  english: string;
+  chinese: string;
+  category: string;
+  pos?: string;
+  categoryId?: number;
+  isWrong?: Flag01;
+  isFavorites?: Flag01;
+  isEasy?: Flag01;
+};
+
+/** Append one word to the current data/*.json via Vite API. */
+export async function addWordOnDisk(input: NewWordInput): Promise<Word> {
+  const english = input.english.trim();
+  const chinese = input.chinese.trim();
+  const category = input.category.trim();
+  if (!english || !chinese || !category) {
+    throw new Error("英文、中文、分类均为必填");
+  }
+
+  const res = await fetch(withDataFile(WORD_URL), {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      english,
+      chinese,
+      category,
+      pos: (input.pos ?? "").trim(),
+      categoryId: input.categoryId,
+      isWrong: input.isWrong ?? 0,
+      isFavorites: input.isFavorites ?? 0,
+      isEasy: input.isEasy ?? 0,
+    }),
+  });
+  if (!res.ok) {
+    throw new Error(`添加单词失败: HTTP ${res.status} ${await res.text()}`);
+  }
+  return normalizeWord(await res.json());
 }
