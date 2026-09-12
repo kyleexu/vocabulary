@@ -453,7 +453,7 @@ export function WordsPractice({
   const [inFav, setInFav] = useState(false);
   const [done, setDone] = useState(false);
   const [toast, setToast] = useState("");
-  const inputShellRef = useRef<HTMLDivElement>(null);
+  const answerInputRef = useRef<HTMLInputElement>(null);
   const advanceTimerRef = useRef(0);
   const correctHandledIdRef = useRef<number | null>(null);
 
@@ -512,7 +512,7 @@ export function WordsPractice({
   useEffect(() => {
     if (!word) return;
     const english = word.english;
-    const focusT = window.setTimeout(() => inputShellRef.current?.focus(), 0);
+    const focusT = window.setTimeout(() => answerInputRef.current?.focus(), 0);
     // Delay speak so React Strict Mode cleanup / cancel() doesn't swallow it.
     const speakT = autoSpeak
       ? window.setTimeout(() => {
@@ -641,6 +641,29 @@ export function WordsPractice({
     });
   };
 
+  const focusAnswerField = () => {
+    answerInputRef.current?.focus();
+  };
+
+  const syncAnswerFromField = (raw: string) => {
+    if (!word) return;
+    setInput(fillStructural(raw.slice(0, word.english.length)));
+  };
+
+  const submitAnswer = () => {
+    if (!word) return;
+    if (normalizeAnswer(input) === normalizeAnswer(word.english)) {
+      clearAdvanceTimer();
+      if (correctHandledIdRef.current !== word.id) {
+        correctHandledIdRef.current = word.id;
+        flash("正确");
+      }
+      next();
+    } else {
+      flash("再试一次");
+    }
+  };
+
   const handleTypeKey = (e: {
     key: string;
     ctrlKey: boolean;
@@ -650,17 +673,7 @@ export function WordsPractice({
   }) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      if (normalizeAnswer(input) === normalizeAnswer(word.english)) {
-        // Fully correct → Enter always advances (even if auto-advance was cancelled).
-        clearAdvanceTimer();
-        if (correctHandledIdRef.current !== word.id) {
-          correctHandledIdRef.current = word.id;
-          flash("正确");
-        }
-        next();
-      } else {
-        flash("再试一次");
-      }
+      submitAnswer();
       return;
     }
     if (e.key === "Backspace") {
@@ -714,7 +727,9 @@ export function WordsPractice({
 
     const onKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
-      if (target?.closest("input, textarea, select")) return;
+      const inAnswer = target === answerInputRef.current;
+      // Other form fields keep native behavior; answer field still gets shortcuts.
+      if (target?.closest("input, textarea, select") && !inAnswer) return;
 
       // ⌘J / Ctrl+J hold → peek word (only when 单词展示 is off)
       if (
@@ -766,6 +781,8 @@ export function WordsPractice({
       }
 
       if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // Answer <input> handles typing / Backspace / Enter via native + onChange
+      if (inAnswer) return;
       // Let focused buttons keep Enter/Space for accessibility
       if (
         target?.closest("button") &&
@@ -982,12 +999,10 @@ export function WordsPractice({
         {index + 1} / {list.length}
       </p>
 
-      <div className="flash-stage" onClick={() => inputShellRef.current?.focus()}>
+      <div className="flash-stage" onClick={focusAnswerField}>
         <div className="flash-word-row">
           <div
-            ref={inputShellRef}
             className="word-input-shell"
-            tabIndex={0}
             onMouseEnter={() => {
               if (displayMode === "hidden") setHoverReveal(true);
             }}
@@ -1000,6 +1015,31 @@ export function WordsPractice({
               value={inputForId === word.id ? input : ""}
               mode={displayMode}
               hoverReveal={hoverReveal || keyReveal}
+            />
+            {/* Real input so mobile soft keyboards can open; slots stay the visual UI. */}
+            <input
+              ref={answerInputRef}
+              className="answer-capture"
+              value={inputForId === word.id ? input : ""}
+              onChange={(e) => syncAnswerFromField(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  submitAnswer();
+                  return;
+                }
+                if (e.key === "Escape") {
+                  e.preventDefault();
+                  setInput(structuralPrefix(word.english));
+                }
+              }}
+              autoCapitalize="off"
+              autoCorrect="off"
+              autoComplete="off"
+              spellCheck={false}
+              inputMode="text"
+              enterKeyHint="go"
+              aria-label="输入英文单词"
             />
           </div>
           <button
@@ -1014,6 +1054,7 @@ export function WordsPractice({
             <SpeakerIcon />
           </button>
         </div>
+        <p className="mobile-type-hint muted">轻点单词区域以唤起键盘</p>
 
         <p className="flash-pos">词性 · {word.pos || "—"}</p>
         <p
