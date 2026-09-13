@@ -17778,7 +17778,7 @@
   {
     "id": 1617,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "market-making",
     "chinese": "做市",
     "pos": "n.",
@@ -17789,7 +17789,7 @@
   {
     "id": 1618,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "market-maker",
     "chinese": "做市商",
     "pos": "n.",
@@ -17800,7 +17800,7 @@
   {
     "id": 1619,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "liquidity-provider",
     "chinese": "流动性提供商（LP）",
     "pos": "n.",
@@ -17811,7 +17811,7 @@
   {
     "id": 1620,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "liquidity",
     "chinese": "流动性",
     "pos": "n.",
@@ -17822,7 +17822,7 @@
   {
     "id": 1621,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "bid",
     "chinese": "买价/买盘",
     "pos": "n.",
@@ -17833,7 +17833,7 @@
   {
     "id": 1622,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "ask",
     "chinese": "卖价/卖盘",
     "pos": "n.",
@@ -17844,7 +17844,7 @@
   {
     "id": 1623,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "spread",
     "chinese": "点差",
     "pos": "n.",
@@ -17855,7 +17855,7 @@
   {
     "id": 1624,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "mid-price",
     "chinese": "中间价",
     "pos": "n.",
@@ -17866,7 +17866,7 @@
   {
     "id": 1625,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "mark-price",
     "chinese": "标记价格",
     "pos": "n.",
@@ -17877,7 +17877,7 @@
   {
     "id": 1626,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "index-price",
     "chinese": "指数价格",
     "pos": "n.",
@@ -17888,7 +17888,7 @@
   {
     "id": 1627,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "last-price",
     "chinese": "最新成交价",
     "pos": "n.",
@@ -17899,7 +17899,7 @@
   {
     "id": 1628,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "order-book",
     "chinese": "订单簿",
     "pos": "n.",
@@ -17910,7 +17910,7 @@
   {
     "id": 1629,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "tick-size",
     "chinese": "最小价格变动",
     "pos": "n.",
@@ -17921,7 +17921,7 @@
   {
     "id": 1630,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "lot-size",
     "chinese": "最小交易单位",
     "pos": "n.",
@@ -17932,7 +17932,7 @@
   {
     "id": 1631,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "RFQ",
     "chinese": "询价请求",
     "pos": "n.",
@@ -17943,7 +17943,7 @@
   {
     "id": 1632,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "RFS",
     "chinese": "流式报价请求",
     "pos": "n.",
@@ -17954,7 +17954,7 @@
   {
     "id": 1633,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "quote",
     "chinese": "报价",
     "pos": "n.",
@@ -17965,7 +17965,7 @@
   {
     "id": 1634,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "indication-of-interest",
     "chinese": "意向兴趣（IOI）",
     "pos": "n.",
@@ -17976,7 +17976,7 @@
   {
     "id": 1635,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "fill",
     "chinese": "成交",
     "pos": "n.",
@@ -17987,7 +17987,7 @@
   {
     "id": 1636,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "partial-fill",
     "chinese": "部分成交",
     "pos": "n.",
@@ -17998,7 +17998,7 @@
   {
     "id": 1637,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "reject",
     "chinese": "拒单",
     "pos": "n.",
@@ -18009,7 +18009,7 @@
   {
     "id": 1638,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "cancel",
     "chinese": "撤单",
     "pos": "n.",
@@ -18020,7 +18020,7 @@
   {
     "id": 1639,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "amend",
     "chinese": "改单",
     "pos": "n.",
@@ -18031,7 +18031,7 @@
   {
     "id": 1640,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "time-in-force",
     "chinese": "订单有效期类型",
     "pos": "n.",
@@ -18042,7 +18042,7 @@
   {
     "id": 1641,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "GTC",
     "chinese": "撤销前有效",
     "pos": "n.",
@@ -18053,7 +18053,7 @@
   {
     "id": 1642,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "IOC",
     "chinese": "立即成交否则取消",
     "pos": "n.",
@@ -18064,7 +18064,7 @@
   {
     "id": 1643,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "FOK",
     "chinese": "全部成交否则取消",
     "pos": "n.",
@@ -18075,7 +18075,7 @@
   {
     "id": 1644,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "limit-order",
     "chinese": "限价单",
     "pos": "n.",
@@ -18086,7 +18086,7 @@
   {
     "id": 1645,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "market-order",
     "chinese": "市价单",
     "pos": "n.",
@@ -18097,7 +18097,7 @@
   {
     "id": 1646,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "stop-order",
     "chinese": "止损单",
     "pos": "n.",
@@ -18108,7 +18108,7 @@
   {
     "id": 1647,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "take-profit",
     "chinese": "止盈",
     "pos": "n.",
@@ -18119,7 +18119,7 @@
   {
     "id": 1648,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "stop-loss",
     "chinese": "止损",
     "pos": "n.",
@@ -18130,7 +18130,7 @@
   {
     "id": 1649,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "slippage",
     "chinese": "滑点",
     "pos": "n.",
@@ -18141,7 +18141,7 @@
   {
     "id": 1650,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "impact-cost",
     "chinese": "冲击成本",
     "pos": "n.",
@@ -18152,7 +18152,7 @@
   {
     "id": 1651,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "VWAP",
     "chinese": "成交量加权平均价",
     "pos": "n.",
@@ -18163,7 +18163,7 @@
   {
     "id": 1652,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "TWAP",
     "chinese": "时间加权平均价",
     "pos": "n.",
@@ -18174,7 +18174,7 @@
   {
     "id": 1653,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "hedging",
     "chinese": "对冲",
     "pos": "n.",
@@ -18185,7 +18185,7 @@
   {
     "id": 1654,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "hedge",
     "chinese": "对冲/对冲单",
     "pos": "n.",
@@ -18196,7 +18196,7 @@
   {
     "id": 1655,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "exposure",
     "chinese": "敞口",
     "pos": "n.",
@@ -18207,7 +18207,7 @@
   {
     "id": 1656,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "position",
     "chinese": "持仓",
     "pos": "n.",
@@ -18218,7 +18218,7 @@
   {
     "id": 1657,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "netting",
     "chinese": "轧差",
     "pos": "n.",
@@ -18229,7 +18229,7 @@
   {
     "id": 1658,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "inventory",
     "chinese": "库存/持仓库存",
     "pos": "n.",
@@ -18240,7 +18240,7 @@
   {
     "id": 1659,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "skew",
     "chinese": "偏斜（报价倾斜）",
     "pos": "n.",
@@ -18251,7 +18251,7 @@
   {
     "id": 1660,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "inventory-risk",
     "chinese": "库存风险",
     "pos": "n.",
@@ -18262,7 +18262,7 @@
   {
     "id": 1661,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "basis-risk",
     "chinese": "基差风险",
     "pos": "n.",
@@ -18273,7 +18273,7 @@
   {
     "id": 1662,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "PnL",
     "chinese": "盈亏",
     "pos": "n.",
@@ -18284,7 +18284,7 @@
   {
     "id": 1663,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "realized-PnL",
     "chinese": "已实现盈亏",
     "pos": "n.",
@@ -18295,7 +18295,7 @@
   {
     "id": 1664,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "unrealized-PnL",
     "chinese": "未实现盈亏",
     "pos": "n.",
@@ -18306,7 +18306,7 @@
   {
     "id": 1665,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "mark-to-market",
     "chinese": "按市值计价",
     "pos": "n.",
@@ -18317,7 +18317,7 @@
   {
     "id": 1666,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "cost-basis",
     "chinese": "成本基础",
     "pos": "n.",
@@ -18328,7 +18328,7 @@
   {
     "id": 1667,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "average-cost",
     "chinese": "加权平均成本",
     "pos": "n.",
@@ -18339,7 +18339,7 @@
   {
     "id": 1668,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "fee",
     "chinese": "手续费",
     "pos": "n.",
@@ -18350,7 +18350,7 @@
   {
     "id": 1669,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "commission",
     "chinese": "佣金",
     "pos": "n.",
@@ -18361,7 +18361,7 @@
   {
     "id": 1670,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "rebate",
     "chinese": "返佣",
     "pos": "n.",
@@ -18372,7 +18372,7 @@
   {
     "id": 1671,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "maker",
     "chinese": "挂单方",
     "pos": "n.",
@@ -18383,7 +18383,7 @@
   {
     "id": 1672,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "taker",
     "chinese": "吃单方",
     "pos": "n.",
@@ -18394,7 +18394,7 @@
   {
     "id": 1673,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "maker-taker",
     "chinese": "挂单吃单模式",
     "pos": "n.",
@@ -18405,7 +18405,7 @@
   {
     "id": 1674,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "settlement",
     "chinese": "结算",
     "pos": "n.",
@@ -18416,7 +18416,7 @@
   {
     "id": 1675,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "clearing",
     "chinese": "清算",
     "pos": "n.",
@@ -18427,7 +18427,7 @@
   {
     "id": 1676,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "reconciliation",
     "chinese": "对账",
     "pos": "n.",
@@ -18438,7 +18438,7 @@
   {
     "id": 1677,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "custody",
     "chinese": "托管",
     "pos": "n.",
@@ -18449,7 +18449,7 @@
   {
     "id": 1678,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "collateral",
     "chinese": "抵押品",
     "pos": "n.",
@@ -18460,7 +18460,7 @@
   {
     "id": 1679,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "margin",
     "chinese": "保证金",
     "pos": "n.",
@@ -18471,7 +18471,7 @@
   {
     "id": 1680,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "initial-margin",
     "chinese": "初始保证金",
     "pos": "n.",
@@ -18482,7 +18482,7 @@
   {
     "id": 1681,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "maintenance-margin",
     "chinese": "维持保证金",
     "pos": "n.",
@@ -18493,7 +18493,7 @@
   {
     "id": 1682,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "leverage",
     "chinese": "杠杆",
     "pos": "n.",
@@ -18504,7 +18504,7 @@
   {
     "id": 1683,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "liquidation",
     "chinese": "强平",
     "pos": "n.",
@@ -18515,7 +18515,7 @@
   {
     "id": 1684,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "funding-rate",
     "chinese": "资金费率",
     "pos": "n.",
@@ -18526,7 +18526,7 @@
   {
     "id": 1685,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "perpetual-contract",
     "chinese": "永续合约",
     "pos": "n.",
@@ -18537,7 +18537,7 @@
   {
     "id": 1686,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "futures",
     "chinese": "期货",
     "pos": "n.",
@@ -18548,7 +18548,7 @@
   {
     "id": 1687,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "spot",
     "chinese": "现货",
     "pos": "n.",
@@ -18559,7 +18559,7 @@
   {
     "id": 1688,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "swap",
     "chinese": "互换/交叉兑换",
     "pos": "n.",
@@ -18570,7 +18570,7 @@
   {
     "id": 1689,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "cross-currency",
     "chinese": "跨币种",
     "pos": "n.",
@@ -18581,7 +18581,7 @@
   {
     "id": 1690,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "synthetic",
     "chinese": "合成（报价/仓位）",
     "pos": "n.",
@@ -18592,7 +18592,7 @@
   {
     "id": 1691,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "notional",
     "chinese": "名义本金",
     "pos": "n.",
@@ -18603,7 +18603,7 @@
   {
     "id": 1692,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "counterparty",
     "chinese": "对手方",
     "pos": "n.",
@@ -18614,7 +18614,7 @@
   {
     "id": 1693,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "counterparty-risk",
     "chinese": "对手方风险",
     "pos": "n.",
@@ -18625,7 +18625,7 @@
   {
     "id": 1694,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "credit-limit",
     "chinese": "授信额度",
     "pos": "n.",
@@ -18636,7 +18636,7 @@
   {
     "id": 1695,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "risk-limit",
     "chinese": "风险限额",
     "pos": "n.",
@@ -18647,7 +18647,7 @@
   {
     "id": 1696,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "position-limit",
     "chinese": "持仓限额",
     "pos": "n.",
@@ -18658,7 +18658,7 @@
   {
     "id": 1697,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "kill-switch",
     "chinese": "一键关停",
     "pos": "n.",
@@ -18669,7 +18669,7 @@
   {
     "id": 1698,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "pre-trade-risk",
     "chinese": "事前风控",
     "pos": "n.",
@@ -18680,7 +18680,7 @@
   {
     "id": 1699,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "post-trade-risk",
     "chinese": "事后风控",
     "pos": "n.",
@@ -18691,7 +18691,7 @@
   {
     "id": 1700,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "KYC",
     "chinese": "了解你的客户",
     "pos": "n.",
@@ -18702,7 +18702,7 @@
   {
     "id": 1701,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "AML",
     "chinese": "反洗钱",
     "pos": "n.",
@@ -18713,7 +18713,7 @@
   {
     "id": 1702,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "audit-trail",
     "chinese": "审计轨迹",
     "pos": "n.",
@@ -18724,7 +18724,7 @@
   {
     "id": 1703,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "trade-blotter",
     "chinese": "成交流水簿",
     "pos": "n.",
@@ -18735,7 +18735,7 @@
   {
     "id": 1704,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "execution-report",
     "chinese": "成交回报",
     "pos": "n.",
@@ -18746,7 +18746,7 @@
   {
     "id": 1705,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "order-management-system",
     "chinese": "订单管理系统（OMS）",
     "pos": "n.",
@@ -18757,7 +18757,7 @@
   {
     "id": 1706,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "matching-engine",
     "chinese": "撮合引擎",
     "pos": "n.",
@@ -18768,7 +18768,7 @@
   {
     "id": 1707,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "price-time-priority",
     "chinese": "价格时间优先",
     "pos": "n.",
@@ -18779,7 +18779,7 @@
   {
     "id": 1708,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "pro-rata",
     "chinese": "按比例分配",
     "pos": "n.",
@@ -18790,7 +18790,7 @@
   {
     "id": 1709,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "internalization",
     "chinese": "内部化成交",
     "pos": "n.",
@@ -18801,7 +18801,7 @@
   {
     "id": 1710,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "internal-match",
     "chinese": "内撮",
     "pos": "n.",
@@ -18812,7 +18812,7 @@
   {
     "id": 1711,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "external-hedge",
     "chinese": "外部对冲",
     "pos": "n.",
@@ -18823,7 +18823,7 @@
   {
     "id": 1712,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "best-execution",
     "chinese": "最佳执行",
     "pos": "n.",
@@ -18834,7 +18834,7 @@
   {
     "id": 1713,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "smart-order-routing",
     "chinese": "智能订单路由",
     "pos": "n.",
@@ -18845,7 +18845,7 @@
   {
     "id": 1714,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "latency-arbitrage",
     "chinese": "延迟套利",
     "pos": "n.",
@@ -18856,7 +18856,7 @@
   {
     "id": 1715,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "arbitrage",
     "chinese": "套利",
     "pos": "n.",
@@ -18867,7 +18867,7 @@
   {
     "id": 1716,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "market-data",
     "chinese": "行情数据",
     "pos": "n.",
@@ -18878,7 +18878,7 @@
   {
     "id": 1717,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "ticker",
     "chinese": "行情摘要",
     "pos": "n.",
@@ -18889,7 +18889,7 @@
   {
     "id": 1718,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "candlestick",
     "chinese": "K 线",
     "pos": "n.",
@@ -18900,7 +18900,7 @@
   {
     "id": 1719,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "OHLCV",
     "chinese": "开高低收量",
     "pos": "n.",
@@ -18911,7 +18911,7 @@
   {
     "id": 1720,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "trade-tick",
     "chinese": "逐笔成交",
     "pos": "n.",
@@ -18922,7 +18922,7 @@
   {
     "id": 1721,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "book-delta",
     "chinese": "盘口增量",
     "pos": "n.",
@@ -18933,7 +18933,7 @@
   {
     "id": 1722,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "sequence-number",
     "chinese": "序列号",
     "pos": "n.",
@@ -18944,7 +18944,7 @@
   {
     "id": 1723,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "gap-detection",
     "chinese": "缺口检测",
     "pos": "n.",
@@ -18955,7 +18955,7 @@
   {
     "id": 1724,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "stale-quote",
     "chinese": "过期报价",
     "pos": "n.",
@@ -18966,7 +18966,7 @@
   {
     "id": 1725,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "TTL-ladder",
     "chinese": "带过期的价格阶梯",
     "pos": "n.",
@@ -18977,7 +18977,7 @@
   {
     "id": 1726,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "price-ladder",
     "chinese": "价格阶梯",
     "pos": "n.",
@@ -18988,7 +18988,7 @@
   {
     "id": 1727,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "best-bid-offer",
     "chinese": "最优买卖价（BBO）",
     "pos": "n.",
@@ -18999,7 +18999,7 @@
   {
     "id": 1728,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "top-of-book",
     "chinese": "盘口最优档",
     "pos": "n.",
@@ -19010,7 +19010,7 @@
   {
     "id": 1729,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "dust",
     "chinese": "碎片量/尘埃量",
     "pos": "n.",
@@ -19021,7 +19021,7 @@
   {
     "id": 1730,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "lot-precision",
     "chinese": "数量精度",
     "pos": "n.",
@@ -19032,7 +19032,7 @@
   {
     "id": 1731,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "rounding",
     "chinese": "舍入",
     "pos": "n.",
@@ -19043,7 +19043,7 @@
   {
     "id": 1732,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "truncation",
     "chinese": "截断",
     "pos": "n.",
@@ -19054,7 +19054,7 @@
   {
     "id": 1733,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "passive-open",
     "chinese": "被动开仓",
     "pos": "n.",
@@ -19065,7 +19065,7 @@
   {
     "id": 1734,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "active-open",
     "chinese": "主动开仓",
     "pos": "n.",
@@ -19076,7 +19076,7 @@
   {
     "id": 1735,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "close-position",
     "chinese": "平仓",
     "pos": "n.",
@@ -19087,7 +19087,7 @@
   {
     "id": 1736,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "merge-position",
     "chinese": "持仓归集",
     "pos": "n.",
@@ -19098,7 +19098,7 @@
   {
     "id": 1737,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "reflow",
     "chinese": "回流（仓位核销）",
     "pos": "n.",
@@ -19109,7 +19109,7 @@
   {
     "id": 1738,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "traffic-split",
     "chinese": "切流",
     "pos": "n.",
@@ -19120,7 +19120,7 @@
   {
     "id": 1739,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "gray-release",
     "chinese": "灰度",
     "pos": "n.",
@@ -19131,7 +19131,7 @@
   {
     "id": 1740,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "dual-track",
     "chinese": "双轨",
     "pos": "n.",
@@ -19142,7 +19142,7 @@
   {
     "id": 1741,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "deviation",
     "chinese": "偏离",
     "pos": "n.",
@@ -19153,7 +19153,7 @@
   {
     "id": 1742,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "basis-point",
     "chinese": "基点（bps）",
     "pos": "n.",
@@ -19164,7 +19164,7 @@
   {
     "id": 1743,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "bps",
     "chinese": "基点",
     "pos": "n.",
@@ -19175,7 +19175,7 @@
   {
     "id": 1744,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "volatility",
     "chinese": "波动率",
     "pos": "n.",
@@ -19186,7 +19186,7 @@
   {
     "id": 1745,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "liquidity-pool",
     "chinese": "流动性池",
     "pos": "n.",
@@ -19197,7 +19197,7 @@
   {
     "id": 1746,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "AMM",
     "chinese": "自动做市商",
     "pos": "n.",
@@ -19208,7 +19208,7 @@
   {
     "id": 1747,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "CEX",
     "chinese": "中心化交易所",
     "pos": "n.",
@@ -19219,7 +19219,7 @@
   {
     "id": 1748,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "DEX",
     "chinese": "去中心化交易所",
     "pos": "n.",
@@ -19230,7 +19230,7 @@
   {
     "id": 1749,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "on-chain",
     "chinese": "链上",
     "pos": "n.",
@@ -19241,7 +19241,7 @@
   {
     "id": 1750,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "off-chain",
     "chinese": "链下",
     "pos": "n.",
@@ -19252,7 +19252,7 @@
   {
     "id": 1751,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "wallet",
     "chinese": "钱包",
     "pos": "n.",
@@ -19263,7 +19263,7 @@
   {
     "id": 1752,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "signing",
     "chinese": "签名",
     "pos": "n.",
@@ -19274,7 +19274,7 @@
   {
     "id": 1753,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "nonce",
     "chinese": "一次性序号",
     "pos": "n.",
@@ -19285,7 +19285,7 @@
   {
     "id": 1754,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "gas",
     "chinese": "链上手续费单位",
     "pos": "n.",
@@ -19296,7 +19296,7 @@
   {
     "id": 1755,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "smart-contract",
     "chinese": "智能合约",
     "pos": "n.",
@@ -19307,7 +19307,7 @@
   {
     "id": 1756,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "MEV",
     "chinese": "可提取最大价值",
     "pos": "n.",
@@ -19318,7 +19318,7 @@
   {
     "id": 1757,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "front-running",
     "chinese": "抢跑",
     "pos": "n.",
@@ -19329,7 +19329,7 @@
   {
     "id": 1758,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "copy-trading",
     "chinese": "跟单",
     "pos": "n.",
@@ -19340,7 +19340,7 @@
   {
     "id": 1759,
     "categoryId": 19,
-    "category": "金融与交易",
+    "category": "Finance & Trading",
     "english": "smart-money",
     "chinese": "聪明钱",
     "pos": "n.",
@@ -19351,7 +19351,7 @@
   {
     "id": 1760,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "market-data-feed",
     "chinese": "行情源",
     "pos": "n.",
@@ -19362,7 +19362,7 @@
   {
     "id": 1761,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "feed-handler",
     "chinese": "行情处理器",
     "pos": "n.",
@@ -19373,7 +19373,7 @@
   {
     "id": 1762,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "conflation",
     "chinese": "合并压缩推送",
     "pos": "n.",
@@ -19384,7 +19384,7 @@
   {
     "id": 1763,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "throttled-push",
     "chinese": "限频推送",
     "pos": "n.",
@@ -19395,7 +19395,7 @@
   {
     "id": 1764,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "subscription",
     "chinese": "订阅",
     "pos": "n.",
@@ -19406,7 +19406,7 @@
   {
     "id": 1765,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "unsubscribe",
     "chinese": "取消订阅",
     "pos": "n.",
@@ -19417,7 +19417,7 @@
   {
     "id": 1766,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "topic-routing",
     "chinese": "主题路由",
     "pos": "n.",
@@ -19428,7 +19428,7 @@
   {
     "id": 1767,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "broker-cluster",
     "chinese": "代理集群",
     "pos": "n.",
@@ -19439,7 +19439,7 @@
   {
     "id": 1768,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "QoS",
     "chinese": "服务质量等级",
     "pos": "n.",
@@ -19450,7 +19450,7 @@
   {
     "id": 1769,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "retained-message",
     "chinese": "保留消息",
     "pos": "n.",
@@ -19461,7 +19461,7 @@
   {
     "id": 1770,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "last-will",
     "chinese": "遗嘱消息",
     "pos": "n.",
@@ -19472,7 +19472,7 @@
   {
     "id": 1771,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "dispatcher",
     "chinese": "分发器",
     "pos": "n.",
@@ -19483,7 +19483,7 @@
   {
     "id": 1772,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "receiver",
     "chinese": "接收器",
     "pos": "n.",
@@ -19494,7 +19494,7 @@
   {
     "id": 1773,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "edge-node",
     "chinese": "边缘节点",
     "pos": "n.",
@@ -19505,7 +19505,7 @@
   {
     "id": 1774,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "co-location",
     "chinese": "托管机房同址",
     "pos": "n.",
@@ -19516,7 +19516,7 @@
   {
     "id": 1775,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "end-to-end-latency",
     "chinese": "端到端延迟",
     "pos": "n.",
@@ -19527,7 +19527,7 @@
   {
     "id": 1776,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "fanout-optimization",
     "chinese": "扇出优化",
     "pos": "n.",
@@ -19538,7 +19538,7 @@
   {
     "id": 1777,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "push-gateway",
     "chinese": "推送网关",
     "pos": "n.",
@@ -19549,7 +19549,7 @@
   {
     "id": 1778,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "writable-channel",
     "chinese": "可写通道",
     "pos": "n.",
@@ -19560,7 +19560,7 @@
   {
     "id": 1779,
     "categoryId": 20,
-    "category": "行情与推送",
+    "category": "Market Data & Push",
     "english": "queue-depth",
     "chinese": "队列深度",
     "pos": "n.",
@@ -20660,7 +20660,7 @@
   {
     "id": 1879,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "LP",
     "chinese": "流动性提供商",
     "pos": "n.",
@@ -20671,7 +20671,7 @@
   {
     "id": 1880,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "OMS",
     "chinese": "订单管理系统",
     "pos": "n.",
@@ -20682,7 +20682,7 @@
   {
     "id": 1881,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "EMS",
     "chinese": "执行管理系统",
     "pos": "n.",
@@ -20693,7 +20693,7 @@
   {
     "id": 1882,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ME",
     "chinese": "撮合引擎",
     "pos": "n.",
@@ -20704,7 +20704,7 @@
   {
     "id": 1883,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "FIX",
     "chinese": "金融信息交换协议",
     "pos": "n.",
@@ -20715,7 +20715,7 @@
   {
     "id": 1884,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "REST",
     "chinese": "表述性状态转移 API 风格",
     "pos": "n.",
@@ -20726,7 +20726,7 @@
   {
     "id": 1885,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "WS",
     "chinese": "WebSocket 简称",
     "pos": "n.",
@@ -20737,7 +20737,7 @@
   {
     "id": 1886,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "MQ",
     "chinese": "消息队列",
     "pos": "n.",
@@ -20748,7 +20748,7 @@
   {
     "id": 1887,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ER",
     "chinese": "成交回报 Execution Report",
     "pos": "n.",
@@ -20759,7 +20759,7 @@
   {
     "id": 1888,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SOR",
     "chinese": "智能订单路由",
     "pos": "n.",
@@ -20770,7 +20770,7 @@
   {
     "id": 1889,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "BBO",
     "chinese": "最优买卖价",
     "pos": "n.",
@@ -20781,7 +20781,7 @@
   {
     "id": 1890,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "TOB",
     "chinese": "盘口最优档 Top of Book",
     "pos": "n.",
@@ -20792,7 +20792,7 @@
   {
     "id": 1891,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "L1",
     "chinese": "一档行情",
     "pos": "n.",
@@ -20803,7 +20803,7 @@
   {
     "id": 1892,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "L2",
     "chinese": "多档深度行情",
     "pos": "n.",
@@ -20814,7 +20814,7 @@
   {
     "id": 1893,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "L3",
     "chinese": "逐笔订单级行情",
     "pos": "n.",
@@ -20825,7 +20825,7 @@
   {
     "id": 1894,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "OTC",
     "chinese": "场外交易",
     "pos": "n.",
@@ -20836,7 +20836,7 @@
   {
     "id": 1895,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "STP",
     "chinese": "直通式处理 / 自成交防护",
     "pos": "n.",
@@ -20847,7 +20847,7 @@
   {
     "id": 1896,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "DMA",
     "chinese": "直接市场接入",
     "pos": "n.",
@@ -20858,7 +20858,7 @@
   {
     "id": 1897,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "HFT",
     "chinese": "高频交易",
     "pos": "n.",
@@ -20869,7 +20869,7 @@
   {
     "id": 1898,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "MM",
     "chinese": "做市商 Market Maker",
     "pos": "n.",
@@ -20880,7 +20880,7 @@
   {
     "id": 1899,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "PM",
     "chinese": "投资组合经理 / 产品经理（语境而定）",
     "pos": "n.",
@@ -20891,7 +20891,7 @@
   {
     "id": 1900,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "IC",
     "chinese": "个人贡献者",
     "pos": "n.",
@@ -20902,7 +20902,7 @@
   {
     "id": 1901,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "TL",
     "chinese": "技术负责人 Tech Lead",
     "pos": "n.",
@@ -20913,7 +20913,7 @@
   {
     "id": 1902,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SRE",
     "chinese": "站点可靠性工程",
     "pos": "n.",
@@ -20924,7 +20924,7 @@
   {
     "id": 1903,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "DBA",
     "chinese": "数据库管理员",
     "pos": "n.",
@@ -20935,7 +20935,7 @@
   {
     "id": 1904,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "CRUD",
     "chinese": "增删改查",
     "pos": "n.",
@@ -20946,7 +20946,7 @@
   {
     "id": 1905,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "DDL",
     "chinese": "数据定义语言",
     "pos": "n.",
@@ -20957,7 +20957,7 @@
   {
     "id": 1906,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "DML",
     "chinese": "数据操纵语言",
     "pos": "n.",
@@ -20968,7 +20968,7 @@
   {
     "id": 1907,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "DCL",
     "chinese": "数据控制语言",
     "pos": "n.",
@@ -20979,7 +20979,7 @@
   {
     "id": 1908,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "OLTP",
     "chinese": "联机事务处理",
     "pos": "n.",
@@ -20990,7 +20990,7 @@
   {
     "id": 1909,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "OLAP",
     "chinese": "联机分析处理",
     "pos": "n.",
@@ -21001,7 +21001,7 @@
   {
     "id": 1910,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ETL",
     "chinese": "抽取转换加载",
     "pos": "n.",
@@ -21012,7 +21012,7 @@
   {
     "id": 1911,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ELT",
     "chinese": "抽取加载转换",
     "pos": "n.",
@@ -21023,7 +21023,7 @@
   {
     "id": 1912,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "UTC",
     "chinese": "协调世界时",
     "pos": "n.",
@@ -21034,7 +21034,7 @@
   {
     "id": 1913,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "EPOCH",
     "chinese": "纪元时间戳起点",
     "pos": "n.",
@@ -21045,7 +21045,7 @@
   {
     "id": 1914,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "UUID",
     "chinese": "通用唯一标识符",
     "pos": "n.",
@@ -21056,7 +21056,7 @@
   {
     "id": 1915,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ULID",
     "chinese": "可排序唯一标识",
     "pos": "n.",
@@ -21067,7 +21067,7 @@
   {
     "id": 1916,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "HMAC",
     "chinese": "哈希消息认证码",
     "pos": "n.",
@@ -21078,7 +21078,7 @@
   {
     "id": 1917,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "JWT",
     "chinese": "JSON Web Token",
     "pos": "n.",
@@ -21089,7 +21089,7 @@
   {
     "id": 1918,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "OAuth",
     "chinese": "开放授权协议",
     "pos": "n.",
@@ -21100,7 +21100,7 @@
   {
     "id": 1919,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "RBAC",
     "chinese": "基于角色的访问控制",
     "pos": "n.",
@@ -21111,7 +21111,7 @@
   {
     "id": 1920,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ACL",
     "chinese": "访问控制列表",
     "pos": "n.",
@@ -21122,7 +21122,7 @@
   {
     "id": 1921,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SSO",
     "chinese": "单点登录",
     "pos": "n.",
@@ -21133,7 +21133,7 @@
   {
     "id": 1922,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "VPN",
     "chinese": "虚拟专用网络",
     "pos": "n.",
@@ -21144,7 +21144,7 @@
   {
     "id": 1923,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "AZ",
     "chinese": "可用区",
     "pos": "n.",
@@ -21155,7 +21155,7 @@
   {
     "id": 1924,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "HA",
     "chinese": "高可用",
     "pos": "n.",
@@ -21166,7 +21166,7 @@
   {
     "id": 1925,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "DR",
     "chinese": "容灾",
     "pos": "n.",
@@ -21177,7 +21177,7 @@
   {
     "id": 1926,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "BGP",
     "chinese": "边界网关协议",
     "pos": "n.",
@@ -21188,7 +21188,7 @@
   {
     "id": 1927,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "NAT",
     "chinese": "网络地址转换",
     "pos": "n.",
@@ -21199,7 +21199,7 @@
   {
     "id": 1928,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "VIP",
     "chinese": "虚拟 IP",
     "pos": "n.",
@@ -21210,7 +21210,7 @@
   {
     "id": 1929,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "LB",
     "chinese": "负载均衡器",
     "pos": "n.",
@@ -21221,7 +21221,7 @@
   {
     "id": 1930,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SDK",
     "chinese": "软件开发工具包",
     "pos": "n.",
@@ -21232,7 +21232,7 @@
   {
     "id": 1931,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "DSL",
     "chinese": "领域特定语言",
     "pos": "n.",
@@ -21243,7 +21243,7 @@
   {
     "id": 1932,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "AST",
     "chinese": "抽象语法树",
     "pos": "n.",
@@ -21254,7 +21254,7 @@
   {
     "id": 1933,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "BFS",
     "chinese": "广度优先搜索",
     "pos": "n.",
@@ -21265,7 +21265,7 @@
   {
     "id": 1934,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "DFS",
     "chinese": "深度优先搜索",
     "pos": "n.",
@@ -21276,7 +21276,7 @@
   {
     "id": 1935,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "LRU",
     "chinese": "最近最少使用",
     "pos": "n.",
@@ -21287,7 +21287,7 @@
   {
     "id": 1936,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "LFU",
     "chinese": "最不经常使用",
     "pos": "n.",
@@ -21298,7 +21298,7 @@
   {
     "id": 1937,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "FIFO",
     "chinese": "先进先出",
     "pos": "n.",
@@ -21309,7 +21309,7 @@
   {
     "id": 1938,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "LIFO",
     "chinese": "后进先出",
     "pos": "n.",
@@ -21320,7 +21320,7 @@
   {
     "id": 1939,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "CRC",
     "chinese": "循环冗余校验",
     "pos": "n.",
@@ -21331,7 +21331,7 @@
   {
     "id": 1940,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "MD5",
     "chinese": "消息摘要算法（已不安全）",
     "pos": "n.",
@@ -21342,7 +21342,7 @@
   {
     "id": 1941,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SHA",
     "chinese": "安全哈希算法族",
     "pos": "n.",
@@ -21353,7 +21353,7 @@
   {
     "id": 1942,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "AES",
     "chinese": "高级加密标准",
     "pos": "n.",
@@ -21364,7 +21364,7 @@
   {
     "id": 1943,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "RSA",
     "chinese": "非对称加密算法",
     "pos": "n.",
@@ -21375,7 +21375,7 @@
   {
     "id": 1944,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "TLS1.3",
     "chinese": "传输层安全协议 1.3",
     "pos": "n.",
@@ -21386,7 +21386,7 @@
   {
     "id": 1945,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "HTTP/2",
     "chinese": "HTTP 第二版",
     "pos": "n.",
@@ -21397,7 +21397,7 @@
   {
     "id": 1946,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "HTTP/3",
     "chinese": "基于 QUIC 的 HTTP",
     "pos": "n.",
@@ -21408,7 +21408,7 @@
   {
     "id": 1947,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "QUIC",
     "chinese": "基于 UDP 的传输协议",
     "pos": "n.",
@@ -21419,7 +21419,7 @@
   {
     "id": 1948,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "gRPC-Web",
     "chinese": "浏览器侧 gRPC",
     "pos": "n.",
@@ -21430,7 +21430,7 @@
   {
     "id": 1949,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Avro",
     "chinese": "序列化与 Schema 系统",
     "pos": "n.",
@@ -21441,7 +21441,7 @@
   {
     "id": 1950,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Parquet",
     "chinese": "列式存储格式",
     "pos": "n.",
@@ -21452,7 +21452,7 @@
   {
     "id": 1951,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ORC",
     "chinese": "优化行列式文件格式",
     "pos": "n.",
@@ -21463,7 +21463,7 @@
   {
     "id": 1952,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Arrow",
     "chinese": "内存列式数据格式",
     "pos": "n.",
@@ -21474,7 +21474,7 @@
   {
     "id": 1953,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "JDBC",
     "chinese": "Java 数据库连接",
     "pos": "n.",
@@ -21485,7 +21485,7 @@
   {
     "id": 1954,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "JMS",
     "chinese": "Java 消息服务",
     "pos": "n.",
@@ -21496,7 +21496,7 @@
   {
     "id": 1955,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "JMX",
     "chinese": "Java 管理扩展",
     "pos": "n.",
@@ -21507,7 +21507,7 @@
   {
     "id": 1956,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "JFR",
     "chinese": "Java Flight Recorder",
     "pos": "n.",
@@ -21518,7 +21518,7 @@
   {
     "id": 1957,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "AOT",
     "chinese": "提前编译",
     "pos": "n.",
@@ -21529,7 +21529,7 @@
   {
     "id": 1958,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "JNI",
     "chinese": "Java 本地接口",
     "pos": "n.",
@@ -21540,7 +21540,7 @@
   {
     "id": 1959,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "OOM",
     "chinese": "内存溢出",
     "pos": "n.",
@@ -21551,7 +21551,7 @@
   {
     "id": 1960,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "CPU",
     "chinese": "中央处理器",
     "pos": "n.",
@@ -21562,7 +21562,7 @@
   {
     "id": 1961,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "GPU",
     "chinese": "图形处理器",
     "pos": "n.",
@@ -21573,7 +21573,7 @@
   {
     "id": 1962,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "NUMA",
     "chinese": "非统一内存访问",
     "pos": "n.",
@@ -21584,7 +21584,7 @@
   {
     "id": 1963,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SSD",
     "chinese": "固态硬盘",
     "pos": "n.",
@@ -21595,7 +21595,7 @@
   {
     "id": 1964,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "HDD",
     "chinese": "机械硬盘",
     "pos": "n.",
@@ -21606,7 +21606,7 @@
   {
     "id": 1965,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "IOPS",
     "chinese": "每秒输入输出次数",
     "pos": "n.",
@@ -21617,7 +21617,7 @@
   {
     "id": 1966,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "RTT",
     "chinese": "往返时延",
     "pos": "n.",
@@ -21628,7 +21628,7 @@
   {
     "id": 1967,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "MTU",
     "chinese": "最大传输单元",
     "pos": "n.",
@@ -21639,7 +21639,7 @@
   {
     "id": 1968,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "MSS",
     "chinese": "最大报文段长度",
     "pos": "n.",
@@ -21650,7 +21650,7 @@
   {
     "id": 1969,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ACK",
     "chinese": "确认应答",
     "pos": "n.",
@@ -21661,7 +21661,7 @@
   {
     "id": 1970,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "NACK",
     "chinese": "否定确认",
     "pos": "n.",
@@ -21672,7 +21672,7 @@
   {
     "id": 1971,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "FIN",
     "chinese": "连接结束标志",
     "pos": "n.",
@@ -21683,7 +21683,7 @@
   {
     "id": 1972,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SYN",
     "chinese": "同步握手标志",
     "pos": "n.",
@@ -21694,7 +21694,7 @@
   {
     "id": 1973,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "RST",
     "chinese": "复位标志",
     "pos": "n.",
@@ -21705,7 +21705,7 @@
   {
     "id": 1974,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "TIME-WAIT",
     "chinese": "TCP 关闭等待状态",
     "pos": "n.",
@@ -21716,7 +21716,7 @@
   {
     "id": 1975,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "CLOSE-WAIT",
     "chinese": "被动关闭等待状态",
     "pos": "n.",
@@ -21727,7 +21727,7 @@
   {
     "id": 1976,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "P50",
     "chinese": "第 50 百分位延迟",
     "pos": "n.",
@@ -21738,7 +21738,7 @@
   {
     "id": 1977,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "P95",
     "chinese": "第 95 百分位延迟",
     "pos": "n.",
@@ -21749,7 +21749,7 @@
   {
     "id": 1978,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "P99",
     "chinese": "第 99 百分位延迟",
     "pos": "n.",
@@ -21760,7 +21760,7 @@
   {
     "id": 1979,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "P999",
     "chinese": "第 99.9 百分位延迟",
     "pos": "n.",
@@ -21771,7 +21771,7 @@
   {
     "id": 1980,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "RPS",
     "chinese": "每秒请求数",
     "pos": "n.",
@@ -21782,7 +21782,7 @@
   {
     "id": 1981,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "EPS",
     "chinese": "每秒事件数",
     "pos": "n.",
@@ -21793,7 +21793,7 @@
   {
     "id": 1982,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "OPS",
     "chinese": "运维 / 每秒操作（语境而定）",
     "pos": "n.",
@@ -21804,7 +21804,7 @@
   {
     "id": 1983,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "T+0",
     "chinese": "当日交收",
     "pos": "n.",
@@ -21815,7 +21815,7 @@
   {
     "id": 1984,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "T+1",
     "chinese": "下一交易日交收",
     "pos": "n.",
@@ -21826,7 +21826,7 @@
   {
     "id": 1985,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "T+N",
     "chinese": "N 日后交收",
     "pos": "n.",
@@ -21837,7 +21837,7 @@
   {
     "id": 1986,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "FX",
     "chinese": "外汇",
     "pos": "n.",
@@ -21848,7 +21848,7 @@
   {
     "id": 1987,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "CFD",
     "chinese": "差价合约",
     "pos": "n.",
@@ -21859,7 +21859,7 @@
   {
     "id": 1988,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ETF",
     "chinese": "交易所交易基金",
     "pos": "n.",
@@ -21870,7 +21870,7 @@
   {
     "id": 1989,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "NAV",
     "chinese": "净资产价值",
     "pos": "n.",
@@ -21881,7 +21881,7 @@
   {
     "id": 1990,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "AUM",
     "chinese": "资产管理规模",
     "pos": "n.",
@@ -21892,7 +21892,7 @@
   {
     "id": 1991,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "FATF",
     "chinese": "金融行动特别工作组",
     "pos": "n.",
@@ -21903,7 +21903,7 @@
   {
     "id": 1992,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "MiFID",
     "chinese": "欧盟金融工具市场指令",
     "pos": "n.",
@@ -21914,7 +21914,7 @@
   {
     "id": 1993,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SEC",
     "chinese": "美国证券交易委员会",
     "pos": "n.",
@@ -21925,7 +21925,7 @@
   {
     "id": 1994,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "CFTC",
     "chinese": "美国商品期货交易委员会",
     "pos": "n.",
@@ -21936,7 +21936,7 @@
   {
     "id": 1995,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "ISIN",
     "chinese": "国际证券识别码",
     "pos": "n.",
@@ -21947,7 +21947,7 @@
   {
     "id": 1996,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "CUSIP",
     "chinese": "北美证券识别码",
     "pos": "n.",
@@ -21958,7 +21958,7 @@
   {
     "id": 1997,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Symbol",
     "chinese": "交易标的代码",
     "pos": "n.",
@@ -21969,7 +21969,7 @@
   {
     "id": 1998,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Pair",
     "chinese": "交易对",
     "pos": "n.",
@@ -21980,7 +21980,7 @@
   {
     "id": 1999,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Base-currency",
     "chinese": "基础货币",
     "pos": "n.",
@@ -21991,7 +21991,7 @@
   {
     "id": 2000,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Quote-currency",
     "chinese": "计价货币",
     "pos": "n.",
@@ -22002,7 +22002,7 @@
   {
     "id": 2001,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Instrument",
     "chinese": "交易标的/合约",
     "pos": "n.",
@@ -22013,7 +22013,7 @@
   {
     "id": 2002,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Venue",
     "chinese": "交易场所",
     "pos": "n.",
@@ -22024,7 +22024,7 @@
   {
     "id": 2003,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Prime-broker",
     "chinese": "主经纪商",
     "pos": "n.",
@@ -22035,7 +22035,7 @@
   {
     "id": 2004,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Clearing-house",
     "chinese": "清算所",
     "pos": "n.",
@@ -22046,7 +22046,7 @@
   {
     "id": 2005,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Custodian",
     "chinese": "托管行",
     "pos": "n.",
@@ -22057,7 +22057,7 @@
   {
     "id": 2006,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Nostro",
     "chinese": "往来账户（我方）",
     "pos": "n.",
@@ -22068,7 +22068,7 @@
   {
     "id": 2007,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "Vostro",
     "chinese": "往来账户（对方）",
     "pos": "n.",
@@ -22079,7 +22079,7 @@
   {
     "id": 2008,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SSI",
     "chinese": "标准结算指令",
     "pos": "n.",
@@ -22090,7 +22090,7 @@
   {
     "id": 2009,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "SWIFT",
     "chinese": "环球银行金融电讯协会",
     "pos": "n.",
@@ -22101,7 +22101,7 @@
   {
     "id": 2010,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "IBAN",
     "chinese": "国际银行账户号码",
     "pos": "n.",
@@ -22112,7 +22112,7 @@
   {
     "id": 2011,
     "categoryId": 21,
-    "category": "高频缩写",
+    "category": "Common Abbreviations",
     "english": "BIC",
     "chinese": "银行识别码",
     "pos": "n.",
@@ -23311,7 +23311,7 @@
   {
     "id": 2120,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "keyBy",
     "chinese": "按键分区算子",
     "pos": "n.",
@@ -23322,7 +23322,7 @@
   {
     "id": 2121,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "KeyedStream",
     "chinese": "按键流",
     "pos": "n.",
@@ -23333,7 +23333,7 @@
   {
     "id": 2122,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "DataStream",
     "chinese": "数据流 API",
     "pos": "n.",
@@ -23344,7 +23344,7 @@
   {
     "id": 2123,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "ProcessFunction",
     "chinese": "底层处理函数",
     "pos": "n.",
@@ -23355,7 +23355,7 @@
   {
     "id": 2124,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "RichFunction",
     "chinese": "富函数",
     "pos": "n.",
@@ -23366,7 +23366,7 @@
   {
     "id": 2125,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "MapState",
     "chinese": "映射状态",
     "pos": "n.",
@@ -23377,7 +23377,7 @@
   {
     "id": 2126,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "ValueState",
     "chinese": "单值状态",
     "pos": "n.",
@@ -23388,7 +23388,7 @@
   {
     "id": 2127,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "ListState",
     "chinese": "列表状态",
     "pos": "n.",
@@ -23399,7 +23399,7 @@
   {
     "id": 2128,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "AggregatingState",
     "chinese": "聚合状态",
     "pos": "n.",
@@ -23410,7 +23410,7 @@
   {
     "id": 2129,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "BroadcastState",
     "chinese": "广播状态",
     "pos": "n.",
@@ -23421,7 +23421,7 @@
   {
     "id": 2130,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "RocksDB-state-backend",
     "chinese": "RocksDB 状态后端",
     "pos": "n.",
@@ -23432,7 +23432,7 @@
   {
     "id": 2131,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "incremental-checkpoint",
     "chinese": "增量检查点",
     "pos": "n.",
@@ -23443,7 +23443,7 @@
   {
     "id": 2132,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "barrier-alignment",
     "chinese": "屏障对齐",
     "pos": "n.",
@@ -23454,7 +23454,7 @@
   {
     "id": 2133,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "unaligned-checkpoint",
     "chinese": "非对齐检查点",
     "pos": "n.",
@@ -23465,7 +23465,7 @@
   {
     "id": 2134,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "exactly-once-sink",
     "chinese": "精确一次输出",
     "pos": "n.",
@@ -23476,7 +23476,7 @@
   {
     "id": 2135,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "two-phase-commit-sink",
     "chinese": "两阶段提交 Sink",
     "pos": "n.",
@@ -23487,7 +23487,7 @@
   {
     "id": 2136,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "operator-state",
     "chinese": "算子状态",
     "pos": "n.",
@@ -23498,7 +23498,7 @@
   {
     "id": 2137,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "key-group",
     "chinese": "键组",
     "pos": "n.",
@@ -23509,7 +23509,7 @@
   {
     "id": 2138,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "rescale",
     "chinese": "重缩放",
     "pos": "n.",
@@ -23520,7 +23520,7 @@
   {
     "id": 2139,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "rescale-partitioner",
     "chinese": "重缩放分区器",
     "pos": "n.",
@@ -23531,7 +23531,7 @@
   {
     "id": 2140,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "forward-partitioner",
     "chinese": "直通分区器",
     "pos": "n.",
@@ -23542,7 +23542,7 @@
   {
     "id": 2141,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "broadcast-partitioner",
     "chinese": "广播分区器",
     "pos": "n.",
@@ -23553,7 +23553,7 @@
   {
     "id": 2142,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "global-partitioner",
     "chinese": "全局分区器",
     "pos": "n.",
@@ -23564,7 +23564,7 @@
   {
     "id": 2143,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "custom-partitioner",
     "chinese": "自定义分区器",
     "pos": "n.",
@@ -23575,7 +23575,7 @@
   {
     "id": 2144,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "slot-sharing-group",
     "chinese": "槽共享组",
     "pos": "n.",
@@ -23586,7 +23586,7 @@
   {
     "id": 2145,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "task-chaining",
     "chinese": "任务链",
     "pos": "n.",
@@ -23597,7 +23597,7 @@
   {
     "id": 2146,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "network-buffer",
     "chinese": "网络缓冲",
     "pos": "n.",
@@ -23608,7 +23608,7 @@
   {
     "id": 2147,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "credit-based-flow-control",
     "chinese": "基于信用的流控",
     "pos": "n.",
@@ -23619,7 +23619,7 @@
   {
     "id": 2148,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "idle-timeout-watermark",
     "chinese": "空闲超时水位",
     "pos": "n.",
@@ -23630,7 +23630,7 @@
   {
     "id": 2149,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "max-out-of-orderness",
     "chinese": "最大乱序时延",
     "pos": "n.",
@@ -23641,7 +23641,7 @@
   {
     "id": 2150,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "punctuated-watermark",
     "chinese": "间断水位",
     "pos": "n.",
@@ -23652,7 +23652,7 @@
   {
     "id": 2151,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "periodic-watermark",
     "chinese": "周期水位",
     "pos": "n.",
@@ -23663,7 +23663,7 @@
   {
     "id": 2152,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "late-data",
     "chinese": "迟到数据",
     "pos": "n.",
@@ -23674,7 +23674,7 @@
   {
     "id": 2153,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "side-output-late-data",
     "chinese": "迟到旁路输出",
     "pos": "n.",
@@ -23685,7 +23685,7 @@
   {
     "id": 2154,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "union",
     "chinese": "流合并",
     "pos": "n.",
@@ -23696,7 +23696,7 @@
   {
     "id": 2155,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "connect",
     "chinese": "双流连接",
     "pos": "n.",
@@ -23707,7 +23707,7 @@
   {
     "id": 2156,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "co-process",
     "chinese": "协同处理",
     "pos": "n.",
@@ -23718,7 +23718,7 @@
   {
     "id": 2157,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "interval-join",
     "chinese": "区间连接",
     "pos": "n.",
@@ -23729,7 +23729,7 @@
   {
     "id": 2158,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "temporal-join",
     "chinese": "时态连接",
     "pos": "n.",
@@ -23740,7 +23740,7 @@
   {
     "id": 2159,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "lookup-join",
     "chinese": "维表关联",
     "pos": "n.",
@@ -23751,7 +23751,7 @@
   {
     "id": 2160,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "retract-stream",
     "chinese": "回撤流",
     "pos": "n.",
@@ -23762,7 +23762,7 @@
   {
     "id": 2161,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "append-stream",
     "chinese": "追加流",
     "pos": "n.",
@@ -23773,7 +23773,7 @@
   {
     "id": 2162,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "TopN",
     "chinese": "Top N 计算",
     "pos": "n.",
@@ -23784,7 +23784,7 @@
   {
     "id": 2163,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "deduplicate",
     "chinese": "去重",
     "pos": "n.",
@@ -23795,7 +23795,7 @@
   {
     "id": 2164,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "BookDelta",
     "chinese": "盘口增量",
     "pos": "n.",
@@ -23806,7 +23806,7 @@
   {
     "id": 2165,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "OrderBook",
     "chinese": "订单簿",
     "pos": "n.",
@@ -23817,7 +23817,7 @@
   {
     "id": 2166,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "Candle",
     "chinese": "K 线",
     "pos": "n.",
@@ -23828,7 +23828,7 @@
   {
     "id": 2167,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "TradeTick",
     "chinese": "成交 tick",
     "pos": "n.",
@@ -23839,7 +23839,7 @@
   {
     "id": 2168,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "sequence-gap",
     "chinese": "序列缺口",
     "pos": "n.",
@@ -23850,7 +23850,7 @@
   {
     "id": 2169,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "gap-fill",
     "chinese": "缺口补齐",
     "pos": "n.",
@@ -23861,7 +23861,7 @@
   {
     "id": 2170,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "snapshot-recovery",
     "chinese": "快照恢复",
     "pos": "n.",
@@ -23872,7 +23872,7 @@
   {
     "id": 2171,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "delta-sync",
     "chinese": "增量同步",
     "pos": "n.",
@@ -23883,7 +23883,7 @@
   {
     "id": 2172,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "full-sync",
     "chinese": "全量同步",
     "pos": "n.",
@@ -23894,7 +23894,7 @@
   {
     "id": 2173,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "conflated-ticker",
     "chinese": "合并后的 ticker",
     "pos": "n.",
@@ -23905,7 +23905,7 @@
   {
     "id": 2174,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "push-coalescing",
     "chinese": "推送合并",
     "pos": "n.",
@@ -23916,7 +23916,7 @@
   {
     "id": 2175,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "subscription-fanout",
     "chinese": "订阅扇出",
     "pos": "n.",
@@ -23927,7 +23927,7 @@
   {
     "id": 2176,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "topic-hierarchy",
     "chinese": "主题层级",
     "pos": "n.",
@@ -23938,7 +23938,7 @@
   {
     "id": 2177,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "shared-subscription",
     "chinese": "共享订阅",
     "pos": "n.",
@@ -23949,7 +23949,7 @@
   {
     "id": 2178,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "clean-session",
     "chinese": "清洁会话",
     "pos": "n.",
@@ -23960,7 +23960,7 @@
   {
     "id": 2179,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "persistent-session",
     "chinese": "持久会话",
     "pos": "n.",
@@ -23971,7 +23971,7 @@
   {
     "id": 2180,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "QoS0",
     "chinese": "最多一次",
     "pos": "n.",
@@ -23982,7 +23982,7 @@
   {
     "id": 2181,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "QoS1",
     "chinese": "至少一次",
     "pos": "n.",
@@ -23993,7 +23993,7 @@
   {
     "id": 2182,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "QoS2",
     "chinese": "精确一次",
     "pos": "n.",
@@ -24004,7 +24004,7 @@
   {
     "id": 2183,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "RingBuffer",
     "chinese": "环形缓冲（Disruptor）",
     "pos": "n.",
@@ -24015,7 +24015,7 @@
   {
     "id": 2184,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "SequenceBarrier",
     "chinese": "序列屏障",
     "pos": "n.",
@@ -24026,7 +24026,7 @@
   {
     "id": 2185,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "WaitStrategy",
     "chinese": "等待策略",
     "pos": "n.",
@@ -24037,7 +24037,7 @@
   {
     "id": 2186,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "BusySpinWaitStrategy",
     "chinese": "忙等等待策略",
     "pos": "n.",
@@ -24048,7 +24048,7 @@
   {
     "id": 2187,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "YieldingWaitStrategy",
     "chinese": "让出等待策略",
     "pos": "n.",
@@ -24059,7 +24059,7 @@
   {
     "id": 2188,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "BlockingWaitStrategy",
     "chinese": "阻塞等待策略",
     "pos": "n.",
@@ -24070,7 +24070,7 @@
   {
     "id": 2189,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "multi-producer",
     "chinese": "多生产者",
     "pos": "n.",
@@ -24081,7 +24081,7 @@
   {
     "id": 2190,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "single-producer",
     "chinese": "单生产者",
     "pos": "n.",
@@ -24092,7 +24092,7 @@
   {
     "id": 2191,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "flush-interval",
     "chinese": "刷写间隔",
     "pos": "n.",
@@ -24103,7 +24103,7 @@
   {
     "id": 2192,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "linger.ms",
     "chinese": "发送滞留毫秒",
     "pos": "n.",
@@ -24114,7 +24114,7 @@
   {
     "id": 2193,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "batch.size",
     "chinese": "批大小",
     "pos": "n.",
@@ -24125,7 +24125,7 @@
   {
     "id": 2194,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "fetch.min.bytes",
     "chinese": "最小拉取字节",
     "pos": "n.",
@@ -24136,7 +24136,7 @@
   {
     "id": 2195,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "max.poll.records",
     "chinese": "单次最大拉取条数",
     "pos": "n.",
@@ -24147,7 +24147,7 @@
   {
     "id": 2196,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "enable.auto.commit",
     "chinese": "自动提交位移",
     "pos": "n.",
@@ -24158,7 +24158,7 @@
   {
     "id": 2197,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "seek",
     "chinese": "定位位移",
     "pos": "n.",
@@ -24169,7 +24169,7 @@
   {
     "id": 2198,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "rewind",
     "chinese": "回退位移",
     "pos": "n.",
@@ -24180,7 +24180,7 @@
   {
     "id": 2199,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "lag-monitoring",
     "chinese": "消费延迟监控",
     "pos": "n.",
@@ -24191,7 +24191,7 @@
   {
     "id": 2200,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "under-replicated",
     "chinese": "副本不足",
     "pos": "n.",
@@ -24202,7 +24202,7 @@
   {
     "id": 2201,
     "categoryId": 22,
-    "category": "实时计算专有",
+    "category": "Real-time Computing",
     "english": "KRaft",
     "chinese": "无 ZooKeeper 的 Kafka 共识",
     "pos": "n.",
@@ -24213,7 +24213,7 @@
   {
     "id": 2202,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "FIX-protocol",
     "chinese": "金融信息交换协议",
     "pos": "n.",
@@ -24224,7 +24224,7 @@
   {
     "id": 2203,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "NewOrderSingle",
     "chinese": "新订单报文",
     "pos": "n.",
@@ -24235,7 +24235,7 @@
   {
     "id": 2204,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "ExecutionReport",
     "chinese": "成交/状态回报",
     "pos": "n.",
@@ -24246,7 +24246,7 @@
   {
     "id": 2205,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "OrderCancelRequest",
     "chinese": "撤单请求",
     "pos": "n.",
@@ -24257,7 +24257,7 @@
   {
     "id": 2206,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "OrderCancelReplace",
     "chinese": "改单请求",
     "pos": "n.",
@@ -24268,7 +24268,7 @@
   {
     "id": 2207,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "OrderStatusRequest",
     "chinese": "查单请求",
     "pos": "n.",
@@ -24279,7 +24279,7 @@
   {
     "id": 2208,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "BusinessMessageReject",
     "chinese": "业务拒绝",
     "pos": "n.",
@@ -24290,7 +24290,7 @@
   {
     "id": 2209,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "SessionReject",
     "chinese": "会话拒绝",
     "pos": "n.",
@@ -24301,7 +24301,7 @@
   {
     "id": 2210,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "TestRequest",
     "chinese": "测试请求",
     "pos": "n.",
@@ -24312,7 +24312,7 @@
   {
     "id": 2211,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Logon",
     "chinese": "登录",
     "pos": "n.",
@@ -24323,7 +24323,7 @@
   {
     "id": 2212,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Logout",
     "chinese": "登出",
     "pos": "n.",
@@ -24334,7 +24334,7 @@
   {
     "id": 2213,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "MsgSeqNum",
     "chinese": "报文序号",
     "pos": "n.",
@@ -24345,7 +24345,7 @@
   {
     "id": 2214,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "PossDupFlag",
     "chinese": "可能重复标志",
     "pos": "n.",
@@ -24356,7 +24356,7 @@
   {
     "id": 2215,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "PossResend",
     "chinese": "可能重发",
     "pos": "n.",
@@ -24367,7 +24367,7 @@
   {
     "id": 2216,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "ClOrdID",
     "chinese": "客户订单号",
     "pos": "n.",
@@ -24378,7 +24378,7 @@
   {
     "id": 2217,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "clientOrderId",
     "chinese": "客户订单号（口语）",
     "pos": "n.",
@@ -24389,7 +24389,7 @@
   {
     "id": 2218,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "OrigClOrdID",
     "chinese": "原客户订单号",
     "pos": "n.",
@@ -24400,7 +24400,7 @@
   {
     "id": 2219,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "OrderID",
     "chinese": "交易所订单号",
     "pos": "n.",
@@ -24411,7 +24411,7 @@
   {
     "id": 2220,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "ExecID",
     "chinese": "成交编号",
     "pos": "n.",
@@ -24422,7 +24422,7 @@
   {
     "id": 2221,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "tradeId",
     "chinese": "成交 ID",
     "pos": "n.",
@@ -24433,7 +24433,7 @@
   {
     "id": 2222,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "sourceId",
     "chinese": "业务源单号",
     "pos": "n.",
@@ -24444,7 +24444,7 @@
   {
     "id": 2223,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "ExecType",
     "chinese": "执行类型",
     "pos": "n.",
@@ -24455,7 +24455,7 @@
   {
     "id": 2224,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "OrdStatus",
     "chinese": "订单状态",
     "pos": "n.",
@@ -24466,7 +24466,7 @@
   {
     "id": 2225,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "OrdType",
     "chinese": "订单类型",
     "pos": "n.",
@@ -24477,7 +24477,7 @@
   {
     "id": 2226,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Side",
     "chinese": "买卖方向",
     "pos": "n.",
@@ -24488,7 +24488,7 @@
   {
     "id": 2227,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Buy",
     "chinese": "买入",
     "pos": "n.",
@@ -24499,7 +24499,7 @@
   {
     "id": 2228,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Sell",
     "chinese": "卖出",
     "pos": "n.",
@@ -24510,7 +24510,7 @@
   {
     "id": 2229,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Qty",
     "chinese": "数量",
     "pos": "n.",
@@ -24521,7 +24521,7 @@
   {
     "id": 2230,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "LeavesQty",
     "chinese": "剩余数量",
     "pos": "n.",
@@ -24532,7 +24532,7 @@
   {
     "id": 2231,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "CumQty",
     "chinese": "累计成交量",
     "pos": "n.",
@@ -24543,7 +24543,7 @@
   {
     "id": 2232,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "AvgPx",
     "chinese": "平均成交价",
     "pos": "n.",
@@ -24554,7 +24554,7 @@
   {
     "id": 2233,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "LastPx",
     "chinese": "最近成交价",
     "pos": "n.",
@@ -24565,7 +24565,7 @@
   {
     "id": 2234,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "LastQty",
     "chinese": "最近成交量",
     "pos": "n.",
@@ -24576,7 +24576,7 @@
   {
     "id": 2235,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "TimeInForce",
     "chinese": "有效期类型",
     "pos": "n.",
@@ -24587,7 +24587,7 @@
   {
     "id": 2236,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Day-order",
     "chinese": "当日有效",
     "pos": "n.",
@@ -24598,7 +24598,7 @@
   {
     "id": 2237,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "GoodTillCancel",
     "chinese": "撤销前有效",
     "pos": "n.",
@@ -24609,7 +24609,7 @@
   {
     "id": 2238,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "ImmediateOrCancel",
     "chinese": "立即成交剩余撤销",
     "pos": "n.",
@@ -24620,7 +24620,7 @@
   {
     "id": 2239,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "FillOrKill",
     "chinese": "全部成交否则撤销",
     "pos": "n.",
@@ -24631,7 +24631,7 @@
   {
     "id": 2240,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "PostOnly",
     "chinese": "只做 Maker",
     "pos": "n.",
@@ -24642,7 +24642,7 @@
   {
     "id": 2241,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "ReduceOnly",
     "chinese": "只减仓",
     "pos": "n.",
@@ -24653,7 +24653,7 @@
   {
     "id": 2242,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Hidden-order",
     "chinese": "隐藏单",
     "pos": "n.",
@@ -24664,7 +24664,7 @@
   {
     "id": 2243,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Iceberg-order",
     "chinese": "冰山单",
     "pos": "n.",
@@ -24675,7 +24675,7 @@
   {
     "id": 2244,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Pegged-order",
     "chinese": "盯市单",
     "pos": "n.",
@@ -24686,7 +24686,7 @@
   {
     "id": 2245,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Trailing-stop",
     "chinese": "移动止损",
     "pos": "n.",
@@ -24697,7 +24697,7 @@
   {
     "id": 2246,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Working-order",
     "chinese": "在途订单",
     "pos": "n.",
@@ -24708,7 +24708,7 @@
   {
     "id": 2247,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Pending-New",
     "chinese": "待确认新单",
     "pos": "n.",
@@ -24719,7 +24719,7 @@
   {
     "id": 2248,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Partially-Filled",
     "chinese": "部分成交",
     "pos": "n.",
@@ -24730,7 +24730,7 @@
   {
     "id": 2249,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Filled",
     "chinese": "完全成交",
     "pos": "n.",
@@ -24741,7 +24741,7 @@
   {
     "id": 2250,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Canceled",
     "chinese": "已撤销",
     "pos": "n.",
@@ -24752,7 +24752,7 @@
   {
     "id": 2251,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Rejected",
     "chinese": "已拒绝",
     "pos": "n.",
@@ -24763,7 +24763,7 @@
   {
     "id": 2252,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Expired",
     "chinese": "已过期",
     "pos": "n.",
@@ -24774,7 +24774,7 @@
   {
     "id": 2253,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Suspended",
     "chinese": "已挂起",
     "pos": "n.",
@@ -24785,7 +24785,7 @@
   {
     "id": 2254,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Replaced",
     "chinese": "已替换",
     "pos": "n.",
@@ -24796,7 +24796,7 @@
   {
     "id": 2255,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Pending-Cancel",
     "chinese": "待撤",
     "pos": "n.",
@@ -24807,7 +24807,7 @@
   {
     "id": 2256,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Pending-Replace",
     "chinese": "待改",
     "pos": "n.",
@@ -24818,7 +24818,7 @@
   {
     "id": 2257,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "self-trade-prevention",
     "chinese": "自成交防护",
     "pos": "n.",
@@ -24829,7 +24829,7 @@
   {
     "id": 2258,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "wash-trade",
     "chinese": "对倒/对敲",
     "pos": "n.",
@@ -24840,7 +24840,7 @@
   {
     "id": 2259,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "layering",
     "chinese": "分层挂单操纵",
     "pos": "n.",
@@ -24851,7 +24851,7 @@
   {
     "id": 2260,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "quote-stuffing",
     "chinese": "报价灌水",
     "pos": "n.",
@@ -24862,7 +24862,7 @@
   {
     "id": 2261,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "market-abuse",
     "chinese": "市场操纵滥用",
     "pos": "n.",
@@ -24873,7 +24873,7 @@
   {
     "id": 2262,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "best-bid",
     "chinese": "最优买价",
     "pos": "n.",
@@ -24884,7 +24884,7 @@
   {
     "id": 2263,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "best-offer",
     "chinese": "最优卖价",
     "pos": "n.",
@@ -24895,7 +24895,7 @@
   {
     "id": 2264,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "crossed-market",
     "chinese": "交叉市场",
     "pos": "n.",
@@ -24906,7 +24906,7 @@
   {
     "id": 2265,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "locked-market",
     "chinese": "锁定市场",
     "pos": "n.",
@@ -24917,7 +24917,7 @@
   {
     "id": 2266,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "wide-market",
     "chinese": "宽点差市场",
     "pos": "n.",
@@ -24928,7 +24928,7 @@
   {
     "id": 2267,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "tight-market",
     "chinese": "窄点差市场",
     "pos": "n.",
@@ -24939,7 +24939,7 @@
   {
     "id": 2268,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "thin-market",
     "chinese": "薄流动性市场",
     "pos": "n.",
@@ -24950,7 +24950,7 @@
   {
     "id": 2269,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "deep-market",
     "chinese": "深流动性市场",
     "pos": "n.",
@@ -24961,7 +24961,7 @@
   {
     "id": 2270,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "price-discovery",
     "chinese": "价格发现",
     "pos": "n.",
@@ -24972,7 +24972,7 @@
   {
     "id": 2271,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "price-improvement",
     "chinese": "价格改善",
     "pos": "n.",
@@ -24983,7 +24983,7 @@
   {
     "id": 2272,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "adverse-selection",
     "chinese": "逆向选择",
     "pos": "n.",
@@ -24994,7 +24994,7 @@
   {
     "id": 2273,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "toxic-flow",
     "chinese": "有毒流量",
     "pos": "n.",
@@ -25005,7 +25005,7 @@
   {
     "id": 2274,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "informed-flow",
     "chinese": "知情流量",
     "pos": "n.",
@@ -25016,7 +25016,7 @@
   {
     "id": 2275,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "uninformed-flow",
     "chinese": "非知情流量",
     "pos": "n.",
@@ -25027,7 +25027,7 @@
   {
     "id": 2276,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "inventory-skew",
     "chinese": "库存偏斜报价",
     "pos": "n.",
@@ -25038,7 +25038,7 @@
   {
     "id": 2277,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "reservation-price",
     "chinese": "保留价格",
     "pos": "n.",
@@ -25049,7 +25049,7 @@
   {
     "id": 2278,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "reservation-bid",
     "chinese": "保留买价",
     "pos": "n.",
@@ -25060,7 +25060,7 @@
   {
     "id": 2279,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "asymmetric-spread",
     "chinese": "非对称点差",
     "pos": "n.",
@@ -25071,7 +25071,7 @@
   {
     "id": 2280,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "markup",
     "chinese": "加价",
     "pos": "n.",
@@ -25082,7 +25082,7 @@
   {
     "id": 2281,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "markdown",
     "chinese": "减价",
     "pos": "n.",
@@ -25093,7 +25093,7 @@
   {
     "id": 2282,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "all-in-price",
     "chinese": "全包价格",
     "pos": "n.",
@@ -25104,7 +25104,7 @@
   {
     "id": 2283,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "gross-price",
     "chinese": "毛价",
     "pos": "n.",
@@ -25115,7 +25115,7 @@
   {
     "id": 2284,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "net-price",
     "chinese": "净价",
     "pos": "n.",
@@ -25126,7 +25126,7 @@
   {
     "id": 2285,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "indicative-quote",
     "chinese": "指示性报价",
     "pos": "n.",
@@ -25137,7 +25137,7 @@
   {
     "id": 2286,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "firm-quote",
     "chinese": "实盘报价",
     "pos": "n.",
@@ -25148,7 +25148,7 @@
   {
     "id": 2287,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "last-look",
     "chinese": "最后审视（LP 确认）",
     "pos": "n.",
@@ -25159,7 +25159,7 @@
   {
     "id": 2288,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "hold-time",
     "chinese": "锁定持有时间",
     "pos": "n.",
@@ -25170,7 +25170,7 @@
   {
     "id": 2289,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "quote-validity",
     "chinese": "报价有效期",
     "pos": "n.",
@@ -25181,7 +25181,7 @@
   {
     "id": 2290,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "accept-window",
     "chinese": "接受窗口",
     "pos": "n.",
@@ -25192,7 +25192,7 @@
   {
     "id": 2291,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "reject-rate",
     "chinese": "拒单率",
     "pos": "n.",
@@ -25203,7 +25203,7 @@
   {
     "id": 2292,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "fill-rate",
     "chinese": "成交率",
     "pos": "n.",
@@ -25214,7 +25214,7 @@
   {
     "id": 2293,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "hit-ratio",
     "chinese": "命中率",
     "pos": "n.",
@@ -25225,7 +25225,7 @@
   {
     "id": 2294,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "cancel-to-trade-ratio",
     "chinese": "撤单成交比",
     "pos": "n.",
@@ -25236,7 +25236,7 @@
   {
     "id": 2295,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "message-rate",
     "chinese": "报文速率",
     "pos": "n.",
@@ -25247,7 +25247,7 @@
   {
     "id": 2296,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "order-to-trade-ratio",
     "chinese": "报单成交比",
     "pos": "n.",
@@ -25258,7 +25258,7 @@
   {
     "id": 2297,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "latency-budget",
     "chinese": "延迟预算",
     "pos": "n.",
@@ -25269,7 +25269,7 @@
   {
     "id": 2298,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "wire-latency",
     "chinese": "线路延迟",
     "pos": "n.",
@@ -25280,7 +25280,7 @@
   {
     "id": 2299,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "serialization-latency",
     "chinese": "序列化延迟",
     "pos": "n.",
@@ -25291,7 +25291,7 @@
   {
     "id": 2300,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "queueing-latency",
     "chinese": "排队延迟",
     "pos": "n.",
@@ -25302,7 +25302,7 @@
   {
     "id": 2301,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "processing-latency",
     "chinese": "处理延迟",
     "pos": "n.",
@@ -25313,7 +25313,7 @@
   {
     "id": 2302,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "ack-latency",
     "chinese": "确认延迟",
     "pos": "n.",
@@ -25324,7 +25324,7 @@
   {
     "id": 2303,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "tick-to-trade",
     "chinese": "行情到交易延迟",
     "pos": "n.",
@@ -25335,7 +25335,7 @@
   {
     "id": 2304,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "marketable-order",
     "chinese": "可立即成交订单",
     "pos": "n.",
@@ -25346,7 +25346,7 @@
   {
     "id": 2305,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "resting-order",
     "chinese": "挂单留存订单",
     "pos": "n.",
@@ -25357,7 +25357,7 @@
   {
     "id": 2306,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "aggressive-order",
     "chinese": "主动单",
     "pos": "n.",
@@ -25368,7 +25368,7 @@
   {
     "id": 2307,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "passive-order",
     "chinese": "被动单",
     "pos": "n.",
@@ -25379,7 +25379,7 @@
   {
     "id": 2308,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "crossing",
     "chinese": "撮合穿越价差",
     "pos": "n.",
@@ -25390,7 +25390,7 @@
   {
     "id": 2309,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "match",
     "chinese": "撮合",
     "pos": "n.",
@@ -25401,7 +25401,7 @@
   {
     "id": 2310,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "unmatch",
     "chinese": "未撮合",
     "pos": "n.",
@@ -25412,7 +25412,7 @@
   {
     "id": 2311,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "allocate",
     "chinese": "分配",
     "pos": "n.",
@@ -25423,7 +25423,7 @@
   {
     "id": 2312,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "novation",
     "chinese": "债务更新/换手清算",
     "pos": "n.",
@@ -25434,7 +25434,7 @@
   {
     "id": 2313,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "give-up",
     "chinese": "成交转让",
     "pos": "n.",
@@ -25445,7 +25445,7 @@
   {
     "id": 2314,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "netting-cycle",
     "chinese": "轧差周期",
     "pos": "n.",
@@ -25456,7 +25456,7 @@
   {
     "id": 2315,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "settlement-date",
     "chinese": "交割日",
     "pos": "n.",
@@ -25467,7 +25467,7 @@
   {
     "id": 2316,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "value-date",
     "chinese": "起息日",
     "pos": "n.",
@@ -25478,7 +25478,7 @@
   {
     "id": 2317,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "trade-date",
     "chinese": "交易日",
     "pos": "n.",
@@ -25489,7 +25489,7 @@
   {
     "id": 2318,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "corporate-action",
     "chinese": "公司行动",
     "pos": "n.",
@@ -25500,7 +25500,7 @@
   {
     "id": 2319,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "haircut",
     "chinese": "折扣/扣减率",
     "pos": "n.",
@@ -25511,7 +25511,7 @@
   {
     "id": 2320,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "variation-margin",
     "chinese": "变动保证金",
     "pos": "n.",
@@ -25522,7 +25522,7 @@
   {
     "id": 2321,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "margin-call",
     "chinese": "追加保证金通知",
     "pos": "n.",
@@ -25533,7 +25533,7 @@
   {
     "id": 2322,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "auto-deleveraging",
     "chinese": "自动减仓（ADL）",
     "pos": "n.",
@@ -25544,7 +25544,7 @@
   {
     "id": 2323,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "insurance-fund",
     "chinese": "保险基金",
     "pos": "n.",
@@ -25555,7 +25555,7 @@
   {
     "id": 2324,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "socialized-loss",
     "chinese": "社会化损失",
     "pos": "n.",
@@ -25566,7 +25566,7 @@
   {
     "id": 2325,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "funding-payment",
     "chinese": "资金费支付",
     "pos": "n.",
@@ -25577,7 +25577,7 @@
   {
     "id": 2326,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "open-interest",
     "chinese": "未平仓合约量",
     "pos": "n.",
@@ -25588,7 +25588,7 @@
   {
     "id": 2327,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "basis",
     "chinese": "基差",
     "pos": "n.",
@@ -25599,7 +25599,7 @@
   {
     "id": 2328,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "contango",
     "chinese": "升水",
     "pos": "n.",
@@ -25610,7 +25610,7 @@
   {
     "id": 2329,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "backwardation",
     "chinese": "贴水",
     "pos": "n.",
@@ -25621,7 +25621,7 @@
   {
     "id": 2330,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "carry",
     "chinese": "持有收益",
     "pos": "n.",
@@ -25632,7 +25632,7 @@
   {
     "id": 2331,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "roll",
     "chinese": "移仓",
     "pos": "n.",
@@ -25643,7 +25643,7 @@
   {
     "id": 2332,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "calendar-spread",
     "chinese": "日历价差",
     "pos": "n.",
@@ -25654,7 +25654,7 @@
   {
     "id": 2333,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "triangular-arbitrage",
     "chinese": "三角套利",
     "pos": "n.",
@@ -25665,7 +25665,7 @@
   {
     "id": 2334,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "cross-rate",
     "chinese": "交叉汇率",
     "pos": "n.",
@@ -25676,7 +25676,7 @@
   {
     "id": 2335,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "synthetic-pair",
     "chinese": "合成交易对",
     "pos": "n.",
@@ -25687,7 +25687,7 @@
   {
     "id": 2336,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "leg",
     "chinese": "交易腿",
     "pos": "n.",
@@ -25698,7 +25698,7 @@
   {
     "id": 2337,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "multi-leg",
     "chinese": "多腿",
     "pos": "n.",
@@ -25709,7 +25709,7 @@
   {
     "id": 2338,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "atomic-swap",
     "chinese": "原子互换",
     "pos": "n.",
@@ -25720,7 +25720,7 @@
   {
     "id": 2339,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "partial-hedge",
     "chinese": "部分对冲",
     "pos": "n.",
@@ -25731,7 +25731,7 @@
   {
     "id": 2340,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "full-hedge",
     "chinese": "完全对冲",
     "pos": "n.",
@@ -25742,7 +25742,7 @@
   {
     "id": 2341,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "over-hedge",
     "chinese": "过度对冲",
     "pos": "n.",
@@ -25753,7 +25753,7 @@
   {
     "id": 2342,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "under-hedge",
     "chinese": "对冲不足",
     "pos": "n.",
@@ -25764,7 +25764,7 @@
   {
     "id": 2343,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "delta",
     "chinese": "德尔塔（价格敏感度）",
     "pos": "n.",
@@ -25775,7 +25775,7 @@
   {
     "id": 2344,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "gamma",
     "chinese": "伽马",
     "pos": "n.",
@@ -25786,7 +25786,7 @@
   {
     "id": 2345,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "vega",
     "chinese": "维加",
     "pos": "n.",
@@ -25797,7 +25797,7 @@
   {
     "id": 2346,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "theta",
     "chinese": "西塔",
     "pos": "n.",
@@ -25808,7 +25808,7 @@
   {
     "id": 2347,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "rho",
     "chinese": "柔",
     "pos": "n.",
@@ -25819,7 +25819,7 @@
   {
     "id": 2348,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "greeks",
     "chinese": "希腊字母风险指标",
     "pos": "n.",
@@ -25830,7 +25830,7 @@
   {
     "id": 2349,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "VaR",
     "chinese": "风险价值",
     "pos": "n.",
@@ -25841,7 +25841,7 @@
   {
     "id": 2350,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "Expected-Shortfall",
     "chinese": "预期短缺",
     "pos": "n.",
@@ -25852,7 +25852,7 @@
   {
     "id": 2351,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "scenario-analysis",
     "chinese": "情景分析",
     "pos": "n.",
@@ -25863,7 +25863,7 @@
   {
     "id": 2352,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "limit-breach",
     "chinese": "限额突破",
     "pos": "n.",
@@ -25874,7 +25874,7 @@
   {
     "id": 2353,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "hard-limit",
     "chinese": "硬限额",
     "pos": "n.",
@@ -25885,7 +25885,7 @@
   {
     "id": 2354,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "soft-limit",
     "chinese": "软限额",
     "pos": "n.",
@@ -25896,7 +25896,7 @@
   {
     "id": 2355,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "pre-trade-check",
     "chinese": "事前检查",
     "pos": "n.",
@@ -25907,7 +25907,7 @@
   {
     "id": 2356,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "post-trade-check",
     "chinese": "事后检查",
     "pos": "n.",
@@ -25918,7 +25918,7 @@
   {
     "id": 2357,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "fat-finger",
     "chinese": "胖手指误操作",
     "pos": "n.",
@@ -25929,7 +25929,7 @@
   {
     "id": 2358,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "notional-cap",
     "chinese": "名义本金上限",
     "pos": "n.",
@@ -25940,7 +25940,7 @@
   {
     "id": 2359,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "price-band",
     "chinese": "价格带",
     "pos": "n.",
@@ -25951,7 +25951,7 @@
   {
     "id": 2360,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "price-collar",
     "chinese": "价格领",
     "pos": "n.",
@@ -25962,7 +25962,7 @@
   {
     "id": 2361,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "volatility-filter",
     "chinese": "波动过滤",
     "pos": "n.",
@@ -25973,7 +25973,7 @@
   {
     "id": 2362,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "stale-price-protection",
     "chinese": "过期价格保护",
     "pos": "n.",
@@ -25984,7 +25984,7 @@
   {
     "id": 2363,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "reasonability-check",
     "chinese": "合理性校验",
     "pos": "n.",
@@ -25995,7 +25995,7 @@
   {
     "id": 2364,
     "categoryId": 23,
-    "category": "交易协议与订单",
+    "category": "Trading Protocols & Orders",
     "english": "sanity-check",
     "chinese": "健全性检查",
     "pos": "n.",
@@ -26809,7 +26809,7 @@
   {
     "id": 2438,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "provide-liquidity",
     "chinese": "提供流动性",
     "pos": "n.",
@@ -26820,7 +26820,7 @@
   {
     "id": 2439,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "take-liquidity",
     "chinese": "消耗流动性",
     "pos": "n.",
@@ -26831,7 +26831,7 @@
   {
     "id": 2440,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "quote-a-two-way-price",
     "chinese": "报买卖双边价",
     "pos": "n.",
@@ -26842,7 +26842,7 @@
   {
     "id": 2441,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "widen-the-spread",
     "chinese": "拉宽点差",
     "pos": "n.",
@@ -26853,7 +26853,7 @@
   {
     "id": 2442,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "tighten-the-spread",
     "chinese": "收窄点差",
     "pos": "n.",
@@ -26864,7 +26864,7 @@
   {
     "id": 2443,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "skew-the-quote",
     "chinese": "倾斜报价",
     "pos": "n.",
@@ -26875,7 +26875,7 @@
   {
     "id": 2444,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "flatten-inventory",
     "chinese": "压平库存",
     "pos": "n.",
@@ -26886,7 +26886,7 @@
   {
     "id": 2445,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "warehouse-risk",
     "chinese": "囤积风险",
     "pos": "n.",
@@ -26897,7 +26897,7 @@
   {
     "id": 2446,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "warehouse-a-position",
     "chinese": "持有库存仓位",
     "pos": "n.",
@@ -26908,7 +26908,7 @@
   {
     "id": 2447,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "internalize-flow",
     "chinese": "内部化流量",
     "pos": "n.",
@@ -26919,7 +26919,7 @@
   {
     "id": 2448,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "externalize-hedge",
     "chinese": "外部化对冲",
     "pos": "n.",
@@ -26930,7 +26930,7 @@
   {
     "id": 2449,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "route-to-LP",
     "chinese": "路由到 LP",
     "pos": "n.",
@@ -26941,7 +26941,7 @@
   {
     "id": 2450,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "last-look-reject",
     "chinese": "最后审视拒单",
     "pos": "n.",
@@ -26952,7 +26952,7 @@
   {
     "id": 2451,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "price-out",
     "chinese": "报出走量价/挤出",
     "pos": "n.",
@@ -26963,7 +26963,7 @@
   {
     "id": 2452,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "get-filled",
     "chinese": "成交",
     "pos": "n.",
@@ -26974,7 +26974,7 @@
   {
     "id": 2453,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "get-done",
     "chinese": "成交达成",
     "pos": "n.",
@@ -26985,7 +26985,7 @@
   {
     "id": 2454,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "work-an-order",
     "chinese": "执行在途单",
     "pos": "n.",
@@ -26996,7 +26996,7 @@
   {
     "id": 2455,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "rest-on-the-book",
     "chinese": "挂在盘口",
     "pos": "n.",
@@ -27007,7 +27007,7 @@
   {
     "id": 2456,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "lift-the-offer",
     "chinese": "吃掉卖盘",
     "pos": "n.",
@@ -27018,7 +27018,7 @@
   {
     "id": 2457,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "hit-the-bid",
     "chinese": "砸掉买盘",
     "pos": "n.",
@@ -27029,7 +27029,7 @@
   {
     "id": 2458,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "join-the-bid",
     "chinese": "挂到买一",
     "pos": "n.",
@@ -27040,7 +27040,7 @@
   {
     "id": 2459,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "join-the-offer",
     "chinese": "挂到卖一",
     "pos": "n.",
@@ -27051,7 +27051,7 @@
   {
     "id": 2460,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "improve-the-bid",
     "chinese": "改善买价",
     "pos": "n.",
@@ -27062,7 +27062,7 @@
   {
     "id": 2461,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "cross-the-spread",
     "chinese": "穿越点差",
     "pos": "n.",
@@ -27073,7 +27073,7 @@
   {
     "id": 2462,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "pay-the-spread",
     "chinese": "支付点差",
     "pos": "n.",
@@ -27084,7 +27084,7 @@
   {
     "id": 2463,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "earn-the-spread",
     "chinese": "赚取点差",
     "pos": "n.",
@@ -27095,7 +27095,7 @@
   {
     "id": 2464,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "adverse-move",
     "chinese": "不利波动",
     "pos": "n.",
@@ -27106,7 +27106,7 @@
   {
     "id": 2465,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "favorable-move",
     "chinese": "有利波动",
     "pos": "n.",
@@ -27117,7 +27117,7 @@
   {
     "id": 2466,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "mark-the-book",
     "chinese": "按市值记账",
     "pos": "n.",
@@ -27128,7 +27128,7 @@
   {
     "id": 2467,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "book-the-trade",
     "chinese": "入账成交",
     "pos": "n.",
@@ -27139,7 +27139,7 @@
   {
     "id": 2468,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "break-a-trade",
     "chinese": "交易对不上/差错",
     "pos": "n.",
@@ -27150,7 +27150,7 @@
   {
     "id": 2469,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "fail-settlement",
     "chinese": "交割失败",
     "pos": "n.",
@@ -27161,7 +27161,7 @@
   {
     "id": 2470,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "fails-to-deliver",
     "chinese": "交割违约（FTD）",
     "pos": "n.",
@@ -27172,7 +27172,7 @@
   {
     "id": 2471,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "novate-a-trade",
     "chinese": "债务更新成交",
     "pos": "n.",
@@ -27183,7 +27183,7 @@
   {
     "id": 2472,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "give-up-a-trade",
     "chinese": "成交转让",
     "pos": "n.",
@@ -27194,7 +27194,7 @@
   {
     "id": 2473,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "allocate-a-fill",
     "chinese": "分配成交",
     "pos": "n.",
@@ -27205,7 +27205,7 @@
   {
     "id": 2474,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "net-exposures",
     "chinese": "轧差敞口",
     "pos": "n.",
@@ -27216,7 +27216,7 @@
   {
     "id": 2475,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "gross-up",
     "chinese": "毛额上调",
     "pos": "n.",
@@ -27227,7 +27227,7 @@
   {
     "id": 2476,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "haircut-collateral",
     "chinese": "抵押品折扣",
     "pos": "n.",
@@ -27238,7 +27238,7 @@
   {
     "id": 2477,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "post-margin",
     "chinese": "缴纳保证金",
     "pos": "n.",
@@ -27249,7 +27249,7 @@
   {
     "id": 2478,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "meet-a-margin-call",
     "chinese": "满足追保",
     "pos": "n.",
@@ -27260,7 +27260,7 @@
   {
     "id": 2479,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "get-liquidated",
     "chinese": "被强平",
     "pos": "n.",
@@ -27271,7 +27271,7 @@
   {
     "id": 2480,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "auto-delever",
     "chinese": "自动减仓",
     "pos": "n.",
@@ -27282,7 +27282,7 @@
   {
     "id": 2481,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "funding-accrues",
     "chinese": "资金费计提",
     "pos": "n.",
@@ -27293,7 +27293,7 @@
   {
     "id": 2482,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "roll-the-position",
     "chinese": "移仓",
     "pos": "n.",
@@ -27304,7 +27304,7 @@
   {
     "id": 2483,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "unwind-the-position",
     "chinese": "平掉仓位",
     "pos": "n.",
@@ -27315,7 +27315,7 @@
   {
     "id": 2484,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "build-a-position",
     "chinese": "建立仓位",
     "pos": "n.",
@@ -27326,7 +27326,7 @@
   {
     "id": 2485,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "scale-in",
     "chinese": "分批建仓",
     "pos": "n.",
@@ -27337,7 +27337,7 @@
   {
     "id": 2486,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "average-down",
     "chinese": "摊低成本",
     "pos": "n.",
@@ -27348,7 +27348,7 @@
   {
     "id": 2487,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "cut-losses",
     "chinese": "止损离场",
     "pos": "n.",
@@ -27359,7 +27359,7 @@
   {
     "id": 2488,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "risk-off",
     "chinese": "风险偏好下降",
     "pos": "n.",
@@ -27370,7 +27370,7 @@
   {
     "id": 2489,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "risk-on",
     "chinese": "风险偏好上升",
     "pos": "n.",
@@ -27381,7 +27381,7 @@
   {
     "id": 2490,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "flight-to-quality",
     "chinese": "资金避险迁移",
     "pos": "n.",
@@ -27392,7 +27392,7 @@
   {
     "id": 2491,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "liquidity-dry-up",
     "chinese": "流动性枯竭",
     "pos": "n.",
@@ -27403,7 +27403,7 @@
   {
     "id": 2492,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "flash-crash",
     "chinese": "闪崩",
     "pos": "n.",
@@ -27414,7 +27414,7 @@
   {
     "id": 2493,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "gap-open",
     "chinese": "跳空开盘",
     "pos": "n.",
@@ -27425,7 +27425,7 @@
   {
     "id": 2494,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "circuit-halt",
     "chinese": "熔断停牌",
     "pos": "n.",
@@ -27436,7 +27436,7 @@
   {
     "id": 2495,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "auction",
     "chinese": "集合竞价",
     "pos": "n.",
@@ -27447,7 +27447,7 @@
   {
     "id": 2496,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "continuous-trading",
     "chinese": "连续交易",
     "pos": "n.",
@@ -27458,7 +27458,7 @@
   {
     "id": 2497,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "pre-open",
     "chinese": "开盘前",
     "pos": "n.",
@@ -27469,7 +27469,7 @@
   {
     "id": 2498,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "post-close",
     "chinese": "收盘后",
     "pos": "n.",
@@ -27480,7 +27480,7 @@
   {
     "id": 2499,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "after-hours",
     "chinese": "盘后",
     "pos": "n.",
@@ -27491,7 +27491,7 @@
   {
     "id": 2500,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "overnight-risk",
     "chinese": "隔夜风险",
     "pos": "n.",
@@ -27502,7 +27502,7 @@
   {
     "id": 2501,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "intraday-risk",
     "chinese": "日内风险",
     "pos": "n.",
@@ -27513,7 +27513,7 @@
   {
     "id": 2502,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "end-of-day",
     "chinese": "日终",
     "pos": "n.",
@@ -27524,7 +27524,7 @@
   {
     "id": 2503,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "start-of-day",
     "chinese": "日初",
     "pos": "n.",
@@ -27535,7 +27535,7 @@
   {
     "id": 2504,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "mark-to-market-PnL",
     "chinese": "盯市盈亏",
     "pos": "n.",
@@ -27546,7 +27546,7 @@
   {
     "id": 2505,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "realized-vs-unrealized",
     "chinese": "已实现与未实现",
     "pos": "n.",
@@ -27557,7 +27557,7 @@
   {
     "id": 2506,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "gross-PnL",
     "chinese": "毛盈亏",
     "pos": "n.",
@@ -27568,7 +27568,7 @@
   {
     "id": 2507,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "net-PnL",
     "chinese": "净盈亏",
     "pos": "n.",
@@ -27579,7 +27579,7 @@
   {
     "id": 2508,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "fee-drag",
     "chinese": "手续费拖累",
     "pos": "n.",
@@ -27590,7 +27590,7 @@
   {
     "id": 2509,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "slippage-cost",
     "chinese": "滑点成本",
     "pos": "n.",
@@ -27601,7 +27601,7 @@
   {
     "id": 2510,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "opportunity-cost",
     "chinese": "机会成本",
     "pos": "n.",
@@ -27612,7 +27612,7 @@
   {
     "id": 2511,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "transaction-cost-analysis",
     "chinese": "交易成本分析（TCA）",
     "pos": "n.",
@@ -27623,7 +27623,7 @@
   {
     "id": 2512,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "best-execution-obligation",
     "chinese": "最佳执行义务",
     "pos": "n.",
@@ -27634,7 +27634,7 @@
   {
     "id": 2513,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "order-protection",
     "chinese": "订单保护",
     "pos": "n.",
@@ -27645,7 +27645,7 @@
   {
     "id": 2514,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "trade-through",
     "chinese": "越过更优价成交",
     "pos": "n.",
@@ -27656,7 +27656,7 @@
   {
     "id": 2515,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "locked-crossed-market",
     "chinese": "锁定/交叉市场",
     "pos": "n.",
@@ -27667,7 +27667,7 @@
   {
     "id": 2516,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "quote-quality",
     "chinese": "报价质量",
     "pos": "n.",
@@ -27678,7 +27678,7 @@
   {
     "id": 2517,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "hit-ratio-by-LP",
     "chinese": "按 LP 的命中率",
     "pos": "n.",
@@ -27689,7 +27689,7 @@
   {
     "id": 2518,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "reject-ratio-by-LP",
     "chinese": "按 LP 的拒单率",
     "pos": "n.",
@@ -27700,7 +27700,7 @@
   {
     "id": 2519,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "LP-performance-scorecard",
     "chinese": "LP 表现记分卡",
     "pos": "n.",
@@ -27711,7 +27711,7 @@
   {
     "id": 2520,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "capacity-by-venue",
     "chinese": "按场所容量",
     "pos": "n.",
@@ -27722,7 +27722,7 @@
   {
     "id": 2521,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "credit-utilization",
     "chinese": "授信占用",
     "pos": "n.",
@@ -27733,7 +27733,7 @@
   {
     "id": 2522,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "headroom",
     "chinese": "剩余额度",
     "pos": "n.",
@@ -27744,7 +27744,7 @@
   {
     "id": 2523,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "limit-utilization",
     "chinese": "限额占用率",
     "pos": "n.",
@@ -27755,7 +27755,7 @@
   {
     "id": 2524,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "breach-alert",
     "chinese": "突破告警",
     "pos": "n.",
@@ -27766,7 +27766,7 @@
   {
     "id": 2525,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "force-close",
     "chinese": "强制平仓",
     "pos": "n.",
@@ -27777,7 +27777,7 @@
   {
     "id": 2526,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "manual-override",
     "chinese": "人工覆盖",
     "pos": "n.",
@@ -27788,7 +27788,7 @@
   {
     "id": 2527,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "trader-intervention",
     "chinese": "交易员介入",
     "pos": "n.",
@@ -27799,7 +27799,7 @@
   {
     "id": 2528,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "ops-intervention",
     "chinese": "运维/运营介入",
     "pos": "n.",
@@ -27810,7 +27810,7 @@
   {
     "id": 2529,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "exception-queue",
     "chinese": "异常队列",
     "pos": "n.",
@@ -27821,7 +27821,7 @@
   {
     "id": 2530,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "break-report",
     "chinese": "差错报告",
     "pos": "n.",
@@ -27832,7 +27832,7 @@
   {
     "id": 2531,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "recon-break",
     "chinese": "对账差异",
     "pos": "n.",
@@ -27843,7 +27843,7 @@
   {
     "id": 2532,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "aged-break",
     "chinese": "陈旧未平差异",
     "pos": "n.",
@@ -27854,7 +27854,7 @@
   {
     "id": 2533,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "suspense-account",
     "chinese": "暂记账户",
     "pos": "n.",
@@ -27865,7 +27865,7 @@
   {
     "id": 2534,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "virtual-ledger",
     "chinese": "虚账",
     "pos": "n.",
@@ -27876,7 +27876,7 @@
   {
     "id": 2535,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "double-entry",
     "chinese": "复式记账",
     "pos": "n.",
@@ -27887,7 +27887,7 @@
   {
     "id": 2536,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "chart-of-accounts",
     "chinese": "会计科目表",
     "pos": "n.",
@@ -27898,7 +27898,7 @@
   {
     "id": 2537,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "journal-entry",
     "chinese": "会计分录",
     "pos": "n.",
@@ -27909,7 +27909,7 @@
   {
     "id": 2538,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "balance-sheet",
     "chinese": "资产负债表",
     "pos": "n.",
@@ -27920,7 +27920,7 @@
   {
     "id": 2539,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "P&L-statement",
     "chinese": "损益表",
     "pos": "n.",
@@ -27931,7 +27931,7 @@
   {
     "id": 2540,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "cash-flow",
     "chinese": "现金流",
     "pos": "n.",
@@ -27942,7 +27942,7 @@
   {
     "id": 2541,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "working-capital",
     "chinese": "营运资金",
     "pos": "n.",
@@ -27953,7 +27953,7 @@
   {
     "id": 2542,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "counterparty-exposure",
     "chinese": "对手方敞口",
     "pos": "n.",
@@ -27964,7 +27964,7 @@
   {
     "id": 2543,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "concentration-risk",
     "chinese": "集中度风险",
     "pos": "n.",
@@ -27975,7 +27975,7 @@
   {
     "id": 2544,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "correlation-risk",
     "chinese": "相关性风险",
     "pos": "n.",
@@ -27986,7 +27986,7 @@
   {
     "id": 2545,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "model-risk",
     "chinese": "模型风险",
     "pos": "n.",
@@ -27997,7 +27997,7 @@
   {
     "id": 2546,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "operational-risk",
     "chinese": "操作风险",
     "pos": "n.",
@@ -28008,7 +28008,7 @@
   {
     "id": 2547,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "technology-risk",
     "chinese": "技术风险",
     "pos": "n.",
@@ -28019,7 +28019,7 @@
   {
     "id": 2548,
     "categoryId": 24,
-    "category": "金融场景短语",
+    "category": "Finance Phrases",
     "english": "key-person-risk",
     "chinese": "关键人风险",
     "pos": "n.",
