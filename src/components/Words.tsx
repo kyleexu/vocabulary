@@ -647,7 +647,13 @@ export function WordsPractice({
 
   const syncAnswerFromField = (raw: string) => {
     if (!word) return;
-    setInput(fillStructural(raw.slice(0, word.english.length)));
+    const clipped = raw.slice(0, word.english.length);
+    setInput((prev) => {
+      // Only auto-insert "-" / " " when typing forward. Re-filling on delete
+      // (e.g. "higher-" → "higher") would immediately restore the hyphen.
+      if (clipped.length <= prev.length) return clipped;
+      return fillStructural(clipped);
+    });
   };
 
   const submitAnswer = () => {
@@ -1026,6 +1032,11 @@ export function WordsPractice({
                 if (e.key === "Enter") {
                   e.preventDefault();
                   submitAnswer();
+                  return;
+                }
+                if (e.key === "Backspace") {
+                  e.preventDefault();
+                  backspaceInput();
                   return;
                 }
                 if (e.key === "Escape") {
