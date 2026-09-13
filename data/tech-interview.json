@@ -13439,7 +13439,7 @@
     "pos": "n.",
     "isWrong": 0,
     "isFavorites": 0,
-    "isEasy": 0
+    "isEasy": 1
   },
   {
     "id": 1223,
@@ -15615,6 +15615,17 @@
     "english": "diagram",
     "chinese": "图表；示意图；图解",
     "pos": "n.",
+    "isWrong": 0,
+    "isFavorites": 0,
+    "isEasy": 0
+  },
+  {
+    "id": 1421,
+    "categoryId": 10,
+    "category": "面试常用表达",
+    "english": "satisfy",
+    "chinese": "满足",
+    "pos": "v.",
     "isWrong": 0,
     "isFavorites": 0,
     "isEasy": 0
