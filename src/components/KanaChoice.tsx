@@ -46,7 +46,8 @@ export function KanaChoicePractice({
   const [autoAdvanceDelayMs, setAutoAdvanceDelayMs] = useState(
     settings.autoAdvanceDelayMs,
   );
-  const [pickedId, setPickedId] = useState<number | null>(null);
+  const [wrongIds, setWrongIds] = useState<number[]>([]);
+  const [solved, setSolved] = useState(false);
   const [inWrong, setInWrong] = useState(false);
   const [inEasy, setInEasy] = useState(false);
   const [inFav, setInFav] = useState(false);
@@ -57,7 +58,6 @@ export function KanaChoicePractice({
   const word = list[index];
   const accent = speakAccent(speakMode);
   const autoSpeak = speakMode !== "off";
-  const locked = pickedId != null;
 
   const choices = useMemo(() => {
     if (!word) return [];
@@ -91,7 +91,8 @@ export function KanaChoicePractice({
 
   useEffect(() => {
     if (!word) return;
-    setPickedId(null);
+    setWrongIds([]);
+    setSolved(false);
     setToast("");
     clearAdvanceTimer();
   }, [word?.id]);
@@ -117,7 +118,7 @@ export function KanaChoicePractice({
   }, [word?.id, autoSpeak, accent, speakRate]);
 
   useEffect(() => {
-    if (done || !word || locked) return;
+    if (done || !word) return;
     const onKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
       if (target?.closest("input, textarea, select")) return;
@@ -136,6 +137,7 @@ export function KanaChoicePractice({
         next();
         return;
       }
+      if (solved) return;
       const n = Number(e.key);
       if (n >= 1 && n <= choices.length) {
         e.preventDefault();
@@ -145,7 +147,7 @@ export function KanaChoicePractice({
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [done, word, locked, choices, accent, speakRate, index, list.length]);
+  }, [done, word, solved, choices, accent, speakRate, index, list.length]);
 
   const changeSpeakMode = (mode: SpeakMode) => {
     setSpeakMode(mode);
@@ -158,11 +160,19 @@ export function KanaChoicePractice({
   };
 
   const choose = (option: Word) => {
-    if (!word || locked) return;
-    setPickedId(option.id);
+    if (!word || solved) return;
     const ok = option.id === word.id;
-    setToast(ok ? "正确" : "再试一次");
-    if (ok && autoAdvance) {
+    if (!ok) {
+      setWrongIds((prev) =>
+        prev.includes(option.id) ? prev : [...prev, option.id],
+      );
+      setToast("再试一次");
+      void speakWord(option, accent, speakRate);
+      return;
+    }
+    setSolved(true);
+    setToast("正确");
+    if (autoAdvance) {
       clearAdvanceTimer();
       advanceTimerRef.current = window.setTimeout(next, autoAdvanceDelayMs);
     }
@@ -329,18 +339,16 @@ export function KanaChoicePractice({
           {choices.map((option, i) => {
             const { hira, kata } = kanaParts(option.chinese);
             const isCorrect = option.id === word.id;
-            const isPicked = option.id === pickedId;
+            const missed = wrongIds.includes(option.id);
             let state = "";
-            if (locked) {
-              if (isCorrect) state = "ok";
-              else if (isPicked) state = "bad";
-            }
+            if (solved && isCorrect) state = "ok";
+            else if (missed) state = "bad";
             return (
               <button
                 key={option.id}
                 type="button"
                 className={`kana-choice ${state}`}
-                disabled={locked}
+                disabled={solved}
                 onClick={() => choose(option)}
               >
                 <span className="kana-choice-index">{i + 1}</span>
