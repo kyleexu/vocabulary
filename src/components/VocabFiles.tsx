@@ -246,7 +246,7 @@ export function VocabFiles({
 
   const speak = (word: Word) => {
     const rate = getSettings().speakRate;
-    void speakWord(word.english, speakAccent(), rate);
+    void speakWord(word, speakAccent(), rate);
   };
 
   const renderWordRow = (w: Word) => {

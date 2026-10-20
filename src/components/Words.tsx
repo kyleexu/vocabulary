@@ -511,12 +511,11 @@ export function WordsPractice({
   // Speak / focus only when the practice word changes — not when book flags update.
   useEffect(() => {
     if (!word) return;
-    const english = word.english;
     const focusT = window.setTimeout(() => answerInputRef.current?.focus(), 0);
     // Delay speak so React Strict Mode cleanup / cancel() doesn't swallow it.
     const speakT = autoSpeak
       ? window.setTimeout(() => {
-          void speakWord(english, accent, speakRate);
+          void speakWord(word, accent, speakRate);
         }, 80)
       : 0;
     return () => {
@@ -524,7 +523,7 @@ export function WordsPractice({
       window.clearTimeout(speakT);
       stopSpeaking();
     };
-  }, [word?.id, word?.english, autoSpeak, accent, speakRate]);
+  }, [word?.id, word?.english, word?.chinese, autoSpeak, accent, speakRate]);
 
   const next = () => {
     clearAdvanceTimer();
@@ -764,7 +763,7 @@ export function WordsPractice({
       // ⌘K / Ctrl+K → speak current word
       if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        void speakWord(word.english, accent, speakRate);
+        void speakWord(word, accent, speakRate);
         return;
       }
 
@@ -1059,7 +1058,7 @@ export function WordsPractice({
             title="发音"
             onClick={(e) => {
               e.stopPropagation();
-              void speakWord(word.english, accent, speakRate);
+              void speakWord(word, accent, speakRate);
             }}
           >
             <SpeakerIcon />

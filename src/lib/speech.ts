@@ -4,9 +4,37 @@ let speakToken = 0;
 let voicesReady: Promise<SpeechSynthesisVoice[]> | null = null;
 let currentAudio: HTMLAudioElement | null = null;
 
-/** Youdao dict voice: type 0 = US, type 1 = UK. Undocumented public mp3. */
-export function youdaoDictVoiceUrl(word: string, accent: Accent): string {
+export type SpeakLang = "en" | "ja";
+
+export type Speakable = string | { english: string; chinese?: string };
+
+const HIRAGANA_RE = /[\u3040-\u309F]+/;
+const KATAKANA_RE = /[\u30A0-\u30FF]+/;
+
+/** Prefer hiragana (then katakana) so audio matches the Japanese character. */
+export function resolveSpeakTarget(
+  english: string,
+  chinese = "",
+): { text: string; lang: SpeakLang } {
+  const fromEnglish =
+    english.match(HIRAGANA_RE)?.[0] ?? english.match(KATAKANA_RE)?.[0];
+  if (fromEnglish) return { text: fromEnglish, lang: "ja" };
+  const fromChinese =
+    chinese.match(HIRAGANA_RE)?.[0] ?? chinese.match(KATAKANA_RE)?.[0];
+  if (fromChinese) return { text: fromChinese, lang: "ja" };
+  return { text: english, lang: "en" };
+}
+
+/** Youdao dict voice: type 0 = US, type 1 = UK; le=jap for Japanese. */
+export function youdaoDictVoiceUrl(
+  word: string,
+  accent: Accent,
+  lang: SpeakLang = "en",
+): string {
   const audio = encodeURIComponent(word.trim());
+  if (lang === "ja") {
+    return `https://dict.youdao.com/dictvoice?le=jap&audio=${audio}`;
+  }
   const type = accent === "uk" ? 1 : 0;
   return `https://dict.youdao.com/dictvoice?type=${type}&audio=${audio}`;
 }
@@ -61,12 +89,15 @@ export function speakSegments(word: string): string[] {
 
 /** Speak via Youdao dictionary audio; fall back to local speechSynthesis. */
 export function speakWord(
-  word: string,
+  word: Speakable,
   accent: Accent,
   ratePercent = 100,
 ): Promise<void> {
   const token = ++speakToken;
-  return speakWithYoudao(word, accent, token, ratePercent);
+  const english = typeof word === "string" ? word : word.english;
+  const chinese = typeof word === "string" ? "" : (word.chinese ?? "");
+  const target = resolveSpeakTarget(english, chinese);
+  return speakWithYoudao(target.text, accent, token, ratePercent, target.lang);
 }
 
 function discardAudio(audio: HTMLAudioElement) {
@@ -79,6 +110,7 @@ function preloadYoudaoClip(
   text: string,
   accent: Accent,
   ratePercent: number,
+  lang: SpeakLang = "en",
 ): Promise<HTMLAudioElement> {
   return new Promise((resolve, reject) => {
     const audio = new Audio();
@@ -107,7 +139,7 @@ function preloadYoudaoClip(
       if (audio.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) finish();
     };
     audio.onerror = fail;
-    audio.src = youdaoDictVoiceUrl(text, accent);
+    audio.src = youdaoDictVoiceUrl(text, accent, lang);
     audio.load();
   });
 }
@@ -135,8 +167,9 @@ async function speakWithYoudao(
   accent: Accent,
   token: number,
   ratePercent: number,
+  lang: SpeakLang = "en",
 ): Promise<void> {
-  const segments = speakSegments(word);
+  const segments = lang === "ja" ? [word.trim()].filter(Boolean) : speakSegments(word);
   if (!segments.length || token !== speakToken) return;
 
   stopCurrentAudio();
@@ -144,7 +177,7 @@ async function speakWithYoudao(
 
   const preloaded = await Promise.all(
     segments.map((part) =>
-      preloadYoudaoClip(part, accent, ratePercent).then(
+      preloadYoudaoClip(part, accent, ratePercent, lang).then(
         (audio) => ({ ok: true as const, audio, part }),
         () => ({ ok: false as const, audio: null, part }),
       ),
@@ -168,7 +201,7 @@ async function speakWithYoudao(
         stopCurrentAudio();
       }
     }
-    await speakWithSynthesis(item.part, accent, token, ratePercent);
+    await speakWithSynthesis(item.part, accent, token, ratePercent, lang);
   }
 }
 
@@ -177,6 +210,7 @@ export async function speakWithSynthesis(
   accent: Accent,
   token = ++speakToken,
   ratePercent = 100,
+  lang: SpeakLang = "en",
 ): Promise<void> {
   if (!("speechSynthesis" in window) || token !== speakToken) return;
 
@@ -194,12 +228,14 @@ export async function speakWithSynthesis(
   if (token !== speakToken) return;
 
   const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = accent === "uk" ? "en-GB" : "en-US";
+  utter.lang = lang === "ja" ? "ja-JP" : accent === "uk" ? "en-GB" : "en-US";
   utter.rate = clampPlaybackRate(ratePercent);
   const preferred = voices.find((v) =>
-    accent === "uk"
-      ? /en-GB|British/i.test(`${v.lang} ${v.name}`)
-      : /en-US|American/i.test(`${v.lang} ${v.name}`),
+    lang === "ja"
+      ? /ja(-JP)?|Japanese/i.test(`${v.lang} ${v.name}`)
+      : accent === "uk"
+        ? /en-GB|British/i.test(`${v.lang} ${v.name}`)
+        : /en-US|American/i.test(`${v.lang} ${v.name}`),
   );
   if (preferred) utter.voice = preferred;
 
