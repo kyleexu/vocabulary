@@ -28,6 +28,9 @@ export type DisplayMode = "full" | "hidden";
 
 export type WordOrder = "random" | "sequential";
 
+/** Spell English (default) vs listen/romaji and pick kana. */
+export type PracticeKind = "spell" | "kana-choice";
+
 export type AppView =
   | "home"
   | "words-setup"

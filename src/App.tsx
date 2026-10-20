@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import type { AppView, Word } from "./types";
+import type { AppView, PracticeKind, Word } from "./types";
 import { Login } from "./components/Login";
 import { WordsPractice, WordsSetup } from "./components/Words";
+import { KanaChoicePractice } from "./components/KanaChoice";
 import { WordBooks } from "./components/WordBooks";
 import { VocabFiles } from "./components/VocabFiles";
 import { isAuthenticated, logout } from "./lib/auth";
@@ -18,6 +19,7 @@ export default function App() {
   const [view, setView] = useState<AppView>("home");
   const [words, setWords] = useState<Word[]>([]);
   const [practiceList, setPracticeList] = useState<Word[]>([]);
+  const [practiceKind, setPracticeKind] = useState<PracticeKind>("spell");
   const [dataFile, setDataFileState] = useState(getDataFile);
   const [switching, setSwitching] = useState(false);
 
@@ -155,20 +157,28 @@ export default function App() {
           favoriteWords={favorites}
           easyWords={easy}
           onBack={() => setView("home")}
-          onStart={({ list }) => {
+          onStart={({ list, kind }) => {
             setPracticeList(list);
+            setPracticeKind(kind);
             setView("words-practice");
           }}
         />
       )}
 
-      {view === "words-practice" && (
-        <WordsPractice
-          list={practiceList}
-          onBack={() => setView("words-setup")}
-          onWordPatched={patchWord}
-        />
-      )}
+      {view === "words-practice" &&
+        (practiceKind === "kana-choice" ? (
+          <KanaChoicePractice
+            list={practiceList}
+            onBack={() => setView("words-setup")}
+            onWordPatched={patchWord}
+          />
+        ) : (
+          <WordsPractice
+            list={practiceList}
+            onBack={() => setView("words-setup")}
+            onWordPatched={patchWord}
+          />
+        ))}
 
       {view === "books" && (
         <WordBooks

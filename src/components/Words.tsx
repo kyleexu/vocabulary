@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type ClipboardEvent } from "react
 import type {
   Accent,
   DisplayMode,
+  PracticeKind,
   SpeakMode,
   Word,
   WordOrder,
@@ -18,6 +19,7 @@ import {
   formatCategoryLabel,
   sortWordsByCsvOrder,
 } from "../data/categories";
+import { isKanaVocab } from "../lib/kana";
 
 type SourceMode = "all" | "wrong" | "favorites" | "easy";
 
@@ -144,12 +146,20 @@ export function WordsSetup({
   wrongWords: Word[];
   favoriteWords: Word[];
   easyWords: Word[];
-  onStart: (payload: { list: Word[] }) => void;
+  onStart: (payload: { list: Word[]; kind: PracticeKind }) => void;
   onBack: () => void;
 }) {
   const categories = useMemo(() => categoriesFromWords(words), [words]);
+  const kanaModeAvailable = useMemo(() => isKanaVocab(words), [words]);
   const settings = getSettings();
   const [selected, setSelected] = useState<number[]>([]);
+  const [kind, setKind] = useState<PracticeKind>(
+    kanaModeAvailable ? "kana-choice" : "spell",
+  );
+
+  useEffect(() => {
+    setKind(kanaModeAvailable ? "kana-choice" : "spell");
+  }, [kanaModeAvailable]);
   const [source, setSource] = useState<SourceMode>("all");
   const [includeEasy, setIncludeEasy] = useState(false);
   const [limit, setLimit] = useState<number | "">(60);
@@ -246,7 +256,7 @@ export function WordsSetup({
       return;
     }
     saveSettings({ ...getSettings(), order });
-    onStart({ list });
+    onStart({ list, kind: kanaModeAvailable ? kind : "spell" });
   };
 
   const tabCounts = useMemo(() => {
@@ -283,6 +293,26 @@ export function WordsSetup({
           </button>
         </div>
       </div>
+
+      {kanaModeAvailable && (
+        <div className="row">
+          <span className="muted">练习模式</span>
+          <button
+            type="button"
+            className={`chip ${kind === "kana-choice" ? "on" : ""}`}
+            onClick={() => setKind("kana-choice")}
+          >
+            听音选假名
+          </button>
+          <button
+            type="button"
+            className={`chip ${kind === "spell" ? "on" : ""}`}
+            onClick={() => setKind("spell")}
+          >
+            拼写罗马音
+          </button>
+        </div>
+      )}
 
       <div className="tabs">
         {(

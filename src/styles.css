@@ -533,6 +533,75 @@ input[type="number"]::-webkit-inner-spin-button {
   color: var(--faint);
 }
 
+.kana-romaji {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.kana-choice-grid {
+  width: min(560px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.kana-choice {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 88px;
+  padding: 12px 8px 10px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.kana-choice:hover:not(:disabled) {
+  border-color: rgba(61, 186, 138, 0.45);
+}
+
+.kana-choice.ok {
+  border-color: rgba(78, 207, 140, 0.7);
+  background: rgba(78, 207, 140, 0.14);
+}
+
+.kana-choice.bad {
+  border-color: rgba(232, 106, 106, 0.7);
+  background: rgba(232, 106, 106, 0.12);
+}
+
+.kana-choice-index {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 0.75rem;
+  color: var(--faint);
+}
+
+.kana-choice-hira {
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.kana-choice-kata {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  .kana-choice-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .flash-pos {
   margin: 10px 0 0;
   font-family: var(--font-mono);
